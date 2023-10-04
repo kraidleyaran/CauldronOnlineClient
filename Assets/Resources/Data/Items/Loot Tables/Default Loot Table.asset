@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f2d5ed9c7d3024bb49ea388292c2b7, type: 3}
+  m_Name: Default Loot Table
+  m_EditorClassIdentifier: 
+  LootRolls:
+  - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
+    ChanceToDrop: 0.5
+    Stack:
+      Min: 1
+      Max: 3
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
+    ChanceToDrop: 0.25
+    Stack:
+      Min: 1
+      Max: 2
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
+    ChanceToDrop: 0.1
+    Stack:
+      Min: 1
+      Max: 3
+    SpawnEachStack: 1

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe00d6aa4e3ad499a1bbb3e213a84f, type: 3}
+  m_Name: Purple Goo Sprite Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _sprite: {fileID: 5174434993469642449, guid: cc12547e4a4e4fc40ab333a6b8d9f340, type: 3}
+  _runtimeAnimator: {fileID: 9100000, guid: 456eec6d6c0c8cd47b7efec2eb82b55f, type: 2}
+  _scaling: {x: 31.25, y: 31.25}
+  _spriteLayer: {fileID: 11400000, guid: b512b79b2cf97e746b8a8553e5f95eac, type: 2}
+  _sortingOrder: 0
+  _offset: {x: 0, y: 2.5}
+  _colorMask: {r: 1, g: 1, b: 1, a: 1}
+  _rotation: 0

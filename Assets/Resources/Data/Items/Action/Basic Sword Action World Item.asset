@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0babc050fe5b1a479676de1cc0f11e3, type: 3}
+  m_Name: Basic Sword Action World Item
+  m_EditorClassIdentifier: 
+  DisplayName: Basic Sword
+  Sprite: {fileID: 11400000, guid: 896fc8e9af96862458e069aa42fcc487, type: 2}
+  Description: []
+  MaxStack: 1
+  Ability: {fileID: 11400000, guid: 014dc0c57a7a16b4a8042468e7a02dd0, type: 2}
+  RemoveOnUse:
+    Item: {fileID: 0}
+    Stack: 0

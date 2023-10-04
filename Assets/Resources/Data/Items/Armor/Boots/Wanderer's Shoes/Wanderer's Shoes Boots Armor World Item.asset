@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bec3ef99ad5704c8049d2ff64c413b, type: 3}
+  m_Name: Wanderer's Shoes Boots Armor World Item
+  m_EditorClassIdentifier: 
+  DisplayName: Wanderer's Shoes
+  Sprite: {fileID: 11400000, guid: 480a1014aa65418419823e9fec073130, type: 2}
+  Description: 
+  MaxStack: 1
+  Slot: 3
+  _applyOnEquip:
+  - {fileID: 11400000, guid: 863d9f918eb6cca4c87469810200a73f, type: 2}

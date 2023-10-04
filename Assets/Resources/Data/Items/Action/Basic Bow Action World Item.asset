@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0babc050fe5b1a479676de1cc0f11e3, type: 3}
+  m_Name: Basic Bow Action World Item
+  m_EditorClassIdentifier: 
+  DisplayName: Basic Bow
+  Sprite: {fileID: 11400000, guid: 9452ed54ef8b7374da26a79fbb36a52f, type: 2}
+  Description: []
+  MaxStack: 1
+  Ability: {fileID: 11400000, guid: ad5e0b82c96ce224faa517862a0d72db, type: 2}
+  RemoveOnUse:
+    Item: {fileID: 0}
+    Stack: 0

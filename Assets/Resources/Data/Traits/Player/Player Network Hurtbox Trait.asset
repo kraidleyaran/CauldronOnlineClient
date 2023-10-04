@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d477e759d0cf005408b955634313c888, type: 3}
+  m_Name: Player Network Hurtbox Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _hitbox: {fileID: 11400000, guid: b20dea75fdcac0d4ba305e4c67ea55de, type: 2}
+  _collisionLayer: {fileID: 11400000, guid: 215e98f63a0f24f419fccad47de2eba8, type: 2}

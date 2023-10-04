@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39738af1aa9ca7b4997c772a3b03bcda, type: 3}
+  m_Name: Generic Slash Attack Setup
+  m_EditorClassIdentifier: 
+  _backSwing:
+    WeaponSpritePosition: {x: -12, y: 0}
+    WeaponSpriteRotation: 90
+  _startup:
+    WeaponSpritePosition: {x: -12, y: 0}
+    WeaponSpriteRotation: 180
+  _active:
+    WeaponSpritePosition: {x: 12, y: -12}
+    WeaponSpriteRotation: 270
+  _recovery:
+    WeaponSpritePosition: {x: 0, y: -8}
+    WeaponSpriteRotation: 270
+  SwingAnimation: {fileID: 11400000, guid: 7fa48a9f27a7df04cb8af37806aeb44c, type: 2}

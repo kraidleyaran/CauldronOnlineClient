@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Purple Goo Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Purple Goo
+  Sprite: {fileID: 11400000, guid: 02e96e2cc895f22419fb35549343223d, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: 7b93e85e92813f9439a0d9ef4c79c7f1, type: 2}
+  - {fileID: 11400000, guid: 7e10428564be387489e7dd009b0140af, type: 2}
+  - {fileID: 11400000, guid: e3f23444696bc284baab7e80d1e3613a, type: 2}
+  - {fileID: 11400000, guid: 79f51456642a31644b5db31ddf9a26f2, type: 2}
+  - {fileID: 11400000, guid: d7abd793613a6214b822529b34145b90, type: 2}
+  - {fileID: 11400000, guid: cd5065b2d7858d145bad127f3e662779, type: 2}
+  - {fileID: 11400000, guid: fb02cee7bc5074f4180f997e82637389, type: 2}
+  - {fileID: 11400000, guid: 8c86245c38d03304ebe32cf23cf2b2b2, type: 2}
+  ShowOnClient: 1
+  IsMonster: 1
+  _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}

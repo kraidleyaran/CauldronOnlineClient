@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6362f63eac488c42bd4872671ec50dd, type: 3}
+  m_Name: Default Player Ability Manager Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _testAbility: {fileID: 11400000, guid: 014dc0c57a7a16b4a8042468e7a02dd0, type: 2}
+  _testProjectileAbility: {fileID: 11400000, guid: ad5e0b82c96ce224faa517862a0d72db, type: 2}

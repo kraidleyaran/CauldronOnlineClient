@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26441cc3a8a77048b73a0f9e8a20598, type: 3}
+  m_Name: Generic Slash Swing Animation Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _backSwing: {fileID: 4726637227326273300, guid: e2dd2871d50627549a8ef6b4eaffc543, type: 3}
+  _startup: {fileID: 7709020036037182032, guid: e2dd2871d50627549a8ef6b4eaffc543, type: 3}
+  _active: {fileID: 8247901407991682460, guid: e2dd2871d50627549a8ef6b4eaffc543, type: 3}
+  _recovery: {fileID: -9048306239676895440, guid: e2dd2871d50627549a8ef6b4eaffc543, type: 3}
+  _scale: {x: 31.25, y: 31.25}

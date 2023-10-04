@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb84dec90775b0c408e4536ea170be7c, type: 3}
+  m_Name: Default Player Item Collect Hitbox Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _hitbox: {fileID: 11400000, guid: c1e65422673e3f5439f96078a18b60aa, type: 2}
+  _collisionLayer: {fileID: 11400000, guid: 9e28df09138a9b34a82f95423adb91fe, type: 2}
+  _applyToOwnerOnEnter: []
+  _applyToTargetOnEnter: []
+  _applyToSelfOnEnter: []
+  _applyToOwnerOnExit: []
+  _applyToTargetOnExit: []

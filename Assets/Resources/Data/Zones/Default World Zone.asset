@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be65063b7994d840ab9bdc75eed869e, type: 3}
+  m_Name: Default World Zone
+  m_EditorClassIdentifier: 
+  DisplayName: Cauldron
+  _aliases:
+  - default
+  _defaultSpawn:
+    X: 0
+    Y: 0
+  Controller: {fileID: 3601721486558363380, guid: 16072e62777160545b736ac4938249f4, type: 3}

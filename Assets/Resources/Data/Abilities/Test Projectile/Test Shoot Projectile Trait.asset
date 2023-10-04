@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75adba6bd2377344c9dfcc54bd54ab9d, type: 3}
+  m_Name: Test Shoot Projectile Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _spriteTrait: {fileID: 11400000, guid: 62914a7479d8bf64c8af92c8cc71d2b3, type: 2}
+  _additionalTraits:
+  - {fileID: 11400000, guid: 4f849f6cedc05ff46a792610a6f74e48, type: 2}
+  - {fileID: 11400000, guid: e82408617d94762429a6f74e43f44394, type: 2}
+  _moveSpeed: 30
+  _offset: 4
+  _baseRotation: -90

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Goo Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Goo
+  Sprite: {fileID: 11400000, guid: 7da8e6b408c6eb146819aeafcd4975ad, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: d1c5fc8c42960bb46840c910bb9ab8e3, type: 2}
+  - {fileID: 11400000, guid: 36c7d038c0c59f44d9e71a7c1064f22e, type: 2}
+  - {fileID: 11400000, guid: 143b5666769359b44b3a53d192644596, type: 2}
+  - {fileID: 11400000, guid: 284d85475e043334c97193aa2b5a19af, type: 2}
+  - {fileID: 11400000, guid: 2d12fc5a5eb9ba24b9a511c8a7eb59a6, type: 2}
+  - {fileID: 11400000, guid: e739e822a2dd28d4983bec3eb037b294, type: 2}
+  - {fileID: 11400000, guid: 0642e7847c6e392488c03398b3f897d0, type: 2}
+  - {fileID: 11400000, guid: 7de853f4d099637448fcd571c434242c, type: 2}
+  ShowOnClient: 1
+  IsMonster: 1
+  _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}

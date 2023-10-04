@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Bat Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Bat
+  Sprite: {fileID: 11400000, guid: 78a22db9edb2ed648818a44e1b783a12, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: d33815b2994cb6c42bba348c0982df54, type: 2}
+  - {fileID: 11400000, guid: 45b71c39c2c90804185405e6c0e7a3a7, type: 2}
+  - {fileID: 11400000, guid: db21a64b15685f540806b97aed8f4d25, type: 2}
+  - {fileID: 11400000, guid: e604b2721701c68418fe2332395568ab, type: 2}
+  - {fileID: 11400000, guid: 26c9b6c8e49fec748a7dc9434940f28d, type: 2}
+  - {fileID: 11400000, guid: d1fb0037dee1d104da833b71132cabe5, type: 2}
+  - {fileID: 11400000, guid: 3311bd58830c25e40a83c59ee0c6bdfa, type: 2}
+  - {fileID: 11400000, guid: 6dc90f5f18eb8df4da53e54ba789adda, type: 2}
+  ShowOnClient: 1
+  IsMonster: 1
+  _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}

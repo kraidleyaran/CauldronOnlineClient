@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49f3de3c87f90242a94a7d9ca1ee481, type: 3}
+  m_Name: Small Health Potion World Ability
+  m_EditorClassIdentifier: 
+  DisplayName: Small Health Potion
+  Description: 
+  RequiredResources: []
+  Icon: {fileID: -6687243199115631265, guid: 71fb4bfe32560524bb640d0a36a734fa, type: 3}
+  AbilitySteps:
+  - Frames: 10
+    State: 0
+    ApplyToOwner: []
+    ApplyToAttack: []
+  - Frames: 10
+    State: 1
+    ApplyToOwner: []
+    ApplyToAttack: []
+  - Frames: 10
+    State: 2
+    ApplyToOwner:
+    - {fileID: 11400000, guid: 046ce52b25037fc459705210d71bf290, type: 2}
+    ApplyToAttack: []
+  - Frames: 10
+    State: 3
+    ApplyToOwner: []
+    ApplyToAttack: []
+  WeaponSprite: {fileID: 11400000, guid: 99cc47a10cc822449996c440b718bb5e, type: 2}
+  AttackSetup: {fileID: 11400000, guid: 75a2c80c94d68d54ba6f7450e5df22c1, type: 2}
+  Offset: {x: 0, y: 0}
+  Cooldown: 0
+  ManaCost: 0

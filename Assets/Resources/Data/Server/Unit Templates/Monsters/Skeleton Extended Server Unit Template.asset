@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Skeleton Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Skeleton
+  Sprite: {fileID: 11400000, guid: 45a8f1cca81159143b72599459d65569, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: 904b95cc53601e34c93b2f2025406018, type: 2}
+  - {fileID: 11400000, guid: dde163645e856cf41bbe54beb4071bce, type: 2}
+  - {fileID: 11400000, guid: 64522e521e1fd2c40839f2a289054be3, type: 2}
+  - {fileID: 11400000, guid: 5c9010f0a0aa3ba4b912908a4ba643ea, type: 2}
+  - {fileID: 11400000, guid: 5f24d7959e162414090f2bba43d72f4d, type: 2}
+  - {fileID: 11400000, guid: d610188593635e14688c6247bd142b27, type: 2}
+  - {fileID: 11400000, guid: 636c5bd79c4333e4f885b1faae4ae33d, type: 2}
+  - {fileID: 11400000, guid: 849f3d0214eac704ca527ffe59b82a28, type: 2}
+  - {fileID: 11400000, guid: e81767824acac394bb3b5542562cb068, type: 2}
+  ShowOnClient: 1
+  IsMonster: 1
+  _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}
