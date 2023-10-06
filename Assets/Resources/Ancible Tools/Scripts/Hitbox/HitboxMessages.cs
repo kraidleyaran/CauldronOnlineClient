@@ -1,5 +1,5 @@
 ﻿using System;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Hitbox

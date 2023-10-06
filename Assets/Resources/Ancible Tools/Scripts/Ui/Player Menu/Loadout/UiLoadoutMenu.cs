@@ -4,7 +4,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Abilities;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Loadout;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.UI;
 using MessageFactory = Assets.Resources.Ancible_Tools.Scripts.System.MessageFactory;

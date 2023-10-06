@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heart Sprite Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 4946381666556589146, guid: 75b2b0ec6e40038488c5e659be720d17, type: 3}
   _runtimeAnimator: {fileID: 0}
   _scaling: {x: 31.25, y: 31.25}
   _spriteLayer: {fileID: 0}

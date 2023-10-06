@@ -20,3 +20,4 @@ MonoBehaviour:
   _spawnEvery: 900
   _chanceToSpawn: 1
   _bounsOnMissedChance: 0
+  _initialSpawn: 1

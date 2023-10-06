@@ -356,6 +356,7 @@ MonoBehaviour:
   _networkKnockbackReceiverTrait: {fileID: 11400000, guid: 3004172d904156245be643b8115287da, type: 2}
   _networkSwitchTrait: {fileID: 11400000, guid: 3e1a1a1dfa5e01f48b48b2b8bbe8260f, type: 2}
   _networkChestTrait: {fileID: 11400000, guid: a3187e6a1ce4a0b4e96211d0a596e1cd, type: 2}
+  _worldPositionTrait: {fileID: 11400000, guid: 2f7221e992509c346889282dc69a849f, type: 2}
 --- !u!1 &5636035961498998251
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +453,10 @@ MonoBehaviour:
     Wisdom: 5
     Luck: 5
   _defaultPlayerSprite: {fileID: 11400000, guid: d5b96159b5123a549996ab6ddcab5362, type: 2}
+  _startingEquippedActionItems:
+  - Item: {fileID: 11400000, guid: 5a978425e52e8b3438aaf89754e00790, type: 2}
+    Stack: 1
+  _startingAbilities: []
   _networkObjectTemplate: {fileID: 11400000, guid: 47154eaa7de048e43afc6b1958c9ddba, type: 2}
   _localFilter: Local
   _showPlayerClone: 0

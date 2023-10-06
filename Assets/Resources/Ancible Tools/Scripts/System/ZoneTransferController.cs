@@ -1,7 +1,7 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.Hitbox;
 using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
 using CauldronOnlineCommon;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System

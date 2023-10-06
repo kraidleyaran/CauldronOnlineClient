@@ -2,7 +2,7 @@
 using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.UI;
 

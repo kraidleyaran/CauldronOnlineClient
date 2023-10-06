@@ -1,6 +1,6 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System.Templates;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System

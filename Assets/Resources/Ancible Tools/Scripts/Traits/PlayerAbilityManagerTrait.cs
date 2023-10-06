@@ -7,7 +7,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Math;
 using DG.Tweening;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
@@ -101,6 +101,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             if (_unitState != UnitState.Attack && _unitState != UnitState.Dead && _unitState != UnitState.Interaction)
             {
+                Debug.Log($"Attack Direction - {_faceDirection}");
                 var ability = msg.Ability;
                 if (ability.RequiredResources.Length > 0)
                 {
@@ -115,7 +116,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     MessageFactory.CacheMessage(removeItemMsg);
                     _controller.gameObject.SendMessage(PlayerInventoryUpdatedMessage.INSTANCE);
                 }
-
                 var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
                 setUnitStateMsg.State = UnitState.Attack;
                 _controller.gameObject.SendMessageTo(setUnitStateMsg, _controller.transform.parent.gameObject);

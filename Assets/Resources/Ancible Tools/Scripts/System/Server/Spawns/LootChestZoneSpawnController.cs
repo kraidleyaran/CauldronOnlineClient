@@ -14,6 +14,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         [SerializeField] private WorldIntRange _drops;
         [SerializeField] private SpriteTrait _closedSprite;
         [SerializeField] private SpriteTrait _openSprite;
+        [SerializeField] private ServerHitbox _hitbox;
 
         public override ZoneSpawnData GetData(WorldVector2Int tile)
         {
@@ -24,7 +25,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 Drops = _drops,
                 ClosedSprite = _closedSprite.name,
                 OpenSprite = _openSprite.name,
-                Open = false
+                Open = false,
+                Hitbox = _hitbox.GetData()
             });
             return data;
         }

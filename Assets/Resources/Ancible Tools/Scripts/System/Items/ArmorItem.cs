@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Items

@@ -19,6 +19,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         public static KnockbackReceiverTrait NetworkKnockbackReceiver => _instance._networkKnockbackReceiverTrait;
         public static SwitchTrait NetworkSwitch => _instance._networkSwitchTrait;
         public static ChestTrait NetworkChest => _instance._networkChestTrait;
+        public static WorldPositionTrait WorldPosition => _instance._worldPositionTrait;
 
         private static TraitFactory _instance = null;
 
@@ -37,6 +38,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private KnockbackReceiverTrait _networkKnockbackReceiverTrait;
         [SerializeField] private SwitchTrait _networkSwitchTrait;
         [SerializeField] private ChestTrait _networkChestTrait;
+        [SerializeField] private WorldPositionTrait _worldPositionTrait;
 
         private Dictionary<string, Trait> _traits = new Dictionary<string, Trait>();
         private Dictionary<string, SpriteTrait> _sprites = new Dictionary<string, SpriteTrait>();

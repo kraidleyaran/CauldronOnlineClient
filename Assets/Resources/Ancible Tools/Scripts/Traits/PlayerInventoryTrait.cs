@@ -3,7 +3,7 @@ using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using CauldronOnlineCommon;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
@@ -202,6 +202,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private void SetInventory(SetInventoryMessage msg)
         {
+            _gold = msg.Gold;
             _items.Clear();
             foreach (var itemData in msg.Items)
             {

@@ -18,6 +18,6 @@ MonoBehaviour:
   _scaling: {x: 31.25, y: 31.25}
   _spriteLayer: {fileID: 11400000, guid: b512b79b2cf97e746b8a8553e5f95eac, type: 2}
   _sortingOrder: 0
-  _offset: {x: 0, y: 0}
+  _offset: {x: 0, y: 2.5}
   _colorMask: {r: 1, g: 1, b: 1, a: 1}
   _rotation: 0

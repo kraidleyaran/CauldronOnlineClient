@@ -1,7 +1,7 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
@@ -41,6 +41,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             base.SubscribeToMessages();
             _controller.transform.parent.gameObject.SubscribeWithFilter<OpenChestMessage>(OpenChest, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetupChestMessage>(SetupChest, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateWorldPositionMessage>(UpdateWorldPosition, _instanceId);
         }
 
         private void OpenChest(OpenChestMessage msg)
@@ -69,7 +70,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 _sprite.SetScale(sprite.Scaling);
                 _sprite.SetOffset(sprite.Offset);
             }
+            _hitboxController.transform.SetLocalScaling(msg.Hitbox.Size.ToVector());
+            _hitboxController.transform.SetLocalPosition(msg.Hitbox.Offset.ToWorldVector());
         }
 
+        private void UpdateWorldPosition(UpdateWorldPositionMessage msg)
+        {
+            var additionalOrder = _open ? _openSprite.SortingOrder : _closedSprite.SortingOrder;
+            _sprite.SetSortingOrder(msg.Position.Y * -1 + additionalOrder);
+        }
     }
 }

@@ -12,7 +12,7 @@ using CauldronOnlineCommon.Data.Items;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.WorldEvents;
 using DG.Tweening;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System
@@ -543,6 +543,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     public class SetInventoryMessage : EventMessage
     {
         public ItemStackData[] Items;
+        public int Gold;
     }
 
     public class SetArmorEquipmentMessage : EventMessage
@@ -597,6 +598,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public string OpenSprite;
         public string CloseSprite;
         public bool Open;
+        public HitboxData Hitbox;
     }
 
     public class FillLoadoutStackMessage : EventMessage

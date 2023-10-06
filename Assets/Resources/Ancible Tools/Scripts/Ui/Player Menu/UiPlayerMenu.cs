@@ -1,4 +1,4 @@
-﻿using MessageBusLib;
+﻿using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu

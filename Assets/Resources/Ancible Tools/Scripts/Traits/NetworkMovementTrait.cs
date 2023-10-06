@@ -3,7 +3,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.WorldEvents;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
@@ -124,7 +124,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     }
                     else
                     {
-                        Debug.Log($"Finished Move Event - {_currentEventProgress * TickController.WORLD_MILLISECONDS:N})");
                         _currentEventProgress = 0f;
                         _rigidBody.position = moveToPosition;
                         _currentEvent = null;

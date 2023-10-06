@@ -8,7 +8,7 @@ using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data;
 using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Math;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using Newtonsoft.Json;
 using UnityEngine;
 using Object = System.Object;

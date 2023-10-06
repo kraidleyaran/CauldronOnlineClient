@@ -1,7 +1,7 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Combat;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.UI;
 

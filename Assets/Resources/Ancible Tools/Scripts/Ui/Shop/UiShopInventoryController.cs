@@ -3,7 +3,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -116,6 +116,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             var controllers = _controllers.Values.ToArray();
             foreach (var controller in controllers)
             {
+                controller.SetHover(false);
                 Destroy(controller.gameObject);
             }
             _controllers.Clear();
@@ -265,6 +266,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                         }
                     }
 
+                }
+                else
+                {
+                    if (_controllers.TryGetValue(_cursorPosition, out var controller))
+                    {
+                        controller.SetHover(msg.Current.Info);
+                    }
                 }
 
                 if (!buttonPushed)

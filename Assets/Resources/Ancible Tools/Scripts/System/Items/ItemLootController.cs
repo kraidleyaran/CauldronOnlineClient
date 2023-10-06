@@ -2,7 +2,7 @@
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon.Data.Math;
 using DG.Tweening;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
@@ -36,20 +36,22 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
         {
             _item = item;
             _stack = stack;
-            if (item.Sprite)
+            
+            if (_item.Sprite)
             {
                 _spriteController = Instantiate(FactoryController.SPRITE_CONTROLLER, transform);
                 _spriteController.SetScale(item.Sprite.Scaling);
                 _spriteController.SetOffset(item.Sprite.Offset);
-            }
-            if (_item.Sprite.RuntimeController)
-            {
-                _spriteController.SetRuntimeController(_item.Sprite.RuntimeController);
-                _spriteController.Play();
-            }
-            else
-            {
-                _spriteController.SetSprite(_item.Sprite.Sprite);
+
+                if (_item.Sprite.RuntimeController)
+                {
+                    _spriteController.SetRuntimeController(_item.Sprite.RuntimeController);
+                    _spriteController.Play();
+                }
+                else
+                {
+                    _spriteController.SetSprite(_item.Sprite.Sprite);
+                }
             }
             var currentPos = transform.position.ToVector2();
             var distance = _range.Roll(true) * DataController.Interpolation;

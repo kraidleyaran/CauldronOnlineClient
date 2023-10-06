@@ -11,7 +11,7 @@ using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.ObjectParameters;
 using CauldronOnlineCommon.Data.Zones;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;

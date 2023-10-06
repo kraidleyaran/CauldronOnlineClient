@@ -4,13 +4,14 @@ using System.Linq;
 using System.Security.Cryptography;
 using Assets.Resources.Ancible_Tools.Scripts.System.Data;
 using Assets.Resources.Ancible_Tools.Scripts.System.Templates;
+using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data;
 using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.ObjectParameters;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System
@@ -21,13 +22,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public static string PlayerObjectId { get; private set; }
         public static SpriteTrait DefaultPlayerSprite => _instance._defaultPlayerSprite;
         public static CombatStats StartingStats => _instance._startingCombatStats;
+        public static PremadeItemSlot[] StartingItems => _instance._startingEquippedActionItems;
+        public static PremadeAbilitySlot[] StartingAbility => _instance._startingAbilities;
         public static string LocalFilter => _instance._localFilter;
+        
 
         private static ObjectManager _instance = null;
 
         [SerializeField] private UnitTemplate _playerTemplate;
         [SerializeField] private CombatStats _startingCombatStats;
         [SerializeField] private SpriteTrait _defaultPlayerSprite;
+        [SerializeField] private PremadeItemSlot[] _startingEquippedActionItems = new PremadeItemSlot[0];
+        [SerializeField] private PremadeAbilitySlot[] _startingAbilities = new PremadeAbilitySlot[0];
         [SerializeField] private UnitTemplate _networkObjectTemplate;
         [SerializeField] private string _localFilter = "Local";
         [SerializeField] private bool _showPlayerClone = false;
@@ -52,6 +58,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private SetLoadoutMessage _setLoadoutMsg = new SetLoadoutMessage();
         private SetupSwitchMessage _setupSwitchMsg = new SetupSwitchMessage();
         private SetupChestMessage _setupChestMsg = new SetupChestMessage();
+        private SetInventoryMessage _setInventoryMsg = new SetInventoryMessage();
 
         private bool _editorMode = false;
 
@@ -99,8 +106,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             _instance._setArmorEquipmentMsg.Equipped = data.EquippedArmor;
             Player.SendMessageTo(_instance._setArmorEquipmentMsg, Player);
 
+            _instance._setInventoryMsg.Items = data.Inventory;
+            _instance._setInventoryMsg.Gold = data.Gold;
+            Player.SendMessageTo(_instance._setInventoryMsg, Player);
+
+            _instance._setLoadedAspectsMsg.Aspects = data.Aspects;
+            _instance._setLoadedAspectsMsg.AvailablePoints = data.AvailablePoints;
+            Player.SendMessageTo(_instance._setLoadedAspectsMsg, Player);
+
             _instance._setLoadoutMsg.Loadout = data.Loadout;
             Player.SendMessageTo(_instance._setLoadoutMsg, Player);
+
+            
 
             Player.transform.SetParent(_instance.transform);
         }
@@ -251,6 +268,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 addTraitToUnitMsg.Trait = TraitFactory.NetworkDoor;
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
+                                addTraitToUnitMsg.Trait = TraitFactory.WorldPosition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
                                 _instance._setupDoorMsg.Open = door.Open;
                                 _instance._setupDoorMsg.RequiredItems = door.RequiredItems;
                                 _instance._setupDoorMsg.Rotation = door.Rotation;
@@ -292,6 +312,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 _instance._setupChestMsg.OpenSprite = lootChest.OpenSprite;
                                 _instance._setupChestMsg.CloseSprite = lootChest.ClosedSprite;
                                 _instance._setupChestMsg.Open = lootChest.Open;
+                                _instance._setupChestMsg.Hitbox = lootChest.Hitbox;
                                 obj.SendMessageTo(_instance._setupChestMsg, obj);
                             }
                             break;
@@ -307,6 +328,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
                 _instance._networkObjects.Add(data.Id, obj);
                 _instance._networkReverseLookup.Add(obj, data.Id);
+
+                var setWorldPositionMsg = MessageFactory.GenerateSetWorldPositionMsg();
+                setWorldPositionMsg.Position = data.Position;
+                obj.SendMessageTo(setWorldPositionMsg, obj);
+                MessageFactory.CacheMessage(setWorldPositionMsg);
 
                 obj.transform.SetParent(_instance.transform);
             }

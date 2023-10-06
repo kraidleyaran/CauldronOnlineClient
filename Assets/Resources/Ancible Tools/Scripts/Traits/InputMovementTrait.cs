@@ -1,5 +1,5 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 

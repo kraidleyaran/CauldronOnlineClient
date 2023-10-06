@@ -1,6 +1,6 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
 using DG.Tweening;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.UI;
 

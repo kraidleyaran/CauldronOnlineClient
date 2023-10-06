@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Bat Ai Wander Server Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _wanderRange: 5
+  _wanderRange: 6
   _anchor: 1
   _idleTicks:
     Min: 32
     Max: 96
-  _chanceToIdle: 0.5
+  _chanceToIdle: 0.05
   _diagonalCost: 0.25

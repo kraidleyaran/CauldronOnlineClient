@@ -2,7 +2,7 @@
 using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using CauldronOnlineCommon.Data.Combat;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits

@@ -2,7 +2,7 @@
 using Assets.Resources.Ancible_Tools.Scripts.System.Abilities;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon.Data.Math;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
@@ -66,7 +66,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     _abilityController.Destroy();
                     ObjectManager.DestroyNetworkObject(_abilityController.gameObject);
                 }
-
+                
                 var ability = msg.Ability;
                 var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
                 setUnitStateMsg.State = UnitState.Attack;

@@ -25,22 +25,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Loadout
             {
                 _sprite.sprite = item.Icon;
                 _sprite.gameObject.SetActive(true);
-                if (item.Ability.RequiredResources.Length > 0 || item.Ability.ManaCost > 0)
-                {
-                    _usesText.text = $"{Item.GetUses(ObjectManager.Player)}";
-                }
-                else
-                {
-                    _usesText.text = string.Empty;
-                }
             }
+            RefreshUses();
         }
 
         public void RefreshUses()
         {
-            if (!Item.IsEmpty && (Item.Ability.RequiredResources.Length > 0 || Item.Ability.ManaCost > 0))
+            if (!Item.IsEmpty && (Item.EquippedItem && Item.EquippedItem.UseStack || Item.Ability.RequiredResources.Length > 0 || Item.Ability.ManaCost > 0))
             {
                 _usesText.text = $"{Item.GetUses(ObjectManager.Player)}";
+            }
+            else
+            {
+                _usesText.text = string.Empty;
             }
         }
     }

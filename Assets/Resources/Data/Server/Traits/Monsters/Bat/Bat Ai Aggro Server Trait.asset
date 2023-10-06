@@ -17,3 +17,4 @@ MonoBehaviour:
   _defaultAggro: 450
   _applyOnAggro:
   - {fileID: 11400000, guid: a4ed42f18f5cdfd4e9ec0b1341f2a5e2, type: 2}
+  _diagonalCost: 0.33

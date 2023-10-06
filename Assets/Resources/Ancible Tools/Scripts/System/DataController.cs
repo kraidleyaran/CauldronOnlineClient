@@ -7,7 +7,7 @@ using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Combat;
 using DG.Tweening;
 using FileDataLib;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System
@@ -105,12 +105,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             _instance.gameObject.SendMessageTo(queryAspectsMsg, player);
             MessageFactory.CacheMessage(queryAspectsMsg);
 
+            var queryGoldMsg = MessageFactory.GenerateQueryGoldMsg();
+            queryGoldMsg.DoAfter = gold => worldCharacterData.Gold = gold;
+            _instance.gameObject.SendMessageTo(queryGoldMsg, player);
+            MessageFactory.CacheMessage(queryGoldMsg);
+
             var loadout = new LoadoutSlot[0];
 
             var queryLoadoutMsg = MessageFactory.GenerateQueryLoadoutMsg();
             queryLoadoutMsg.DoAfter = slots => loadout = slots;
             _instance.gameObject.SendMessageTo(queryLoadoutMsg, player);
             MessageFactory.CacheMessage(queryLoadoutMsg);
+
+
 
             var saveSlots = new List<LoadoutSlotData>();
             for (var i = 0; i < loadout.Length; i++)
@@ -199,6 +206,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         private WorldCharacterData GenerateNewCharacter()
         {
+            var loadout = new List<PremadeLoadoutSlot>();
+            loadout.AddRange(ObjectManager.StartingItems);
+            loadout.AddRange(ObjectManager.StartingAbility);
+
+            var savedLoadout = new LoadoutSlotData[loadout.Count];
+            for (var i = 0; i < loadout.Count; i++)
+            {
+                savedLoadout[i] = loadout[i].GetData(i);
+            }
             return new WorldCharacterData
             {
                 Name = "Default",
@@ -215,7 +231,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         Health = ObjectManager.StartingStats.Health,
                         Mana = ObjectManager.StartingStats.Mana
                     },
-                Loadout = new LoadoutSlotData[0],
+                Loadout = savedLoadout,
                 Zone = _startingZone.name,
                 Position = _startingZone.DefaultSpawn.ToWorldVector()
             };

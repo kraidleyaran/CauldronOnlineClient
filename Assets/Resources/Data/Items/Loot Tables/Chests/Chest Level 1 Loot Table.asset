@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69f2d5ed9c7d3024bb49ea388292c2b7, type: 3}
-  m_Name: Level 1 Loot Table
+  m_Name: Chest Level 1 Loot Table
   m_EditorClassIdentifier: 
   LootRolls:
   - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
-    ChanceToDrop: 0.5
+    ChanceToDrop: 0.66
     Stack:
-      Min: 1
-      Max: 3
+      Min: 3
+      Max: 5
     SpawnEachStack: 1
   - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
-    ChanceToDrop: 0.15
+    ChanceToDrop: 0.2
+    Stack:
+      Min: 3
+      Max: 5
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: 7adfcff9de4bf25419dea74886a8c350, type: 2}
+    ChanceToDrop: 0.25
     Stack:
       Min: 1
       Max: 2
     SpawnEachStack: 1
-  - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
-    ChanceToDrop: 0.08
-    Stack:
-      Min: 1
-      Max: 3
-    SpawnEachStack: 1
-  - Item: {fileID: 11400000, guid: 6dc0231fbbd84784ab37d6a7c3dc2915, type: 2}
-    ChanceToDrop: 0.33
+  - Item: {fileID: 11400000, guid: 5dcdb3662c3369640bc4fad6531f4de1, type: 2}
+    ChanceToDrop: 0.05
     Stack:
       Min: 1
       Max: 1
     SpawnEachStack: 1
-  - Item: {fileID: 11400000, guid: 6dc0231fbbd84784ab37d6a7c3dc2915, type: 2}
-    ChanceToDrop: 0.2
+  - Item: {fileID: 11400000, guid: aa9007f0984ab9e4d91f51cc732e01ad, type: 2}
+    ChanceToDrop: 0.05
     Stack:
       Min: 1
       Max: 1

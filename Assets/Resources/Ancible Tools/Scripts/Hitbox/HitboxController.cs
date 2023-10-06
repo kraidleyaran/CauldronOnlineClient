@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Resources.Ancible_Tools.Scripts.System;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Hitbox

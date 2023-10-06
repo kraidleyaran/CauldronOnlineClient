@@ -3,7 +3,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.WorldEvents;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits

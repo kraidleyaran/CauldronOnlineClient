@@ -8,7 +8,7 @@ using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Items;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.WorldEvents;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System
@@ -306,6 +306,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 {
                                     _setSignalMsg.Signal = signalEvent.Signal;
                                     obj.SendMessageTo(_setSignalMsg, obj);
+                                }
+                            }
+                            break;
+                        case ChestEvent.ID:
+                            if (worldEvent is ChestEvent chest)
+                            {
+                                var obj = ObjectManager.GetObjectById(chest.TargetId);
+                                if (obj)
+                                {
+                                    obj.SendMessageTo(OpenChestMessage.INSTANCE, obj);
                                 }
                             }
                             break;

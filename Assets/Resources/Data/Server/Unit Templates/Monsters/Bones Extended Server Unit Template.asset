@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Bones Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Bones
+  Sprite: {fileID: 11400000, guid: 93353053068265347950c4ff172dcbb8, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: 9e179c35fdba55545926c97643f29140, type: 2}
+  - {fileID: 11400000, guid: 3719f100eab4b7347a33b61102cc1c0e, type: 2}
+  - {fileID: 11400000, guid: c6e2f70cd2cf73043947a9d0afd4ab06, type: 2}
+  - {fileID: 11400000, guid: 75fe6f63500214f46a77db2b0d0db420, type: 2}
+  - {fileID: 11400000, guid: 6253c3b4644631e4f929549c21f2aa4f, type: 2}
+  - {fileID: 11400000, guid: 48f816e44b5a3b34c8e6b52252108981, type: 2}
+  - {fileID: 11400000, guid: 35ba0257bb4129940aa905a7dc3f5eae, type: 2}
+  ShowOnClient: 1
+  IsMonster: 1
+  _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}

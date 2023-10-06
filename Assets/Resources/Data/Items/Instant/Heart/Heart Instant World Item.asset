@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heart Instant World Item
   m_EditorClassIdentifier: 
   DisplayName: Heart
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 11400000, guid: 164b223c7e18505499a8c800ee85c3df, type: 2}
   Description: 
   MaxStack: 1
   SellValue: 0

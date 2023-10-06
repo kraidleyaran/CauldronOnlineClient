@@ -9,7 +9,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
     {
         [SerializeField] private int _aggroRange = 1;
         [SerializeField] private int _defaultAggro = 25;
-        [SerializeField] private ServerTrait[] _applyOnAggro;
+        [SerializeField] private ServerTrait[] _applyOnAggro = new ServerTrait[0];
         [SerializeField] private float _diagonalCost = 0f;
 
         public override WorldTraitData GetData()

@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0babc050fe5b1a479676de1cc0f11e3, type: 3}
-  m_Name: Basic Bow Action World Item
+  m_Name: Wood Bow Action World Item
   m_EditorClassIdentifier: 
-  DisplayName: Basic Bow
+  DisplayName: Wood Bow
   Sprite: {fileID: 11400000, guid: 9452ed54ef8b7374da26a79fbb36a52f, type: 2}
-  Description: []
+  Description: 
   MaxStack: 1
-  Ability: {fileID: 11400000, guid: ad5e0b82c96ce224faa517862a0d72db, type: 2}
-  RemoveOnUse:
-    Item: {fileID: 0}
-    Stack: 0
+  SellValue: 0
+  Ability: {fileID: 11400000, guid: 97b9438469b884a49a65ce3c8f626abb, type: 2}
+  UseStack: 0

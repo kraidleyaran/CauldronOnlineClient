@@ -1,4 +1,4 @@
-﻿using MessageBusLib;
+﻿using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

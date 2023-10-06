@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using MessageBusLib;
+using ConcurrentMessageBus;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 {

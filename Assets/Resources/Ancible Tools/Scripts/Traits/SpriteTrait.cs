@@ -1,7 +1,7 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Abilities;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
@@ -31,6 +31,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private Vector2 _offset = Vector2.zero;
         [SerializeField] private Color _colorMask = Color.white;
         [SerializeField] private float _rotation = 0f;
+        [SerializeField] private FlipSprite _flipX = FlipSprite.None;
 
         private SpriteController _spriteController = null;
 
@@ -123,6 +124,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
                 _spriteController.SetAnimatorState(X, _faceDirection.x);
                 _spriteController.SetAnimatorState(Y, _faceDirection.y);
+
+                if (_faceDirection.x != 0 && _flipX != FlipSprite.None )
+                {
+                    switch (_flipX)
+                    {
+                        case FlipSprite.Negative:
+                            _spriteController.FlipX(_faceDirection.x < 0);
+                            break;
+                        case FlipSprite.Positive:
+                            _spriteController.FlipX(_faceDirection.x > 0);
+                            break;
+                    }
+                }
             }
         }
 
@@ -164,6 +178,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     _spriteController.SetAnimatorState(X, _faceDirection.x);
                     _spriteController.SetAnimatorState(Y, _faceDirection.y);
                 }
+
+                if (_faceDirection.x != 0 && _flipX != FlipSprite.None)
+                {
+                    switch (_flipX)
+                    {
+                        case FlipSprite.Negative:
+                            _spriteController.FlipX(_faceDirection.x < 0);
+                            break;
+                        case FlipSprite.Positive:
+                            _spriteController.FlipX(_faceDirection.x > 0);
+                            break;
+                    }
+                }
             }
         }
 
@@ -174,7 +201,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private void UpdateWorldPosition(UpdateWorldPositionMessage msg)
         {
-            _spriteController.SetSortingOrder(msg.Position.Y * - 1 + _sortingOrder);
+            _spriteController.SetSortingOrder((msg.Position.Y * -1) + _sortingOrder);
         }
 
         public override void Destroy()

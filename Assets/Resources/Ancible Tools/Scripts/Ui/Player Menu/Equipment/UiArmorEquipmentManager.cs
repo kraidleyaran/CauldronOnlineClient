@@ -2,8 +2,9 @@
 using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
 {
@@ -11,7 +12,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
     {
         [SerializeField] private UiArmorItemController[] _equipmentControllers = new UiArmorItemController[0];
         [SerializeField] private GameObject _cursor;
-        [SerializeField] private int _maxPerRow = 3;
+        [SerializeField] private GridLayoutGroup _grid;
 
         private Dictionary<ArmorSlot, UiArmorItemController> _controllers = new Dictionary<ArmorSlot, UiArmorItemController>();
 
@@ -28,7 +29,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
 
                     controller.Position = position;
                     position.x++;
-                    if (position.x >= _maxPerRow)
+                    if (position.x >= _grid.constraintCount)
                     {
                         position.x = 0;
                         position.y++;
@@ -61,6 +62,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
                     controller.Setup(item);
                 }
             }
+
+            var cursorController = _controllers.Values.FirstOrDefault(c => c.Position == _cursorPosition);
+            if (!cursorController)
+            {
+                cursorController = _controllers[ArmorSlot.Helm];
+            }
+            cursorController.SetCursor(_cursor);
 
         }
 

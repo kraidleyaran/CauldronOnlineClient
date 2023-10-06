@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
 {
@@ -8,3 +9,4 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         
     }
 }
+#endif

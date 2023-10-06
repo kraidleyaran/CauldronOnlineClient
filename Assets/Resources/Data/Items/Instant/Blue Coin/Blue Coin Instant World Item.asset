@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962502ffaa6a814459217edcbc39356c, type: 3}
+  m_Name: Blue Coin Instant World Item
+  m_EditorClassIdentifier: 
+  DisplayName: Blue Coin
+  Sprite: {fileID: 11400000, guid: 70b8890cfe1b501468fa7189211c348d, type: 2}
+  Description: 
+  MaxStack: 1
+  SellValue: 0
+  _applyOnPickup:
+  - {fileID: 11400000, guid: f4439466f7c42624eba722c5d49a72aa, type: 2}

@@ -15,6 +15,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
         [SerializeField] private int _spawnEvery = 1;
         [SerializeField] [Range(0f, 1f)] private float _chanceToSpawn = 1f;
         [SerializeField] private float _bounsOnMissedChance = 0f;
+        [SerializeField] private bool _initialSpawn = false;
 
         public override WorldTraitData GetData()
         {
@@ -35,7 +36,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 SpawnEvery = _spawnEvery,
                 SpawnData = objectSpawnData,
                 ChanceToSpawn = _chanceToSpawn,
-                BonusPerMissedChance = _bounsOnMissedChance
+                BonusPerMissedChance = _bounsOnMissedChance,
+                InitialSpawn = _initialSpawn
             };
 
 

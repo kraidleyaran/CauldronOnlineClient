@@ -5,7 +5,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using CauldronOnlineCommon.Data.Math;
 using DG.Tweening;
-using MessageBusLib;
+using ConcurrentMessageBus;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities

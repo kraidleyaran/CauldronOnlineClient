@@ -22,6 +22,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Data
         public ItemStackData[] Inventory;
         public int Experience;
         public int Level;
+        public int Gold;
 
         public ClientCharacterData ToClientData()
         {
