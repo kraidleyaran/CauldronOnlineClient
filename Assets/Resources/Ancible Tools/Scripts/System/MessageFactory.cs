@@ -83,6 +83,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private static List<QueryDamageBonusMessage> _queryDamageBonusCache = new List<QueryDamageBonusMessage>();
         private static List<ApplySecondaryStatsMessage> _applySecondaryStatsCache = new List<ApplySecondaryStatsMessage>();
         private static List<QueryAvailableResourceUsesMessage> _queryAvailableResourceUsesCache = new List<QueryAvailableResourceUsesMessage>();
+        private static List<RemoveManaMessage> _removeManaCache = new List<RemoveManaMessage>();
+        private static List<RestoreManaMessage> _restoreManaCache = new List<RestoreManaMessage>();
+        private static List<QueryTimerMessage> _queryTimerCache = new List<QueryTimerMessage>();
         
         public static AddTraitToUnitMessage GenerateAddTraitToUnitMsg()
         {
@@ -901,6 +904,42 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             return new QueryAvailableResourceUsesMessage();
         }
 
+        public static RemoveManaMessage GenerateRemoveManaMsg()
+        {
+            if (_removeManaCache.Count > 0)
+            {
+                var message = _removeManaCache[0];
+                _removeManaCache.Remove(message);
+                return message;
+            }
+
+            return new RemoveManaMessage();
+        }
+
+        public static RestoreManaMessage GenereateRestoreManaMsg()
+        {
+            if (_restoreManaCache.Count > 0)
+            {
+                var message = _restoreManaCache[0];
+                _restoreManaCache.Remove(message);
+                return message;
+            }
+
+            return new RestoreManaMessage();
+        }
+
+        public static QueryTimerMessage GenerateQueryTimerMsg()
+        {
+            if (_queryTimerCache.Count > 0)
+            {
+                var message = _queryTimerCache[0];
+                _queryTimerCache.Remove(message);
+                return message;
+            }
+
+            return new QueryTimerMessage();
+        }
+
         //TODO: Start Cache
 
         public static void CacheMessage(AddTraitToUnitMessage msg)
@@ -1409,6 +1448,27 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             msg.Items = null;
             msg.Sender = null;
             _queryAvailableResourceUsesCache.Add(msg);
+        }
+
+        public static void CacheMessage(RemoveManaMessage msg)
+        {
+            msg.Amount = 0;
+            msg.Sender = null;
+            _removeManaCache.Add(msg);
+        }
+
+        public static void CacheMessage(RestoreManaMessage msg)
+        {
+            msg.Amount = 0;
+            msg.Sender = null;
+            _restoreManaCache.Add(msg);
+        }
+
+        public static void CacheMessage(QueryTimerMessage msg)
+        {
+            msg.DoAfter = null;
+            msg.Sender = null;
+            _queryTimerCache.Add(msg);
         }
     }
 }

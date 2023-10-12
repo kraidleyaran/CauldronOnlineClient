@@ -19,6 +19,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         public Vector2 Scaling => _scaling;
         public SpriteLayer SpriteLayer => _spriteLayer;
         public int SortingOrder => _sortingOrder;
+        public bool IgnoreWorldPosition = false;
         public Color ColorMask => _colorMask;
         public float Rotation => _rotation;
         public Vector2 Offset => _offset;
@@ -81,7 +82,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateAbilityStateMessage>(UpdateAbilityState, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetFacingDirectionMessage>(SetFacingDirection, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<QueryFacingDirectionMessage>(QueryFacingDirection, _instanceId);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateWorldPositionMessage>(UpdateWorldPosition, _instanceId);
+            if (!IgnoreWorldPosition)
+            {
+                _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateWorldPositionMessage>(UpdateWorldPosition, _instanceId);
+            }
         }
 
 

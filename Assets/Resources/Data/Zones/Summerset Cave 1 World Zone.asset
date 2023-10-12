@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be65063b7994d840ab9bdc75eed869e, type: 3}
   m_Name: Summerset Cave 1 World Zone
   m_EditorClassIdentifier: 
-  DisplayName: Cave
+  DisplayName: Summerset Cave 1
   _aliases:
   - summersetCave1
-  DefaultSpawn: {x: -7, y: 59}
-  Controller: {fileID: 5166712651169224376, guid: 2aa286f4c50394b429e2c54cc5670bdb, type: 3}
+  DefaultSpawn: {x: -7, y: -72}
+  Controller: {fileID: 5166712651169224376, guid: 0d40591786fdd04498ada3e8c7ed4afd, type: 3}

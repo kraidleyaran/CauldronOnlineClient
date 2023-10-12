@@ -15,6 +15,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.UnitTemplates
         public ServerTrait[] Traits;
         public bool ShowOnClient;
         public bool IsMonster;
+        public bool ShowName;
+        public bool ShowAppearance = true;
 
         public ObjectSpawnData GetData()
         {
@@ -24,7 +26,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.UnitTemplates
                 Traits = GetTraits(),
                 ShowOnClient = ShowOnClient,
                 IsMonster = IsMonster,
-                Parameters = new ObjectParameter[0]
+                ShowNameOnClient = ShowName,
+                Parameters = new ObjectParameter[0],
+                ShowAppearance = ShowAppearance
             };
             return data;
         }

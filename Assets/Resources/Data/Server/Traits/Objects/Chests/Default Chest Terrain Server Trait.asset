@@ -15,4 +15,4 @@ MonoBehaviour:
   MaxStack: 1
   _hitbox:
     Size: {x: 16, y: 8}
-    Offset: {x: 0, y: 4}
+    Offset: {x: 0, y: 0}

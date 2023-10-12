@@ -51,6 +51,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
             Item = null;
             _iconImage.sprite = null;
             _stackText.text = string.Empty;
+            if (_hovered)
+            {
+                UiHoverInfoManager.RemoveHoverInfo(gameObject);
+            }
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Aspects
         private Vector2Int _cursorPosition = Vector2Int.zero;
 
         private int _availablePoints = 0;
+        private bool _hover = false;
 
         void Awake()
         {
@@ -85,6 +86,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Aspects
                 if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
                 {
                     setCursorController.SetCursor(_cursor);
+                    setCursorController.SetHovered(_hover);
                 }
                 else
                 {
@@ -93,9 +95,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Aspects
                     {
                         _cursorPosition = closest.Key;
                         closest.Value.SetCursor(_cursor);
+                        closest.Value.SetHovered(_hover);
                     }
                 }
             }
+
+            _upArrow.gameObject.SetActive(_dataRowPosition > 0);
+            _downArrow.gameObject.SetActive(_dataRowPosition + 1 < _rows.Length - _maxRows + 1);
         }
 
         private void UpdateAspects(WorldAspectInstance[] aspects, int availablePoints)
@@ -181,11 +187,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Aspects
                     gameObject.SendMessage(PlayerAspectsUpdatedMessage.INSTANCE);
                 }
             }
-            else
+            else if (!msg.Previous.Info && msg.Current.Info)
             {
+                _hover = !_hover;
                 if (_controllers.TryGetValue(_cursorPosition, out var controller))
                 {
-                    controller.SetHovered(msg.Current.Info);
+                    controller.SetHovered(_hover);
                 }
             }
 
@@ -211,18 +218,32 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Aspects
 
                 if (direction != Vector2Int.zero)
                 {
+
                     if (_controllers.TryGetValue(direction + _cursorPosition, out var itemController))
                     {
+                        if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                        {
+                            selected.SetHovered(false);
+                        }
                         _cursorPosition = itemController.Position;
                         itemController.SetCursor(_cursor);
+                        itemController.SetHovered(_hover);
                     }
                     else if (direction.y > 0 && _dataRowPosition + 1 < _rows.Length - _maxRows + 1)
                     {
+                        if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                        {
+                            selected.SetHovered(false);
+                        }
                         _dataRowPosition++;
                         RefreshRows();
                     }
                     else if (direction.y < 0 && _dataRowPosition > 0)
                     {
+                        if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                        {
+                            selected.SetHovered(false);
+                        }
                         _dataRowPosition--;
                         RefreshRows();
                     }

@@ -49,6 +49,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _controller.transform.parent.gameObject.SubscribeWithFilter<QueryExperienceMessage>(QueryExperience, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetLoadedAspectsMessage>(SetLoadedAspects, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetExperienceMessage>(SetExperience, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<LevelUpMessage>(LevelUp, _instanceId);
         }
 
         private void ApplyAspectRanks(ApplyAspectRanksMessage msg)
@@ -114,13 +115,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 var aspect = AspectFactory.GetAspectByName(aspectData.Name);
                 if (aspect)
                 {
-                    if (!_aspects.ContainsKey(aspect))
+                    if (!_aspects.TryGetValue(aspect, out var instance))
                     {
+                        instance = new WorldAspectInstance(aspect);
                         _aspects.Add(aspect, new WorldAspectInstance(aspect));
                     }
 
-                    var totalAdd = aspectData.Rank - _aspects[aspect].Rank;
-                    aspect.ApplyRank(totalAdd, _controller.transform.parent.gameObject);
+                    var totalAdd = Mathf.Max(0, aspectData.Rank - instance.Rank);
+                    instance.Apply(totalAdd, _controller.transform.parent.gameObject, false);
                 }
             }
             _controller.gameObject.SendMessage(PlayerAspectsUpdatedMessage.INSTANCE);
@@ -131,6 +133,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _experience = msg.Experience;
             _level = msg.Level;
             _controller.gameObject.SendMessage(PlayerExperienceUpdatedMessage.INSTANCE);
+        }
+
+        private void LevelUp(LevelUpMessage msg)
+        {
+            if (Debug.isDebugBuild)
+            {
+                _level++;
+                _availablePoints++;
+                _controller.gameObject.SendMessage(PlayerAspectsUpdatedMessage.INSTANCE);
+                _controller.gameObject.SendMessage(PlayerExperienceUpdatedMessage.INSTANCE);
+            }
         }
 
     }

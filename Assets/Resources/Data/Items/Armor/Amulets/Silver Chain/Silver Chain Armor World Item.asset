@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bec3ef99ad5704c8049d2ff64c413b, type: 3}
+  m_Name: Silver Chain Armor World Item
+  m_EditorClassIdentifier: 
+  DisplayName: Silver Chain
+  Sprite: {fileID: 11400000, guid: 45f60ef096e212c43bbbc22cb31b356b, type: 2}
+  Description: 
+  MaxStack: 1
+  SellValue: 0
+  Slot: 5
+  _applyOnEquip:
+  - {fileID: 11400000, guid: c926c8d207ed2924aadaca907f4b0384, type: 2}

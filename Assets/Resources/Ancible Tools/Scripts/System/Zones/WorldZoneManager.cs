@@ -61,6 +61,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Zones
             return _instance._currentZone && _instance._currentZone.name == zoneName;
         }
 
+        public static WorldZone[] GetAllZones()
+        {
+            return _instance._zones.Values.ToArray();
+        }
+
         public static void Clear()
         {
             if (_instance._controller)

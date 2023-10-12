@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxStack: 1
   _experience:
-    Min: 20
-    Max: 30
+    Min: 45
+    Max: 60

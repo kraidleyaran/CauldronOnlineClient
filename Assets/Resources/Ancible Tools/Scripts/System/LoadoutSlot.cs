@@ -58,6 +58,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             {
                 var removeItemMsg = MessageFactory.GenerateRemoveItemMsg();
                 removeItemMsg.Item = EquippedItem;
+                removeItemMsg.Stack = Stack;
                 owner.SendMessageTo(removeItemMsg, owner);
                 MessageFactory.CacheMessage(removeItemMsg);
             }
@@ -83,7 +84,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public bool CanUse(GameObject owner)
         {
             var canUse = true;
-            var hasItemsQueryMsg = MessageFactory.GenerateHasItemsQueryMsg();
+            
             if (EquippedItem && EquippedItem.UseStack)
             {
                 canUse = Stack > 0;
@@ -105,14 +106,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             }
             if (canUse && Ability.RequiredResources.Length > 0)
             {
-                var playerHasItems = false;
-                
-                hasItemsQueryMsg.Items = EquippedItem.Ability.RequiredResources.Select(r => r.ToItemStack()).ToArray();
-                hasItemsQueryMsg.DoAfter = hasItems => playerHasItems = hasItems;
-                owner.SendMessageTo(hasItemsQueryMsg, owner);
-                
+                var playerResourceUses = 0;
+                var queryResourceAvailableUsesMsg = MessageFactory.GenerateQueryAvailableResourceUsesMsg();
+                queryResourceAvailableUsesMsg.Items = Ability.RequiredResources;
+                queryResourceAvailableUsesMsg.DoAfter = resourceUses => playerResourceUses = resourceUses;
+                owner.SendMessageTo(queryResourceAvailableUsesMsg, owner);
+                MessageFactory.CacheMessage(queryResourceAvailableUsesMsg);
 
-                canUse = playerHasItems;
+                canUse = playerResourceUses > 0;
             }
             if (canUse && Ability.Cooldown > 0)
             {
@@ -124,7 +125,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 MessageFactory.CacheMessage(queryAbilityCooldownMsg);
                 canUse = abilityIsNotOnCooldown;
             }
-            MessageFactory.CacheMessage(hasItemsQueryMsg);
+            
             return canUse;
 
         }
@@ -136,7 +137,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         public int GetUses(GameObject owner)
         {
-            var uses = EquippedItem && EquippedItem.UseStack ? Stack : 1;
+            var uses = EquippedItem && EquippedItem.UseStack ? Stack : -1;
             if (Ability.RequiredResources.Length > 0)
             {
                 var resourceUses = 0;
@@ -146,7 +147,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 owner.SendMessageTo(queryAvailableUses, owner);
                 MessageFactory.CacheMessage(queryAvailableUses);
 
-                uses = Mathf.Min(uses, resourceUses);
+
+                uses = uses < 0 ? resourceUses : Mathf.Min(uses, resourceUses);
             }
 
             if (Ability.ManaCost > 0)
@@ -163,7 +165,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 MessageFactory.CacheMessage(queryCombatStatsMsg);
 
                 var manaCost = Math.Max(1, Ability.ManaCost - manaReduction);
-                uses = Math.Min(availableMana / manaCost, uses);
+                var manaUses = availableMana / manaCost;
+                uses = uses < 0 ? manaUses : Math.Min(manaUses, uses);
             }
             return uses;
         }

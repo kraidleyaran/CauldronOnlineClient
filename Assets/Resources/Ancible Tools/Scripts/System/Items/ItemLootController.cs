@@ -1,5 +1,6 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.Hitbox;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.ItemStacks;
 using CauldronOnlineCommon.Data.Math;
 using DG.Tweening;
 using ConcurrentMessageBus;
@@ -32,7 +33,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
         private int _moveTowardsPlayerSpeed = 0;
         
 
-        public void Setup(WorldItem item, int stack, Vector2 direction)
+        public void Setup(WorldItem item, int stack, Vector2 direction, bool registerSack)
         {
             _item = item;
             _stack = stack;
@@ -61,6 +62,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
             _hitboxController = Instantiate(_pickupHitbox.Controller, transform);
             _hitboxController.Setup(CollisionLayerFactory.ItemCollect);
             _hitboxController.AddSubscriber(gameObject);
+            if (registerSack)
+            {
+                UiIWorldItemStackManager.Setup(gameObject, stack);
+            }
             SubscribeToMessages();
         }
 
@@ -98,6 +103,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
                 _hitboxController.Destroy();
                 Destroy(_hitboxController.gameObject);
                 _hitboxController = null;
+                UiIWorldItemStackManager.Remove(gameObject);
                 gameObject.UnsubscribeFromAllMessagesWithFilter(_filter);
             }
         }
@@ -139,6 +145,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
 
         void OnDestroy()
         {
+            UiIWorldItemStackManager.Remove(gameObject);
             gameObject.UnsubscribeFromAllMessages();
         }
     }

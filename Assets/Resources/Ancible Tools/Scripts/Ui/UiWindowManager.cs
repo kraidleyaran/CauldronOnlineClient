@@ -62,5 +62,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
 
             return false;
         }
+
+        public static bool IsWindowOpen(string windowName)
+        {
+            return _instance._windows.ContainsKey(windowName);
+        }
     }
 }

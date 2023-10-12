@@ -11,6 +11,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
     {
         [SerializeField] protected internal ServerUnitTemplate _template;
         [SerializeField] protected internal ServerTrait[] _additionalTraits;
+        [SerializeField] private bool _showAppearance = true;
 
         [Header("Editor Settings")]
         [SerializeField] protected internal SpriteRenderer _spriteRenderer;
@@ -25,7 +26,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 objectSpawnData.Traits = traits.ToArray();
             }
 
-            return new ZoneSpawnData {Spawn = objectSpawnData, Tile = tile};
+            return new ZoneSpawnData {Spawn = objectSpawnData, Tile = tile, ShowAppearance = _showAppearance};
         }
 
         public virtual void RefreshEditorSprite()

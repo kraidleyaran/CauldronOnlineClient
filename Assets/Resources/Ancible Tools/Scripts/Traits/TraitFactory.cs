@@ -20,6 +20,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         public static SwitchTrait NetworkSwitch => _instance._networkSwitchTrait;
         public static ChestTrait NetworkChest => _instance._networkChestTrait;
         public static WorldPositionTrait WorldPosition => _instance._worldPositionTrait;
+        public static NameTagTrait NameTag => _instance._nameTagTrait;
+        public static VisualFxTrait AppearanceFx => _instance._appearanceVisualFxTrait;
 
         private static TraitFactory _instance = null;
 
@@ -39,6 +41,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private SwitchTrait _networkSwitchTrait;
         [SerializeField] private ChestTrait _networkChestTrait;
         [SerializeField] private WorldPositionTrait _worldPositionTrait;
+        [SerializeField] private NameTagTrait _nameTagTrait;
+        [SerializeField] private VisualFxTrait _appearanceVisualFxTrait;
 
         private Dictionary<string, Trait> _traits = new Dictionary<string, Trait>();
         private Dictionary<string, SpriteTrait> _sprites = new Dictionary<string, SpriteTrait>();

@@ -55,5 +55,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
 
             _hovered = hovered;
         }
+
+        void OnDestroy()
+        {
+            if (_hovered)
+            {
+                UiHoverInfoManager.RemoveHoverInfo(gameObject);
+            }
+        }
     }
 }

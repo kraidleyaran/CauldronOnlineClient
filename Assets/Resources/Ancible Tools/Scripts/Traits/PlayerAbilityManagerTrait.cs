@@ -93,6 +93,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _worldPosition = msg.Position;
             if (_abilityController)
             {
+                Debug.Log($"World Position Update - Ability - {_worldPosition}");
                 _abilityController.SetPosition(_worldPosition.ToWorldVector());
             }
         }
@@ -116,6 +117,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     MessageFactory.CacheMessage(removeItemMsg);
                     _controller.gameObject.SendMessage(PlayerInventoryUpdatedMessage.INSTANCE);
                 }
+
+                if (ability.ManaCost > 0)
+                {
+                    var removeManaMsg = MessageFactory.GenerateRemoveManaMsg();
+                    removeManaMsg.Amount = ability.ManaCost;
+                    _controller.gameObject.SendMessageTo(removeManaMsg, _controller.transform.parent.gameObject);
+                    MessageFactory.CacheMessage(removeManaMsg);
+                }
+
                 var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
                 setUnitStateMsg.State = UnitState.Attack;
                 _controller.gameObject.SendMessageTo(setUnitStateMsg, _controller.transform.parent.gameObject);
@@ -131,6 +141,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 var pos = _worldPosition.ToWorldVector() + new Vector2(abilityOffset.x * _faceDirection.x, abilityOffset.y * _faceDirection.y) + objOffset;
                 if (_faceDirection.y < 0)
                 {
+                    Debug.Log($"Down Offset Applied");
                     pos.y += FactoryController.ABILITY_CONTROLLER.DownOffset * DataController.Interpolation;
                 }
 

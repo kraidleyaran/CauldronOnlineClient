@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: 6984513114953419391
     second: Blue Switch Right
+  - first:
+      213: -7385175419658825098
+    second: 48x Blue Locked Dungeon Door
+  - first:
+      213: 9119227501592392301
+    second: 48x Sealed Blue Dungeon Door
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -178,7 +184,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,7 +205,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,6 +213,48 @@ TextureImporter:
       bones: []
       spriteID: f7a0bd92ca9fde060800000000000000
       internalID: 6984513114953419391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 48x Blue Locked Dungeon Door
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6721a4b8516928990800000000000000
+      internalID: -7385175419658825098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 48x Sealed Blue Dungeon Door
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d623362d8110e8e70800000000000000
+      internalID: 9119227501592392301
       vertices: []
       indices: 
       edges: []

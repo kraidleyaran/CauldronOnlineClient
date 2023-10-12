@@ -15,6 +15,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         [SerializeField] private SpriteTrait _closedSprite;
         [SerializeField] private SpriteTrait _openSprite;
         [SerializeField] private ServerHitbox _hitbox;
+        [SerializeField] private bool _refillItems = false;
+        [SerializeField] private WorldIntRange _refillTicks = new WorldIntRange(0, 1);
 
         public override ZoneSpawnData GetData(WorldVector2Int tile)
         {
@@ -26,7 +28,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 ClosedSprite = _closedSprite.name,
                 OpenSprite = _openSprite.name,
                 Open = false,
-                Hitbox = _hitbox.GetData()
+                Hitbox = _hitbox.GetData(),
+                RefillChest = _refillItems,
+                RefillTicks = _refillTicks
             });
             return data;
         }

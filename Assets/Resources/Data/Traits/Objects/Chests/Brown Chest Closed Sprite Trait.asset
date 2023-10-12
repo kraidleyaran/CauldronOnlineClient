@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Brown Chest Closed Sprite Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
+  IgnoreWorldPosition: 0
   _sprite: {fileID: -4540487871930681109, guid: f8f518882f4979941aa6c14a25e0c99c, type: 3}
   _runtimeAnimator: {fileID: 0}
   _scaling: {x: 31.25, y: 31.25}
   _spriteLayer: {fileID: 11400000, guid: b512b79b2cf97e746b8a8553e5f95eac, type: 2}
   _sortingOrder: 0
-  _offset: {x: 0, y: 2.5}
+  _offset: {x: 0, y: 0}
   _colorMask: {r: 1, g: 1, b: 1, a: 1}
   _rotation: 0
+  _flipX: 0

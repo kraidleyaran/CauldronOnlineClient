@@ -53,6 +53,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             base.SubscribeToMessages();
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetupSwitchMessage>(SetupSwitch, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetSignalMessage>(SetSignal, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateWorldPositionMessage>(UpdateWorldPosition, _instanceId);
         }
 
         private void SetupSwitch(SetupSwitchMessage msg)
@@ -76,6 +77,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void SetSignal(SetSignalMessage msg)
         {
             SetSignal(msg.Signal);
+        }
+
+        private void UpdateWorldPosition(UpdateWorldPositionMessage msg)
+        {
+            var addOrder = _signals[_currentSignal].SortingOrder;
+            _spriteController.SetSortingOrder((msg.Position.Y * -1) + addOrder);
         }
     }
 }

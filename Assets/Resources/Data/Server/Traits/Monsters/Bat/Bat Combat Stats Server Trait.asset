@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxStack: 1
   _baseStats:
-    Health: 10
+    Health: 14
     Mana: 0
     Armor: 0
     Strength: 0

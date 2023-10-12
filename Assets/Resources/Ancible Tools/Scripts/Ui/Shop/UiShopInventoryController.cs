@@ -29,6 +29,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
         private UiSellStackWindow _sellWindow = null;
 
         private bool _active = false;
+        private bool _hover = false;
 
         public void Setup(GameObject shopOwner)
         {
@@ -60,18 +61,22 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                 }
                 else
                 {
+                    _active = false;
                     UiShopWindow.SetActiveShop(_type == ShopInventoryType.Player ? ShopInventoryType.Shop : ShopInventoryType.Player, cursorY);
                 }
                 
             }
-            else if (_active && !_active)
+            else if (_active && !active)
             {
+                _active = false;
                 if (_controllers.TryGetValue(_cursorPosition, out var controller))
                 {
                     controller.SetHover(false);
                 }
                 gameObject.Unsubscribe<UpdateInputStateMessage>();
             }
+
+            _cursor.gameObject.SetActive(_active);
         }
         
 
@@ -150,6 +155,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                 if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
                 {
                     setCursorController.SetCursor(_cursor);
+                    setCursorController.SetHover(_hover);
                 }
                 else
                 {
@@ -158,6 +164,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                     {
                         _cursorPosition = closest.Key;
                         closest.Value.SetCursor(_cursor);
+                        closest.Value.SetHover(_hover);
                     }
 
                 }
@@ -267,11 +274,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                     }
 
                 }
-                else
+                else if (!msg.Previous.Info && msg.Current.Info)
                 {
-                    if (_controllers.TryGetValue(_cursorPosition, out var controller))
+                    _hover = !_hover;
+                    if (_controllers.TryGetValue(_cursorPosition, out var selected))
                     {
-                        controller.SetHover(msg.Current.Info);
+                        selected.SetHover(_hover);
                     }
                 }
 
@@ -297,10 +305,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
 
                     if (direction != Vector2Int.zero)
                     {
+                        if (_controllers.TryGetValue(_cursorPosition, out var selectedController))
+                        {
+                            selectedController.SetHover(false);
+                        }
                         if (_controllers.TryGetValue(direction + _cursorPosition, out var itemController))
                         {
                             _cursorPosition = itemController.Position;
                             itemController.SetCursor(_cursor);
+                            itemController.SetHover(_hover);
                         }
                         else if (direction.y > 0 && _dataRowPosition + 1 < _rows.Length - _maxRows + 1)
                         {
@@ -317,13 +330,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                             switch (_type)
                             {
                                 case ShopInventoryType.Player:
-                                    if (direction.x > 0 && _cursorPosition.x >= _grid.constraintCount - 1)
+                                    if (direction.x > 0)
                                     {
-                                        UiShopWindow.SetActiveShop(ShopInventoryType.Shop, _cursorPosition.y);
+                                        var currentRow = _rows[_cursorPosition.y + _dataRowPosition];
+                                        if (_cursorPosition.y >= currentRow.Items.Count - 1)
+                                        {
+                                            UiShopWindow.SetActiveShop(ShopInventoryType.Shop, _cursorPosition.y);
+                                        }
                                     }
                                     break;
                                 case ShopInventoryType.Shop:
-                                    if (direction.x < 0 && _cursorPosition.x < 0)
+                                    if (direction.x < 0 && _cursorPosition.x <= 0)
                                     {
                                         UiShopWindow.SetActiveShop(ShopInventoryType.Player, _cursorPosition.y);
                                     }

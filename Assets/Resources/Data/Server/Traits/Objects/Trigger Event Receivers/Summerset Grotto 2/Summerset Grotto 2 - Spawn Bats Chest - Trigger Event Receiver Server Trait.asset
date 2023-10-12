@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b94da2085a9a7b4a8d96b2f08ef031e, type: 3}
+  m_Name: Summerset Grotto 2 - Spawn Bats Chest - Trigger Event Receiver Server Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _triggerEvents:
+  - {fileID: 11400000, guid: 7411485913a8c904e90dd3593f840097, type: 2}
+  _applyOnEvent:
+  - {fileID: 11400000, guid: b38c7a228a4775849b1a4675dcf693c8, type: 2}

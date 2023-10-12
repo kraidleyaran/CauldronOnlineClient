@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera;
 using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
 using Battlehub.Dispatcher;
 using CauldronOnlineCommon;
@@ -155,6 +156,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             SendToServer(new ClientRespawnRequestMessage{Data = clientData, Zone = DataController.CurrentCharacter.Zone, Position = DataController.CurrentCharacter.Position});
         }
 
+        
+
         public static void SetConnctionSettings(string ipAddress, int port)
         {
             _instance._settings.IpAddres = ipAddress;
@@ -183,32 +186,30 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 {
                     foreach (var msg in messages)
                     {
-                        if (msg.MessageId == ClientMultiPartMessage.ID && msg is ClientMultiPartMessage multiPart)
+                        if (msg.MessageId == ClientMultiPartMessage.ID && msg is ClientMultiPartMessage mulitPart)
                         {
-                            if (!_multiPartMessages.ContainsKey(multiPart.MultiPartId))
+                            if (!_multiPartMessages.ContainsKey(mulitPart.MultiPartId))
                             {
-                                _multiPartMessages.Add(multiPart.MultiPartId, new List<ClientMultiPartMessage>());
+                                _multiPartMessages.Add(mulitPart.MultiPartId, new List<ClientMultiPartMessage>());
                             }
-                            _multiPartMessages[multiPart.MultiPartId].Add(multiPart);
-                            if (_multiPartMessages[multiPart.MultiPartId].Count >= multiPart.TotalParts)
+                            _multiPartMessages[mulitPart.MultiPartId].Add(mulitPart);
+                            if (_multiPartMessages[mulitPart.MultiPartId].Count >= mulitPart.TotalParts)
                             {
-                                var message = _multiPartMessages[multiPart.MultiPartId].ToArray().ToClientMessage();
-                                _multiPartMessages.Remove(multiPart.MultiPartId);
+                                var message = _multiPartMessages[mulitPart.MultiPartId].ToArray().ToClientMessage();
+                                _multiPartMessages.Remove(mulitPart.MultiPartId);
                                 Dispatcher.Current.BeginInvoke(() =>
                                 {
                                     gameObject.SendMessage(message);
                                 });
                             }
                         }
-                        else
-                        {
-                            Dispatcher.Current.BeginInvoke(() =>
-                            {
-                                gameObject.SendMessage(msg);
-                            });
-                        }
 
-                        
+
+
+                        Dispatcher.Current.BeginInvoke(() =>
+                        {
+                            gameObject.SendMessage(msg);
+                        });
                     }
 
 
@@ -228,6 +229,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             gameObject.Subscribe<ClientPingMessage>(ClientPing);
             gameObject.Subscribe<ClientZoneTransferResultMessage>(ClientZoneTransferResult);
             gameObject.Subscribe<ClientRespawnResultMessage>(ClientRespawnResult);
+            //gameObject.Subscribe<ClientMultiPartMessage>(ClientMultiPart);
         }
 
         private void ClientConnectionResult(ClientConnectResultMessage msg)
@@ -283,13 +285,30 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         {
             if (msg.Success)
             {
-                ObjectManager.ClearObjects();
-                ObjectManager.SetPlayerObjectId(msg.ObjectId);
-                WorldZoneManager.LoadZone(msg.Zone);
-                _setWorldPositionMsg.Position = msg.Position;
-                gameObject.SendMessageTo(_setWorldPositionMsg, ObjectManager.Player);
-                CameraController.SetPosition(msg.Position.ToWorldVector(), true);
-                SendToServer(new ClientObjectRequestMessage());
+                if (msg.Zone != WorldZoneManager.CurrentZone.name)
+                {
+                    ObjectManager.ClearObjects();
+                    ObjectManager.SetPlayerObjectId(msg.ObjectId);
+                    WorldZoneManager.LoadZone(msg.Zone);
+                    _setWorldPositionMsg.Position = msg.Position;
+                    gameObject.SendMessageTo(_setWorldPositionMsg, ObjectManager.Player);
+                    CameraController.SetPosition(msg.Position.ToWorldVector(), true);
+                    SendToServer(new ClientObjectRequestMessage());
+                }
+                else
+                {
+                    _setWorldPositionMsg.Position = msg.Position;
+                    gameObject.SendMessageTo(_setWorldPositionMsg, ObjectManager.Player);
+                    CameraController.SetPosition(msg.Position.ToWorldVector(), true);
+
+                    DataController.SetWorldState(WorldState.Active);
+
+                    var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
+                    setUnitStateMsg.State = UnitState.Active;
+                    gameObject.SendMessageTo(setUnitStateMsg, ObjectManager.Player);
+                    MessageFactory.CacheMessage(setUnitStateMsg);
+                }
+
             }
             else
             {
@@ -327,6 +346,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 
             }
         }
+
+        //private void ClientMultiPart(ClientMultiPartMessage msg)
+        //{
+
+        //}
 
         void OnDestroy()
         {

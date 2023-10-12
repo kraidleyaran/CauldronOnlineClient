@@ -35,6 +35,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
             _owner = owner;
             _doAfter = doAfter;
             _applyTraits = applyTraits;
+            _direction = direction;
             if (ids != null)
             {
                 _ids = ids.ToList();
@@ -79,14 +80,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
             {
                 transform.SetLocalRotation(rotation);
             }
-
+            Debug.Log($"{transform.position.ToVector2()}");
             UpdateStep();
 
         }
 
         public void SetPosition(Vector2 pos)
         {
-            var position = pos + _direction.ToVector2(false) * (_ability.Offset.ToVector2(true) + FactoryController.ABILITY_CONTROLLER.ObjectOffset.ToVector2(true)) ;
+            var position = pos + (_direction.ToVector2(false) * _ability.Offset.ToVector2(true) + FactoryController.ABILITY_CONTROLLER.ObjectOffset.ToVector2(true)) ;
+            Debug.Log($"Moved Ability Position - {position}");
             transform.SetTransformPosition(position);
         }
 
@@ -115,8 +117,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
             MessageFactory.CacheMessage(updateAbilityStateMsg);
 
             var attackStep = _ability.AttackSetup.GetAttackStepByAbilityState(abilityStep.State);
-            _weaponSpriteController.transform.SetLocalPosition(attackStep.WeaponSpritePosition.ToVector2(true) + _ability.WeaponSprite.Offset);
-            _weaponSpriteController.transform.SetLocalRotation(attackStep.WeaponSpriteRotation);
+            if (_weaponSpriteController)
+            {
+                _weaponSpriteController.transform.SetLocalPosition(attackStep.WeaponSpritePosition.ToVector2(true) + _ability.WeaponSprite.Offset);
+                _weaponSpriteController.transform.SetLocalRotation(attackStep.WeaponSpriteRotation);
+            }
 
             var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
             if (_applyTraits)

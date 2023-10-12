@@ -15,7 +15,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
 
         public string GetRequiredDescription()
         {
-            return $"{Item.DisplayName}x{Stack}";
+            return $"{Item.DisplayName} x{Stack}";
         }
     }
 

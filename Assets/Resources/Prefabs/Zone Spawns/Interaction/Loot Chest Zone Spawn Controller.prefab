@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _template: {fileID: 11400000, guid: 2cb11fb5c324e614c8c5d450d91afdda, type: 2}
   _additionalTraits: []
+  _showAppearance: 1
   _spriteRenderer: {fileID: 5615534110198227235}
   _lootTable: {fileID: 0}
   _drops:
@@ -55,7 +56,11 @@ MonoBehaviour:
   _openSprite: {fileID: 11400000, guid: 09cf36f3b6ec35543b1906d9cb184e54, type: 2}
   _hitbox:
     Size: {x: 18, y: 10}
-    Offset: {x: 0, y: 5}
+    Offset: {x: 0, y: 0}
+  _refillItems: 0
+  _refillTicks:
+    Min: 0
+    Max: 1
 --- !u!1 &5615534110198227261
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5615534110198227261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 31.25, y: 31.25, z: 1}
   m_Children: []
   m_Father: {fileID: 5615534109026252731}

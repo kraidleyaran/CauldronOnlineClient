@@ -42,6 +42,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _controller.transform.parent.gameObject.SubscribeWithFilter<OpenChestMessage>(OpenChest, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetupChestMessage>(SetupChest, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateWorldPositionMessage>(UpdateWorldPosition, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<CloseChestMessage>(CloseChest, _instanceId);
         }
 
         private void OpenChest(OpenChestMessage msg)
@@ -55,6 +56,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     _sprite.SetScale(_openSprite.Scaling);
                     _sprite.SetOffset(_openSprite.Offset);
                 }
+                _hitboxController.gameObject.SetActive(false);
             }
         }
 
@@ -72,12 +74,28 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             }
             _hitboxController.transform.SetLocalScaling(msg.Hitbox.Size.ToVector());
             _hitboxController.transform.SetLocalPosition(msg.Hitbox.Offset.ToWorldVector());
+            _hitboxController.gameObject.SetActive(!_open);
         }
 
         private void UpdateWorldPosition(UpdateWorldPositionMessage msg)
         {
             var additionalOrder = _open ? _openSprite.SortingOrder : _closedSprite.SortingOrder;
             _sprite.SetSortingOrder(msg.Position.Y * -1 + additionalOrder);
+        }
+
+        private void CloseChest(CloseChestMessage msg)
+        {
+            if (_open)
+            {
+                _open = false;
+                if (_closedSprite)
+                {
+                    _sprite.SetSprite(_closedSprite.Sprite);
+                    _sprite.SetScale(_closedSprite.Scaling);
+                    _sprite.SetOffset(_closedSprite.Offset);
+                }
+                _hitboxController.gameObject.SetActive(true);
+            }
         }
     }
 }

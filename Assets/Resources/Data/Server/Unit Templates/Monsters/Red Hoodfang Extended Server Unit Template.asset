@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Red Hoodfang Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Red Hoodfang
+  Sprite: {fileID: 11400000, guid: 9e6732bc09f64d049877954757a8b443, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: f0e549255bc32e043994042cb92b8784, type: 2}
+  - {fileID: 11400000, guid: bd68916e8cc39f54e9050fdd758d0cce, type: 2}
+  - {fileID: 11400000, guid: fb1df413db37a2e41b44f35c0c4a1065, type: 2}
+  - {fileID: 11400000, guid: 9bf5175723a98f9439fe7e3548cd5856, type: 2}
+  - {fileID: 11400000, guid: f81d3670efbb4584f97ecfeadd3c68b6, type: 2}
+  - {fileID: 11400000, guid: a87cdd2a6267f6e4599fb1f0c5984454, type: 2}
+  - {fileID: 11400000, guid: d2134aeb737e2774ab8d2bddaea391f7, type: 2}
+  - {fileID: 11400000, guid: 835a5da43290e3346a145dc129b65565, type: 2}
+  - {fileID: 11400000, guid: 560535eabe0e0014eb9e9532cc25debf, type: 2}
+  ShowOnClient: 1
+  IsMonster: 1
+  ShowName: 0
+  ShowAppearance: 1
+  _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}

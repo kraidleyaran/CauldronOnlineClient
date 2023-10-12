@@ -17,7 +17,7 @@ MonoBehaviour:
   _additionalTraits: []
   _maxSpawns: 1
   _spawnRange: 3
-  _spawnEvery: 25
+  _spawnEvery: 1440
   _chanceToSpawn: 1
   _bounsOnMissedChance: 0
   _initialSpawn: 1

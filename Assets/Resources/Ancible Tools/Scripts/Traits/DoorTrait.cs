@@ -51,7 +51,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void SetDoorState(SetDoorStateMessage msg)
         {
             _open = msg.Open;
+            if (!_open)
+            {
+                var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+                addTraitToUnitMsg.Trait = TraitFactory.AppearanceFx;
+                _controller.gameObject.SendMessageTo(addTraitToUnitMsg, _controller.transform.parent.gameObject);
+                MessageFactory.CacheMessage(addTraitToUnitMsg);
+            }
             _controller.transform.parent.gameObject.SetActive(!_open);
+
         }
     }
 }

@@ -31,7 +31,7 @@ TextureImporter:
     second: Tools_8
   - first:
       213: 6451205499376113164
-    second: Tools_9
+    second: Silver Key
   - first:
       213: -9191924470218883087
     second: Tools_10
@@ -476,7 +476,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tools_9
+      name: Silver Key
       rect:
         serializedVersion: 2
         x: 143

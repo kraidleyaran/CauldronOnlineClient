@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be65063b7994d840ab9bdc75eed869e, type: 3}
+  m_Name: Summerset Grotto 2 World Zone
+  m_EditorClassIdentifier: 
+  DisplayName: Suummerset Grotto 2
+  _aliases:
+  - summersetGrotto2
+  DefaultSpawn: {x: -535, y: 101}
+  Controller: {fileID: 5166712651169224376, guid: 33c74f9f8f5c8bb488d2ac4b121695ae, type: 3}

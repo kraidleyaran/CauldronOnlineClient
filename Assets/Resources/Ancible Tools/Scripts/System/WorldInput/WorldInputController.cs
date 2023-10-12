@@ -22,6 +22,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
         [SerializeField] private Key _blue = Key.Z;
         [SerializeField] private Key _yellow = Key.X;
         [SerializeField] private Key _info = Key.I;
+        [SerializeField] private Key _devWindow = Key.F8;
 
         private WorldInputState _previous;
 
@@ -46,7 +47,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
             currentState.Left = currentState.Left || Gamepad.current.leftStick.left.isPressed;
             currentState.Right = currentState.Right || Gamepad.current.leftStick.right.isPressed;
             currentState.LeftShoulder = currentState.LeftShoulder || Gamepad.current.leftShoulder.isPressed;
-            currentState.RightShoulder = currentState.RightShoulder || Gamepad.current.leftShoulder.isPressed;
+            currentState.RightShoulder = currentState.RightShoulder || Gamepad.current.rightShoulder.isPressed;
             currentState.PlayerMenu = currentState.PlayerMenu || Gamepad.current.startButton.isPressed;
             currentState.LeftTrigger = currentState.LeftTrigger || Gamepad.current.leftTrigger.isPressed;
             currentState.Green = currentState.Green || Gamepad.current.buttonSouth.isPressed;
@@ -121,7 +122,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
                 Red = Keyboard.current[_red].isPressed,
                 Blue = Keyboard.current[_blue].isPressed,
                 Yellow = Keyboard.current[_yellow].isPressed,
-                Info = Keyboard.current[_info].isPressed
+                Info = Keyboard.current[_info].isPressed,
+                DevWindow = Keyboard.current[_devWindow].isPressed
             };
 
             if (Gamepad.current != null)

@@ -26,7 +26,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
             {
                 _availableUsesText.text = string.Empty;
             }
-            else if (Slot.Ability.RequiredResources.Length > 0 || Slot.Ability.ManaCost > 0)
+            else if (Slot.Ability.RequiredResources.Length > 0 || Slot.Ability.ManaCost > 0 || Slot.EquippedItem && Slot.EquippedItem.UseStack)
             {
                 _availableUsesText.text = $"{Slot.GetUses(ObjectManager.Player)}";
             }
@@ -57,6 +57,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
             }
 
             _hovered = hovered;
+        }
+
+        void OnDestroy()
+        {
+            if (_hovered)
+            {
+                UiHoverInfoManager.RemoveHoverInfo(gameObject);
+            }
         }
     }
 }

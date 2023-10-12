@@ -15,5 +15,5 @@ MonoBehaviour:
   DisplayName: Summserset Forest
   _aliases:
   - summerset
-  DefaultSpawn: {x: 7, y: -534}
+  DefaultSpawn: {x: 55, y: -538}
   Controller: {fileID: 5166712651169224376, guid: 72430c3d3eb10ff4fbcb4858f09f6519, type: 3}

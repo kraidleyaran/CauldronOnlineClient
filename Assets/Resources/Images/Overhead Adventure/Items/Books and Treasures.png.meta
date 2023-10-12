@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -3606869026123710453
     second: Brown Chest Open
+  - first:
+      213: 630948231231520308
+    second: Red Chest Closed
+  - first:
+      213: -8765710748728112145
+    second: Red Chest Open
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -159,6 +165,48 @@ TextureImporter:
       bones: []
       spriteID: b0089821bb3d1fdc0800000000000000
       internalID: -3606869026123710453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Chest Closed
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e373ac21491c800800000000000000
+      internalID: 630948231231520308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Chest Open
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febcc3a4480f95680800000000000000
+      internalID: -8765710748728112145
       vertices: []
       indices: 
       edges: []

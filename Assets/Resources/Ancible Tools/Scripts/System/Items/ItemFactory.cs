@@ -7,11 +7,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
     public class ItemFactory : MonoBehaviour
     {
         public static ItemLootController ItemLoot => _instance._itemLootTemplate;
+        public static KeyItemLootController KeyItemLoot => _instance._keyItemLootTemplate;
 
         private static ItemFactory _instance = null;
 
         [SerializeField] private string _internalItemPath = string.Empty;
         [SerializeField] private ItemLootController _itemLootTemplate;
+        [SerializeField] private KeyItemLootController _keyItemLootTemplate;
 
         private Dictionary<string, WorldItem> _items = new Dictionary<string, WorldItem>();
 

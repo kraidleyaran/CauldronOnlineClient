@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbe00d6aa4e3ad499a1bbb3e213a84f, type: 3}
+  m_Name: Bronze Chain Sprite Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _sprite: {fileID: -4618197095799520207, guid: 71fb4bfe32560524bb640d0a36a734fa, type: 3}
+  _runtimeAnimator: {fileID: 0}
+  _scaling: {x: 31.25, y: 31.25}
+  _spriteLayer: {fileID: 11400000, guid: b512b79b2cf97e746b8a8553e5f95eac, type: 2}
+  _sortingOrder: 0
+  _offset: {x: 0, y: 0}
+  _colorMask: {r: 1, g: 1, b: 1, a: 1}
+  _rotation: 0
+  _flipX: 0

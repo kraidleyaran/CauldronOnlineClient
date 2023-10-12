@@ -29,7 +29,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Aspects
             else
             {
                 var applyRanks = Aspect.MaxRanks - Rank;
-                if (applyRanks > 0)
+                if (applyRanks >= 0)
                 {
                     for (var i = 0; i < ranks; i++)
                     {

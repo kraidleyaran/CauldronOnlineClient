@@ -1,4 +1,5 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
+using CauldronOnlineCommon.Data.WorldEvents;
 using ConcurrentMessageBus;
 using UnityEngine;
 
@@ -36,6 +37,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Loadout
         {
             gameObject.Subscribe<PlayerLoadoutUpdatedMessage>(PlayerLoadoutUpdated);
             gameObject.Subscribe<PlayerInventoryUpdatedMessage>(PlayerInventoryUpdated);
+            gameObject.Subscribe<PlayerCombatStatsUpdatedMessage>(PlayerCombatStatsUpdated);
         }
 
         private void PlayerLoadoutUpdated(PlayerLoadoutUpdatedMessage msg)
@@ -49,6 +51,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Loadout
             {
                 slot.RefreshUses();
             }
+        }
+
+        private void PlayerCombatStatsUpdated(PlayerCombatStatsUpdatedMessage msg)
+        {
+            foreach (var slot in _controllers)
+            {
+                slot.RefreshUses();
+            }
+        }
+
+        void OnDestroy()
+        {
+            gameObject.UnsubscribeFromAllMessages();
         }
         
     }

@@ -24,6 +24,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
 
         private int _dataRowPosition = 0;
         private Vector2Int _cursorPosition = Vector2Int.zero;
+        private bool _hover = false;
 
         void Awake()
         {
@@ -83,6 +84,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                 if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
                 {
                     setCursorController.SetCursor(_cursor);
+                    setCursorController.SetHover(_hover);
                 }
                 else
                 {
@@ -91,6 +93,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                     {
                         _cursorPosition = closest.Key;
                         closest.Value.SetCursor(_cursor);
+                        closest.Value.SetHover(_hover);
                     }
 
                 }
@@ -152,9 +155,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                     buttonPressed = true;
                     gameObject.SendMessage(PlayerInventoryUpdatedMessage.INSTANCE);
                 }
-                else
+                else if (!msg.Previous.Info && msg.Current.Info)
                 {
-                    controller.SetHover(msg.Current.Info);
+                    _hover = !_hover;
+                    if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                    {
+                       selected.SetHover(_hover);
+                    }
                 }
                 
             }
@@ -185,6 +192,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                     {
                         _cursorPosition = itemController.Position;
                         itemController.SetCursor(_cursor);
+                        itemController.SetHover(_hover);
                     }
                     else if (direction.y > 0 && _dataRowPosition + 1 < _items.Length - _maxRows + 1)
                     {

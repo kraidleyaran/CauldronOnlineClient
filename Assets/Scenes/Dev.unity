@@ -368,8 +368,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518761935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 16, y: 16, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 728889990}
   m_RootOrder: 1
@@ -1013,9 +1013,14 @@ MonoBehaviour:
   _activeWorldWindows:
   - {fileID: 4108047467708678075, guid: c629d2d866a05944da5c42ab75e8072b, type: 3}
   - {fileID: 4056976260666829029, guid: 0ce95fc1597b39c4b96864fbe1e52cd2, type: 3}
+  _alwaysOpenWindows:
+  - {fileID: 7779701523120681283, guid: 1f6edcdab96729743aa4fb3aef6467e5, type: 3}
+  - {fileID: 8425661353179753180, guid: e3529de2da8801c469ff25f575a950d7, type: 3}
+  - {fileID: 6471820154472775694, guid: 44336ef7b4cc7044a8a71c0d317f9043, type: 3}
   _playerMenuWindow: {fileID: 7141678618020171685, guid: 0072356f17f64dd47a29590de86dca30, type: 3}
   _shopWindow: {fileID: 6376516659430548985, guid: e91e1ccc0bbfd974b8bfb3dda573d383, type: 3}
   _dialogueWindow: {fileID: 5856048492627534733, guid: 74e2e562917dd964cb68c2314c26e552, type: 3}
+  _devWindow: {fileID: 8655438054582095151, guid: a8f9d7464143d1c4a945cbd12cdff8b0, type: 3}
 --- !u!1 &1393899424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596359703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 31.25, y: 31.25, z: 1}
   m_Children: []
   m_Father: {fileID: 728889990}
@@ -1329,7 +1334,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2542987139816268518, guid: 303e6c945f6d9ee41966920cbbc29091, type: 3}
+  m_Sprite: {fileID: 6266863058263678821, guid: 18ff64d06e054cc45a3d6c22e6f8afa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1549,7 +1554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 12
+  m_AssetsPPU: 16
   m_RefResolutionX: 1600
   m_RefResolutionY: 900
   m_UpscaleRT: 0
@@ -1571,7 +1576,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 35
   _rigidBody: {fileID: 1747278575}
-  _cameraInterpolation: 0.3125
+  _cameraInterpolation: 4
+  _camera: {fileID: 1747278571}
+  _zoneTransitionSpeed: 30
+  _minimumZoneTransitionDistance: 32
 --- !u!50 &1747278575
 Rigidbody2D:
   serializedVersion: 4

@@ -40,7 +40,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.HoverInfo
 
         public static void RemoveHoverInfo(GameObject owner)
         {
-            if (_instance._owner && _instance._owner == owner)
+            if (_instance && _instance._owner && _instance._owner == owner)
             {
                 _instance._owner = null;
                 _instance._hoverInfo.Clear();

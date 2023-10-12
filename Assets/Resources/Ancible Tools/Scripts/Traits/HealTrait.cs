@@ -49,5 +49,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             owner.SendMessageTo(healMsg, _controller.transform.parent.gameObject);
             MessageFactory.CacheMessage(healMsg);
         }
+
+        public override string GetDescription()
+        {
+            var amountString = _amount.Min < _amount.Max ? $"{_amount}" : $"{_amount.Min}";
+            return $"+{amountString} Health";
+        }
     }
 }

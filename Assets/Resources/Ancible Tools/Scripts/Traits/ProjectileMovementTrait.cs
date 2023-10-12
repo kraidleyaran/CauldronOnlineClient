@@ -23,6 +23,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             _controller.gameObject.Subscribe<FixedUpdateTickMessage>(FixedUpdateTick);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetupProjectileMessage>(SetupProjectile, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<QueryPositionMessage>(QueryPosition, _instanceId);
         }
 
         private void FixedUpdateTick(FixedUpdateTickMessage msg)
@@ -61,6 +62,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 else
                 {
                     _rigidBody.position = setPos;
+                    var updatePositionMsg = MessageFactory.GenerateUpdatePositionMsg();
+                    updatePositionMsg.Position = _rigidBody.position;
+                    _controller.gameObject.SendMessageTo(updatePositionMsg, _controller.transform.parent.gameObject);
+                    MessageFactory.CacheMessage(updatePositionMsg);
                 }
 
             }
@@ -70,6 +75,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             _direction = msg.Direction;
             _speed = msg.MoveSpeed;
+        }
+
+        private void QueryPosition(QueryPositionMessage msg)
+        {
+            msg.DoAfter.Invoke(_rigidBody.position);
         }
     }
 }

@@ -424,7 +424,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         public static Vector2 ToVector2(this Vector2Int vector, bool interpolated)
         {
-            return interpolated ? new Vector2(vector.x * DataController.Interpolation, vector.y * DataController.Interpolation) : new Vector2(vector.x, vector.y);
+            return interpolated ? new Vector2(vector.x * (DataController.Interpolation + Vector2.kEpsilon), vector.y * (DataController.Interpolation + Vector2.kEpsilon)) : new Vector2(vector.x, vector.y);
         }
 
         public static Vector2 ToWorldVector(this WorldVector2Int vector)

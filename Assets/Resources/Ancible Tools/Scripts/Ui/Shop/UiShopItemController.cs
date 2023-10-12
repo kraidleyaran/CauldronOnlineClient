@@ -20,8 +20,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
         public void Setup(ShopItem shopItem, Vector2Int position)
         {
             ShopItem = shopItem;
+            Position = position;
             _itemIcon.sprite = ShopItem.Item.Sprite.Sprite;
             _stacktext.text = ShopItem.Stack > 1 ? $"x{ShopItem.Stack}" : string.Empty;
+            
         }
 
         public void SetCursor(GameObject cursor)
@@ -41,6 +43,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             else if (_hovered && !hovered)
             {
                 _hovered = false;
+                UiHoverInfoManager.RemoveHoverInfo(gameObject);
+            }
+        }
+
+        void OnDestroy()
+        {
+            if (_hovered)
+            {
                 UiHoverInfoManager.RemoveHoverInfo(gameObject);
             }
         }

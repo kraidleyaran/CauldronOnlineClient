@@ -11,6 +11,7 @@ using CauldronOnlineCommon.Data;
 using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.ObjectParameters;
+using CauldronOnlineCommon.Data.WorldEvents;
 using ConcurrentMessageBus;
 using UnityEngine;
 
@@ -59,6 +60,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private SetupSwitchMessage _setupSwitchMsg = new SetupSwitchMessage();
         private SetupChestMessage _setupChestMsg = new SetupChestMessage();
         private SetInventoryMessage _setInventoryMsg = new SetInventoryMessage();
+        private SetNameTagMessage _setNameTagMsg = new SetNameTagMessage();
 
         private bool _editorMode = false;
 
@@ -122,7 +124,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             Player.transform.SetParent(_instance.transform);
         }
 
-        public static void GenerateNetworkObject(ClientObjectData data)
+        public static void GenerateNetworkObject(ClientObjectData data, bool showAppearance = false)
         {
             if (!_instance._networkObjects.ContainsKey(data.Id) && (PlayerObjectId != data.Id || _instance._editorMode && _instance._showPlayerClone))
             {
@@ -140,8 +142,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                     }
                 }
 
+                if (data.ShowName)
+                {
+                    addTraitToUnitMsg.Trait = TraitFactory.NameTag;
+                    obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                    _instance._setNameTagMsg.Name = data.DisplayName;
+                    obj.SendMessageTo(_instance._setNameTagMsg, obj);
+                }
 
                 var isMonster = false;
+
 
                 foreach (var paraData in data.Parameters)
                 {
@@ -316,6 +327,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 obj.SendMessageTo(_instance._setupChestMsg, obj);
                             }
                             break;
+                        case KeyItemChestParameter.TYPE:
+                            if (parameter is KeyItemChestParameter keyItemChest)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.NetworkChest;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupChestMsg.OpenSprite = keyItemChest.OpenSprite;
+                                _instance._setupChestMsg.CloseSprite = keyItemChest.ClosedSprite;
+                                _instance._setupChestMsg.Open = keyItemChest.Open;
+                                _instance._setupChestMsg.Hitbox = keyItemChest.Hitbox;
+                                obj.SendMessageTo(_instance._setupChestMsg, obj);
+                            }
+                            break;
                     }
                 }
 
@@ -324,7 +348,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                     _instance.gameObject.SendMessageTo(IsMonsterMessage.INSTANCE, obj);
                 }
 
-                MessageFactory.CacheMessage(addTraitToUnitMsg);
+                
 
                 _instance._networkObjects.Add(data.Id, obj);
                 _instance._networkReverseLookup.Add(obj, data.Id);
@@ -335,6 +359,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 MessageFactory.CacheMessage(setWorldPositionMsg);
 
                 obj.transform.SetParent(_instance.transform);
+
+                if (showAppearance)
+                {
+                    addTraitToUnitMsg.Trait = TraitFactory.AppearanceFx;
+                    obj.SendMessageTo(addTraitToUnitMsg, obj);
+                }
+
+                MessageFactory.CacheMessage(addTraitToUnitMsg);
             }
             else
             {

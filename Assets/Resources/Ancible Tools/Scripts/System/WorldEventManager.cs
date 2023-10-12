@@ -10,6 +10,7 @@ using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.WorldEvents;
 using ConcurrentMessageBus;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System
 {
@@ -78,14 +79,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 for (var s = 0; s < stack; s++)
                                 {
                                     var controller = Instantiate(ItemFactory.ItemLoot, position, Quaternion.identity);
-                                    controller.Setup(item, 1, StaticMethods.RandomDirection());
+                                    controller.Setup(item, 1, StaticMethods.RandomDirection(), false);
                                     ObjectManager.RegisterObject(controller.gameObject);
                                 }
                             }
                             else
                             {
                                 var controller = Instantiate(ItemFactory.ItemLoot, position, Quaternion.identity);
-                                controller.Setup(item, stack, StaticMethods.RandomDirection());
+                                controller.Setup(item, stack, StaticMethods.RandomDirection(), true);
                                 ObjectManager.RegisterObject(controller.gameObject);
                             }
 
@@ -123,7 +124,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         case ObjectCreatedEvent.ID:
                             if (worldEvent is ObjectCreatedEvent objectCreated)
                             {
-                                ObjectManager.GenerateNetworkObject(objectCreated.Data);
+                                ObjectManager.GenerateNetworkObject(objectCreated.Data, objectCreated.ShowAppearance);
                             }
                             break;
                         case MovementEvent.ID:
@@ -309,13 +310,55 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 }
                             }
                             break;
-                        case ChestEvent.ID:
-                            if (worldEvent is ChestEvent chest)
+                        case ChestOpenEvent.ID:
+                            if (worldEvent is ChestOpenEvent chest)
                             {
                                 var obj = ObjectManager.GetObjectById(chest.TargetId);
                                 if (obj)
                                 {
                                     obj.SendMessageTo(OpenChestMessage.INSTANCE, obj);
+                                }
+                            }
+                            break;
+                        case ChestRefillEvent.ID:
+                            if (worldEvent is ChestRefillEvent refill)
+                            {
+                                var obj = ObjectManager.GetObjectById(refill.TargetId);
+                                if (obj)
+                                {
+                                    obj.SendMessageTo(CloseChestMessage.INSTANCE, obj);
+                                }
+                            }
+                            break;
+                        case KeyItemLootEvent.ID:
+                            if (worldEvent is KeyItemLootEvent keyItem)
+                            {
+                                var item = ItemFactory.GetItemByName(keyItem.Item);
+                                if (item)
+                                {
+                                    var pos = keyItem.Position.ToWorldVector();
+                                    var obj = ObjectManager.GetObjectById(keyItem.TargetId);
+                                    if (obj)
+                                    {
+                                        pos = obj.transform.position.ToVector2();
+                                    }
+
+                                    var controller = Instantiate(ItemFactory.KeyItemLoot, pos, Quaternion.identity);
+                                    ObjectManager.RegisterObject(controller.gameObject);
+                                    controller.Setup(item);
+                                }
+                            }
+                            break;
+                        case TeleportEvent.ID:
+                            if (worldEvent is TeleportEvent teleport)
+                            {
+                                var obj = ObjectManager.GetObjectById(teleport.ObjectId);
+                                if (obj)
+                                {
+                                    var setWorldPositionMsg = MessageFactory.GenerateSetWorldPositionMsg();
+                                    setWorldPositionMsg.Position = teleport.Position;
+                                    obj.SendMessageTo(setWorldPositionMsg, obj);
+                                    MessageFactory.CacheMessage(setWorldPositionMsg);
                                 }
                             }
                             break;

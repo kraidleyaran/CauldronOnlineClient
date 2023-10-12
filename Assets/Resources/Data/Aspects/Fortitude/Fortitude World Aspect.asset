@@ -15,7 +15,7 @@ MonoBehaviour:
   DisplayName: Fortitude
   Icon: {fileID: 21300000, guid: 99599765728884842afd35aee8557ce2, type: 3}
   Description: 
-  MaxRanks: 10
+  MaxRanks: 20
   Ranks:
   - MinimumLevel: 0
     ApplyOnLevel:

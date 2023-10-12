@@ -52,7 +52,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     {
                         
                         var distance = results[i].distance;
-                        if (distance > 0f)
+                        if (distance > DataController.Interpolation)
                         {
                             pos = msg.Origin + msg.Direction * (distance * results[i].fraction);
                         }

@@ -18,6 +18,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
         public bool Red;
         public bool Blue;
         public bool Info;
+        public bool DevWindow;
 
 
 

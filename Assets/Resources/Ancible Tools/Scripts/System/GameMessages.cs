@@ -607,4 +607,39 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public int Stack;
         public Action<int> DoAfter;
     }
+
+    public class RemoveManaMessage : EventMessage
+    {
+        public int Amount;
+    }
+
+    public class CloseChestMessage : EventMessage
+    {
+        public static CloseChestMessage INSTANCE = new CloseChestMessage();
+    }
+
+    public class RestoreManaMessage : EventMessage
+    {
+        public int Amount;
+    }
+
+    public class SetNameTagMessage : EventMessage
+    {
+        public string Name;
+    }
+
+    public class LevelUpMessage : EventMessage
+    {
+        public static LevelUpMessage INSTANCE = new LevelUpMessage();
+    }
+
+    public class QueryTimerMessage : EventMessage
+    {
+        public Action DoAfter;
+    }
+
+    public class RefreshTimerMessage : EventMessage
+    {
+        public static RefreshTimerMessage INSTANCE = new RefreshTimerMessage();
+    }
 }

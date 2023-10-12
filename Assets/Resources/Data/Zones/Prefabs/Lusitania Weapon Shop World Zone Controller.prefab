@@ -1221,6 +1221,7 @@ Transform:
   m_Children:
   - {fileID: 957373556061692311}
   - {fileID: 3333434140844457989}
+  - {fileID: 3337321686325664150}
   m_Father: {fileID: 5166712651169224383}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2558,6 +2559,91 @@ MonoBehaviour:
     useLightProbes: 0
     reflectionProbeUsage: 0
     anchorOverride: {fileID: 0}
+--- !u!1 &8313314966200301179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3337321686325664150}
+  - component: {fileID: 5468023245507713090}
+  m_Layer: 0
+  m_Name: Camera Zone Spawn Tilemap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3337321686325664150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313314966200301179}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7876234338244240463}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5468023245507713090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313314966200301179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dec3ca0fe88506448df84e8bf55b2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowGrid: 1
+  InnerPadding: 0
+  ColliderDepth: 0.1
+  ColliderType: 0
+  Collider2DType: 0
+  Collider2DOptimizationDisabled: 0
+  ShowColliderNormals: 1
+  ColliderDisplayMode: 0
+  IsUndoEnabled: 0
+  SortOrder: 0
+  ColliderGenerationMethod: 0
+  m_sortingLayer: 0
+  m_sortingLayerName: Default
+  m_orderInLayer: 0
+  m_material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_tintColor: {r: 1, g: 1, b: 1, a: 1}
+  m_pixelSnap: 0
+  m_maskInteraction: 0
+  m_isVisible: 1
+  m_allowPaintingOutOfBounds: 1
+  m_autoShrink: 0
+  m_enableUndoWhilePainting: 1
+  m_isTrigger: 0
+  m_physicMaterial: {fileID: 0}
+  m_physicMaterial2D: {fileID: 0}
+  m_cellSize: {x: 5, y: 5}
+  m_mapBounds:
+    m_Center: {x: 2.5, y: 2.5, z: 0}
+    m_Extent: {x: 2.5, y: 2.5, z: 0}
+  m_tileset: {fileID: 11400000, guid: d99c6e50a57e0e24da690d334b973f99, type: 2}
+  m_minGridX: 0
+  m_minGridY: 0
+  m_maxGridX: 0
+  m_maxGridY: 0
+  m_parentTilemapGroup: {fileID: 0}
+  m_parallaxFactor: {x: 1, y: 1}
+  m_chunkRendererProperties:
+    castShadows: 0
+    receiveShadows: 0
+    useLightProbes: 0
+    reflectionProbeUsage: 0
+    anchorOverride: {fileID: 0}
 --- !u!1 &8527349110064381915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,11 +3055,6 @@ PrefabInstance:
       objectReference: {fileID: -5558358845440793454, guid: fbc1bbbd0c62fff4a8ad73917b53c6bc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c3efe73ef463f34ba7b41bd963f22dd, type: 3}
---- !u!212 &1197761818335760366 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 882100887138707599, guid: 9c3efe73ef463f34ba7b41bd963f22dd, type: 3}
-  m_PrefabInstance: {fileID: 2063374385570932577}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1197761819973567199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 882100886696142270, guid: 9c3efe73ef463f34ba7b41bd963f22dd, type: 3}
@@ -2982,6 +3063,11 @@ GameObject:
 --- !u!4 &1197761819973567196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 882100886696142269, guid: 9c3efe73ef463f34ba7b41bd963f22dd, type: 3}
+  m_PrefabInstance: {fileID: 2063374385570932577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1197761818335760366 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 882100887138707599, guid: 9c3efe73ef463f34ba7b41bd963f22dd, type: 3}
   m_PrefabInstance: {fileID: 2063374385570932577}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6898346392524201152

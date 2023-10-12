@@ -1,4 +1,5 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.Dev;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Dialogue;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Shop;
@@ -16,9 +17,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
 
         [SerializeField] private UiWindowBase[] _disconnectedWorldWindows = new UiWindowBase[0];
         [SerializeField] private UiWindowBase[] _activeWorldWindows = new UiWindowBase[0];
+        [SerializeField] private UiWindowBase[] _alwaysOpenWindows = new UiWindowBase[0];
         [SerializeField] private UiPlayerMenuManagerWindow _playerMenuWindow = null;
         [SerializeField] private UiShopWindow _shopWindow;
         [SerializeField] private UiDialogueWindow _dialogueWindow;
+        [SerializeField] private UiDevWindow _devWindow;
 
         private UiPlayerMenuManagerWindow _openPlayerMenuWindow = null;
 
@@ -37,6 +40,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
         void Start()
         {
             foreach (var window in _disconnectedWorldWindows)
+            {
+                UiWindowManager.OpenWindow(window);
+            }
+
+            foreach (var window in _alwaysOpenWindows)
             {
                 UiWindowManager.OpenWindow(window);
             }
@@ -64,6 +72,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
         {
             gameObject.Subscribe<UpdateWorldStateMessage>(UpdateWorldState);
             gameObject.Subscribe<UpdateClientStateMessage>(UpdateClientState);
+            gameObject.Subscribe<UpdateInputStateMessage>(UpdateInputState);
         }
 
         private void UpdateWorldState(UpdateWorldStateMessage msg)
@@ -102,6 +111,21 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
                         UiWindowManager.OpenWindow(window);
                     }
                     break;
+            }
+        }
+
+        private void UpdateInputState(UpdateInputStateMessage msg)
+        {
+            if (Debug.isDebugBuild && !msg.Previous.DevWindow && msg.Current.DevWindow)
+            {
+                if (UiWindowManager.IsWindowOpen(_devWindow.name))
+                {
+                    UiWindowManager.CloseWindow(_devWindow);
+                }
+                else
+                {
+                    UiWindowManager.OpenWindow(_devWindow);
+                }
             }
         }
 

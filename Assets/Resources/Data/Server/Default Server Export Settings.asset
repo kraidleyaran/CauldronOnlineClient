@@ -20,6 +20,7 @@ MonoBehaviour:
   - Data/Traits/Objects
   _internalTraitPaths:
   - Data/Server/Traits
+  - Data/Abilities
   _traitSaveFolderPath: C:\CauldronOnline\Traits
   _internalLootTablePath: Data/Items/Loot Tables
   _lootTableSaveFolderPath: C:\CauldronOnline\Items\Loot Tables

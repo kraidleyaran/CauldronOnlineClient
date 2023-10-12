@@ -76,7 +76,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
             }
             else if (!msg.Previous.RightShoulder && msg.Current.RightShoulder)
             {
-                var menuIndex = _menuIndex < _playerMenus.Length - 1 ? _menuIndex + 1 : _menuIndex = 0;
+                var menuIndex = _menuIndex < _playerMenus.Length - 1 ? _menuIndex + 1 : 0;
                 if (menuIndex != _menuIndex)
                 {
                     _menuIndex = menuIndex;

@@ -32,6 +32,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             _shopOwner = shopOwner;
             _npcShop.Setup(_shopOwner);
             _playerShop.Setup(ObjectManager.Player);
+            _playerShop.SetActive(false);
             _npcShop.SetActive(true);
         }
 

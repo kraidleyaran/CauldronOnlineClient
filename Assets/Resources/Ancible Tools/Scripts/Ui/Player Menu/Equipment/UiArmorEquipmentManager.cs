@@ -17,6 +17,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
         private Dictionary<ArmorSlot, UiArmorItemController> _controllers = new Dictionary<ArmorSlot, UiArmorItemController>();
 
         private Vector2Int _cursorPosition = Vector2Int.zero;
+        private bool _hover = false;
 
         void Awake()
         {
@@ -69,6 +70,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
                 cursorController = _controllers[ArmorSlot.Helm];
             }
             cursorController.SetCursor(_cursor);
+            cursorController.SetHover(_hover);
 
         }
 
@@ -81,24 +83,25 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
         private void UpdateInputState(UpdateInputStateMessage msg)
         {
             var buttonPushed = false;
+            var selected = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition);
             if (!msg.Previous.Red && msg.Current.Red)
             {
-                var controller = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition);
-                if (controller && controller.Item != null)
+                
+                if (selected && selected.Item != null)
                 {
                     var unequipArmorItemMsg = MessageFactory.GenerateUnequipArmorItemFromSlotMsg();
-                    unequipArmorItemMsg.Slot = controller.Item.Item.Slot;
+                    unequipArmorItemMsg.Slot = selected.Item.Item.Slot;
                     gameObject.SendMessageTo(unequipArmorItemMsg, ObjectManager.Player);
                     MessageFactory.CacheMessage(unequipArmorItemMsg);
                     buttonPushed = true;
                 }
             }
-            else
+            else if (!msg.Previous.Info && msg.Current.Info)
             {
-                var controller = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition);
-                if (controller)
+                _hover = !_hover;
+                if (selected)
                 {
-                    controller.SetHover(msg.Current.Info);
+                    selected.SetHover(_hover);
                 }
             }
 
@@ -127,13 +130,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
                     var controller = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition + direction);
                     if (controller)
                     {
-                        var prevController = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition);
-                        if (prevController)
+                        if (selected)
                         {
-                            prevController.SetHover(false);
+                            selected.SetHover(false);
                         }
                         _cursorPosition = controller.Position;
                         controller.SetCursor(_cursor);
+                        controller.SetHover(_hover);
                     }
                 }
             }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dabbb26ed07e6d40be8bf33820e3558, type: 3}
+  m_Name: Death - Purple Smoke Visual Fx Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _runtime: {fileID: 9100000, guid: 59c7245e4ef17c047b33e05412acd377, type: 2}
+  _scale: {x: 31.25, y: 31.25}
+  _offset: {x: 0, y: 0}
+  _instantiateAlone: 1

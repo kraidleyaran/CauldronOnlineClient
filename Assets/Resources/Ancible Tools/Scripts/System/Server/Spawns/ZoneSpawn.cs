@@ -14,6 +14,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         public ServerUnitTemplate Template;
         public ServerTrait[] AdditionalTraits;
         public Vector2Int Tile;
+        public bool ShowAppearance;
 
         public ZoneSpawnData GetData()
         {
@@ -27,7 +28,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
             {
                 Spawn = data,
                 Tile = Tile.ToWorldVector(),
-                IsWorldPosition = false
+                IsWorldPosition = false,
+                ShowAppearance = ShowAppearance
             };
         }
     }

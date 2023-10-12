@@ -1,4 +1,5 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.FloatingText;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Combat;
 using ConcurrentMessageBus;
@@ -22,6 +23,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private UnitState _unitState = UnitState.Active;
 
+        private bool _isMonster = false;
+
         public override void SetupController(TraitController controller)
         {
             base.SetupController(controller);
@@ -39,6 +42,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _controller.transform.parent.gameObject.SubscribeWithFilter<HealMessage>(Heal, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<QueryDamageBonusMessage>(QueryDamageBonus, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<ApplySecondaryStatsMessage>(ApplySecondaryStats, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<RemoveManaMessage>(RemoveMana, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<IsMonsterMessage>(IsMonster, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<RestoreManaMessage>(RestoreMana, _instanceId);
         }
 
         private void TakeDamage(TakeDamageMessage msg)
@@ -66,6 +72,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     }
                     if (_controller.transform.parent.gameObject == ObjectManager.Player)
                     {
+                        UiFloatingTextManager.Register($"{StaticMethods.ApplyColorToText($"-{amount}", ColorFactory.PlayerDamageTaken)}", _controller.transform.parent.gameObject);
                         ClientController.SendToServer(new ClientDamageMessage { OwnerId = msg.OwnerId, TargetId = ObjectManager.PlayerObjectId, Amount = amount, Tick = TickController.ServerTick });
                     }
                     else
@@ -73,6 +80,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                         var id = ObjectManager.GetId(_controller.transform.parent.gameObject);
                         if (!string.IsNullOrEmpty(id) && ObjectManager.PlayerObjectId == msg.OwnerId)
                         {
+                            if (_isMonster)
+                            {
+                                UiFloatingTextManager.Register($"{StaticMethods.ApplyColorToText($"{amount}", ColorFactory.MonsterDamageTaken)}", _controller.transform.parent.gameObject);
+                            }
                             ClientController.SendToServer(new ClientDamageMessage { OwnerId = msg.OwnerId, TargetId = id, Amount = amount, Tick = TickController.ServerTick });
                         }
                     }
@@ -80,7 +91,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
                 _vitals.Health -= amount;
                 _controller.gameObject.SendMessageTo(CombatStatsUpdatedMessage.INSTANCE, _controller.transform.parent.gameObject);
-                Debug.Log($"{amount} Damage Applied - {TickController.ServerTick}");
                 if (_applyOnDamageTaken.Length > 0)
                 {
                     var addtraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
@@ -96,7 +106,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 {
                     _controller.gameObject.SendMessageTo(UnitDeathMessage.INSTANCE, _controller.transform.parent.gameObject);
                 }
-                //TODO: Show damage;
             }
         }
 
@@ -215,6 +224,25 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void ApplySecondaryStats(ApplySecondaryStatsMessage msg)
         {
             _bonusSecondary += msg.Stats;
+            _controller.gameObject.SendMessageTo(CombatStatsUpdatedMessage.INSTANCE, _controller.transform.parent.gameObject);
+        }
+
+        private void RemoveMana(RemoveManaMessage msg)
+        {
+            var combined = _baseStats + _bonusStats;
+            _vitals.Mana = Mathf.Max(0, Mathf.Min(_vitals.Mana - msg.Amount, combined.Mana));
+            _controller.gameObject.SendMessageTo(CombatStatsUpdatedMessage.INSTANCE, _controller.transform.parent.gameObject);
+        }
+
+        private void IsMonster(IsMonsterMessage msg)
+        {
+            _isMonster = true;
+        }
+
+        private void RestoreMana(RestoreManaMessage msg)
+        {
+            var combined = _baseStats + _bonusStats;
+            _vitals.Mana = Mathf.Max(0, Mathf.Min(_vitals.Mana + msg.Amount, combined.Mana));
             _controller.gameObject.SendMessageTo(CombatStatsUpdatedMessage.INSTANCE, _controller.transform.parent.gameObject);
         }
     }

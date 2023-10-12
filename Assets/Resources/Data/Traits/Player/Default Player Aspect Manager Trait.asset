@@ -15,5 +15,10 @@ MonoBehaviour:
   MaxStack: 1
   _startingAspects:
   - {fileID: 11400000, guid: d2c970f5acdfa994ba86a8a77b838842, type: 2}
-  _experienceRequirementMultiplierPerLevel: 0.15
+  - {fileID: 11400000, guid: b29266de27b221049bbc0bdfa11cd5a6, type: 2}
+  - {fileID: 11400000, guid: 957e0bf15061c384d8ef4970bdb2c602, type: 2}
+  - {fileID: 11400000, guid: e7f89411de01e38489590590ab1c0a19, type: 2}
+  - {fileID: 11400000, guid: 2bc38f45fc34f4f44bf89439a517c1c8, type: 2}
+  - {fileID: 11400000, guid: 398d15b91da3fe74a98390e1753c64db, type: 2}
+  _experienceRequirementMultiplierPerLevel: 0.66
   _baseRequiredExperience: 100

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f1cd7010bd194a90df0e1dd24c27b, type: 3}
   m_Name: Rank 1 Fortitude Apply Combat Stats Trait
   m_EditorClassIdentifier: 
-  MaxStack: 1
+  MaxStack: 0
   _stats:
     Health: 25
     Mana: 0

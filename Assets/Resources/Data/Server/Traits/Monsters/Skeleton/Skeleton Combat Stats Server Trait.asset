@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxStack: 1
   _baseStats:
-    Health: 35
+    Health: 65
     Mana: 0
     Armor: 5
-    Strength: 0
-    Agility: 0
+    Strength: 5
+    Agility: 5
     Wisdom: 0
     Luck: 0

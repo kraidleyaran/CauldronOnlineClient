@@ -64,5 +64,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Aspects
                 UiHoverInfoManager.RemoveHoverInfo(gameObject);
             }
         }
+
+        void OnDestroy()
+        {
+            if (_hovered)
+            {
+                UiHoverInfoManager.RemoveHoverInfo(gameObject);
+            }
+        }
     }
 }

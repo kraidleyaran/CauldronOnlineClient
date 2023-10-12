@@ -16,14 +16,14 @@ MonoBehaviour:
   - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
     ChanceToDrop: 0.66
     Stack:
-      Min: 3
-      Max: 5
+      Min: 2
+      Max: 3
     SpawnEachStack: 1
   - Item: {fileID: 11400000, guid: fcec3dbc91eaeb842abd018f28c9cf48, type: 2}
     ChanceToDrop: 0.2
     Stack:
-      Min: 3
-      Max: 5
+      Min: 2
+      Max: 3
     SpawnEachStack: 1
   - Item: {fileID: 11400000, guid: 7adfcff9de4bf25419dea74886a8c350, type: 2}
     ChanceToDrop: 0.25
@@ -39,6 +39,48 @@ MonoBehaviour:
     SpawnEachStack: 1
   - Item: {fileID: 11400000, guid: aa9007f0984ab9e4d91f51cc732e01ad, type: 2}
     ChanceToDrop: 0.05
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: 6a4e40b72d053314493e6ef5948539dd, type: 2}
+    ChanceToDrop: 0.025
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: 4c4e0c8848a12164cba42502aaea7256, type: 2}
+    ChanceToDrop: 0.025
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: f4981e1a16b07dc47a2ac57bbad66212, type: 2}
+    ChanceToDrop: 0.01
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: ab47448d7de3ebc4c964ebfec246f370, type: 2}
+    ChanceToDrop: 0.025
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: 17e9674cd1b23414d9172a207617faaf, type: 2}
+    ChanceToDrop: 0.025
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: cc3d50867d1825441b1bd75d8c5533f3, type: 2}
+    ChanceToDrop: 0.025
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: eceb716c33df99f40890719df1d8170b, type: 2}
+    ChanceToDrop: 0.025
     Stack:
       Min: 1
       Max: 1

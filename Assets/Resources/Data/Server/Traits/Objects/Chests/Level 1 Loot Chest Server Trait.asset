@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea99e3fe4dc0cce4cbe168ea81f81ad8, type: 3}
+  m_Name: Level 1 Loot Chest Server Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _lootTable: {fileID: 11400000, guid: 2845bb7708dd2e343a0de393c38e7ea0, type: 2}
+  _closedSprite: {fileID: 11400000, guid: aba6d26e6df4adb4d853031d94a6e99e, type: 2}
+  _openSprite: {fileID: 11400000, guid: 09cf36f3b6ec35543b1906d9cb184e54, type: 2}
+  _hitbox:
+    Size: {x: 18, y: 10}
+    Offset: {x: 0, y: 5}
+  _drops:
+    Min: 4
+    Max: 8
+  _refillChest: 0
+  _refillTicks:
+    Min: 0
+    Max: 0

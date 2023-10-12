@@ -229,6 +229,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                         availableUses = 0;
                         break;
                     }
+
+                    if (uses < availableUses || availableUses < 0)
+                    {
+                        availableUses = uses;
+                    }
                 }
                 else
                 {

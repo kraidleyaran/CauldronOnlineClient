@@ -1,5 +1,6 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System.Abilities;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
+using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public static NetworkHitboxController NETWORK_HITBOX => _instance._networkHitboxTemplate;
         public static WorldAbilityController ABILITY_CONTROLLER => _instance._worldAbilityTemplate;
         public static VisualFxController VISUAL_FX => _instance._visualFxTemplate;
+        
 
         private static FactoryController _instance;
 

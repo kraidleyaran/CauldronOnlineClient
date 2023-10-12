@@ -54,8 +54,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             }
             else
             {
-                var traitCount = _currentTraits.Count(c => c.Trait.name == msg.Trait.name);
-                if (traitCount < msg.Trait.MaxStack)
+                var traitCount = msg.Trait.MaxStack > 0 ? _currentTraits.Count(c => c.Trait.name == msg.Trait.name) : 0;
+                if (traitCount < msg.Trait.MaxStack || msg.Trait.MaxStack <= 0)
                 {
                     var controller = Instantiate(FactoryController.TRAIT_CONTROLLER, transform);
                     if (!string.IsNullOrEmpty(msg.WorldId))

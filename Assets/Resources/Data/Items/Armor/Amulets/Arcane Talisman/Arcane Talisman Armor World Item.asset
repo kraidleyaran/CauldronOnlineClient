@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bec3ef99ad5704c8049d2ff64c413b, type: 3}
+  m_Name: Arcane Talisman Armor World Item
+  m_EditorClassIdentifier: 
+  DisplayName: Arcane Talisman
+  Sprite: {fileID: 11400000, guid: 05248561e42e1774b8819140c2f02419, type: 2}
+  Description: 
+  MaxStack: 1
+  SellValue: 0
+  Slot: 5
+  _applyOnEquip:
+  - {fileID: 11400000, guid: 72315613944546040b592fa7ec4f3d2b, type: 2}
