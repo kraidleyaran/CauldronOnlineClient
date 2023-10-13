@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
 {
-    [CreateAssetMenu(fileName = "Loot Table", menuName = "Ancible Tools/Items/Loot Table")]
+    [CreateAssetMenu(fileName = "Loot Table", menuName = "Ancible Tools/Items/Loot/Loot Table")]
     public class LootTable : ScriptableObject
     {
         public LootRoll[] LootRolls = new LootRoll[0];
 
-        public LootTableData GetData()
+        public virtual LootTableData GetData()
         {
             return new LootTableData
             {

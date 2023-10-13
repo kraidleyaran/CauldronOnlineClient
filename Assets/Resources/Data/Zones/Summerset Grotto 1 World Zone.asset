@@ -15,5 +15,5 @@ MonoBehaviour:
   DisplayName: Suummerset Grotto 1
   _aliases:
   - summersetGrotto1
-  DefaultSpawn: {x: 6, y: -57}
+  DefaultSpawn: {x: 8, y: -89}
   Controller: {fileID: 5166712651169224376, guid: 4774eef6f0e9bd746a3ae86e283312d5, type: 3}

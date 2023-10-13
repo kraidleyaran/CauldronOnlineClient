@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Skeleton Ai Aggro Server Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _aggroRange: 100
+  _aggroRange: 7
   _defaultAggro: 1000
   _applyOnAggro: []
   _diagonalCost: 1.25
+  _aggroType: 0

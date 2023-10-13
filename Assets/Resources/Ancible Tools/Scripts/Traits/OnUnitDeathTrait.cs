@@ -103,5 +103,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _destroyOnDeath = true;
             _reportDeath = true;
         }
+
+        public override void Destroy()
+        {
+            if (_deathTimer != null)
+            {
+                if (_deathTimer.IsActive())
+                {
+                    _deathTimer.Kill();
+                }
+
+                _deathTimer = null;
+            }
+            base.Destroy();
+        }
     }
 }

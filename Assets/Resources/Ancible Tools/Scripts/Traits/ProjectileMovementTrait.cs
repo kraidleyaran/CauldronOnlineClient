@@ -11,6 +11,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private Rigidbody2D _rigidBody = null;
         private Vector2 _direction = Vector2.zero;
         private int _speed = 0;
+        private Trait[] _applyOnWallImpact = new Trait[0];
 
         public override void SetupController(TraitController controller)
         {
@@ -24,6 +25,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _controller.gameObject.Subscribe<FixedUpdateTickMessage>(FixedUpdateTick);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetupProjectileMessage>(SetupProjectile, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<QueryPositionMessage>(QueryPosition, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<SetDirectionMessage>(SetDirection, _instanceId);
         }
 
         private void FixedUpdateTick(FixedUpdateTickMessage msg)
@@ -52,12 +54,27 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 }
                 if (stop)
                 {
-                    var id = ObjectManager.GetId(_controller.transform.parent.gameObject);
-                    if (!string.IsNullOrEmpty(id))
+                    if (_applyOnWallImpact.Length > 0)
                     {
-                        ClientController.SendToServer(new ClientDestroyObjectMessage{TargetId = id, Tick = TickController.ServerTick});
+                        var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+                        foreach (var trait in _applyOnWallImpact)
+                        {
+                            addTraitToUnitMsg.Trait = trait;
+                            _controller.gameObject.SendMessageTo(addTraitToUnitMsg, _controller.transform.parent.gameObject);
+                        }
+                        MessageFactory.CacheMessage(addTraitToUnitMsg);
+                        //var id = ObjectManager.GetId(_controller.transform.parent.gameObject);
+                        //if (!string.IsNullOrEmpty(id))
+                        //{
+                        //    ClientController.SendToServer(new ClientDestroyObjectMessage { TargetId = id, Tick = TickController.ServerTick });
+                        //}
+                        //ObjectManager.DestroyNetworkObject(_controller.transform.parent.gameObject);
                     }
-                    ObjectManager.DestroyNetworkObject(_controller.transform.parent.gameObject);
+                    else
+                    {
+                        _direction = Vector2.zero;
+                    }
+
                 }
                 else
                 {
@@ -75,11 +92,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             _direction = msg.Direction;
             _speed = msg.MoveSpeed;
+            _applyOnWallImpact = msg.ApplyOnWall;
         }
 
         private void QueryPosition(QueryPositionMessage msg)
         {
             msg.DoAfter.Invoke(_rigidBody.position);
+        }
+
+        private void SetDirection(SetDirectionMessage msg)
+        {
+            _direction = msg.Direction;
         }
     }
 }

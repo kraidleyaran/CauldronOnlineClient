@@ -17,6 +17,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private Dictionary<int, LoadoutSlot> _loadout = new Dictionary<int, LoadoutSlot>();
 
         private UnitState _unitState = UnitState.Active;
+        private UpdateSlotUsesMessage _updateSlotUsesMsg = new UpdateSlotUsesMessage();
 
         public override void SetupController(TraitController controller)
         {
@@ -60,16 +61,28 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             if (_unitState == UnitState.Active)
             {
                 LoadoutSlot slot = null;
+                var index = -1;
                 for (var i = 0; i < msg.Current.Loadout.Length; i++)
                 {
                     if (msg.Current.Loadout[i] && _loadout.TryGetValue(i, out var loadoutSlot) && !loadoutSlot.IsEmpty && loadoutSlot.CanUse(_controller.transform.parent.gameObject))
                     {
                         slot = loadoutSlot;
+                        index = i;
                         break;
                     }
                 }
 
-                slot?.Use(_controller.transform.parent.gameObject);
+                if (index >= 0 && slot != null)
+                {
+                    slot.Use(_controller.transform.parent.gameObject);
+                    if (slot.GetUses(_controller.transform.parent.gameObject) >= 0)
+                    {
+                        _updateSlotUsesMsg.Slot = index;
+                        _controller.gameObject.SendMessage(_updateSlotUsesMsg);
+                    }
+                }
+                
+                
             }
         }
 

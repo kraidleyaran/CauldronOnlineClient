@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Traits;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
         [SerializeField] private int _defaultAggro = 25;
         [SerializeField] private ServerTrait[] _applyOnAggro = new ServerTrait[0];
         [SerializeField] private float _diagonalCost = 0f;
+        [SerializeField] private AggroType _aggroType = AggroType.Aggressive;
 
         public override WorldTraitData GetData()
         {
@@ -21,7 +23,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 AggroRange = _aggroRange,
                 DefaultAggro = _defaultAggro,
                 ApplyOnAggro = _applyOnAggro.Where(t => t).Select(t => t.name).ToArray(),
-                DiagonalCost = _diagonalCost
+                DiagonalCost = _diagonalCost,
+                AggroType = _aggroType
             };
         }
     }

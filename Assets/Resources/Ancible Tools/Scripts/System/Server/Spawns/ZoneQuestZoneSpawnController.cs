@@ -14,7 +14,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         [SerializeField] private int _range = 0;
         [SerializeField] private ServerTrait[] _applyOnComplete;
         [SerializeField] private TriggerEvent[] _triggerEventsOnComplete;
+        [SerializeField] private bool _resetQuest = true;
         [SerializeField] private WorldIntRange _resetTicks = new WorldIntRange(1,1);
+        
 
         public override ZoneSpawnData GetData(WorldVector2Int tile)
         {
@@ -26,6 +28,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 Range = _range,
                 ApplyOnComplete = _applyOnComplete.Where(t => t).Select(t => t.name).ToArray(),
                 TriggerEventOnComplete = _triggerEventsOnComplete.Where(t => t).Select(t => t.name).ToArray(),
+                ResetQuest = _resetQuest,
                 ResetTicks = _resetTicks
             });
             return data;

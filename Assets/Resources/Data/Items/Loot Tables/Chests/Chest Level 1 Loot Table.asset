@@ -85,3 +85,9 @@ MonoBehaviour:
       Min: 1
       Max: 1
     SpawnEachStack: 1
+  - Item: {fileID: 11400000, guid: 43555ad30ae04c34e9578178d28b98d8, type: 2}
+    ChanceToDrop: 0.05
+    Stack:
+      Min: 1
+      Max: 1
+    SpawnEachStack: 1

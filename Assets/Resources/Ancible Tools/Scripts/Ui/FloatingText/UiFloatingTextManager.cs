@@ -2,6 +2,7 @@
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera;
 using UnityEngine;
+using static UnityEngine.Object;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Ui.FloatingText
 {
@@ -43,6 +44,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.FloatingText
         {
             _instance._controllers.Remove(controller);
             Destroy(controller.gameObject);
+        }
+
+        public static void Clear()
+        {
+            foreach (var controller in _instance._controllers)
+            {
+                Destroy(controller.gameObject);
+            }
+            _instance._controllers.Clear();
         }
     }
 }

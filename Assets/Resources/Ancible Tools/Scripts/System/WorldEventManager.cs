@@ -74,7 +74,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         var item = ItemFactory.GetItemByName(loot.Item);
                         if (stack > 0 && item)
                         {
-                            if (loot.SpawnEachStack && stack > 1)
+                            if (loot.SpawnEachStack || stack <= 1)
                             {
                                 for (var s = 0; s < stack; s++)
                                 {

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Crimson Thicket
   _aliases:
-  - default
+  - crimsonThicket
   DefaultSpawn: {x: -615, y: 343}
   Controller: {fileID: 5166712651169224376, guid: 3c3e37264ad283644b7a450bb1d7fd7a, type: 3}

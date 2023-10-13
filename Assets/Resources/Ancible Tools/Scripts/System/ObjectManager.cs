@@ -6,6 +6,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Data;
 using Assets.Resources.Ancible_Tools.Scripts.System.Templates;
 using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.FloatingText;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data;
 using CauldronOnlineCommon.Data.Combat;
@@ -420,6 +421,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         public static void ClearObjects(bool clearPlayer = false)
         {
+            UiFloatingTextManager.Clear();
             var objs = _instance._networkObjects.Values.ToArray();
             foreach (var obj in objs)
             {

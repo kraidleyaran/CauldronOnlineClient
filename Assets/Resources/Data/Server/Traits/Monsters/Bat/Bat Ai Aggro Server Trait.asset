@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Bat Ai Aggro Server Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _aggroRange: 150
+  _aggroRange: 5
   _defaultAggro: 450
   _applyOnAggro:
   - {fileID: 11400000, guid: a4ed42f18f5cdfd4e9ec0b1341f2a5e2, type: 2}
   _diagonalCost: 0.33
+  _aggroType: 2

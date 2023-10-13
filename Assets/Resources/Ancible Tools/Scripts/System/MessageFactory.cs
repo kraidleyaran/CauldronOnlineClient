@@ -1173,6 +1173,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         {
             msg.Direction = Vector2Int.zero;
             msg.MoveSpeed = 0;
+            msg.ApplyOnWall = null;
             msg.Sender = null;
             _setupProjectileCache.Add(msg);
         }

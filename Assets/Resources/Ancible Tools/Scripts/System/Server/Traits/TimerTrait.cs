@@ -36,6 +36,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 if (timerCount >= MaxStack - 1)
                 {
                     _controller.gameObject.SendMessageWithFilterTo(RefreshTimerMessage.INSTANCE, _controller.transform.parent.gameObject, name);
+
                     var removeTraitFromUnitByControllerMsg = MessageFactory.GenerateRemoveTraitFromUnitByControllerMsg();
                     removeTraitFromUnitByControllerMsg.Controller = _controller;
                     _controller.gameObject.SendMessageTo(removeTraitFromUnitByControllerMsg, _controller.transform.parent.gameObject);
@@ -43,6 +44,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                     return;
                 }
             }
+
             _owner = _controller.transform.parent.gameObject;
 
             var queryOwnerMsg = MessageFactory.GenerateQueryOwnerMsg();
@@ -71,6 +73,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 _applied = applied.ToArray();
                 MessageFactory.CacheMessage(addTraitToUnitMsg);
             }
+            
             StartTimer();
             SubscribeToMessages();
             
@@ -166,6 +169,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
 
                 _timerSequence = null;
             }
+            _controller.transform.parent.gameObject.UnsubscribeFromAllMessagesWithFilter(name);
             base.Destroy();
         }
     }

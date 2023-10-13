@@ -19,6 +19,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private int _moveSpeed = 1;
         [SerializeField] private int _offset = 0;
         [SerializeField] private float _baseRotation = 0f;
+        [SerializeField] private bool _rotateProjectile = false;
+        [SerializeField] private bool _destryOnTerrainImpact = true;
+        [SerializeField] private Trait[] _applyOnWall;
 
         public override void SetupController(TraitController controller)
         {
@@ -40,8 +43,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             if (direction != Vector2Int.zero)
             {
                 var offset = (direction * _offset).ToVector2(true);
-                var rotationDirection = direction.ToVector2(false).ToZRotation();
-                var projectile = AbilityFactory.Projectile.GenerateUnitWithRotation(_controller.transform.parent.position.ToVector2() + offset, _baseRotation + rotationDirection).gameObject;
+                var rotationDirection = _rotateProjectile ? direction.ToVector2(false).ToZRotation() + _baseRotation : 0f;
+                var projectile = AbilityFactory.Projectile.GenerateUnitWithRotation(_controller.transform.parent.position.ToVector2() + offset, rotationDirection).gameObject;
 
                 var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
                 addTraitToUnitMsg.Trait = _spriteTrait;
@@ -62,6 +65,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 var setupProjectileMsg = MessageFactory.GenerateSetupProjectileMsg();
                 setupProjectileMsg.Direction = direction;
                 setupProjectileMsg.MoveSpeed = _moveSpeed;
+                setupProjectileMsg.ApplyOnWall = _applyOnWall;
+                
                 _controller.gameObject.SendMessageTo(setupProjectileMsg, projectile);
                 MessageFactory.CacheMessage(setupProjectileMsg);
 

@@ -6,6 +6,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Aspects;
 using Assets.Resources.Ancible_Tools.Scripts.System.Data;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.System.WorldInput;
+using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Items;
@@ -239,6 +240,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     {
         public int MoveSpeed;
         public Vector2 Direction;
+        public Trait[] ApplyOnWall;
     }
 
     public class QueryFacingDirectionMessage : EventMessage
@@ -641,5 +643,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     public class RefreshTimerMessage : EventMessage
     {
         public static RefreshTimerMessage INSTANCE = new RefreshTimerMessage();
+    }
+
+    public class UpdateSlotUsesMessage : EventMessage
+    {
+        public int Slot;
     }
 }

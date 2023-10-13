@@ -20,3 +20,7 @@ MonoBehaviour:
   _moveSpeed: 45
   _offset: 4
   _baseRotation: 0
+  _rotateProjectile: 0
+  _destryOnTerrainImpact: 1
+  _applyOnWall:
+  - {fileID: 11400000, guid: a78c9ed87d55f0c4f9f411cf01ea287b, type: 2}

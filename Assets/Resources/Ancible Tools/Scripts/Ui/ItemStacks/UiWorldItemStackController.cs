@@ -27,8 +27,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.ItemStacks
         {
             if (_owner)
             {
-                var ownerPos = CameraController.Camera.WorldToScreenPoint(_owner.transform.position).ToVector2();
-                transform.SetLocalPosition(ownerPos + _offset);
+                var ownerPos = CameraController.Camera.WorldToScreenPoint(_owner.transform.position.ToVector2()).ToVector2();
+                transform.SetTransformPosition(ownerPos + _offset);
             }
 
         }

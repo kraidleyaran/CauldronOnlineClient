@@ -15,7 +15,8 @@ MonoBehaviour:
   DevWindowPath: C:\Builds\Cauldron Online Client\Dev\Windows\Cauldron Online
   DevLinuxPath: C:\Builds\Cauldron Online Client\Dev\Linux\Cauldron Online
   DevMacOSPath: 
+  BuildVersionFilePath: C:\Builds\Cauldron Online Client\buildnumber.txt
   Major: 0
-  Build: 27
+  Build: 28
   SceneNames:
   - Assets/Scenes/Dev.unity

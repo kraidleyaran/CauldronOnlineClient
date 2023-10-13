@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Hoodfang Ai Aggro Server Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _aggroRange: 6
+  _aggroRange: 5
   _defaultAggro: 1000
   _applyOnAggro: []
   _diagonalCost: 0
+  _aggroType: 0

@@ -15,5 +15,5 @@ MonoBehaviour:
   DisplayName: Dungeon 1
   _aliases:
   - dungeon1
-  DefaultSpawn: {x: -953, y: -3172}
+  DefaultSpawn: {x: -954, y: -3177}
   Controller: {fileID: 5166712651169224376, guid: 8e3b207a786fc0845b8722c13120aa6c, type: 3}

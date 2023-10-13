@@ -28,6 +28,7 @@ MonoBehaviour:
   - Frames: 10
     State: 2
     ApplyToOwner:
+    - {fileID: 11400000, guid: 046ce52b25037fc459705210d71bf290, type: 2}
     - {fileID: 11400000, guid: a53ed917580085244b0ed97360690251, type: 2}
     ApplyToAttack: []
   - Frames: 10

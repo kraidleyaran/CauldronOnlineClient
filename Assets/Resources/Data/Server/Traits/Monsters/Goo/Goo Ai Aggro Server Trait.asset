@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Goo Ai Aggro Server Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _aggroRange: 100
+  _aggroRange: 4
   _defaultAggro: 250
   _applyOnAggro: []
   _diagonalCost: 0
+  _aggroType: 2

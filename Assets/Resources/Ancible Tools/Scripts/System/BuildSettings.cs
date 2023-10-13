@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR
+using System.IO;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public string DevWindowPath;
         public string DevLinuxPath;
         public string DevMacOSPath;
+        public string BuildVersionFilePath;
         public int Major = 0;
         public int Build = 0;
 
@@ -18,7 +20,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         public void BuildDev()
         {
-            PlayerSettings.bundleVersion = $"{Major}.{Build}";
+            var version = $"{Major}.{Build}";
+            PlayerSettings.bundleVersion = version;
+            File.WriteAllText(BuildVersionFilePath, version);
             if (BuildWindowsDev())
             {
 
