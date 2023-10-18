@@ -9,15 +9,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
     public class SpawnObjectServerTrait : ServerTrait
     {
         [SerializeField] private ZoneSpawn _spawn;
+        [SerializeField] private bool _startActive = true;
 
         public override WorldTraitData GetData()
         {
-            return new SpawnObjectTraitData
+            var data = new SpawnObjectTraitData
             {
                 Name = name,
                 MaxStack = MaxStack,
                 Spawn = _spawn.GetData(),
             };
+            data.Spawn.StartActive = _startActive;
+            return data;
         }
     }
 }

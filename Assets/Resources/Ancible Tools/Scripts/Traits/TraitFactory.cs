@@ -22,6 +22,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         public static WorldPositionTrait WorldPosition => _instance._worldPositionTrait;
         public static NameTagTrait NameTag => _instance._nameTagTrait;
         public static VisualFxTrait AppearanceFx => _instance._appearanceVisualFxTrait;
+        public static ZoneTransitionTrait ZoneTransition => _instance._zoneTransitionTrait;
+        public static NetworkCrafterTrait Crafter => _instance._networkCrafterTrait;
+        public static BridgeTrait Bridge => _instance._bridgeTrait;
 
         private static TraitFactory _instance = null;
 
@@ -43,9 +46,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private WorldPositionTrait _worldPositionTrait;
         [SerializeField] private NameTagTrait _nameTagTrait;
         [SerializeField] private VisualFxTrait _appearanceVisualFxTrait;
+        [SerializeField] private ZoneTransitionTrait _zoneTransitionTrait;
+        [SerializeField] private NetworkCrafterTrait _networkCrafterTrait;
+        [SerializeField] private BridgeTrait _bridgeTrait;
 
         private Dictionary<string, Trait> _traits = new Dictionary<string, Trait>();
         private Dictionary<string, SpriteTrait> _sprites = new Dictionary<string, SpriteTrait>();
+        private Dictionary<string, TilemapSpriteTrait> _tilemapSprites = new Dictionary<string, TilemapSpriteTrait>();
 
         void Awake()
         {
@@ -68,6 +75,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                         {
                             _sprites.Add(sprite.name, sprite);
                         }
+                        else if (trait is TilemapSpriteTrait tilemap)
+                        {
+                            _tilemapSprites.Add(tilemap.name, tilemap);
+                        }
                     }
                 }
             }
@@ -78,6 +89,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             if (_instance._sprites.TryGetValue(spriteName, out var sprite))
             {
                 return sprite;
+            }
+
+            return null;
+        }
+
+        public static TilemapSpriteTrait GetTilemapSprite(string tilemap)
+        {
+            if (_instance._tilemapSprites.TryGetValue(tilemap, out var tilemapSprite))
+            {
+                return tilemapSprite;
             }
 
             return null;

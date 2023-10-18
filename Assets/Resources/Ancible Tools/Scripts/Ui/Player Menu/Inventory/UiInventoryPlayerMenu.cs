@@ -155,7 +155,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                     buttonPressed = true;
                     gameObject.SendMessage(PlayerInventoryUpdatedMessage.INSTANCE);
                 }
-                else if (!msg.Previous.Info && msg.Current.Info)
+                if (!msg.Previous.Info && msg.Current.Info)
                 {
                     _hover = !_hover;
                     if (_controllers.TryGetValue(_cursorPosition, out var selected))
@@ -190,6 +190,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                 {
                     if (_controllers.TryGetValue(direction + _cursorPosition, out var itemController))
                     {
+                        if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                        {
+                            selected.SetHover(false);
+                        }
                         _cursorPosition = itemController.Position;
                         itemController.SetCursor(_cursor);
                         itemController.SetHover(_hover);
@@ -215,6 +219,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
         private void PlayerInventoryUpdated(PlayerInventoryUpdatedMessage msg)
         {
             RefreshInventory();
+        }
+
+        public override void Destroy()
+        {
+            var controllers = _controllers.Values.ToArray();
+            foreach (var controller in controllers)
+            {
+                controller.Destroy();
+                Destroy(controller.gameObject);
+            }
+            base.Destroy();
         }
     }
 }

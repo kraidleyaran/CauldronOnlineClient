@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxStack: 2
   _worldTicksPerLoop: 8
-  _loops: 3
+  _loops: 8
   _applyOnStart: []
   _applyOnLoop:
   - {fileID: 11400000, guid: 046ce52b25037fc459705210d71bf290, type: 2}

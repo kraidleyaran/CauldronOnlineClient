@@ -19,6 +19,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
         [SerializeField] private GameObject _cursor;
         [SerializeField] private GameObject _upArrow;
         [SerializeField] private GameObject _downArrow;
+        [SerializeField] private UiActiveLoadoutController _activeLoadoutController;
 
         private LoadoutSlot[] _available = new LoadoutSlot[0];
         private DataRow<LoadoutSlot>[] _rows = new DataRow<LoadoutSlot>[0];
@@ -26,7 +27,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
 
         private int _dataRowPosition = 0;
         private Vector2Int _cursorPosition = Vector2Int.zero;
-        private bool _hover = false;
+        private bool _hover = true;
+        private bool _active = true;
 
         void Awake()
         {
@@ -34,6 +36,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
             _upArrow.gameObject.SetActive(false);
             _downArrow.gameObject.SetActive(_dataRowPosition + 1 < _rows.Length - _maxRows + 1);
             SubscribeToMessages();
+        }
+
+        void Start()
+        {
+            if (_available.Length <= 0)
+            {
+                _active = false;
+                _activeLoadoutController.SetActive(true);
+            }
         }
 
         private static bool IsEquippableItem(ItemStack stack)
@@ -49,6 +60,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
             var queryItemsMsg = MessageFactory.GenerateQueryItemsMessage();
             queryItemsMsg.Query = IsEquippableItem;
             queryItemsMsg.DoAfter = items => playerItems = items;
+            queryItemsMsg.StackAll = false;
             gameObject.SendMessageTo(queryItemsMsg, ObjectManager.Player);
             MessageFactory.CacheMessage(queryItemsMsg);
 
@@ -57,7 +69,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                 if (item.Item is ActionItem actionItem)
                 {
                     var slot = new LoadoutSlot();
-                    slot.Setup(actionItem, slot.Stack);
+                    slot.Setup(actionItem, item.Stack);
                     available.Add(slot);
                 }
             }
@@ -201,9 +213,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                             {
                                 var equipItemToLoadoutSlotMsg = MessageFactory.GeneratEquipItemToLoadoutSlotMsg();
                                 equipItemToLoadoutSlotMsg.Item = controller.Slot.EquippedItem;
+                                equipItemToLoadoutSlotMsg.Stack = controller.Slot.Stack;
                                 equipItemToLoadoutSlotMsg.Slot = i;
                                 gameObject.SendMessageTo(equipItemToLoadoutSlotMsg, ObjectManager.Player);
                                 MessageFactory.CacheMessage(equipItemToLoadoutSlotMsg);
+
+                                gameObject.SendMessage(PlayerInventoryUpdatedMessage.INSTANCE);
+
                             }
                             else
                             {
@@ -258,15 +274,35 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                         itemController.SetCursor(_cursor);
                         itemController.SetHovered(_hover);
                     }
-                    else if (direction.y > 0 && _dataRowPosition + 1 < _rows.Length - _maxRows + 1)
+                    else if (direction.y > 0)
                     {
-                        _dataRowPosition++;
-                        RefreshRows();
+                        if (_dataRowPosition + 1 < _rows.Length - _maxRows + 1)
+                        {
+                            _dataRowPosition++;
+                            RefreshRows();
+                        }
+                        else if (_active)
+                        {
+                            _active = false;
+                            _activeLoadoutController.SetActive(true);
+                        }
                     }
-                    else if (direction.y < 0 && _dataRowPosition > 0)
+                    else if (direction.y < 0)
                     {
-                        _dataRowPosition--;
-                        RefreshRows();
+                        if (_active)
+                        {
+                            if (_dataRowPosition > 0)
+                            {
+                                _dataRowPosition--;
+                                RefreshRows();
+                            }
+                        }
+                        else
+                        {
+                            _active = true;
+                            _activeLoadoutController.SetActive(false);
+                        }
+
                     }
 
                     _upArrow.gameObject.SetActive(_dataRowPosition > 0);

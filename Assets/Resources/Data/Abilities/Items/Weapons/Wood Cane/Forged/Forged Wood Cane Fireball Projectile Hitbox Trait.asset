@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb84dec90775b0c408e4536ea170be7c, type: 3}
+  m_Name: Forged Wood Cane Fireball Projectile Hitbox Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _hitbox: {fileID: 11400000, guid: fe5d4fb9378ce2f4a86022bf9e5b27d0, type: 2}
+  _collisionLayer: {fileID: 11400000, guid: 3649a9d880b77e1409b8c53fb14d5793, type: 2}
+  _applyToOwnerOnEnter: []
+  _applyToTargetOnEnter:
+  - {fileID: 11400000, guid: 24325ee4ba41c6c4485ca1580bca2568, type: 2}
+  _applyToSelfOnEnter: []
+  _applyToOwnerOnExit: []
+  _applyToTargetOnExit: []

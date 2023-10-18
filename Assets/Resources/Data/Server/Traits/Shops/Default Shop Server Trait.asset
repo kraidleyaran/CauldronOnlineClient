@@ -32,9 +32,20 @@ MonoBehaviour:
   - Item: {fileID: 11400000, guid: fc247aabbbfd9764982de2f565739f5e, type: 2}
     Stack: 5
     Cost: 30
+  - Item: {fileID: 11400000, guid: 08cec3c22de66e644901e60077cdadda, type: 2}
+    Stack: 5
+    Cost: 23
+  - Item: {fileID: 11400000, guid: 08cec3c22de66e644901e60077cdadda, type: 2}
+    Stack: 1
+    Cost: 5
   - Item: {fileID: 11400000, guid: 43555ad30ae04c34e9578178d28b98d8, type: 2}
     Stack: 1
     Cost: 150
+  _restrictedItems:
+  - Item: {fileID: 11400000, guid: 8eae2db05a4f6bc4aa5afba7ef70a027, type: 2}
+    Stack: 1
+    Cost: 300
+    TriggerEvent: {fileID: 11400000, guid: 0f513752f5ee6a442a618020499c6cd1, type: 2}
   _serverHitbox:
     Size: {x: 10, y: 16}
     Offset: {x: 0, y: 8}

@@ -10,8 +10,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
     public class ZoneSpawnController : MonoBehaviour
     {
         [SerializeField] protected internal ServerUnitTemplate _template;
-        [SerializeField] protected internal ServerTrait[] _additionalTraits;
+        [SerializeField] protected internal ServerTrait[] _additionalTraits = new ServerTrait[0];
         [SerializeField] private bool _showAppearance = true;
+        [SerializeField] private bool _startActive = true;
 
         [Header("Editor Settings")]
         [SerializeField] protected internal SpriteRenderer _spriteRenderer;
@@ -25,8 +26,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 traits.AddRange(_additionalTraits.Where(t => t).Select(t => t.name));
                 objectSpawnData.Traits = traits.ToArray();
             }
-
-            return new ZoneSpawnData {Spawn = objectSpawnData, Tile = tile, ShowAppearance = _showAppearance};
+            objectSpawnData.StartActive = _startActive;
+            return new ZoneSpawnData {Spawn = objectSpawnData, Tile = tile, ShowAppearance = _showAppearance, StartActive = _startActive};
         }
 
         public virtual void RefreshEditorSprite()

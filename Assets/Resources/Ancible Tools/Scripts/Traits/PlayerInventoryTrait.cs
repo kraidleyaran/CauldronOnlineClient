@@ -107,6 +107,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 {
                     remainingStack -= itemStack.Stack;
                     _items.Remove(itemStack);
+                    if (remainingStack <= 0)
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -191,7 +195,27 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private void QueryItems(QueryItemsMessage msg)
         {
-            msg.DoAfter.Invoke(_items.Where(msg.Query.Invoke).ToArray());
+            if (msg.StackAll)
+            {
+                var returnItems = new Dictionary<WorldItem, int>();
+                var items = _items.Where(msg.Query.Invoke).ToArray();
+                foreach (var item in items)
+                {
+                    if (!returnItems.ContainsKey(item.Item))
+                    {
+                        returnItems.Add(item.Item, 0);
+                    }
+
+                    returnItems[item.Item] += item.Stack;
+                }
+
+                var stacked = returnItems.Select(kv => new ItemStack {Item = kv.Key, Stack = kv.Value}).ToArray();
+                msg.DoAfter.Invoke(stacked);
+            }
+            else
+            {
+                msg.DoAfter.Invoke(_items.Where(msg.Query.Invoke).ToArray());
+            }
         }
 
         private void QueryShop(QueryShopMessage msg)

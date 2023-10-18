@@ -47,7 +47,7 @@ MonoBehaviour:
   _template: {fileID: 0}
   _additionalTraits: []
   _showAppearance: 1
-  _spriteRenderer: {fileID: 0}
+  _spriteRenderer: {fileID: 882100887138707599}
 --- !u!1 &882100887138707593
 GameObject:
   m_ObjectHideFlags: 0

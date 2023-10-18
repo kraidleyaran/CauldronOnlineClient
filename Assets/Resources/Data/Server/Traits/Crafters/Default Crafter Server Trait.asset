@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9abcd45f1f9d84fa023de10ef115d9, type: 3}
+  m_Name: Default Crafter Server Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _recipes:
+  - {fileID: 11400000, guid: 4094d16919ee06249ab7c3e16b6e4bde, type: 2}
+  - {fileID: 11400000, guid: f2e57407568c88b4e906a47122a58dd5, type: 2}
+  - {fileID: 11400000, guid: ea5f4419be11e2a419fbf3fb4666dfe4, type: 2}
+  - {fileID: 11400000, guid: 250671a043bc6a147a48ba988e6f4b04, type: 2}
+  - {fileID: 11400000, guid: 235dd83d9c6f2834095a330fb4a3228f, type: 2}
+  - {fileID: 11400000, guid: 34d0241078043a04c9b75f238f6b855e, type: 2}
+  - {fileID: 11400000, guid: 9f37ff7e08fd08e42ac1b5d3d3b5f621, type: 2}
+  - {fileID: 11400000, guid: 67f87a4a25f32b343b98514a8a0b43d8, type: 2}
+  - {fileID: 11400000, guid: 274505b8a47cefe4681f68ca8d95e0f5, type: 2}
+  - {fileID: 11400000, guid: 35ce4839426c5294cba6d2aa943db10e, type: 2}
+  _hitbox:
+    Size: {x: 10, y: 16}
+    Offset: {x: 0, y: 8}

@@ -1,4 +1,6 @@
-﻿using Assets.Resources.Ancible_Tools.Scripts.Hitbox;
+﻿using System;
+using System.Linq;
+using Assets.Resources.Ancible_Tools.Scripts.Hitbox;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using ConcurrentMessageBus;
 using UnityEngine;
@@ -40,6 +42,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             }
 
             SubscribeToMessages();
+        }
+
+        public override string GetDescription()
+        {
+            var descriptions = _applyToTargetOnEnter.GetTraitDescriptions().ToList();
+            descriptions.AddRange(_applyToTargetOnExit.GetTraitDescriptions());
+            var description = string.Empty;
+            foreach (var trait in descriptions)
+            {
+                description = string.IsNullOrEmpty(description) ? trait : $"{description}{Environment.NewLine}{trait}";
+            }
+
+            return description;
         }
 
         private void SubscribeToMessages()

@@ -5,6 +5,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Abilities;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon;
+using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Math;
 using DG.Tweening;
 using ConcurrentMessageBus;
@@ -21,7 +22,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private Vector2Int _faceDirection = Vector2Int.down;
         private WorldVector2Int _worldPosition = WorldVector2Int.Zero;
 
-        private List<WorldAbility> _ability = new List<WorldAbility>();
+        private List<WorldAbility> _abilities = new List<WorldAbility>();
         private Dictionary<WorldAbility, Sequence> _cooldowns = new Dictionary<WorldAbility, Sequence>();
 
         public override void SetupController(TraitController controller)
@@ -78,7 +79,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             {
                 _abilityController.Destroy();
                 Destroy(_abilityController.gameObject);
-                _ability = null;
             }
 
         }
@@ -93,7 +93,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _worldPosition = msg.Position;
             if (_abilityController)
             {
-                Debug.Log($"World Position Update - Ability - {_worldPosition}");
                 _abilityController.SetPosition(_worldPosition.ToWorldVector());
             }
         }
@@ -102,7 +101,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             if (_unitState != UnitState.Attack && _unitState != UnitState.Dead && _unitState != UnitState.Interaction)
             {
-                Debug.Log($"Attack Direction - {_faceDirection}");
                 var ability = msg.Ability;
                 if (ability.RequiredResources.Length > 0)
                 {
@@ -120,8 +118,22 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
                 if (ability.ManaCost > 0)
                 {
+                    var manaReduction = 0;
+                    var totalStats = new CombatStats();
+                    var queryCombatStatsMsg = MessageFactory.GenerateQueryCombatStatsMsg();
+                    queryCombatStatsMsg.DoAfter = (baseStats, bonusStats, vitals, secondaryBonus) =>
+                    {
+                        totalStats = baseStats + bonusStats;
+                        manaReduction = secondaryBonus.ManaReduction;
+                    };
+                    _controller.gameObject.SendMessageTo(queryCombatStatsMsg, _controller.transform.parent.gameObject);
+                    MessageFactory.CacheMessage(queryCombatStatsMsg);
+
+                    manaReduction += CombatManager.Settings.CalculateManaReduction(totalStats);
+                    var manaCost = Mathf.Max(1, ability.ManaCost - manaReduction);
+
                     var removeManaMsg = MessageFactory.GenerateRemoveManaMsg();
-                    removeManaMsg.Amount = ability.ManaCost;
+                    removeManaMsg.Amount = manaCost;
                     _controller.gameObject.SendMessageTo(removeManaMsg, _controller.transform.parent.gameObject);
                     MessageFactory.CacheMessage(removeManaMsg);
                 }
@@ -141,7 +153,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 var pos = _worldPosition.ToWorldVector() + new Vector2(abilityOffset.x * _faceDirection.x, abilityOffset.y * _faceDirection.y) + objOffset;
                 if (_faceDirection.y < 0)
                 {
-                    Debug.Log($"Down Offset Applied");
                     pos.y += FactoryController.ABILITY_CONTROLLER.DownOffset * DataController.Interpolation;
                 }
 
@@ -166,7 +177,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private void QueryAbilities(QueryAbilitiesMessage msg)
         {
-            msg.DoAfter.Invoke(_ability.ToArray());
+            msg.DoAfter?.Invoke(_abilities.ToArray());
         }
 
         private void QueryAbilityCooldown(QueryAbilityCooldownMessage msg)
@@ -180,9 +191,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             {
                 _abilityController.Destroy();
                 Destroy(_abilityController.gameObject);
-                _ability = null;
+                
             }
-
+            _abilities.Clear();
             if (_cooldowns.Count > 0)
             {
                 var cooldowns = _cooldowns.Values.ToArray();

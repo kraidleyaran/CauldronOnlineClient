@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits;
@@ -59,14 +60,22 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server
             foreach (var zone in zones)
             {
                 var path = $"{_zoneSaveFolderPath}{Path.DirectorySeparatorChar}{zone.name}.{WorldZoneData.EXTENSION}";
-                var result = FileData.SaveData(path, zone.GetData());
-                if (result.Success)
+                try
                 {
-                    success++;
+                    var result = FileData.SaveData(path, zone.GetData());
+                    if (result.Success)
+                    {
+                        success++;
+                    }
+                    else
+                    {
+                        Debug.LogWarning(
+                            $"Error while saving {zone.name} to path {path} - {(result.HasException ? $"{result.Exception}" : "Unknown error")}");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Debug.LogWarning($"Error while saving {zone.name} to path {path} - {(result.HasException ? $"{result.Exception}" : "Unknown error")}");
+                    Debug.LogWarning($"Error while saving {zone.name} - {ex}");
                 }
             }
 

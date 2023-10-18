@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _iconImage: {fileID: 1582881370585908137}
+  _framgeImage: {fileID: 1582881369147057838}
   _stackText: {fileID: 1582881369277128818}
   _cursorPosition: {fileID: 1582881370827733666}
   Item:

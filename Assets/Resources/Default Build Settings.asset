@@ -17,6 +17,6 @@ MonoBehaviour:
   DevMacOSPath: 
   BuildVersionFilePath: C:\Builds\Cauldron Online Client\buildnumber.txt
   Major: 0
-  Build: 28
+  Build: 34
   SceneNames:
   - Assets/Scenes/Dev.unity

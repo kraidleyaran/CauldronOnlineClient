@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
 {
-    [CreateAssetMenu(fileName = "Loot Table", menuName = "Ancible Tools/Items/Loot/Extended Loot Table")]
+    [CreateAssetMenu(fileName = "Extended Loot Table", menuName = "Ancible Tools/Items/Loot/Extended Loot Table")]
     public class ExtendedLootTable : LootTable
     {
         [SerializeField] private LootTable _baseTable;

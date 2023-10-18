@@ -50,10 +50,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
             currentState.RightShoulder = currentState.RightShoulder || Gamepad.current.rightShoulder.isPressed;
             currentState.PlayerMenu = currentState.PlayerMenu || Gamepad.current.startButton.isPressed;
             currentState.LeftTrigger = currentState.LeftTrigger || Gamepad.current.leftTrigger.isPressed;
-            currentState.Green = currentState.Green || Gamepad.current.buttonSouth.isPressed;
-            currentState.Red = currentState.Red || Gamepad.current.buttonEast.isPressed;
-            currentState.Blue = currentState.Blue || Gamepad.current.buttonWest.isPressed;
-            currentState.Yellow = currentState.Yellow || Gamepad.current.buttonNorth.isPressed;
+            currentState.Green = currentState.Green || Gamepad.current.aButton.isPressed;
+            currentState.Red = currentState.Red || Gamepad.current.bButton.isPressed;
+            currentState.Blue = currentState.Blue || Gamepad.current.xButton.isPressed;
+            currentState.Yellow = currentState.Yellow || Gamepad.current.yButton.isPressed;
             currentState.Info = currentState.Info || Gamepad.current.selectButton.isPressed;
 
             for (var i = 0; i < currentState.Loadout.Length; i++)
@@ -79,13 +79,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
             switch (slot)
             {
                 case 0:
-                    return gamepad.buttonSouth.isPressed;
+                    return gamepad.buttonSouth.isPressed && !gamepad.rightTrigger.isPressed;
                 case 1:
-                    return gamepad.buttonWest.isPressed;
+                    return gamepad.buttonWest.isPressed && !gamepad.rightTrigger.isPressed;
                 case 2:
-                    return gamepad.buttonNorth.isPressed;
+                    return gamepad.buttonNorth.isPressed && !gamepad.rightTrigger.isPressed;
                 case 3:
-                    return gamepad.buttonEast.isPressed;
+                    return gamepad.buttonEast.isPressed && !gamepad.rightTrigger.isPressed;
                 case 4:
                     return gamepad.buttonSouth.isPressed && gamepad.rightTrigger.isPressed;
                 case 5:

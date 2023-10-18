@@ -2340,6 +2340,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6864448679989508218, guid: 9df8d53462f2d4544a8045d19badc075, type: 3}
+      propertyPath: Zone
+      value: 
+      objectReference: {fileID: 11400000, guid: 869d7c74edb5ff6488478270c41b1df4, type: 2}
+    - target: {fileID: 6864448679989508218, guid: 9df8d53462f2d4544a8045d19badc075, type: 3}
       propertyPath: _zone
       value: 
       objectReference: {fileID: 11400000, guid: 869d7c74edb5ff6488478270c41b1df4, type: 2}

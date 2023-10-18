@@ -86,6 +86,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private static List<RemoveManaMessage> _removeManaCache = new List<RemoveManaMessage>();
         private static List<RestoreManaMessage> _restoreManaCache = new List<RestoreManaMessage>();
         private static List<QueryTimerMessage> _queryTimerCache = new List<QueryTimerMessage>();
+        private static List<QueryRecallMessage> _queryRecallCache = new List<QueryRecallMessage>();
+        private static List<WaypointWindowClosedMessage> _waypointWindowClosedCache = new List<WaypointWindowClosedMessage>();
+        private static List<SwapLoadoutSlotsMessage> _swapLoadoutSlotsCache = new List<SwapLoadoutSlotsMessage>();
+        private static List<RegisterProjectileMessage> _registerProjectileCache = new List<RegisterProjectileMessage>();
+        private static List<ProjectileReturnedMessage> _projectileReturnedCache = new List<ProjectileReturnedMessage>();
+        private static List<ProjectileAvailableCheckMessage> _projectileAvavailableCheckCache = new List<ProjectileAvailableCheckMessage>();
+        private static List<SetProjectileDirectionMessage> _setProjectileDirectionCache = new List<SetProjectileDirectionMessage>();
         
         public static AddTraitToUnitMessage GenerateAddTraitToUnitMsg()
         {
@@ -940,6 +947,90 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             return new QueryTimerMessage();
         }
 
+        public static QueryRecallMessage GenerateQueryRecallMsg()
+        {
+            if (_queryRecallCache.Count > 0)
+            {
+                var message = _queryRecallCache[0];
+                _queryRecallCache.Remove(message);
+                return message;
+            }
+
+            return new QueryRecallMessage();
+        }
+
+        public static WaypointWindowClosedMessage GenerateWaypointWindowClosedMsg()
+        {
+            if (_waypointWindowClosedCache.Count > 0)
+            {
+                var message = _waypointWindowClosedCache[0];
+                _waypointWindowClosedCache.Remove(message);
+                return message;
+            }
+
+            return new WaypointWindowClosedMessage();
+        }
+
+        public static SwapLoadoutSlotsMessage GenerateSwapLoadoutSlotsMsg()
+        {
+            if (_swapLoadoutSlotsCache.Count > 0)
+            {
+                var message = _swapLoadoutSlotsCache[0];
+                _swapLoadoutSlotsCache.Remove(message);
+                return message;
+            }
+
+            return new SwapLoadoutSlotsMessage();
+        }
+
+        public static RegisterProjectileMessage GenerateRegisterProjectileMsg()
+        {
+            if (_registerProjectileCache.Count > 0)
+            {
+                var message = _registerProjectileCache[0];
+                _registerProjectileCache.Remove(message);
+                return message;
+            }
+
+            return new RegisterProjectileMessage();
+        }
+
+        public static ProjectileReturnedMessage GenerateProjectileReturnedMsg()
+        {
+            if (_projectileReturnedCache.Count > 0)
+            {
+                var message = _projectileReturnedCache[0];
+                _projectileReturnedCache.Remove(message);
+                return message;
+            }
+
+            return new ProjectileReturnedMessage();
+        }
+
+        public static ProjectileAvailableCheckMessage GenerateProjectileAvailableCheckMsg()
+        {
+            if (_projectileAvavailableCheckCache.Count > 0)
+            {
+                var message = _projectileAvavailableCheckCache[0];
+                _projectileAvavailableCheckCache.Remove(message);
+                return message;
+            }
+
+            return new ProjectileAvailableCheckMessage();
+        }
+
+        public static SetProjectileDirectionMessage GenerateSetProjectileDirectionMsg()
+        {
+            if (_setProjectileDirectionCache.Count > 0)
+            {
+                var message = _setProjectileDirectionCache[0];
+                _setProjectileDirectionCache.Remove(message);
+                return message;
+            }
+
+            return new SetProjectileDirectionMessage();
+        }
+
         //TODO: Start Cache
 
         public static void CacheMessage(AddTraitToUnitMessage msg)
@@ -1174,6 +1265,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             msg.Direction = Vector2Int.zero;
             msg.MoveSpeed = 0;
             msg.ApplyOnWall = null;
+            msg.StopOnWall = false;
+            msg.ReportPosition = false;
+            msg.WorldId = string.Empty;
+            msg.Unregister = false;
             msg.Sender = null;
             _setupProjectileCache.Add(msg);
         }
@@ -1249,6 +1344,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         {
             msg.Query = null;
             msg.DoAfter = null;
+            msg.StackAll = false;
             msg.Sender = null;
             _queryItemsCache.Add(msg);
         }
@@ -1470,6 +1566,59 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             msg.DoAfter = null;
             msg.Sender = null;
             _queryTimerCache.Add(msg);
+        }
+
+        public static void CacheMessage(QueryRecallMessage msg)
+        {
+            msg.DoAfter = null;
+            msg.Sender = null;
+            _queryRecallCache.Add(msg);
+        }
+
+        public static void CacheMessage(WaypointWindowClosedMessage msg)
+        {
+            msg.Travelling = false;
+            msg.Sender = null;
+            _waypointWindowClosedCache.Add(msg);
+        }
+
+        public static void CacheMessage(SwapLoadoutSlotsMessage msg)
+        {
+            msg.SlotA = 0;
+            msg.SlotB = 0;
+            msg.Sender = null;
+            _swapLoadoutSlotsCache.Add(msg);
+        }
+
+        public static void CacheMessage(RegisterProjectileMessage msg)
+        {
+            msg.MaxStack = 0;
+            msg.Projectile = null;
+            msg.ProjectileName = string.Empty;
+            msg.Sender = null;
+            _registerProjectileCache.Add(msg);
+        }
+
+        public static void CacheMessage(ProjectileReturnedMessage msg)
+        {
+            msg.Projectile = null;
+            msg.Sender = null;
+            _projectileReturnedCache.Add(msg);
+        }
+
+        public static void CacheMessage(ProjectileAvailableCheckMessage msg)
+        {
+            msg.DoAfter = null;
+            msg.Projectile = string.Empty;
+            msg.Sender = null;
+            _projectileAvavailableCheckCache.Add(msg);
+        }
+
+        public static void CacheMessage(SetProjectileDirectionMessage msg)
+        {
+            msg.Direction = Vector2.zero;
+            msg.Sender = null;
+            _setProjectileDirectionCache.Add(msg);
         }
     }
 }

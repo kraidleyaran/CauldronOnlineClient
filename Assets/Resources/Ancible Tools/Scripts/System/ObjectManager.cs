@@ -62,6 +62,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private SetupChestMessage _setupChestMsg = new SetupChestMessage();
         private SetInventoryMessage _setInventoryMsg = new SetInventoryMessage();
         private SetNameTagMessage _setNameTagMsg = new SetNameTagMessage();
+        private SetupZoneTransitionMessage _setupZoneTransitionMsg = new SetupZoneTransitionMessage();
+        private SetupCrafterMessage _setupCrafterMsg = new SetupCrafterMessage();
+        private SetupBridgeMessage _setupBridgeMsg = new SetupBridgeMessage();
 
         private bool _editorMode = false;
 
@@ -312,6 +315,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 _instance._setupSwitchMsg.Hitbox = switchParam.Hitbox;
                                 _instance._setupSwitchMsg.Signals = switchParam.Signals;
                                 _instance._setupSwitchMsg.CurrentSignal = switchParam.CurrentSignal;
+                                _instance._setupSwitchMsg.CombatInteractable = switchParam.CombatInteractable;
+                                _instance._setupSwitchMsg.Locked = switchParam.Locked;
+                                _instance._setupSwitchMsg.LockOnInteract = switchParam.LockOnInteract;
                                 obj.SendMessageTo(_instance._setupSwitchMsg, obj);
                             }
                             break;
@@ -341,6 +347,41 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 obj.SendMessageTo(_instance._setupChestMsg, obj);
                             }
                             break;
+                        case ZoneTransitionParameter.TYPE:
+                            if (parameter is ZoneTransitionParameter zoneTransition)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.ZoneTransition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupZoneTransitionMsg.Zone = zoneTransition.Zone;
+                                _instance._setupZoneTransitionMsg.Position = zoneTransition.Position;
+                                _instance._setupZoneTransitionMsg.Rotation = zoneTransition.Rotation;
+                                obj.SendMessageTo(_instance._setupZoneTransitionMsg, obj);
+                            }
+                            break;
+                        case CrafterParameter.TYPE:
+                            if (parameter is CrafterParameter crafter)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.Crafter;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupCrafterMsg.Recipes = crafter.Recipes;
+                                _instance._setupCrafterMsg.Hitbox = crafter.Hitbox;
+                                obj.SendMessageTo(_instance._setupCrafterMsg, obj);
+                            }
+                            break;
+                        case BridgeParameter.TYPE:
+                            if (parameter is BridgeParameter bridge)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.Bridge;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupBridgeMsg.TilemapSprite = bridge.TilemapSprite;
+                                _instance._setupBridgeMsg.Size = bridge.Size;
+                                _instance._setupBridgeMsg.Active = bridge.Active;
+                                obj.SendMessageTo(_instance._setupBridgeMsg, obj);
+                            }
+                            break;
                     }
                 }
 
@@ -348,8 +389,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 {
                     _instance.gameObject.SendMessageTo(IsMonsterMessage.INSTANCE, obj);
                 }
-
-                
 
                 _instance._networkObjects.Add(data.Id, obj);
                 _instance._networkReverseLookup.Add(obj, data.Id);
@@ -365,6 +404,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 {
                     addTraitToUnitMsg.Trait = TraitFactory.AppearanceFx;
                     obj.SendMessageTo(addTraitToUnitMsg, obj);
+                }
+
+                if (!data.Active)
+                {
+                    var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
+                    setUnitStateMsg.State = UnitState.Disabled;
+                    obj.SendMessageTo(setUnitStateMsg, obj);
+                    MessageFactory.CacheMessage(setUnitStateMsg);
                 }
 
                 MessageFactory.CacheMessage(addTraitToUnitMsg);

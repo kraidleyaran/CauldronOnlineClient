@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bec3ef99ad5704c8049d2ff64c413b, type: 3}
+  m_Name: Leather Boots Boots Armor World Item
+  m_EditorClassIdentifier: 
+  DisplayName: Leather Boots
+  Sprite: {fileID: 11400000, guid: 730ec042b94191342be19b92a6b09fb5, type: 2}
+  Quality: 0
+  Description: 
+  MaxStack: 1
+  SellValue: 0
+  Slot: 3
+  _applyOnEquip:
+  - {fileID: 11400000, guid: bf30570340e87ff42b6c1eba3e0971ef, type: 2}

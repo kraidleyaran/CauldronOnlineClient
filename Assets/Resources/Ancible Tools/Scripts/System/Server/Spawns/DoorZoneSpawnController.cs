@@ -13,7 +13,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         [SerializeField] private ItemStack[] _requiredItems = new ItemStack[0];
         [SerializeField] private ServerHitbox _serverHitbox = null;
         [SerializeField] private TriggerEvent[] _triggerEvents = new TriggerEvent[0];
+        [SerializeField] private bool _requireAllEvents = false;
         [SerializeField] private bool _allowOpenWithNoItems = false;
+        [HideInInspector] public Vector2Int TrappedSpawnPosition = Vector2Int.zero;
 
         public override ZoneSpawnData GetData(WorldVector2Int tile)
         {
@@ -25,9 +27,21 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 Hitbox = _serverHitbox.GetData(),
                 Rotation = transform.localRotation.eulerAngles.z,
                 TriggerEvents = _triggerEvents.Where(t => t).Select(e => e.name).ToArray(),
-                AllowOpenWithNoItems = _allowOpenWithNoItems
+                RequireAllEvents = _requireAllEvents,
+                AllowOpenWithNoItems = _allowOpenWithNoItems,
+                TrappedSpawnPosition = TrappedSpawnPosition.ToWorldVector()
             });
             return data;
+        }
+
+        public override void RefreshEditorSprite()
+        {
+#if UNITY_EDITOR
+            base.RefreshEditorSprite();
+            var color = _spriteRenderer.color;
+            color.a = _startOpen ? .66f : 1f;
+            _spriteRenderer.color = color;
+#endif
         }
     }
 }

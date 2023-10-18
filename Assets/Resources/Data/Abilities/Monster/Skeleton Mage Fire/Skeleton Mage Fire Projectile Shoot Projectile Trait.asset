@@ -18,11 +18,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 007fc7f528b430c4893a28996ac590b5, type: 2}
   - {fileID: 11400000, guid: 9f13c4216ff38764d85b9bc7f39cbd1d, type: 2}
   - {fileID: 11400000, guid: 87bb3a69755b5b145923ad2a31223880, type: 2}
+  - {fileID: 11400000, guid: fa7b972c1203f1f48814779cadf75a7d, type: 2}
   _moveSpeed: 3
   _offset: 4
   _baseRotation: 0
   _rotateProjectile: 0
-  _destryOnTerrainImpact: 0
   _applyOnWall:
   - {fileID: 11400000, guid: eb8dd16e21041314e81835d82b1ec919, type: 2}
-  - {fileID: 11400000, guid: fa7b972c1203f1f48814779cadf75a7d, type: 2}

@@ -10,6 +10,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
     [CreateAssetMenu(fileName = "Combat Stats Trait", menuName = "Ancible Tools/Traits/Combat/Combat Stats")]
     public class CombatStatsTrait : Trait
     {
+        public const string FULL_HEAL = "Full Heal!";
+
         [SerializeField] private Trait[] _applyOnDamageTaken = new Trait[0];
         [SerializeField] private bool _reportHeal = false;
 
@@ -102,7 +104,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     MessageFactory.CacheMessage(addtraitToUnitMsg);
                 }
 
-                if (_vitals.Health <= 0)
+                if (_vitals.Health <= 0 && _reportDamage)
                 {
                     _controller.gameObject.SendMessageTo(UnitDeathMessage.INSTANCE, _controller.transform.parent.gameObject);
                 }
@@ -114,6 +116,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _baseStats = msg.Stats;
             _vitals = msg.Vitals;
             _reportDamage = msg.Report;
+            if (_vitals.Health <= 0)
+            {
+                _controller.gameObject.SendMessageTo(UnitDeathMessage.INSTANCE, _controller.transform.parent.gameObject);
+            }
         }
 
         private void QueryCombatStats(QueryCombatStatsMessage msg)
@@ -127,6 +133,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _vitals.Health = combined.Health;
             _vitals.Mana = combined.Mana;
             _controller.gameObject.SendMessageTo(CombatStatsUpdatedMessage.INSTANCE, _controller.transform.parent.gameObject);
+            UiFloatingTextManager.Register($"{StaticMethods.ApplyColorToText(FULL_HEAL, ColorFactory.Heal)}", _controller.transform.parent.gameObject);
         }
 
         private void UpdateUnitState(UpdateUnitStateMessage msg)
@@ -194,6 +201,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     ClientController.SendToServer(new ClientHealMessage{Amount = msg.Amount, OwnerId = ownerId, TargetId = targetId, Tick = TickController.ServerTick});
                 }
             }
+
+            UiFloatingTextManager.Register($"{StaticMethods.ApplyColorToText($"{msg.Amount}", ColorFactory.Heal)}", _controller.transform.parent.gameObject);
         }
 
         private void QueryDamageBonus(QueryDamageBonusMessage msg)

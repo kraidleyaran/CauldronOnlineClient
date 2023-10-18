@@ -15,6 +15,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         [SerializeField] private HitboxData _hitbox;
         [SerializeField] private SpriteTrait[] _signals;
         [SerializeField] private int _startingSignal;
+        [SerializeField] private bool _startLocked = false;
+        [SerializeField] private bool _lockOnInteract = false;
+        [SerializeField] private bool _combatInteracable = true;
 
         public override ZoneSpawnData GetData(WorldVector2Int tile)
         {
@@ -24,7 +27,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 Name = _switch.name,
                 Signals = _signals.Where(s => s).Select(s => s.name).ToArray(),
                 CurrentSignal = _startingSignal,
-                Hitbox = _hitbox
+                Hitbox = _hitbox,
+                Locked =  _startLocked,
+                LockOnInteract = _lockOnInteract,
+                CombatInteractable = _combatInteracable
             });
             return data;
         }

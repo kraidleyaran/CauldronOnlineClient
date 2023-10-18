@@ -9,6 +9,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
     public class UiInventoryItemController : MonoBehaviour
     {
         [SerializeField] private Image _iconImage;
+        [SerializeField] private Image _framgeImage;
         [SerializeField] private Text _stackText;
         [SerializeField] private RectTransform _cursorPosition;
 
@@ -21,6 +22,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
         {
             Item = item;
             Position = position;
+            _framgeImage.color = ItemFactory.GetQualityColor(Item.Item);
             _iconImage.sprite = item.Item.Sprite.Sprite;
             _stackText.text = item.Stack > 1 ? $"x{item.Stack}" : string.Empty;
         }
@@ -36,14 +38,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
         {
             if (!_hovered && hovered)
             {
-                _hovered = true;
-                UiHoverInfoManager.SetHoverInfo(gameObject, Item.Item.DisplayName, Item.Item.GetDescription(), Item.Item.Sprite.Sprite, transform.position.ToVector2(), Item.Item.SellValue);
+                UiHoverInfoManager.SetHoverInfo(gameObject, Item.Item.GetDisplayName(), Item.Item.GetDescription(), Item.Item.Sprite.Sprite, transform.position.ToVector2(), Item.Item.SellValue);
             }
             else if (_hovered && !hovered)
             {
-                _hovered = false;
                 UiHoverInfoManager.RemoveHoverInfo(gameObject);
             }
+            _hovered = hovered;
         }
 
         public void Destroy()

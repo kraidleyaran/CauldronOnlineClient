@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Resources.Ancible_Tools.Scripts.Hitbox;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using CauldronOnlineCommon;
@@ -13,9 +14,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         protected internal override string _actionText => "Interact";
 
         private SpriteController _spriteController = null;
+        private HitboxController _combatHitboxController = null;
 
         private SpriteTrait[] _signals = new SpriteTrait[0];
         private int _currentSignal = 0;
+        private bool _locked = false;
+        private bool _lockOnInteract = false;
 
         public override void SetupController(TraitController controller)
         {
@@ -25,14 +29,22 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         protected internal override void Interact()
         {
-            var signal = _currentSignal + 1;
-            if (signal >= _signals.Length)
+            if (!_locked)
             {
-                signal = 0;
+                var signal = _currentSignal + 1;
+                if (signal >= _signals.Length)
+                {
+                    signal = 0;
+                }
+
+                if (_lockOnInteract)
+                {
+                    _locked = true;
+                }
+                var targetId = ObjectManager.GetId(_controller.transform.parent.gameObject);
+                ClientController.SendToServer(new ClientSwitchSignalMessage { Signal = signal, TargetId = targetId, Tick = TickController.ServerTick });
             }
 
-            var targetId = ObjectManager.GetId(_controller.transform.parent.gameObject);
-            ClientController.SendToServer(new ClientSwitchSignalMessage{Signal = signal, TargetId = targetId, Tick = TickController.ServerTick});
         }
 
         private void SetSignal(int signal)
@@ -58,6 +70,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private void SetupSwitch(SetupSwitchMessage msg)
         {
+            _lockOnInteract = msg.LockOnInteract;
+            _locked = msg.Locked;
             var sprites = new List<SpriteTrait>();
             foreach (var signal in msg.Signals)
             {
@@ -69,20 +83,44 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             }
 
             _signals = sprites.ToArray();
+            
             SetSignal(msg.CurrentSignal);
             _hitboxController.transform.SetLocalScaling(msg.Hitbox.Size.ToVector());
             _hitboxController.transform.SetLocalPosition(msg.Hitbox.Offset.ToWorldVector());
+            if (msg.CombatInteractable)
+            {
+                _combatHitboxController = Instantiate(_hitboxController, _controller.transform.parent);
+                _combatHitboxController.Setup(_hitbox, CollisionLayerFactory.MonsterHurt);
+                _combatHitboxController.AddSubscriber(_controller.gameObject);
+                _controller.gameObject.SubscribeWithFilter<EnterCollisionWithObjectMessage>(CombatEnterCollisionWithObject, _instanceId);
+            }
         }
 
         private void SetSignal(SetSignalMessage msg)
         {
             SetSignal(msg.Signal);
+            _locked = msg.Locked;
         }
 
         private void UpdateWorldPosition(UpdateWorldPositionMessage msg)
         {
             var addOrder = _signals[_currentSignal].SortingOrder;
             _spriteController.SetSortingOrder((msg.Position.Y * -1) + addOrder);
+        }
+
+        private void CombatEnterCollisionWithObject(EnterCollisionWithObjectMessage msg)
+        {
+            Interact();
+        }
+
+        public override void Destroy()
+        {
+            if (_combatHitboxController)
+            {
+                Destroy(_combatHitboxController.gameObject);
+                _combatHitboxController = null;
+            }
+            base.Destroy();
         }
     }
 }

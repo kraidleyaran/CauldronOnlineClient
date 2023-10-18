@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c1de61e39cb5d488fe0684e723aceb, type: 3}
+  m_Name: Detailed Floor - Blue-Grey Brick CarpetBrush
+  m_EditorClassIdentifier: 
+  Tileset: {fileID: 11400000, guid: 9d80e38b63bfecc4cab7dd5904f654d3, type: 2}
+  Params:
+    m_paramList: []
+  m_group: 0
+  m_autotilingMode: 1
+  m_showInPalette: 1
+  TileIds: 550b0000550b0000550b0000140f0000550b0000550b0000140a0000540b0000550b0000160f0000550b0000150f0000160a0000560b0000150a0000550b0000
+  InteriorCornerTileIds: 960c0000940c0000d60d0000d40d0000

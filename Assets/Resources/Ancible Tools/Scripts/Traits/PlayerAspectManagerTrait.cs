@@ -85,7 +85,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _experience += msg.Amount;
             var required = CalculateLevelExperience(_level + 1);
             var leveled = false;
-            while (required < _experience)
+            while (_experience >= required)
             {
                 leveled = true;
                 _experience -= required;

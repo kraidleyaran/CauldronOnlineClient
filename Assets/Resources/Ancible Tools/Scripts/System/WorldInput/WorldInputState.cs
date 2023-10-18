@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Vector2 = System.Numerics.Vector2;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
 {
@@ -19,9 +20,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
         public bool Blue;
         public bool Info;
         public bool DevWindow;
-
-
-
 
 
     }

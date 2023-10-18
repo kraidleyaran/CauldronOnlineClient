@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8008b38655f90043b29b1c717c31624, type: 3}
+  m_Name: Boomerang Chaining Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _maxChains: 2
+  _chainArea: 80
+  _chainAreaHitbox: {fileID: 11400000, guid: 3df2905acbe49c240bf6373c09d487d7, type: 2}
+  _chainChangeHitbox: {fileID: 11400000, guid: 9c072cf74b3b51942bee7f56e3f4d806, type: 2}
+  _changeLayer: {fileID: 11400000, guid: 3649a9d880b77e1409b8c53fb14d5793, type: 2}
+  _areaLayer: {fileID: 11400000, guid: ed9dbc738d098c1468182af047d35fc0, type: 2}
+  _maxObjectHistory: 1
+  _applyOnChainEnd:
+  - {fileID: 11400000, guid: eceb62fc1ff070f48bd39d1a281ea266, type: 2}
+  _resetMaxDistanceChain: 1

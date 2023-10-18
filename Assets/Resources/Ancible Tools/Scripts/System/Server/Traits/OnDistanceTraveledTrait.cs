@@ -35,6 +35,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
         private void SubscribeToMessages()
         {
             _controller.transform.parent.gameObject.SubscribeWithFilter<UpdatePositionMessage>(UpdatePosition, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<ResetMaxDistanceCheckMessage>(ResetMaxDistanceCheck, _instanceId);
         }
 
         private void UpdatePosition(UpdatePositionMessage msg)
@@ -61,6 +62,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 _controller.gameObject.SendMessageTo(removeTraintFromUnitByController, _controller.transform.parent.gameObject);
                 MessageFactory.CacheMessage(removeTraintFromUnitByController);
             }
+        }
+
+        private void ResetMaxDistanceCheck(ResetMaxDistanceCheckMessage msg)
+        {
+            _currentDistance = 0f;
         }
     }
 }

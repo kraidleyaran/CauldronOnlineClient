@@ -41,6 +41,9 @@ TextureImporter:
   - first:
       213: 8597797646119509961
     second: Small Mana Potion
+  - first:
+      213: -1014471878319070210
+    second: Recall Scroll
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -415,7 +418,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -423,6 +426,27 @@ TextureImporter:
       bones: []
       spriteID: 9cf94a3f763815770800000000000000
       internalID: 8597797646119509961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recall Scroll
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 866
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef32b2a933fdbe1f0800000000000000
+      internalID: -1014471878319070210
       vertices: []
       indices: 
       edges: []

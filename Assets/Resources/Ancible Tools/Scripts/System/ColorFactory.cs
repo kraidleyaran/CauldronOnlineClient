@@ -8,6 +8,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public static Color NegativeStat => _instance._negativeStat;
         public static Color PlayerDamageTaken => _instance._playerDamageTaken;
         public static Color MonsterDamageTaken => _instance._monsterDamageTaken;
+        public static Color Heal => _instance._healTaken;
+        public static Color ManaRestored => _instance._manaRestored;
 
         private static ColorFactory _instance = null;
 
@@ -18,6 +20,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         [SerializeField] private Color _playerDamageTaken = Color.red;
         [SerializeField] private Color _monsterDamageTaken = Color.white;
         [SerializeField] private Color _manaRestored = Color.blue;
+        [SerializeField] private Color _healTaken = Color.green;
 
         void Awake()
         {

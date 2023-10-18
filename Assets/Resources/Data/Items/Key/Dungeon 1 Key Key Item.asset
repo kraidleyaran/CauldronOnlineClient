@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Dungeon 1 Key
   Sprite: {fileID: 11400000, guid: dea5a37c2f43fa740b197d5f98dce3f6, type: 2}
+  Quality: 0
   Description: 
-  MaxStack: 1
+  MaxStack: 0
   SellValue: 0

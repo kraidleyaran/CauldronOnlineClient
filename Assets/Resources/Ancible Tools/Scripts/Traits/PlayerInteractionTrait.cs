@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Resources.Ancible_Tools.Scripts.System;
+using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using Assets.Resources.Ancible_Tools.Scripts.Ui;
 using ConcurrentMessageBus;
 using UnityEngine;
@@ -62,6 +63,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void UpdateUnitState(UpdateUnitStateMessage msg)
         {
             _unitState = msg.State;
+            if (_unitState == UnitState.Interaction)
+            {
+                var setUnitAnimationStateMsg = MessageFactory.GenerateSetUnitAnimationStateMsg();
+                setUnitAnimationStateMsg.State = UnitAnimationState.Idle;
+                _controller.gameObject.SendMessageTo(setUnitAnimationStateMsg, _controller.transform.parent.gameObject);
+                MessageFactory.CacheMessage(setUnitAnimationStateMsg);
+            }
         }
     }
 }

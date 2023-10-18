@@ -33,7 +33,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
         private int _moveTowardsPlayerSpeed = 0;
         
 
-        public void Setup(WorldItem item, int stack, Vector2 direction, bool registerSack)
+        public void Setup(WorldItem item, int stack, Vector2 direction, bool registerStack)
         {
             _item = item;
             _stack = stack;
@@ -62,7 +62,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
             _hitboxController = Instantiate(_pickupHitbox.Controller, transform);
             _hitboxController.Setup(CollisionLayerFactory.ItemCollect);
             _hitboxController.AddSubscriber(gameObject);
-            if (registerSack)
+            if (registerStack)
             {
                 UiIWorldItemStackManager.Setup(gameObject, stack);
             }

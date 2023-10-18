@@ -10,6 +10,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
     {
         [SerializeField] private Hitbox.Hitbox _hitbox = null;
         [SerializeField] private int _resultCount = 5;
+        [SerializeField] private bool _ignoreGround = false;
 
         private HitboxController _hitboxController = null;
 
@@ -19,11 +20,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             base.SetupController(controller);
             _hitboxController = _controller.gameObject.SetupHitbox(_hitbox, CollisionLayerFactory.Casting);
+            var layerMask = CollisionLayerFactory.GroundTerrain.ToMask() | CollisionLayerFactory.Terrain.ToMask();
+            if (_ignoreGround)
+            {
+                layerMask = CollisionLayerFactory.Terrain.ToMask();
+            }
             _contactFilter = new ContactFilter2D
             {
                 useTriggers = true,
                 useLayerMask = true,
-                layerMask = CollisionLayerFactory.Terrain.ToMask()
+                layerMask = layerMask
             };
             SubscribeToMessages();
         }

@@ -178,17 +178,31 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         }
 
-        public static float GetHeightOfText(this Text uiObject, string text)
+        public static int GetHeightOfText(this Text uiObject, string text)
         {
             var generator = new TextGenerator();
             var settings = uiObject.GetGenerationSettings(uiObject.rectTransform.rect.size);
             settings.verticalOverflow = VerticalWrapMode.Overflow;
+            settings.horizontalOverflow = HorizontalWrapMode.Wrap;
             //settings.fontSize = uiObject.fontSize;
             //settings.font = uiObject.font;
-            //settings.lineSpacing = uiObject.lineSpacing;
+            settings.lineSpacing = uiObject.lineSpacing;
             generator.Populate(text, settings);
             //Debug.Log($"Line Count: {generator.lines.Count}");
-            return (generator.lines.Count) * (settings.fontSize + settings.lineSpacing);
+            var height = generator.GetPreferredHeight(text, settings);
+            var intHeight = (int) height;
+            if (intHeight < height)
+            {
+                intHeight += 1;
+            }
+
+            var halfHeight = intHeight / 2f;
+            var halfIntHeight = intHeight / 2;
+            if (halfHeight > halfIntHeight)
+            {
+                intHeight += 1;
+            }
+            return intHeight;
             //return generator.GetPreferredHeight(text, settings) /*/ (settings.font.fontSize / (float)settings.fontSize)*/;
         }
 
@@ -429,7 +443,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         public static Vector2 ToWorldVector(this WorldVector2Int vector)
         {
-            return new Vector2(vector.X * DataController.Interpolation, vector.Y * DataController.Interpolation);
+            return new Vector2(vector.X * (DataController.Interpolation + Vector2.kEpsilon), vector.Y * (DataController.Interpolation + Vector2.kEpsilon));
         }
 
         public static Vector2 Multiply(this Vector2Int direction, float multiply = 1f)
@@ -455,7 +469,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         public static WorldVector2Int ToWorldPosition(this Vector2 vector)
         {
-            var pos = vector / DataController.Interpolation;
+            var pos = vector / (DataController.Interpolation);
             return new WorldVector2Int((int)pos.x, (int)pos.y);
         }
 

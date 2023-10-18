@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 {
-    [CreateAssetMenu(fileName = "Network Shop Trait", menuName = "Ancible Tools/Traits/Network/Network Shop")]
+    [CreateAssetMenu(fileName = "Network Shop Trait", menuName = "Ancible Tools/Traits/Network/Interactions/Network Shop")]
     public class NetworkShopTrait : InteractableTrait
     {
         private ShopItem[] _shopItems = new ShopItem[0];

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdc0bfc934ff2f4282138448e9eaf52, type: 3}
+  m_Name: Ground Fire Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  Sprite: {fileID: 11400000, guid: 42e12539cc20f2841954b798d573a579, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: f05518bc95ace0740a585bfc79b345e7, type: 2}
+  ShowOnClient: 1
+  IsMonster: 0
+  ShowName: 0
+  ShowAppearance: 1

@@ -29,7 +29,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
         {
             _shopItem = item;
             _icon.sprite = _shopItem.Item.Sprite.Sprite;
-            _itemNameText.text = _shopItem.Item.DisplayName;
+            _itemNameText.text = _shopItem.Item.GetDisplayName();
             _sellStack = _shopItem.Stack;
             _stackText.text = $"{_sellStack:n0}";
             _valueText.text = $"{_shopItem.Item.SellValue:n0}";

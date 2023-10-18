@@ -6,6 +6,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Aspects;
 using Assets.Resources.Ancible_Tools.Scripts.System.Data;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.System.WorldInput;
+using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Combat;
@@ -204,6 +205,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     {
         public WorldAbility Ability;
         public string[] Ids;
+        public WorldVector2Int Position;
     }
 
     public class SetApplyAbilityMessage : EventMessage
@@ -241,6 +243,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public int MoveSpeed;
         public Vector2 Direction;
         public Trait[] ApplyOnWall;
+        public bool ReportPosition;
+        public string WorldId;
+        public bool StopOnWall;
+        public bool Unregister;
     }
 
     public class QueryFacingDirectionMessage : EventMessage
@@ -330,6 +336,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     {
         public Predicate<ItemStack> Query;
         public Action<ItemStack[]> DoAfter;
+        public bool StackAll;
     }
 
     public class HasItemsQueryMessage : EventMessage
@@ -517,6 +524,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public float Rotation;
         public HitboxData Hitbox;
         public bool AllowOpenWithNoItems;
+        public WorldVector2Int TrappedSpawnPosition;
     }
 
     public class SetupNetworkTriggerHitboxMessage : EventMessage
@@ -564,11 +572,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public string[] Signals;
         public HitboxData Hitbox;
         public int CurrentSignal;
+        public bool Locked;
+        public bool LockOnInteract;
+        public bool CombatInteractable;
     }
 
     public class SetSignalMessage : EventMessage
     {
         public int Signal;
+        public bool Locked;
     }
 
     public class QueryDamageBonusMessage : EventMessage
@@ -649,4 +661,94 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     {
         public int Slot;
     }
+
+    public class SetupZoneTransitionMessage : EventMessage
+    {
+        public string Zone { get; set; }
+        public WorldVector2Int Position { get; set; }
+        public float Rotation { get; set; }
+    }
+
+    public class CraftingWindowClosedMessage : EventMessage
+    {
+        public static CraftingWindowClosedMessage INSTANCE = new CraftingWindowClosedMessage();
+    }
+
+    public class SetupCrafterMessage : EventMessage
+    {
+        public ItemRecipeData[] Recipes;
+        public HitboxData Hitbox;
+    }
+
+    public class QueryRecallMessage : EventMessage
+    {
+        public Action<WorldZone, WorldVector2Int> DoAfter;
+    }
+
+    public class RecallMessage : EventMessage
+    {
+        public static RecallMessage INSTANCE = new RecallMessage();
+    }
+
+    public class WaypointWindowClosedMessage : EventMessage
+    {
+        public bool Travelling;
+    }
+
+    public class RemoveActiveRecallMessage : EventMessage
+    {
+        public static RemoveActiveRecallMessage INSTANCE = new RemoveActiveRecallMessage();
+    }
+
+    public class SwapLoadoutSlotsMessage : EventMessage
+    {
+        public int SlotA;
+        public int SlotB;
+    }
+
+    public class SetProjectileDirectionMessage : EventMessage
+    {
+        public Vector2 Direction;
+    }
+
+    public class ResetMaxDistanceCheckMessage : EventMessage
+    {
+        public static ResetMaxDistanceCheckMessage INSTANCE = new ResetMaxDistanceCheckMessage();
+    }
+
+    public class ProjectileReturnedMessage : EventMessage
+    {
+        public GameObject Projectile;
+    }
+
+    public class RegisterProjectileMessage : EventMessage
+    {
+        public string ProjectileName;
+        public int MaxStack;
+        public GameObject Projectile;
+    }
+
+    public class ProjectileAvailableCheckMessage : EventMessage
+    {
+        public string Projectile;
+        public Action DoAfter;
+    }
+
+    public class ReturningToOwnerMessage : EventMessage
+    {
+        public static ReturningToOwnerMessage INSTANCE = new ReturningToOwnerMessage();
+    }
+
+    public class SetupBridgeMessage : EventMessage
+    {
+        public string TilemapSprite;
+        public WorldVector2Int Size;
+        public bool Active;
+    }
+
+    public class SetBridgeStateMessage : EventMessage
+    {
+        public bool Active;
+    }
+    
 }

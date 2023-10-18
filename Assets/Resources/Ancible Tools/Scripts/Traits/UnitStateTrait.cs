@@ -31,10 +31,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 _controller.gameObject.SendMessageTo(updateUnitStateMsg, _controller.transform.parent.gameObject);
                 MessageFactory.CacheMessage(updateUnitStateMsg);
 
-                if (_unitState == UnitState.Disabled)
-                {
-                    _controller.transform.parent.gameObject.SetActive(false);
-                }
+                _controller.transform.parent.gameObject.SetActive(_unitState != UnitState.Disabled);
             }
         }
 

@@ -59,7 +59,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
 
         public static UiSellStackWindow ShowSellStack(ShopItem shopItem, Action<WorldItem, int, bool> doAfter)
         {
-            _instance._sellStackWindow = UiWindowManager.OpenWindow(_instance._sellStackWindow);
+            _instance._sellStackWindow = UiWindowManager.OpenWindow(_instance._sellStackTemplate);
             _instance._sellStackWindow.Setup(shopItem, doAfter);
             return _instance._sellStackWindow;
         }
@@ -97,6 +97,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                 _instance._sellStackWindow = null;
             }
             gameObject.SendMessageTo(ShopWindowClosedMessage.INSTANCE, _shopOwner);
+            _instance = null;
             base.Close();
         }
     }

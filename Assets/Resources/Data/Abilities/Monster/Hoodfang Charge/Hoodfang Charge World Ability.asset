@@ -38,3 +38,4 @@ MonoBehaviour:
   Offset: {x: 0, y: 0}
   Cooldown: 40
   ManaCost: 0
+  ApplyAtEndofAbility: []

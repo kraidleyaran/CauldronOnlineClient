@@ -9,8 +9,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
     public class UiShopItemController : MonoBehaviour
     {
         [SerializeField] private Image _itemIcon;
+        [SerializeField] private Image _framgeImage;
         [SerializeField] private Text _stacktext;
         [SerializeField] private RectTransform _cursorPosition;
+        
 
         public ShopItem ShopItem;
         public Vector2Int Position;
@@ -23,7 +25,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             Position = position;
             _itemIcon.sprite = ShopItem.Item.Sprite.Sprite;
             _stacktext.text = ShopItem.Stack > 1 ? $"x{ShopItem.Stack}" : string.Empty;
-            
+            _framgeImage.color = ItemFactory.GetQualityColor(shopItem.Item);
         }
 
         public void SetCursor(GameObject cursor)
@@ -38,7 +40,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             if (!_hovered && hovered)
             {
                 _hovered = true;
-                UiHoverInfoManager.SetHoverInfo(gameObject, ShopItem.Item.DisplayName, ShopItem.Item.GetDescription(), ShopItem.Item.Sprite.Sprite, transform.position.ToVector2(), ShopItem.Cost);
+                UiHoverInfoManager.SetHoverInfo(gameObject, ShopItem.Item.GetDisplayName(), ShopItem.Item.GetDescription(), ShopItem.Item.Sprite.Sprite, transform.position.ToVector2(), ShopItem.Cost);
             }
             else if (_hovered && !hovered)
             {

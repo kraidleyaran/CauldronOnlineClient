@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Small Mana Potion
   Sprite: {fileID: 11400000, guid: 31fd078537495c845af13e8318cd9472, type: 2}
+  Quality: 0
   Description: 
   MaxStack: 20
   SellValue: 1
-  Ability: {fileID: 11400000, guid: 0e8bcb6ce7a785142a15e87ba34ecf90, type: 2}
+  Ability: {fileID: 11400000, guid: 1ac97c43e6ddbf2419b16e7d2ac639c3, type: 2}
   UseStack: 1

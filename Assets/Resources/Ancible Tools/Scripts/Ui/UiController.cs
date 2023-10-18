@@ -1,4 +1,5 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Dev;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Dialogue;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu;
@@ -12,6 +13,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
     public class UiController : MonoBehaviour
     {
         public static UiShopWindow Shop => _instance._shopWindow;
+        public static UiCraftingWindow Crafting => _instance._craftingWindow;
+        public static UiWaypointWindow Waypoint => _instance._waypointWindow;
 
         private static UiController _instance = null;
 
@@ -21,6 +24,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
         [SerializeField] private UiPlayerMenuManagerWindow _playerMenuWindow = null;
         [SerializeField] private UiShopWindow _shopWindow;
         [SerializeField] private UiDialogueWindow _dialogueWindow;
+        [SerializeField] private UiCraftingWindow _craftingWindow;
+        [SerializeField] private UiWaypointWindow _waypointWindow;
         [SerializeField] private UiDevWindow _devWindow;
 
         private UiPlayerMenuManagerWindow _openPlayerMenuWindow = null;

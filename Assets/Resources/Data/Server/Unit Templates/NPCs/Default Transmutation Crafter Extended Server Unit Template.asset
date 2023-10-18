@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Default Transmutation Crafter Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Izumi
+  Sprite: {fileID: 11400000, guid: a382e80460579274a952b80715015318, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: 7db648b4dd705a145866d05638544a41, type: 2}
+  ShowOnClient: 1
+  IsMonster: 0
+  ShowName: 1
+  ShowAppearance: 1
+  _baseTemplate: {fileID: 11400000, guid: 2c16eb48d5b85f84a8b3ca095608666e, type: 2}

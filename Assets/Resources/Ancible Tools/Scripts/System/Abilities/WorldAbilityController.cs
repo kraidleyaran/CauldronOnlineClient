@@ -101,7 +101,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
             }
             else
             {
-                
+                if (_ability.ApplyAtEndofAbility.Length > 0)
+                {
+                    var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+                    foreach (var trait in _ability.ApplyAtEndofAbility)
+                    {
+                        addTraitToUnitMsg.Trait = trait;
+                        _owner.SendMessageTo(addTraitToUnitMsg, _owner);
+                    }
+                    MessageFactory.CacheMessage(addTraitToUnitMsg);
+                }
                 _doAfter?.Invoke();
             }
         }
@@ -195,8 +204,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
                 {
                     _abilitySequence.Kill();
                 }
-
-                _ability = null;
             }
 
             _ability = null;
@@ -212,6 +219,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
                 Destroy(_weaponSpriteController.gameObject);
                 _weaponSpriteController = null;
             }
+
+            _doAfter = null;
         }
     }
 }

@@ -122,14 +122,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
 
         public override string GetDescription()
         {
-            
-            var description = $"Applies the following every {_worldTicksPerLoop * TickController.WorldTick:N} seconds for {((_worldTicksPerLoop * _loops + 1) * TickController.WorldTick):N} seconds:";
+            var description = $"Applies every {_worldTicksPerLoop * TickController.WorldTick:N} seconds for {((_worldTicksPerLoop * _loops + 1) * TickController.WorldTick):N} seconds({_loops + 1}):";
             var traits = _applyOnLoop.GetTraitDescriptions();
             if (traits.Length > 0)
             {
                 foreach (var trait in traits)
                 {
-                    description = string.IsNullOrEmpty(description) ? trait : $"{description}{Environment.NewLine}{trait}";
+                    description = $"{description}{Environment.NewLine} > {trait}";
                 }
             }
 

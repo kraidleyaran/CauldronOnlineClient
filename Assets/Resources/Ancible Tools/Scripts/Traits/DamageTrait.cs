@@ -52,9 +52,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
 
             }
+        }
 
-
-
+        public override string GetDescription()
+        {
+            return $"{_amount} {_type} Damage";
         }
     }
 }

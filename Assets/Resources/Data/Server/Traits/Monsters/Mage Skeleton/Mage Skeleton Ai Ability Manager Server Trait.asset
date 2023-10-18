@@ -15,7 +15,7 @@ MonoBehaviour:
   MaxStack: 1
   _abilities:
   - Ability: {fileID: 11400000, guid: 9ccfa025ded2b974292d2fc63618f3f7, type: 2}
-    Range: 8
+    Range: 20
     Priority: 0
-    Sight: 1
+    Sight: 2
     ApplyAfterCastOnServer: []

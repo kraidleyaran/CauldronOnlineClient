@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49f3de3c87f90242a94a7d9ca1ee481, type: 3}
+  m_Name: Recall Scroll World Ability
+  m_EditorClassIdentifier: 
+  DisplayName: Recall
+  Description: 
+  RequiredResources: []
+  Icon: {fileID: 0}
+  AbilitySteps:
+  - Frames: 8
+    State: 0
+    ApplyToOwner: []
+    ApplyToAttack: []
+  - Frames: 8
+    State: 1
+    ApplyToOwner: []
+    ApplyToAttack: []
+  - Frames: 8
+    State: 2
+    ApplyToOwner: []
+    ApplyToAttack: []
+  - Frames: 8
+    State: 3
+    ApplyToOwner: []
+    ApplyToAttack: []
+  WeaponSprite: {fileID: 11400000, guid: 031c96feae2f2d74cabb8d3e9b9611fa, type: 2}
+  AttackSetup: {fileID: 11400000, guid: 75a2c80c94d68d54ba6f7450e5df22c1, type: 2}
+  Offset: {x: 0, y: 0}
+  Cooldown: 0
+  ManaCost: 0
+  ApplyAtEndofAbility:
+  - {fileID: 11400000, guid: b2d84c828f7d2944bba9ca42e72949a9, type: 2}

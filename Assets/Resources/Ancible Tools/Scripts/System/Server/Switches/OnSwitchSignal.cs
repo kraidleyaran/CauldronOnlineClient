@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits;
-using CauldronOnlineCommon.Data;
+using CauldronOnlineCommon.Data.Switches;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Switches
 {
@@ -11,7 +11,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Switches
         public SwitchSignal Switch;
         public int RequiredSignal;
         public ServerTrait[] ApplyOnSignal;
-        
+        public TriggerEvent[] ApplyEventOnSignal = new TriggerEvent[0];
 
         public OnSwitchSignalData GetData()
         {
@@ -19,7 +19,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Switches
             {
                 Signal = RequiredSignal,
                 ApplyOnSignal = ApplyOnSignal.Where(t => t).Select(t => t.name).ToArray(),
-                Switch = Switch.name 
+                ApplyEventsOnSignal = ApplyEventOnSignal.Where(t => t).Select(t => t.name).ToArray(),
+                Switch = Switch.name
             };
         }
     }

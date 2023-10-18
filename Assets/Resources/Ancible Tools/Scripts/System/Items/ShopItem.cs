@@ -23,12 +23,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
             Cost = data.Cost;
         }
 
-        public ShopItemData GetData()
+        public virtual ShopItemData GetData()
         {
             return new ShopItemData {Item = Item.name, Stack = Stack, Cost = Cost};
         }
 
-        public void Destroy()
+        public virtual void Destroy()
         {
             Item = null;
             Stack = 0;

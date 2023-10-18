@@ -1549,28 +1549,28 @@ TextureImporter:
     second: Character Sprite Sheet_514
   - first:
       213: 8548093786289895429
-    second: Character Sprite Sheet_515
+    second: Green Witch Up 0
   - first:
       213: -3169336740284249806
-    second: Character Sprite Sheet_516
+    second: Green Witch Up 1
   - first:
       213: -3313469849592956964
-    second: Character Sprite Sheet_517
+    second: Green Witch Down 0
   - first:
       213: 4215608477998034685
-    second: Character Sprite Sheet_518
+    second: Green Witch Down 1
   - first:
       213: 6470363211125363178
-    second: Character Sprite Sheet_519
+    second: Green Witch Left 0
   - first:
       213: -4497839840625027250
-    second: Character Sprite Sheet_520
+    second: Green Witch Left 1
   - first:
       213: 2049975153523272267
-    second: Character Sprite Sheet_521
+    second: Green Witch Right 0
   - first:
       213: 8421302693648836346
-    second: Character Sprite Sheet_522
+    second: Green Witch Right 1
   - first:
       213: 271549676398365648
     second: Character Sprite Sheet_523
@@ -1723,28 +1723,28 @@ TextureImporter:
     second: Character Sprite Sheet_572
   - first:
       213: -8855158953731822806
-    second: Character Sprite Sheet_573
+    second: Red-Headed Witch Up 0
   - first:
       213: 5555846067924133575
-    second: Character Sprite Sheet_574
+    second: Red-Headed Witch Up 1
   - first:
       213: 6334021333035079185
-    second: Character Sprite Sheet_575
+    second: Red-Headed Witch Down 0
   - first:
       213: 3738117857040551208
-    second: Character Sprite Sheet_576
+    second: Red-Headed Witch Down 1
   - first:
       213: 2413722299635602354
-    second: Character Sprite Sheet_577
+    second: Red-Headed Witch Left 0
   - first:
       213: 3649394603213883918
-    second: Character Sprite Sheet_578
+    second: Red-Headed Witch Left 1
   - first:
       213: -6501579179878034472
-    second: Character Sprite Sheet_579
+    second: Red-Headed Witch Right 0
   - first:
       213: -8540344564158423406
-    second: Character Sprite Sheet_580
+    second: Red-Headed Witch Right 1
   - first:
       213: 809656137545560108
     second: Character Sprite Sheet_581
@@ -13067,7 +13067,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_515
+      name: Green Witch Up 0
       rect:
         serializedVersion: 2
         x: 64
@@ -13088,7 +13088,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_516
+      name: Green Witch Up 1
       rect:
         serializedVersion: 2
         x: 96
@@ -13109,7 +13109,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_517
+      name: Green Witch Down 0
       rect:
         serializedVersion: 2
         x: 128
@@ -13130,7 +13130,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_518
+      name: Green Witch Down 1
       rect:
         serializedVersion: 2
         x: 160
@@ -13151,7 +13151,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_519
+      name: Green Witch Left 0
       rect:
         serializedVersion: 2
         x: 192
@@ -13172,7 +13172,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_520
+      name: Green Witch Left 1
       rect:
         serializedVersion: 2
         x: 224
@@ -13193,7 +13193,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_521
+      name: Green Witch Right 0
       rect:
         serializedVersion: 2
         x: 256
@@ -13214,7 +13214,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_522
+      name: Green Witch Right 1
       rect:
         serializedVersion: 2
         x: 288
@@ -14285,7 +14285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_573
+      name: Red-Headed Witch Up 0
       rect:
         serializedVersion: 2
         x: 192
@@ -14306,7 +14306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_574
+      name: Red-Headed Witch Up 1
       rect:
         serializedVersion: 2
         x: 224
@@ -14327,7 +14327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_575
+      name: Red-Headed Witch Down 0
       rect:
         serializedVersion: 2
         x: 256
@@ -14348,7 +14348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_576
+      name: Red-Headed Witch Down 1
       rect:
         serializedVersion: 2
         x: 288
@@ -14369,7 +14369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_577
+      name: Red-Headed Witch Left 0
       rect:
         serializedVersion: 2
         x: 320
@@ -14390,7 +14390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_578
+      name: Red-Headed Witch Left 1
       rect:
         serializedVersion: 2
         x: 352
@@ -14411,7 +14411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_579
+      name: Red-Headed Witch Right 0
       rect:
         serializedVersion: 2
         x: 384
@@ -14432,7 +14432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Sprite Sheet_580
+      name: Red-Headed Witch Right 1
       rect:
         serializedVersion: 2
         x: 416

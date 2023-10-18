@@ -11,6 +11,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
         public ArmorSlot Slot;
         public Vector2Int Position;
         [SerializeField] private Image _itemImage;
+        [SerializeField] private Image _frameImage;
         [SerializeField] private Image _unequippedImage;
         [SerializeField] private RectTransform _cursorPosition;
 
@@ -24,6 +25,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
             var itemEquipped = item != null;
             _itemImage.sprite = itemEquipped ? Item.Item.Sprite.Sprite : null;
             _itemImage.gameObject.SetActive(itemEquipped);
+            _frameImage.color = itemEquipped ? ItemFactory.GetQualityColor(Item.Item) : Color.white;
             _unequippedImage.gameObject.SetActive(!itemEquipped);
         }
 
@@ -40,7 +42,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
             {
                 if (Item != null)
                 {
-                    UiHoverInfoManager.SetHoverInfo(gameObject, Item.Item.DisplayName, Item.Item.GetDescription(), Item.Item.Sprite.Sprite, transform.position.ToVector2());
+                    UiHoverInfoManager.SetHoverInfo(gameObject, Item.Item.GetDisplayName(), Item.Item.GetDescription(), Item.Item.Sprite.Sprite, transform.position.ToVector2());
                 }
                 else
                 {

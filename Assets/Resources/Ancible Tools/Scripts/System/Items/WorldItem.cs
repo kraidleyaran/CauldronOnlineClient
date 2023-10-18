@@ -9,6 +9,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
         public virtual ItemType Type => ItemType.General;
         public string DisplayName;
         public SpriteTrait Sprite;
+        public ItemQuality Quality = ItemQuality.Normal;
         [TextArea(3, 5)] public string Description;
         public int MaxStack = 1;
         public int SellValue = 0;
@@ -16,6 +17,28 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
         public virtual string GetDescription()
         {
             return Description;
+        }
+
+        public string GetName()
+        {
+            switch (Quality)
+            {
+                case ItemQuality.Normal:
+                    return DisplayName;
+                default:
+                    return $"{Quality} {DisplayName}";
+            }
+        }
+
+        public string GetDisplayName()
+        {
+            switch (Quality)
+            {
+                case ItemQuality.Normal:
+                    return DisplayName;
+                default:
+                    return $"{StaticMethods.ApplyColorToText($"{Quality} {DisplayName}", ItemFactory.GetQualityColor(this))}";
+            }
         }
     }
 }

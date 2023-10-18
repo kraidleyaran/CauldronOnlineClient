@@ -171,6 +171,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             return uses;
         }
 
+        public string GetDescription()
+        {
+            return Ability.GetDescription();
+        }
+
         public void Clear()
         {
             Ability = null;

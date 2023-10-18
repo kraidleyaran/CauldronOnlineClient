@@ -15,6 +15,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
         private bool _hovered = false;
 
         [SerializeField] private Image _iconImage;
+        [SerializeField] private Image _frameImage;
         [SerializeField] private RectTransform _cursorPosition;
         [SerializeField] private Text _availableUsesText;
 
@@ -35,6 +36,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                 _availableUsesText.text = string.Empty;
             }
             _iconImage.sprite = Slot.EquippedItem ? Slot.EquippedItem.Sprite.Sprite : Slot.Ability.Icon;
+            _frameImage.color = Slot.EquippedItem ? ItemFactory.GetQualityColor(slot.EquippedItem) : Color.white;
         }
 
         public void SetCursor(GameObject cursor)
@@ -48,7 +50,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
         {
             if (!_hovered && hovered)
             {
-                var title = Slot.EquippedItem ? Slot.EquippedItem.DisplayName : Slot.Ability.DisplayName;
+                var title = Slot.EquippedItem ? Slot.EquippedItem.GetDisplayName() : Slot.Ability.DisplayName;
                 UiHoverInfoManager.SetHoverInfo(gameObject, title, Slot.Ability.GetDescription(), Slot.Icon, transform.position.ToVector2());
             }
             else if (_hovered && !hovered)

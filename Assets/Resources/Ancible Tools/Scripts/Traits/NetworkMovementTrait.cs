@@ -22,8 +22,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private MovementEvent _currentEvent = null;
         private bool _knockback = false;
 
-        private float _currentEventProgress = 0f;
-
         private UnitState _unitState = UnitState.Active;
 
         public override void SetupController(TraitController controller)
@@ -120,11 +118,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     if (distance > moveSpeed)
                     {
                         _rigidBody.position = newPos;
-                        _currentEventProgress += Time.fixedDeltaTime;
                     }
                     else
                     {
-                        _currentEventProgress = 0f;
                         _rigidBody.position = moveToPosition;
                         _currentEvent = null;
                     }

@@ -152,21 +152,24 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                     position.y++;
                 }
 
-                if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
+                if (_active)
                 {
-                    setCursorController.SetCursor(_cursor);
-                    setCursorController.SetHover(_hover);
-                }
-                else
-                {
-                    var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
-                    if (closest.Value)
+                    if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
                     {
-                        _cursorPosition = closest.Key;
-                        closest.Value.SetCursor(_cursor);
-                        closest.Value.SetHover(_hover);
+                        setCursorController.SetCursor(_cursor);
+                        setCursorController.SetHover(_hover);
                     }
+                    else
+                    {
+                        var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
+                        if (closest.Value)
+                        {
+                            _cursorPosition = closest.Key;
+                            closest.Value.SetCursor(_cursor);
+                            closest.Value.SetHover(_hover);
+                        }
 
+                    }
                 }
             }
             else
@@ -217,6 +220,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
         {
             if (_active && !_sellWindow)
             {
+                if (!msg.Previous.Info && msg.Current.Info)
+                {
+                    _hover = !_hover;
+                    if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                    {
+                        selected.SetHover(_hover);
+                    }
+                }
+
                 var buttonPushed = false;
                 if (!msg.Previous.Green && msg.Current.Green)
                 {
@@ -242,6 +254,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                                     addGoldMsg.Amount = controller.ShopItem.Cost;
                                     gameObject.SendMessageTo(addGoldMsg, ObjectManager.Player);
                                     MessageFactory.CacheMessage(addGoldMsg);
+
+                                    gameObject.SendMessage(PlayerInventoryUpdatedMessage.INSTANCE);
                                 }
 
                                 buttonPushed = true;
@@ -267,20 +281,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                                     MessageFactory.CacheMessage(addItemMsg);
                                     buttonPushed = true;
                                 }
-
-                                
                                 break;
                         }
                     }
 
-                }
-                else if (!msg.Previous.Info && msg.Current.Info)
-                {
-                    _hover = !_hover;
-                    if (_controllers.TryGetValue(_cursorPosition, out var selected))
-                    {
-                        selected.SetHover(_hover);
-                    }
                 }
 
                 if (!buttonPushed)
@@ -333,7 +337,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                                     if (direction.x > 0)
                                     {
                                         var currentRow = _rows[_cursorPosition.y + _dataRowPosition];
-                                        if (_cursorPosition.y >= currentRow.Items.Count - 1)
+                                        if (_cursorPosition.x >= currentRow.Items.Count - 1)
                                         {
                                             UiShopWindow.SetActiveShop(ShopInventoryType.Shop, _cursorPosition.y);
                                         }

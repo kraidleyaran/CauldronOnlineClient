@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75adba6bd2377344c9dfcc54bd54ab9d, type: 3}
+  m_Name: Red Skeleton Mage Cardinal Fire Projectile Shoot Projectile Trait - Right
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _spriteTrait: {fileID: 11400000, guid: 42e12539cc20f2841954b798d573a579, type: 2}
+  _additionalTraits:
+  - {fileID: 11400000, guid: 9f4873314c9689a4bbf606400235ff9f, type: 2}
+  - {fileID: 11400000, guid: efc5b9c0d060aa34eaaffe99516b9008, type: 2}
+  - {fileID: 11400000, guid: 3c358554e628baa468ebd5f1110f7413, type: 2}
+  - {fileID: 11400000, guid: 5e3207339d328c448a9627e8e570056b, type: 2}
+  _moveSpeed: 3
+  _offset: 4
+  _baseRotation: 0
+  _rotateProjectile: 0
+  _applyOnWall:
+  - {fileID: 11400000, guid: eb8dd16e21041314e81835d82b1ec919, type: 2}
+  _direction: {x: 1, y: 0}

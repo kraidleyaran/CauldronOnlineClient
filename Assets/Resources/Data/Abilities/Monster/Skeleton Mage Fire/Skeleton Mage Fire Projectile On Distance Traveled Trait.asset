@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Skeleton Mage Fire Projectile On Distance Traveled Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _distance: 100
+  _distance: 80
   _applyOnDistanceTraveled:
-  - {fileID: 11400000, guid: fa7b972c1203f1f48814779cadf75a7d, type: 2}
   - {fileID: 11400000, guid: eb8dd16e21041314e81835d82b1ec919, type: 2}

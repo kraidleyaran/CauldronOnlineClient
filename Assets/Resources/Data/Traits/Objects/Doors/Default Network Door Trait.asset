@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxStack: 1
   _hitbox: {fileID: 11400000, guid: 3d6bf61a9ec96f7468a75358d9adba16, type: 2}
+  _trappedHitbox: {fileID: 11400000, guid: d8588cfe70585904293bbaf39c6f987a, type: 2}

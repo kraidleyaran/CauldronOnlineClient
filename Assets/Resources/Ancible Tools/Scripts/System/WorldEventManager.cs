@@ -173,8 +173,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                     var worldAbility = AbilityFactory.GetAbilityByName(ability.Ability);
                                     if (worldAbility)
                                     {
-                                        _setWorldPositionMsg.Position = ability.Position;
-                                        gameObject.SendMessageTo(_setWorldPositionMsg, obj);
+                                        //_setWorldPositionMsg.Position = ability.Position;
+                                        //gameObject.SendMessageTo(_setWorldPositionMsg, obj);
 
                                         _setFacingDirectionMsg.Direction = ability.Direction.ToVector();
                                         gameObject.SendMessageTo(_setFacingDirectionMsg, obj);
@@ -191,6 +191,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
                                         _useAbilitMsg.Ability = worldAbility;
                                         _useAbilitMsg.Ids = ability.Ids;
+                                        _useAbilitMsg.Position = ability.Position;
                                         gameObject.SendMessageTo(_useAbilitMsg, obj);
                                     }
                                     
@@ -306,6 +307,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 if (obj)
                                 {
                                     _setSignalMsg.Signal = signalEvent.Signal;
+                                    _setSignalMsg.Locked = signalEvent.Locked;
                                     obj.SendMessageTo(_setSignalMsg, obj);
                                 }
                             }
@@ -359,6 +361,29 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                     setWorldPositionMsg.Position = teleport.Position;
                                     obj.SendMessageTo(setWorldPositionMsg, obj);
                                     MessageFactory.CacheMessage(setWorldPositionMsg);
+                                }
+                            }
+                            break;
+                        case FullHealEvent.ID:
+                            if (worldEvent is FullHealEvent fullHeal)
+                            {
+                                var obj = ObjectManager.GetObjectById(fullHeal.TargetId);
+                                if (obj)
+                                {
+                                    obj.SendMessageTo(FullHealMessage.INSTANCE, obj);
+                                }
+                            }
+                            break;
+                        case ObjectStateEvent.ID:
+                            if (worldEvent is ObjectStateEvent objectState)
+                            {
+                                var obj = ObjectManager.GetObjectById(objectState.TargetId);
+                                if (obj)
+                                {
+                                    var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
+                                    setUnitStateMsg.State = objectState.Active ? UnitState.Active : UnitState.Disabled;
+                                    obj.SendMessageTo(setUnitStateMsg, obj);
+                                    MessageFactory.CacheMessage(setUnitStateMsg);
                                 }
                             }
                             break;

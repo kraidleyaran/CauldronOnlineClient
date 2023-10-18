@@ -46,16 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _template: {fileID: 11400000, guid: 7028244d62aa8624fa3cc4b9ee41ff15, type: 2}
   _additionalTraits: []
+  _showAppearance: 1
   _spriteRenderer: {fileID: 3627388219156865439}
   _actionText: Read
   _dialogue:
   - This is a sign.
   _sprite: {fileID: 11400000, guid: a7844634ed1a52e4b85fa00ee24fad36, type: 2}
   _serverHitbox:
-    Size: {x: 16, y: 16}
-    Offset: {x: 0, y: 8}
-    ApplyOnServer: []
-    ApplyOnClient: []
+    Size: {x: 14, y: 6}
+    Offset: {x: 0, y: 3}
 --- !u!1 &3627388219156865433
 GameObject:
   m_ObjectHideFlags: 0

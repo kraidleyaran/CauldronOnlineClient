@@ -1,4 +1,5 @@
-﻿using Assets.Resources.Ancible_Tools.Scripts.System.Items;
+﻿using System.Linq;
+using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using CauldronOnlineCommon.Data.Items;
 using CauldronOnlineCommon.Data.Math;
@@ -15,6 +16,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         [SerializeField] private SpriteTrait _closedSprite;
         [SerializeField] private SpriteTrait _openSprite;
         [SerializeField] private ServerHitbox _hitbox;
+        [SerializeField] private ItemStack[] _applyToPlayers = new ItemStack[0];
+        [SerializeField] private TriggerEvent[] _applyTriggerEventOnChestOpen;
 
         [Header("Key Item Chest Internal References")]
         [SerializeField] private SpriteRenderer _itemRenderer;
@@ -27,7 +30,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 Item = new WorldItemStackData { Item = _keyItem.name, Stack = _stack},
                 ClosedSprite = _closedSprite.name,
                 OpenSprite = _openSprite.name,
-                Hitbox = _hitbox.GetData()
+                Hitbox = _hitbox.GetData(),
+                RewardToPlayers = _applyToPlayers.Where(i => i.Item).Select(i => i.GetWorldData()).ToArray(),
+                ApplyEventsOnOpen = _applyTriggerEventOnChestOpen.Where(t => t).Select(t => t.name).ToArray()
             });
             return data;
         }

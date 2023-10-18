@@ -1,4 +1,5 @@
-﻿using Assets.Resources.Ancible_Tools.Scripts.System.Items;
+﻿using System.Linq;
+using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using CauldronOnlineCommon.Data.Items;
 using CauldronOnlineCommon.Data.Traits;
@@ -14,6 +15,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
         [SerializeField] private SpriteTrait _closedSprite;
         [SerializeField] private SpriteTrait _openSprite;
         [SerializeField] private ServerHitbox _hitbox;
+        [SerializeField] private TriggerEvent[] _applyTriggerEventsOnOpen = new TriggerEvent[0];
 
         public override WorldTraitData GetData()
         {
@@ -24,7 +26,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 Item = new WorldItemStackData {Item = _item.name, Stack = _stack},
                 ClosedSprite = _closedSprite.name,
                 OpenSprite = _openSprite.name,
-                Hitbox = _hitbox.GetData()
+                Hitbox = _hitbox.GetData(),
+                ApplyTriggerEventsOnOpen = _applyTriggerEventsOnOpen.Where(t => t).Select(t => t.name).ToArray()
             };
         }
     }

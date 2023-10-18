@@ -19,7 +19,6 @@ MonoBehaviour:
   _applyToTargetOnEnter:
   - {fileID: 11400000, guid: 86c654862e4156e43a21c0e2fd988dc9, type: 2}
   - {fileID: 11400000, guid: 56b2f13d83f18254aa3db820e3db9b15, type: 2}
-  _applyToSelfOnEnter:
-  - {fileID: 11400000, guid: f0435fcee334e6247b474db460e04027, type: 2}
+  _applyToSelfOnEnter: []
   _applyToOwnerOnExit: []
   _applyToTargetOnExit: []

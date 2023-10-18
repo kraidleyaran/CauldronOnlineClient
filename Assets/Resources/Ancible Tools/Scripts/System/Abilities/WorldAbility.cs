@@ -20,6 +20,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
         public Vector2Int Offset;
         public int Cooldown = 0;
         public int ManaCost = 0;
+        public Trait[] ApplyAtEndofAbility = new Trait[0];
 
         public string GetDescription()
         {
@@ -90,6 +91,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Abilities
             }
 
             return count;
+        }
+
+        public int GetClientFrames()
+        {
+            var frames = 0;
+            foreach (var step in AbilitySteps)
+            {
+                frames += step.Frames;
+            }
+
+            return frames;
         }
 
         public BonusTag[] GetAllBonusTags()

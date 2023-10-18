@@ -171,7 +171,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private void FillLoadoutStack(FillLoadoutStackMessage msg)
         {
-            var available = _loadout.Values.Where(s => !s.IsEmpty && s.EquippedItem && s.EquippedItem == msg.Item && s.Stack < s.EquippedItem.MaxStack).OrderByDescending(s => s.Stack).ToArray();
+            var available = _loadout.Values.Where(s => !s.IsEmpty && s.EquippedItem && s.EquippedItem.UseStack && s.EquippedItem == msg.Item && s.Stack < s.EquippedItem.MaxStack).OrderByDescending(s => s.Stack).ToArray();
             var remainder = msg.Stack;
             if (available.Length > 0)
             {
@@ -196,6 +196,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 }
             }
             msg.DoAfter.Invoke(remainder);
+        }
+
+        private void SwapLoadoutSlots(SwapLoadoutSlotsMessage msg)
+        {
+            if (msg.SlotA != msg.SlotB && _loadout.TryGetValue(msg.SlotA, out var slotA) && _loadout.TryGetValue(msg.SlotB, out var slotB))
+            {
+                _loadout[msg.SlotA] = slotB;
+                _loadout[msg.SlotB] = slotA;
+                _controller.gameObject.SendMessage(PlayerLoadoutUpdatedMessage.INSTANCE);
+            }
         }
     }
 }

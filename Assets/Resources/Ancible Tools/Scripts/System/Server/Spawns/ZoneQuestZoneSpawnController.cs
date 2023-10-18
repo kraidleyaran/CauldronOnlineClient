@@ -16,11 +16,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
         [SerializeField] private TriggerEvent[] _triggerEventsOnComplete;
         [SerializeField] private bool _resetQuest = true;
         [SerializeField] private WorldIntRange _resetTicks = new WorldIntRange(1,1);
+        [SerializeField] private bool _usePov = true;
+        [SerializeField] private TriggerEvent _spawnEvent = null;
         
 
         public override ZoneSpawnData GetData(WorldVector2Int tile)
         {
             var data = base.GetData(tile);
+
             data.Spawn.AddParameter(new ZoneQuestParameter
             {
                 Name = name,
@@ -29,7 +32,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Spawns
                 ApplyOnComplete = _applyOnComplete.Where(t => t).Select(t => t.name).ToArray(),
                 TriggerEventOnComplete = _triggerEventsOnComplete.Where(t => t).Select(t => t.name).ToArray(),
                 ResetQuest = _resetQuest,
-                ResetTicks = _resetTicks
+                ResetTicks = _resetTicks,
+                UsePov = _usePov,
+                SpawnEvent = _spawnEvent ? _spawnEvent.name : string.Empty
             });
             return data;
         }

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d81baaada3f848b1eb6ad24e5a878, type: 3}
+  m_Name: Red Mage Skeleton Extended Server Unit Template
+  m_EditorClassIdentifier: 
+  DisplayName: Fire Mage
+  Sprite: {fileID: 11400000, guid: fa4bf296726253a4b98cd5c85d3cfdf8, type: 2}
+  Traits:
+  - {fileID: 11400000, guid: f0062ccf4e7c5194db1aaa6b289d1086, type: 2}
+  - {fileID: 11400000, guid: 0490208decf87e94789b2f9ee4ead4b8, type: 2}
+  - {fileID: 11400000, guid: 0463c0ecec93bf643895ac1b6f109481, type: 2}
+  - {fileID: 11400000, guid: e57545501ca45e3498f29fbb09e5d30e, type: 2}
+  - {fileID: 11400000, guid: b580eb36e0d084547905729715e1f6eb, type: 2}
+  - {fileID: 11400000, guid: 3dbe514fc52ea2a4ea497f0fbf0a4bfe, type: 2}
+  - {fileID: 11400000, guid: 7e6b9d71b42210e4994c0610815336a7, type: 2}
+  - {fileID: 11400000, guid: 4bad42b000983ff4a846826c950e1ec3, type: 2}
+  - {fileID: 11400000, guid: 7079795143b30794aa79a5290e6bdc30, type: 2}
+  ShowOnClient: 1
+  IsMonster: 1
+  ShowName: 0
+  ShowAppearance: 1
+  _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}

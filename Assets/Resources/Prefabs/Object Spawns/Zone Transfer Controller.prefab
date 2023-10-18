@@ -127,8 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b86392b627f4da4ea461db7428a55a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitbox: {fileID: 11400000, guid: 0a6448db02a76694fb68d15f04be26f1, type: 2}
-  _zone: {fileID: 0}
+  _template: {fileID: 11400000, guid: 73045afc38b9ab34588369a5cb870ec9, type: 2}
+  _additionalTraits: []
+  _showAppearance: 0
+  _spriteRenderer: {fileID: 0}
+  Zone: {fileID: 0}
   Position: {x: 0, y: 0}
 --- !u!50 &2309018350995475019
 Rigidbody2D:

@@ -26,6 +26,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.HoverInfo
             if (!string.IsNullOrEmpty(description))
             {
                 var height = _descriptionText.GetHeightOfText(description.RemoveTags());
+                _descriptionText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
                 size += height;
             }
 

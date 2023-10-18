@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nameText: {fileID: 1532191647511119992}
-  _offset: {x: 0, y: 80}
+  _offset: {x: 0, y: 100}
 --- !u!114 &1532191647511119992
 MonoBehaviour:
   m_ObjectHideFlags: 0

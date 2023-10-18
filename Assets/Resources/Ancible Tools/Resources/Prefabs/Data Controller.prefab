@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterAggro: {fileID: 11400000, guid: bf628d3c6398c3648bc448f2c9792b28, type: 2}
+  _monsterHurt: {fileID: 11400000, guid: ed9dbc738d098c1468182af047d35fc0, type: 2}
   _playerAggro: {fileID: 11400000, guid: cfd5c92083a061a4a9fae15d2a0431db, type: 2}
   _casting: {fileID: 11400000, guid: 372d42a0e5d65714dbbb5e5b3f6907da, type: 2}
   _terrain: {fileID: 11400000, guid: 96d52b04e20da524b9410ee4e0aacf36, type: 2}
@@ -185,6 +186,7 @@ MonoBehaviour:
   _playerDamageTaken: {r: 0.85490197, g: 0.39607844, b: 0.36862746, a: 1}
   _monsterDamageTaken: {r: 1, g: 1, b: 1, a: 1}
   _manaRestored: {r: 0.039215688, g: 0.5372549, b: 1, a: 1}
+  _healTaken: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &4046400618405463994
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +364,8 @@ MonoBehaviour:
   _worldPositionTrait: {fileID: 11400000, guid: 2f7221e992509c346889282dc69a849f, type: 2}
   _nameTagTrait: {fileID: 11400000, guid: b65d1ae8228562e4dae8beac4ea5225c, type: 2}
   _appearanceVisualFxTrait: {fileID: 11400000, guid: cce66b941a1325643879c87b56b82923, type: 2}
+  _zoneTransitionTrait: {fileID: 11400000, guid: 7d34c0c03148d4c458feb50c445ffec3, type: 2}
+  _networkCrafterTrait: {fileID: 11400000, guid: d79ee4c2dce5e2e4a809b43dacb6c164, type: 2}
 --- !u!1 &5636035961498998251
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +466,8 @@ MonoBehaviour:
   - Item: {fileID: 11400000, guid: 5a978425e52e8b3438aaf89754e00790, type: 2}
     Stack: 1
   - Item: {fileID: 11400000, guid: 140e2abe91ec926479e719a3c3799871, type: 2}
+    Stack: 10
+  - Item: {fileID: 11400000, guid: 08cec3c22de66e644901e60077cdadda, type: 2}
     Stack: 5
   _startingAbilities: []
   _networkObjectTemplate: {fileID: 11400000, guid: 47154eaa7de048e43afc6b1958c9ddba, type: 2}
@@ -702,6 +708,12 @@ MonoBehaviour:
   _internalItemPath: Data/Items
   _itemLootTemplate: {fileID: 4081817834852410326, guid: f211510a7012f9c479f71c8635afbcd9, type: 3}
   _keyItemLootTemplate: {fileID: 4175208551176256474, guid: 56eb25413fb1ca148840c2c1627506a1, type: 3}
+  _normal: {r: 1, g: 1, b: 1, a: 1}
+  _polished: {r: 0.1254902, g: 0.70980394, b: 0.38431373, a: 1}
+  _forged: {r: 0.007843138, g: 0.2901961, b: 0.7921569, a: 1}
+  _rare: {r: 0.41568628, g: 0.19215687, b: 0.7921569, a: 1}
+  _ornate: {r: 0.8117647, g: 0.23529412, b: 0.44313726, a: 1}
+  _legendary: {r: 1, g: 0.73333335, b: 0.19215687, a: 1}
 --- !u!1 &8336418316504823673
 GameObject:
   m_ObjectHideFlags: 0

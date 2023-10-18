@@ -9,6 +9,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
     {
         [SerializeField] private TriggerEvent[] _triggerEvents;
         [SerializeField] private ServerTrait[] _applyOnEvent;
+        [SerializeField] private bool _requireAllEvents = false;
 
         public override WorldTraitData GetData()
         {
@@ -17,7 +18,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 Name = name,
                 MaxStack = MaxStack,
                 ApplyOnTriggerEvent = _applyOnEvent.Where(t => t).Select(t => t.name).ToArray(),
-                TriggerEvents = _triggerEvents.Where(t => t).Select(t => t.name).ToArray()
+                TriggerEvents = _triggerEvents.Where(t => t).Select(t => t.name).ToArray(),
+                RequireAllEvents = _requireAllEvents
             };
         }
     }

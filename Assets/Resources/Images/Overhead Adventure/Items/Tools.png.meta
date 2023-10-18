@@ -37,7 +37,7 @@ TextureImporter:
     second: Tools_10
   - first:
       213: -7669099814004915387
-    second: Tools_11
+    second: Wood Boomerang
   - first:
       213: -8188083361976690054
     second: Tools_12
@@ -518,7 +518,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tools_11
+      name: Wood Boomerang
       rect:
         serializedVersion: 2
         x: 0
