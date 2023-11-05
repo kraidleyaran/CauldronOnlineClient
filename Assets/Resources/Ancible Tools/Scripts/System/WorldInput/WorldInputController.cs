@@ -1,30 +1,31 @@
 ﻿using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.DualShock;
+using UnityEngine.InputSystem.XInput;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
 {
     public class WorldInputController : MonoBehaviour
     {
+        public static WorldKeyboardInputLayout KeyboardLayout => _instance._defaultKeyboardLayout;
+        public static WorldInputLayoutType CurrentInput => _instance._currentInput;
+
         private static WorldInputController _instance = null;
 
-        [SerializeField] private Key _up = Key.UpArrow;
-        [SerializeField] private Key _down = Key.DownArrow;
-        [SerializeField] private Key _left = Key.LeftArrow;
-        [SerializeField] private Key _right = Key.RightArrow;
-        [SerializeField] private Key[] _loadout = {Key.Z, Key.X, Key.C, Key.V, Key.A, Key.S, Key.D, Key.F};
-        [SerializeField] private Key _menuLeft = Key.Q;
-        [SerializeField] private Key _menuRight = Key.E;
-        [SerializeField] private Key _playerMenu = Key.P;
-        [SerializeField] private Key _leftTrigger = Key.LeftShift;
-        [SerializeField] private Key _green = Key.Space;
-        [SerializeField] private Key _red = Key.C;
-        [SerializeField] private Key _blue = Key.Z;
-        [SerializeField] private Key _yellow = Key.X;
-        [SerializeField] private Key _info = Key.I;
-        [SerializeField] private Key _devWindow = Key.F8;
+        [SerializeField] private Key _devMenu = Key.F8;
+        [SerializeField] private WorldKeyboardInputLayout _defaultKeyboardLayout;
+        [SerializeField] private WorldGamepadInputLayout _defaultGamepadLayout;
+        
+        [Header("Gamepad Button Sprites")]
+        [SerializeField] private WorldGamepadButtonLayout _xboxLayout;
+
 
         private WorldInputState _previous;
+        private WorldInputLayoutType _currentInput = WorldInputLayoutType.Keyboard;
+        private WorldGamepadType _gamepadType = WorldGamepadType.Generic;
+        private bool _gamePadActive = false;
+
 
         private UpdateInputStateMessage _updateInputStateMsg = new UpdateInputStateMessage();
 
@@ -36,42 +37,94 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
                 return;
             }
 
+            _gamePadActive = Gamepad.current != null;
+            if (_gamePadActive)
+            {
+                RefreshGamepadType();
+            }
+            InputSystem.onDeviceChange += InputSystemOnOnDeviceChange;
             _instance = this;
             SubscribeToMessages();
         }
 
-        private WorldInputState GetGamepadInput(WorldInputState currentState)
+        private void RefreshGamepadType()
         {
-            currentState.Up = currentState.Up || Gamepad.current.leftStick.up.isPressed;
-            currentState.Down = currentState.Down || Gamepad.current.leftStick.down.isPressed;
-            currentState.Left = currentState.Left || Gamepad.current.leftStick.left.isPressed;
-            currentState.Right = currentState.Right || Gamepad.current.leftStick.right.isPressed;
-            currentState.LeftShoulder = currentState.LeftShoulder || Gamepad.current.leftShoulder.isPressed;
-            currentState.RightShoulder = currentState.RightShoulder || Gamepad.current.rightShoulder.isPressed;
-            currentState.PlayerMenu = currentState.PlayerMenu || Gamepad.current.startButton.isPressed;
-            currentState.LeftTrigger = currentState.LeftTrigger || Gamepad.current.leftTrigger.isPressed;
-            currentState.Green = currentState.Green || Gamepad.current.aButton.isPressed;
-            currentState.Red = currentState.Red || Gamepad.current.bButton.isPressed;
-            currentState.Blue = currentState.Blue || Gamepad.current.xButton.isPressed;
-            currentState.Yellow = currentState.Yellow || Gamepad.current.yButton.isPressed;
-            currentState.Info = currentState.Info || Gamepad.current.selectButton.isPressed;
-
-            for (var i = 0; i < currentState.Loadout.Length; i++)
+            if (Gamepad.current is DualShockGamepad)
             {
-                currentState.Loadout[i] = currentState.Loadout[i] || GetGamepadStateForLoadoutSot(i, Gamepad.current);
+                _gamepadType = WorldGamepadType.Playstation;
             }
-            return currentState;
+            else if (Gamepad.current is XInputController)
+            {
+                _gamepadType = WorldGamepadType.Xbox;
+            }
+            //else if (Gamepad.current is SwitchProControllerHID)
+            //{
+            //    _gamepadType = WorldGamepadType.Switch;
+            //}
+            else
+            {
+                _gamepadType = WorldGamepadType.Generic;
+            }
         }
 
-        private bool[] GetLoadoutInputState()
+        private void InputSystemOnOnDeviceChange(InputDevice arg1, InputDeviceChange arg2)
         {
-            var returnValue = new bool[_loadout.Length];
-            for (var i = 0; i < returnValue.Length; i++)
+            switch (arg2)
             {
-                returnValue[i] = Keyboard.current[_loadout[i]].isPressed;
+                case InputDeviceChange.Added:
+                    _gamePadActive = Gamepad.current != null;
+                    if (_gamePadActive)
+                    {
+                        RefreshGamepadType();
+                    }
+                    break;
+                case InputDeviceChange.Removed:
+                    break;
+                case InputDeviceChange.Disconnected:
+                    _gamePadActive = Gamepad.current != null;
+                    if (_gamePadActive)
+                    {
+                        RefreshGamepadType();
+                    }
+                    break;
+                case InputDeviceChange.Reconnected:
+                    break;
+                case InputDeviceChange.Enabled:
+                    break;
+                case InputDeviceChange.Disabled:
+                    break;
+                case InputDeviceChange.UsageChanged:
+                    break;
+                case InputDeviceChange.ConfigurationChanged:
+                    break;
+                case InputDeviceChange.SoftReset:
+                    break;
+                case InputDeviceChange.HardReset:
+                    break;
             }
+        }
 
-            return returnValue;
+        private WorldInputState GetGamepadInput(WorldInputState currentState)
+        {
+            //currentState.Up = currentState.Up || Gamepad.current.leftStick.up.isPressed;
+            //currentState.Down = currentState.Down || Gamepad.current.leftStick.down.isPressed;
+            //currentState.Left = currentState.Left || Gamepad.current.leftStick.left.isPressed;
+            //currentState.Right = currentState.Right || Gamepad.current.leftStick.right.isPressed;
+            //currentState.LeftShoulder = currentState.LeftShoulder || Gamepad.current.leftShoulder.isPressed;
+            //currentState.RightShoulder = currentState.RightShoulder || Gamepad.current.rightShoulder.isPressed;
+            //currentState.PlayerMenu = currentState.PlayerMenu || Gamepad.current.startButton.isPressed;
+            //currentState.LeftTrigger = currentState.LeftTrigger || Gamepad.current.leftTrigger.isPressed;
+            //currentState.Green = currentState.Green || Gamepad.current.aButton.isPressed;
+            //currentState.Red = currentState.Red || Gamepad.current.bButton.isPressed;
+            //currentState.Blue = currentState.Blue || Gamepad.current.xButton.isPressed;
+            //currentState.Yellow = currentState.Yellow || Gamepad.current.yButton.isPressed;
+            //currentState.Info = currentState.Info || Gamepad.current.selectButton.isPressed;
+
+            //for (var i = 0; i < currentState.Loadout.Length; i++)
+            //{
+            //    currentState.Loadout[i] = currentState.Loadout[i] || GetGamepadStateForLoadoutSot(i, Gamepad.current);
+            //}
+            return _defaultGamepadLayout.GetInputState(currentState);
         }
 
         private bool GetGamepadStateForLoadoutSot(int slot, Gamepad gamepad)
@@ -107,33 +160,45 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
 
         private void UpdateTick(UpdateTickMessage msg)
         {
-            var current = new WorldInputState
+            if (_defaultKeyboardLayout.GetInputState(new WorldInputState{Loadout = new bool[8]}).AnyInput && _currentInput == WorldInputLayoutType.Gamepad)
             {
-                Up = Keyboard.current[_up].isPressed,
-                Down = Keyboard.current[_down].isPressed,
-                Left = Keyboard.current[_left].isPressed,
-                Right = Keyboard.current[_right].isPressed,
-                Loadout =  GetLoadoutInputState(),
-                LeftShoulder = Keyboard.current[_menuLeft].isPressed,
-                RightShoulder = Keyboard.current[_menuRight].isPressed,
-                PlayerMenu =  Keyboard.current[_playerMenu].isPressed,
-                LeftTrigger = Keyboard.current[_leftTrigger].isPressed,
-                Green = Keyboard.current[_green].isPressed,
-                Red = Keyboard.current[_red].isPressed,
-                Blue = Keyboard.current[_blue].isPressed,
-                Yellow = Keyboard.current[_yellow].isPressed,
-                Info = Keyboard.current[_info].isPressed,
-                DevWindow = Keyboard.current[_devWindow].isPressed
-            };
-
+                _currentInput = WorldInputLayoutType.Keyboard;
+                gameObject.SendMessage(InputTypeUpdatedMessage.INSTANCE);
+            }
+            else if (Gamepad.current != null && _defaultGamepadLayout.GetInputState(new WorldInputState{Loadout = new bool[8]}).AnyInput && _currentInput == WorldInputLayoutType.Keyboard)
+            {
+                //Debug.Log("Gamepad input updated");
+                _currentInput = WorldInputLayoutType.Gamepad;
+                gameObject.SendMessage(InputTypeUpdatedMessage.INSTANCE);
+            }
+            
+            var state = new WorldInputState {Loadout = new bool[8]};
+            var current = _defaultKeyboardLayout.GetInputState(state);
+            if (Debug.isDebugBuild)
+            {
+                current.DevWindow = Keyboard.current[_devMenu].isPressed;
+            }
             if (Gamepad.current != null)
             {
                 current = GetGamepadInput(current);
             }
+
             _updateInputStateMsg.Current = current;
             _updateInputStateMsg.Previous = _previous;
             gameObject.SendMessage(_updateInputStateMsg);
             _previous = current;
         }
+
+        public static Sprite GetGamepadButtonSpriteByGamepadInputType(WorldGamepadInputType type)
+        {
+            return _instance._xboxLayout.GetSpriteByButtonType(type);
+        }
+
+        public static Sprite GetGamepadButtonSpriteByInputType(WorldInputType type, int index = 0)
+        {
+            return GetGamepadButtonSpriteByGamepadInputType(_instance._defaultGamepadLayout.GetGamepadInputFromWorldInput(type, index));
+        }
+
+
     }
 }

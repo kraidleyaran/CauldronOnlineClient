@@ -59,11 +59,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
                 _objectLookup.Remove(msg.Projectile);
             }
-            var objId = ObjectManager.GetId(msg.Projectile);
-            if (!string.IsNullOrEmpty(objId))
-            {
-                ClientController.SendToServer(new ClientDestroyObjectMessage{TargetId = objId, Tick = TickController.ServerTick});
-            }
+            ObjectManager.DestroyNetworkObject(msg.Projectile);
+            //if (msg.Destroy)
+            //{
+            //    var objId = ObjectManager.GetId(msg.Projectile);
+            //    if (!string.IsNullOrEmpty(objId))
+            //    {
+            //        ClientController.SendToServer(new ClientDestroyObjectMessage { TargetId = objId, Tick = TickController.ServerTick });
+            //    }
+            //}
+
         }
 
         private void ProjectileAvailbleCheck(ProjectileAvailableCheckMessage msg)

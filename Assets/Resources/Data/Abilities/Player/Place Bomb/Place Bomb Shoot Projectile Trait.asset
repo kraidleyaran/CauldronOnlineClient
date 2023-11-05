@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75adba6bd2377344c9dfcc54bd54ab9d, type: 3}
+  m_Name: Place Bomb Shoot Projectile Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _spriteTrait: {fileID: 11400000, guid: 91623abd13fb26640ba3a3776255bed2, type: 2}
+  _additionalTraits:
+  - {fileID: 11400000, guid: 64c0272eadc152e419bc3a9fe9c61ed6, type: 2}
+  _moveSpeed: 0
+  _offset: 12
+  _baseRotation: 0
+  _rotateProjectile: 0
+  _applyOnWall: []
+  _stopOnWall: 1
+  _direction: {x: 0, y: 0}
+  _registerProjectile: 0
+  _tags: []

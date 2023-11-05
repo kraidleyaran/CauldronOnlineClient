@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
@@ -21,6 +22,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldInput
         public bool Info;
         public bool DevWindow;
 
+        public bool AnyInput => Up || Down || Left || Right || Loadout.Contains(true) || LeftShoulder ||
+                                RightShoulder || PlayerMenu || LeftTrigger || Green || Yellow || Red || Blue || Info;
 
     }
 }

@@ -16,3 +16,8 @@ MonoBehaviour:
   Sprite: {fileID: 0}
   Traits:
   - {fileID: 11400000, guid: 113064554efe2454bb3b9a1a6e6eafad, type: 2}
+  - {fileID: 11400000, guid: 6ad4fe2552b41d04d8cfd9cb0a868133, type: 2}
+  ShowOnClient: 0
+  IsMonster: 0
+  ShowName: 0
+  ShowAppearance: 1

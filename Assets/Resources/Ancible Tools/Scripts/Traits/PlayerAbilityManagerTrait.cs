@@ -16,6 +16,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
     [CreateAssetMenu(fileName = "Player Ability Manager Trait", menuName = "Ancible Tools/Traits/Player/Player Ability Manager")]
     public class PlayerAbilityManagerTrait : Trait
     {
+        [SerializeField] private WorldAbility[] _startingAbilities = new WorldAbility[0];
+
         private WorldAbilityController _abilityController = null;
 
         private UnitState _unitState = UnitState.Active;
@@ -28,6 +30,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         public override void SetupController(TraitController controller)
         {
             base.SetupController(controller);
+            foreach (var ability in _startingAbilities)
+            {
+                if (!_abilities.Contains(ability))
+                {
+                    _abilities.Add(ability);
+                }
+            }
             SubscribeToMessages();
         }
 

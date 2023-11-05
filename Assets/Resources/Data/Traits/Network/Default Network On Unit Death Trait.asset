@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxStack: 1
   _applyOnDeath:
-  - {fileID: 11400000, guid: 9537ccf5ce6ad8c4fb71302bd3587ca4, type: 2}
   - {fileID: 11400000, guid: 678f675c4d3e5ea438b6aeb46fbab1ac, type: 2}
-  _deathTicks: 20
+  _applyOnTimerComplete:
+  - {fileID: 11400000, guid: 9537ccf5ce6ad8c4fb71302bd3587ca4, type: 2}
+  _deathTicks: 40

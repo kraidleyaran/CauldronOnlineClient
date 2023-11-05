@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Default Player Sprite Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
+  IgnoreWorldPosition: 0
   _sprite: {fileID: -7451622218086624989, guid: 757f915fcfb159f4cbb6bd55185cb486, type: 3}
   _runtimeAnimator: {fileID: 9100000, guid: 679fbcf1528b7d546b488982a7801365, type: 2}
   _scaling: {x: 31.25, y: 31.25}
@@ -21,3 +22,5 @@ MonoBehaviour:
   _offset: {x: 0, y: 2.5}
   _colorMask: {r: 1, g: 1, b: 1, a: 1}
   _rotation: 0
+  _flipX: 0
+  _material: {fileID: 2100000, guid: cc9b8a1ea8fd26b46a2174b169064cee, type: 2}

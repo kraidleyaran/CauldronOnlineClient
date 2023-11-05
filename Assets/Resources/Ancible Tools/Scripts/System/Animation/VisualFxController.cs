@@ -30,6 +30,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Animation
             }
         }
 
+        public void SetSortingLayer(SpriteLayer layer)
+        {
+            _spriteRenderer.sortingLayerID = layer.Id;
+        }
+
+        public void SetSortingOrder(int order)
+        {
+            _spriteRenderer.sortingOrder = order;
+        }
+
+
         public void Destroy()
         {
             _animator.enabled = false;

@@ -31,6 +31,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Resources
             var queryItemsMsg = MessageFactory.GenerateQueryItemsMessage();
             queryItemsMsg.Query = IsResourceItem;
             queryItemsMsg.DoAfter = UpdateResources;
+            queryItemsMsg.StackAll = true;
             gameObject.SendMessageTo(queryItemsMsg, ObjectManager.Player);
             MessageFactory.CacheMessage(queryItemsMsg);
         }
@@ -47,7 +48,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Resources
                         resourcesStacks.Add(resource, 0);
                     }
 
-                    resourcesStacks[resource] += item.Stack;
+                    resourcesStacks[resource] = item.Stack;
                 }
             }
 

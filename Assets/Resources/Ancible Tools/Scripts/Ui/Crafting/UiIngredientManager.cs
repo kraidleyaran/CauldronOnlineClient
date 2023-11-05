@@ -13,6 +13,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
     {
         [SerializeField] private UiIngredientItemController _itemTemplate;
         [SerializeField] private Text _costText = null;
+        [SerializeField] private Color _missingAmountColor = Color.red;
+        [SerializeField] private Color _fulfilledAmountColor = Color.green;
         [SerializeField] private GridLayoutGroup _grid;
         [SerializeField] private int _maxRows = 4;
         [SerializeField] private GameObject _cursor;
@@ -49,7 +51,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
                 _controllers = new Dictionary<Vector2Int, UiIngredientItemController>();
             }
 
-            _costText.text = $"{_cost:N0}";
+            var queryGoldMsg = MessageFactory.GenerateQueryGoldMsg();
+            queryGoldMsg.DoAfter = UpdatePlayerGold;
+            gameObject.SendMessageTo(queryGoldMsg, ObjectManager.Player);
+            MessageFactory.CacheMessage(queryGoldMsg);
             UpdateIngredients(items);
         }
 
@@ -57,12 +62,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
         {
             _active = active;
             _cursor.gameObject.SetActive(_active);
-            if (_active)
+            if (_controllers.TryGetValue(_cursorPosition, out var controller))
             {
-                if (_controllers.TryGetValue(_cursorPosition, out var controller))
-                {
-                    controller.SetHovered(_hover);
-                }
+                controller.SetHovered(_hover && _active);
             }
 
         }
@@ -141,7 +143,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
             foreach (var controller in controllers)
             {
                 var item = items.FirstOrDefault(s => s.Item == controller.Item);
-                controller.RefreshPlayerStack(item?.Stack ?? 0);
+                controller.RefreshPlayerStack(item?.Stack ?? 0, _missingAmountColor, _fulfilledAmountColor);
+            }
+
+            var ordered = controllers.OrderBy(c => !c.RequirementFulfilled).ToArray();
+            for (var i = 0; i < ordered.Length; i++)
+            {
+                ordered[i].transform.SetSiblingIndex(i);
             }
         }
 
@@ -227,23 +235,25 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
                     position.y++;
                 }
 
-                if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
+                if (_active)
                 {
-                    setCursorController.SetCursor(_cursor);
-                    setCursorController.SetHovered(_hover);
-                }
-                else
-                {
-                    var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
-                    if (closest.Value)
+                    if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
                     {
-                        _cursorPosition = closest.Key;
-                        closest.Value.SetCursor(_cursor);
-                        closest.Value.SetHovered(_hover);
+                        setCursorController.SetCursor(_cursor);
+                        setCursorController.SetHovered(_hover);
                     }
+                    else
+                    {
+                        var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
+                        if (closest.Value)
+                        {
+                            _cursorPosition = closest.Key;
+                            closest.Value.SetCursor(_cursor);
+                            closest.Value.SetHovered(_hover);
+                        }
 
+                    }
                 }
-                
             }
             else
             {
@@ -251,6 +261,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
             }
 
             RefresPlayerItemStacks();
+        }
+
+        private void UpdatePlayerGold(int amount)
+        {
+            var color = amount >= _cost ? _fulfilledAmountColor : _missingAmountColor;
+            _costText.text = $"{StaticMethods.ApplyColorToText($"{_cost:N0}", color)}";
         }
 
         private void SubscribeToMessages()

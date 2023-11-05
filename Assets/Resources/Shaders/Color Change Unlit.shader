@@ -75,7 +75,7 @@ Shader "Ancible/ColorChange"
 			float4 frag(Fragment IN) : COLOR
 			{
 				half4 c = tex2D(_MainTex, IN.uv_MainTex);
-				if (_Active == 1 && c.a == 1)
+				if (c.a == 1)
 				{
 					return _ChangeColor;
 				}

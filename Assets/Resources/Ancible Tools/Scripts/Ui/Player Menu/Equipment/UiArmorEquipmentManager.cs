@@ -12,14 +12,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
     {
         [SerializeField] private UiArmorItemController[] _equipmentControllers = new UiArmorItemController[0];
         [SerializeField] private GameObject _cursor;
-        [SerializeField] private GridLayoutGroup _grid;
+        [SerializeField] private HorizontalLayoutGroup _grid;
+        [SerializeField] private GameObject _unequip;
 
         private Dictionary<ArmorSlot, UiArmorItemController> _controllers = new Dictionary<ArmorSlot, UiArmorItemController>();
 
         private Vector2Int _cursorPosition = Vector2Int.zero;
         private bool _hover = false;
+        private bool _active = false;
 
-        void Awake()
+        public void WakeUp()
         {
             var position = Vector2Int.zero;
             foreach (var controller in _equipmentControllers)
@@ -30,15 +32,36 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
 
                     controller.Position = position;
                     position.x++;
-                    if (position.x >= _grid.constraintCount)
-                    {
-                        position.x = 0;
-                        position.y++;
-                    }
+                    //if (position.x >= _grid.)
+                    //{
+                    //    position.x = 0;
+                    //    position.y++;
+                    //}
                 }
             }
+            _unequip.gameObject.SetActive(false);
             RefreshArmorEquipment();
             SubscribeToMessages();
+        }
+
+        public void SetActive(bool active)
+        {
+            _active = active;
+            var selected = _controllers.Values.FirstOrDefault(c => c.Position == _cursorPosition);
+            if (_active)
+            {
+                if (selected)
+                {
+                    selected.SetCursor(_cursor);
+                    selected.SetHover(_hover);
+                    _unequip.gameObject.SetActive(selected.Item != null);
+                }
+            }
+            else if (selected)
+            {
+                selected.SetHover(false);
+                _unequip.gameObject.SetActive(false);
+            }
         }
 
         private void RefreshArmorEquipment()
@@ -64,13 +87,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
                 }
             }
 
-            var cursorController = _controllers.Values.FirstOrDefault(c => c.Position == _cursorPosition);
-            if (!cursorController)
+            if (_active)
             {
-                cursorController = _controllers[ArmorSlot.Helm];
+                var cursorController = _controllers.Values.FirstOrDefault(c => c.Position == _cursorPosition);
+                if (!cursorController)
+                {
+                    cursorController = _controllers[ArmorSlot.Helm];
+                }
+                cursorController.SetCursor(_cursor);
+                cursorController.SetHover(_hover);
+                _unequip.gameObject.SetActive(cursorController.Item != null);
             }
-            cursorController.SetCursor(_cursor);
-            cursorController.SetHover(_hover);
+
 
         }
 
@@ -82,64 +110,70 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
 
         private void UpdateInputState(UpdateInputStateMessage msg)
         {
-            var buttonPushed = false;
             var selected = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition);
-            if (!msg.Previous.Red && msg.Current.Red)
-            {
-                
-                if (selected && selected.Item != null)
-                {
-                    var unequipArmorItemMsg = MessageFactory.GenerateUnequipArmorItemFromSlotMsg();
-                    unequipArmorItemMsg.Slot = selected.Item.Item.Slot;
-                    gameObject.SendMessageTo(unequipArmorItemMsg, ObjectManager.Player);
-                    MessageFactory.CacheMessage(unequipArmorItemMsg);
-                    buttonPushed = true;
-                }
-            }
-            else if (!msg.Previous.Info && msg.Current.Info)
+            if (!msg.Previous.Info && msg.Current.Info)
             {
                 _hover = !_hover;
-                if (selected)
+                if (selected && _active)
                 {
                     selected.SetHover(_hover);
                 }
             }
-
-            if (!buttonPushed)
+            if (_active)
             {
-                var direction = Vector2Int.zero;
-                if (!msg.Previous.Up && msg.Current.Up)
+                var buttonPushed = false;
+                
+                if (!msg.Previous.Green && msg.Current.Green)
                 {
-                    direction.y = -1;
-                }
-                else if (!msg.Previous.Down && msg.Current.Down)
-                {
-                    direction.y = 1;
-                }
-                else if (!msg.Previous.Left && msg.Current.Left)
-                {
-                    direction.x = -1;
-                }
-                else if (!msg.Previous.Right && msg.Current.Right)
-                {
-                    direction.x = 1;
+
+                    if (selected && selected.Item != null)
+                    {
+                        var unequipArmorItemMsg = MessageFactory.GenerateUnequipArmorItemFromSlotMsg();
+                        unequipArmorItemMsg.Slot = selected.Item.Item.Slot;
+                        gameObject.SendMessageTo(unequipArmorItemMsg, ObjectManager.Player);
+                        MessageFactory.CacheMessage(unequipArmorItemMsg);
+                        buttonPushed = true;
+                    }
                 }
 
-                if (direction != Vector2Int.zero)
+                if (!buttonPushed)
                 {
-                    var controller = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition + direction);
-                    if (controller)
+                    var direction = Vector2Int.zero;
+                    //if (!msg.Previous.Up && msg.Current.Up)
+                    //{
+                    //    direction.y = -1;
+                    //}
+                    //else if (!msg.Previous.Down && msg.Current.Down)
+                    //{
+                    //    direction.y = 1;
+                    //}
+                    if (!msg.Previous.Left && msg.Current.Left)
                     {
-                        if (selected)
+                        direction.x = -1;
+                    }
+                    else if (!msg.Previous.Right && msg.Current.Right)
+                    {
+                        direction.x = 1;
+                    }
+
+                    if (direction != Vector2Int.zero)
+                    {
+                        var controller = _equipmentControllers.FirstOrDefault(c => c.Position == _cursorPosition + direction);
+                        if (controller)
                         {
-                            selected.SetHover(false);
+                            if (selected)
+                            {
+                                selected.SetHover(false);
+                            }
+                            _cursorPosition = controller.Position;
+                            controller.SetCursor(_cursor);
+                            controller.SetHover(_hover);
+                            _unequip.gameObject.SetActive(controller.Item != null);
                         }
-                        _cursorPosition = controller.Position;
-                        controller.SetCursor(_cursor);
-                        controller.SetHover(_hover);
                     }
                 }
             }
+            
             
         }
 

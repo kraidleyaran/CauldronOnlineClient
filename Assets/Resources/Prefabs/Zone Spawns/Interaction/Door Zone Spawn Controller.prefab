@@ -44,16 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0cbef839f34f7e479b11b955bc485d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _overrideSprite: {fileID: 0}
   _template: {fileID: 11400000, guid: 01a0114b238ce764985c016d29b0977f, type: 2}
   _additionalTraits: []
+  _showAppearance: 1
+  _startActive: 1
   _spriteRenderer: {fileID: 3627388219156865439}
   _startOpen: 0
   _requiredItems: []
   _serverHitbox:
     Size: {x: 48, y: 32}
     Offset: {x: 0, y: 0}
-    ApplyOnServer: []
-    ApplyOnClient: []
+  _triggerEvents: []
+  _requireAllEvents: 0
+  _allowOpenWithNoItems: 0
+  TrappedSpawnPosition: {x: 0, y: 0}
 --- !u!1 &3627388219156865433
 GameObject:
   m_ObjectHideFlags: 0

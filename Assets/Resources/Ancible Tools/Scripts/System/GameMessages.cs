@@ -5,10 +5,13 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
 using Assets.Resources.Ancible_Tools.Scripts.System.Aspects;
 using Assets.Resources.Ancible_Tools.Scripts.System.Data;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
+using Assets.Resources.Ancible_Tools.Scripts.System.Skills;
 using Assets.Resources.Ancible_Tools.Scripts.System.WorldInput;
 using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.Characters;
 using CauldronOnlineCommon;
+using CauldronOnlineCommon.Data;
 using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Items;
 using CauldronOnlineCommon.Data.Math;
@@ -91,12 +94,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public DamageType Type;
         public bool Event;
         public string OwnerId;
+        public BonusTag[] Tags;
+        public Action OnDamageDone;
     }
 
     public class SetCombatStatsMessage : EventMessage
     {
         public CombatStats Stats;
         public CombatVitals Vitals;
+        public SecondaryStats BonusSecondary;
         public bool Report;
     }
 
@@ -183,7 +189,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public Vector2 Origin;
         public Vector2 Direction;
         public float Speed;
+        public bool CheckAlternate;
+        public GameObject[] Ignore = new GameObject[0];
         public Action<Vector2, bool> DoAfter;
+
     }
 
     public class SetupKnockbackMessage : EventMessage
@@ -247,6 +256,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public string WorldId;
         public bool StopOnWall;
         public bool Unregister;
+        public BonusTag[] Tags = new BonusTag[0];
     }
 
     public class QueryFacingDirectionMessage : EventMessage
@@ -257,6 +267,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     public class SetWorldPositionMessage : EventMessage
     {
         public WorldVector2Int Position;
+        public bool IgnorePositionChange;
     }
 
     public class AddItemMessage : EventMessage
@@ -497,6 +508,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     public class SetupTerrainMessage : EventMessage
     {
         public HitboxData Hitbox;
+        public bool IsGround;
     }
 
     public class HealMessage : EventMessage
@@ -719,6 +731,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     public class ProjectileReturnedMessage : EventMessage
     {
         public GameObject Projectile;
+        public bool Destroy;
     }
 
     public class RegisterProjectileMessage : EventMessage
@@ -750,5 +763,170 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     {
         public bool Active;
     }
-    
+
+    public class SetDefaulMaterialsMessage : EventMessage
+    {
+        public Material[] Default;
+    }
+
+    public class QueryPlayerTimeStampMessage : EventMessage
+    {
+        public Action<DateTime> DoAfter;
+    }
+
+    public class SetSelectedPlayerCharacterControllerMessage : EventMessage
+    {
+        public UiPlayerCharacterController Controller;
+    }
+
+    public class PromptResultMessage : EventMessage
+    {
+        public bool Confirm;
+    }
+
+    public class WorldCharactersUpdatedMessage : EventMessage
+    {
+        public static WorldCharactersUpdatedMessage INSTANCE = new WorldCharactersUpdatedMessage();
+    }
+
+    public class RefreshTimestampMessage : EventMessage
+    {
+        public static RefreshTimestampMessage INSTANCE = new RefreshTimestampMessage();
+    }
+
+    public class SetSpriteColorDataMessage : EventMessage
+    {
+        public SpriteColorData Data;
+    }
+
+    public class DestroyingObjectMessage : EventMessage
+    {
+        public static DestroyingObjectMessage INSTANCE = new DestroyingObjectMessage();
+    }
+
+    public class SetupMovableMessage : EventMessage
+    {
+        public int MoveSpeed;
+        public HitboxData Hitbox;
+        public HitboxData Horizontal;
+        public WorldOffset Offset;
+    }
+
+    public class SetupWalledMessage : EventMessage
+    {
+        public HitboxData Hitbox;
+        public bool IgnoreGround;
+        public bool CheckForPlayer;
+    }
+
+    public class SetMovableMessage : EventMessage
+    {
+        public GameObject Movable;
+        public string Id;
+        public int MoveSpeed;
+        public MovableAxis Axis;
+        public WorldOffset Offset;
+    }
+
+    public class ReleaseMovableMessage : EventMessage
+    {
+        public static ReleaseMovableMessage INSTANCE = new ReleaseMovableMessage();
+    }
+
+    public class MovableEventMessage : EventMessage
+    {
+        public MovableEvent Event;
+    }
+
+    public class RollMessage : EventMessage
+    {
+        public static RollMessage INSTANCE = new RollMessage();
+    }
+
+    public class RollFinishedMessage : EventMessage
+    {
+        public static RollFinishedMessage INSTANCE = new RollFinishedMessage();
+    }
+
+    public class RollEventMessage : EventMessage
+    {
+        public RollEvent Event;
+    }
+
+    public class InputTypeUpdatedMessage : EventMessage
+    {
+        public static InputTypeUpdatedMessage INSTANCE = new InputTypeUpdatedMessage();
+    }
+
+    public class QueryProjectileTagsMessage : EventMessage
+    {
+        public BonusTag[] Tags;
+        public Action DoAfter;
+    }
+
+    public class SetupProjectileRedirectMessage : EventMessage
+    {
+        public WorldVector2Int Direction;
+        public string[] Tags;
+        public HitboxData Hitbox;
+    }
+
+    public class PlayerRosterUpdatedMessage : EventMessage
+    {
+        public static PlayerRosterUpdatedMessage INSTANCE = new PlayerRosterUpdatedMessage();
+    }
+
+    public class RosterWindowClosedMessage : EventMessage
+    {
+        public static RosterWindowClosedMessage INSTANCE = new RosterWindowClosedMessage();
+    }
+
+    public class CloseWaypointWindowMessage : EventMessage
+    {
+        public bool Travelling;
+    }
+
+    public class TeleportToPlayerClosedMessage : EventMessage
+    {
+        public static TeleportToPlayerClosedMessage INSTANCE = new TeleportToPlayerClosedMessage();
+    }
+
+    public class NetworkReturnToOwnerMessage : EventMessage
+    {
+        public int DetectInstance;
+        public WorldVector2Int Offset;
+    }
+
+    public class NetworkProjectileReturnedMessage : EventMessage
+    {
+        public static NetworkProjectileReturnedMessage INSTANCE = new NetworkProjectileReturnedMessage();
+    }
+
+    public class GainSkillExperienceMessage : EventMessage
+    {
+        public int Experience;
+        public WorldSkill Skill;
+    }
+
+    public class QuerySkillsMessage : EventMessage
+    {
+        public Action<SkillInstance[]> DoAfter;
+    }
+
+    public class SkillsUpdatedMessage : EventMessage
+    {
+        public static SkillsUpdatedMessage INSTANCE = new SkillsUpdatedMessage();
+    }
+
+    public class SetSkillsMessage : EventMessage
+    {
+        public SkillData[] Skills;
+    }
+
+    public class SetupBombableDoorMessage : EventMessage
+    {
+        public HitboxData Hitbox;
+        public bool Open;
+        public int BombableExperience;
+    }
 }

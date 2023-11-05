@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49f3de3c87f90242a94a7d9ca1ee481, type: 3}
+  m_Name: Place Bomb World Ability
+  m_EditorClassIdentifier: 
+  DisplayName: Place Bomb
+  Description: 
+  RequiredResources:
+  - Item: {fileID: 11400000, guid: a8478e6ac558cf04fb53349f7e4f91b3, type: 2}
+    Stack: 1
+  Icon: {fileID: 21300000, guid: 384546d5a11087c4380656e3e91d5188, type: 3}
+  AbilitySteps:
+  - Frames: 8
+    State: 0
+    ApplyToOwner: []
+    ApplyToAttack: []
+  - Frames: 8
+    State: 1
+    ApplyToOwner: []
+    ApplyToAttack:
+    - {fileID: 11400000, guid: 7f03dd210bad55248890877d91f13b68, type: 2}
+  - Frames: 8
+    State: 2
+    ApplyToOwner: []
+    ApplyToAttack: []
+  - Frames: 8
+    State: 0
+    ApplyToOwner: []
+    ApplyToAttack: []
+  WeaponSprite: {fileID: 11400000, guid: 91623abd13fb26640ba3a3776255bed2, type: 2}
+  AttackSetup: {fileID: 11400000, guid: 75a2c80c94d68d54ba6f7450e5df22c1, type: 2}
+  Offset: {x: 1, y: 1}
+  Cooldown: 0
+  ManaCost: 0
+  ApplyAtEndofAbility: []

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c70b5a61c21b2f4ab107f9aa59f6c46, type: 3}
+  m_Name: Xbox World Gamepad Button Layout
+  m_EditorClassIdentifier: 
+  _leftStick: {fileID: -7293658978278006141, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _rightStick: {fileID: -8968792816814884415, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _aButton: {fileID: 8769396089252263448, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _bButton: {fileID: -2268730382184368236, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _xButton: {fileID: -5708825691454669277, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _yButton: {fileID: 3019058344738457083, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _dpadUp: {fileID: 4484427032776805749, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _dpadDown: {fileID: -4254515508646573679, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _dpadLeft: {fileID: -3017678284800240116, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _dpadRight: {fileID: 6755738812833723501, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _leftShoulder: {fileID: -288119585051115629, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _rightShoulder: {fileID: 3882885062619668833, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _leftTrigger: {fileID: 7363346164282047839, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _rightTrigger: {fileID: 4920394074468937403, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _start: {fileID: 3297326843112928333, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}
+  _select: {fileID: 7666339292419304699, guid: 32e8d731cd634f6489ee7421fe0deed2, type: 3}

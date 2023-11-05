@@ -15,4 +15,4 @@ MonoBehaviour:
   MaxStack: 1
   _hitbox: {fileID: 11400000, guid: 04ce2d5f5a1511b4a9d48077b034bf6a, type: 2}
   _resultCount: 5
-  _onCollision: []
+  _ignoreGround: 1

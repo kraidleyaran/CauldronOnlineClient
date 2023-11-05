@@ -30,7 +30,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
             }
         }
 
-        public string GetDisplayName()
+        public virtual string GetDisplayName()
         {
             switch (Quality)
             {

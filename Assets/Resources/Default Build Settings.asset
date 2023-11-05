@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DevWindowPath: C:\Builds\Cauldron Online Client\Dev\Windows\Cauldron Online
   DevLinuxPath: C:\Builds\Cauldron Online Client\Dev\Linux\Cauldron Online
-  DevMacOSPath: 
+  DevMacOSPath: C:\Builds\Cauldron Online Client\Dev\MacOS\Cauldron Online Client
   BuildVersionFilePath: C:\Builds\Cauldron Online Client\buildnumber.txt
   Major: 0
-  Build: 34
+  Build: 49
   SceneNames:
   - Assets/Scenes/Dev.unity

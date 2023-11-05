@@ -110,8 +110,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 {
                     foreach (var trait in _applied)
                     {
-                        removeTraitByControllerMsg.Controller = trait;
-                        _controller.gameObject.SendMessageTo(removeTraitByControllerMsg, _controller.transform.parent.gameObject);
+                        if (trait)
+                        {
+                            removeTraitByControllerMsg.Controller = trait;
+                            _controller.gameObject.SendMessageTo(removeTraitByControllerMsg, _controller.transform.parent.gameObject);
+                        }
                     }
                 }
                 removeTraitByControllerMsg.Controller = _controller;

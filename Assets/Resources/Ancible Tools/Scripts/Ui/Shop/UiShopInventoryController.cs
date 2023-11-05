@@ -5,6 +5,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using ConcurrentMessageBus;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
@@ -23,6 +24,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
         private DataRow<ShopItem>[] _rows = new DataRow<ShopItem>[0];
 
         private int _dataRowPosition = 0;
+        private int _maxControllerRows = 0;
         private Vector2Int _cursorPosition;
         private GameObject _inventoryOwner = null;
 
@@ -47,7 +49,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                 if (_controllers.Count > 0)
                 {
                     _active = true;
-                    _cursorPosition.y = cursorY;
+                    _cursorPosition.y = Mathf.Min(_maxControllerRows, cursorY);
                     if (_controllers.TryGetValue(_cursorPosition, out var controller))
                     {
                         controller.SetCursor(_cursor);
@@ -110,6 +112,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             }
 
             _rows = dataItems.ToArray();
+            _maxControllerRows = Mathf.Clamp(_rows.Length - 1, 0, _maxRows);
             RefreshRows();
         }
 
@@ -134,7 +137,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                 {
                     endingRow = Mathf.Min(_dataRowPosition + _maxRows - 1, _rows.Length - 1);
                 }
-
 
                 var position = Vector2Int.zero;
                 for (var row = startingRow; row <= endingRow; row++)

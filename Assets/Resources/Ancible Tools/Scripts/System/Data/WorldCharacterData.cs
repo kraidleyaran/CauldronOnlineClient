@@ -11,6 +11,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Data
         public static string EXTENSION = "wcd";
 
         public string Name;
+        public string SaveId;
         public WorldVector2Int Position;
         public string Zone;
         public CombatStats Stats;
@@ -23,6 +24,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Data
         public int Experience;
         public int Level;
         public int Gold;
+        public TimeSpanData PlayTime = new TimeSpanData();
+        public SpriteColorData Colors = null;
+        public SkillData[] Skills = new SkillData[0];
 
         public ClientCharacterData ToClientData()
         {
@@ -31,6 +35,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Data
                 DisplayName = Name,
                 Stats = Stats,
                 Vitals = Vitals,
+                Colors = Colors
             };
         }
     }

@@ -6,5 +6,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     public class BonusTag : ScriptableObject
     {
         public string DisplayName;
+        public bool Show = true;
     }
 }

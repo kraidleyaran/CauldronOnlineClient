@@ -6,5 +6,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
     public class KeyItem : WorldItem
     {
         public override ItemType Type => ItemType.Key;
+
+        public override string GetDisplayName()
+        {
+            return $"{DisplayName} ({Type})";
+        }
     }
 }

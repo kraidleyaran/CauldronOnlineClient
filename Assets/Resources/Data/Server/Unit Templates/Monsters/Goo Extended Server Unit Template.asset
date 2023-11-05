@@ -23,6 +23,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e739e822a2dd28d4983bec3eb037b294, type: 2}
   - {fileID: 11400000, guid: 0642e7847c6e392488c03398b3f897d0, type: 2}
   - {fileID: 11400000, guid: 7de853f4d099637448fcd571c434242c, type: 2}
+  - {fileID: 11400000, guid: e5e267eec1a5e404f908fa226f4138c0, type: 2}
   ShowOnClient: 1
   IsMonster: 1
+  ShowName: 0
+  ShowAppearance: 1
   _baseTemplate: {fileID: 11400000, guid: 6ba93f8cdd9cb2943a3cbe490b97789b, type: 2}

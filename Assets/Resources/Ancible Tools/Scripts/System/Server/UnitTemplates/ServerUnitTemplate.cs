@@ -18,12 +18,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.UnitTemplates
         public bool ShowName;
         public bool ShowAppearance = true;
 
-        public ObjectSpawnData GetData()
+        public ObjectSpawnData GetData(bool includeSprite = true)
         {
             var data = new ObjectSpawnData
             {
                 DisplayName = DisplayName,
-                Traits = GetTraits(),
+                Traits = GetTraits(includeSprite),
                 ShowOnClient = ShowOnClient,
                 IsMonster = IsMonster,
                 ShowNameOnClient = ShowName,
@@ -33,15 +33,20 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.UnitTemplates
             return data;
         }
 
-        public virtual string[] GetTraits()
+        public virtual string[] GetTraits(bool includeSprite = true)
         {
             var traits = Traits.Where(t => t).Select(t => t.name).ToList();
-            if (Sprite)
+            if (includeSprite && Sprite)
             {
                 traits.Add(Sprite.name);
             }
 
             return traits.ToArray();
+        }
+
+        public virtual SpriteTrait GetSprite()
+        {
+            return Sprite;
         }
     }
 }

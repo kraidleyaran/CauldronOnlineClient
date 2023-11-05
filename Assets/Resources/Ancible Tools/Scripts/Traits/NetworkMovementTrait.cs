@@ -55,6 +55,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetWorldPositionMessage>(SetWorldPosition, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetPathMessage>(SetPath, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<QueryWorldPositionMessage>(QueryWorldPosition, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateFacingDirectionMessage>(UpdateFacingDirection, _instanceId);
         }
 
         private void ApplyMovement(ApplyMovementEventMessage msg)
@@ -189,6 +190,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 _controller.gameObject.SendMessageTo(updateDirectionMsg, _controller.transform.parent.gameObject);
                 MessageFactory.CacheMessage(updateDirectionMsg);
             }
+        }
+
+        private void UpdateFacingDirection(UpdateFacingDirectionMessage msg)
+        {
+            _direction = msg.Direction;
         }
 
         private void UpdateUnitState(UpdateUnitStateMessage msg)

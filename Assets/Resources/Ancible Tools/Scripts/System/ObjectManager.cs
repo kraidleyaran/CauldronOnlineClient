@@ -6,6 +6,7 @@ using Assets.Resources.Ancible_Tools.Scripts.System.Data;
 using Assets.Resources.Ancible_Tools.Scripts.System.Templates;
 using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
+using Assets.Resources.Ancible_Tools.Scripts.Ui;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.FloatingText;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data;
@@ -34,6 +35,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         [SerializeField] private UnitTemplate _playerTemplate;
         [SerializeField] private CombatStats _startingCombatStats;
         [SerializeField] private SpriteTrait _defaultPlayerSprite;
+        [SerializeField] private RecolorTrait _defaultRecolorTrait;
         [SerializeField] private PremadeItemSlot[] _startingEquippedActionItems = new PremadeItemSlot[0];
         [SerializeField] private PremadeAbilitySlot[] _startingAbilities = new PremadeAbilitySlot[0];
         [SerializeField] private UnitTemplate _networkObjectTemplate;
@@ -65,6 +67,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private SetupZoneTransitionMessage _setupZoneTransitionMsg = new SetupZoneTransitionMessage();
         private SetupCrafterMessage _setupCrafterMsg = new SetupCrafterMessage();
         private SetupBridgeMessage _setupBridgeMsg = new SetupBridgeMessage();
+        private SetSpriteColorDataMessage _setSpriteColorDataMsg = new SetSpriteColorDataMessage();
+        private SetupMovableMessage _setupMovableMsg = new SetupMovableMessage();
+        private SetupWalledMessage _setupWalledMsg = new SetupWalledMessage();
+        private SetupProjectileRedirectMessage _setupProjectileRedirectMsg = new SetupProjectileRedirectMessage();
+        private SetSkillsMessage _setSkillsMsg = new SetSkillsMessage();
+        private SetupBombableDoorMessage _setupBombableDoorMsg = new SetupBombableDoorMessage();
 
         private bool _editorMode = false;
 
@@ -92,8 +100,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             Player.name = "Player";
 
             var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+
             addTraitToUnitMsg.Trait = _instance._defaultPlayerSprite;
             Player.SendMessageTo(addTraitToUnitMsg, Player);
+
+            _instance._setSpriteColorDataMsg.Data = data.Colors;
+            Player.SendMessageTo(_instance._setSpriteColorDataMsg, Player);
+
+            //addTraitToUnitMsg.Trait = _instance._defaultRecolorTrait;
+            //Player.SendMessageTo(addTraitToUnitMsg, Player);
+
             MessageFactory.CacheMessage(addTraitToUnitMsg);
 
             _instance._setCombatStatsMsg.Stats = data.Stats;
@@ -119,6 +135,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             _instance._setLoadedAspectsMsg.Aspects = data.Aspects;
             _instance._setLoadedAspectsMsg.AvailablePoints = data.AvailablePoints;
             Player.SendMessageTo(_instance._setLoadedAspectsMsg, Player);
+
+            if (data.Skills == null)
+            {
+                data.Skills = new SkillData[0];
+            }
+            _instance._setSkillsMsg.Skills = data.Skills;
+            Player.SendMessageTo(_instance._setSkillsMsg, Player);
 
             _instance._setLoadoutMsg.Loadout = data.Loadout;
             Player.SendMessageTo(_instance._setLoadoutMsg, Player);
@@ -193,6 +216,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
                                 _instance._setCombatStatsMsg.Stats = combatStats.Stats;
                                 _instance._setCombatStatsMsg.Vitals = combatStats.Vitals;
+                                _instance._setCombatStatsMsg.BonusSecondary = combatStats.BonusSecondary;
                                 _instance._setCombatStatsMsg.Report = combatStats.Monster;
                                 isMonster = combatStats.Monster;
                                 obj.SendMessageTo(_instance._setCombatStatsMsg, obj);
@@ -224,6 +248,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 addTraitToUnitMsg.Trait = TraitFactory.NetworkAbilityManager;
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
+                                addTraitToUnitMsg.Trait = TraitFactory.ProjectileManager;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
                                 _instance._setApplyAbilityMsg.ApplyAbility = ability.ApplyTraitsOnClient;
                                 obj.SendMessageTo(_instance._setApplyAbilityMsg, obj);
                             }
@@ -246,6 +273,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         case ShopParameter.TYPE:
                             if (parameter is ShopParameter shop)
                             {
+                                addTraitToUnitMsg.Trait = TraitFactory.WorldPosition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
                                 addTraitToUnitMsg.Trait = TraitFactory.NetworkShop;
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
@@ -261,6 +291,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
                                 _instance._setupTerrainMsg.Hitbox = terrain.Hitbox;
+                                _instance._setupTerrainMsg.IsGround = terrain.IsGround;
                                 obj.SendMessageTo(_instance._setupTerrainMsg, obj);
                             }
                             break;
@@ -291,6 +322,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 _instance._setupDoorMsg.Rotation = door.Rotation;
                                 _instance._setupDoorMsg.Hitbox = door.Hitbox;
                                 _instance._setupDoorMsg.AllowOpenWithNoItems = door.AllowOpenWithNoItems;
+                                _instance._setupDoorMsg.TrappedSpawnPosition = door.TrappedSpawnPosition;
                                 obj.SendMessageTo(_instance._setupDoorMsg, obj);
                             }
                             break;
@@ -311,6 +343,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 addTraitToUnitMsg.Trait = TraitFactory.NetworkSwitch;
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
+                                addTraitToUnitMsg.Trait = TraitFactory.WorldPosition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
                                 _instance._setupSwitchMsg.Switch = switchParam.Name;
                                 _instance._setupSwitchMsg.Hitbox = switchParam.Hitbox;
                                 _instance._setupSwitchMsg.Signals = switchParam.Signals;
@@ -324,6 +359,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         case LootChestParameter.TYPE:
                             if (parameter is LootChestParameter lootChest)
                             {
+                                addTraitToUnitMsg.Trait = TraitFactory.WorldPosition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
                                 addTraitToUnitMsg.Trait = TraitFactory.NetworkChest;
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
@@ -337,6 +375,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         case KeyItemChestParameter.TYPE:
                             if (parameter is KeyItemChestParameter keyItemChest)
                             {
+                                addTraitToUnitMsg.Trait = TraitFactory.WorldPosition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
                                 addTraitToUnitMsg.Trait = TraitFactory.NetworkChest;
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
@@ -362,6 +403,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         case CrafterParameter.TYPE:
                             if (parameter is CrafterParameter crafter)
                             {
+                                addTraitToUnitMsg.Trait = TraitFactory.WorldPosition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
                                 addTraitToUnitMsg.Trait = TraitFactory.Crafter;
                                 obj.SendMessageTo(addTraitToUnitMsg, obj);
 
@@ -380,6 +424,91 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                 _instance._setupBridgeMsg.Size = bridge.Size;
                                 _instance._setupBridgeMsg.Active = bridge.Active;
                                 obj.SendMessageTo(_instance._setupBridgeMsg, obj);
+                            }
+                            break;
+                        case PlayerParameter.TYPE:
+                            if (parameter is PlayerParameter player)
+                            {
+                                _instance._setSpriteColorDataMsg.Data = player.Colors;
+                                obj.SendMessageTo(_instance._setSpriteColorDataMsg, obj);
+                            }
+
+                            addTraitToUnitMsg.Trait = TraitFactory.NetworkPlayerTerrain;
+                            obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                            addTraitToUnitMsg.Trait = TraitFactory.NetworkMovableHelper;
+                            obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                            addTraitToUnitMsg.Trait = TraitFactory.NetworkMovement;
+                            obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                            addTraitToUnitMsg.Trait = TraitFactory.NetworkAbilityManager;
+                            obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                            addTraitToUnitMsg.Trait = TraitFactory.ProjectileManager;
+                            obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                            addTraitToUnitMsg.Trait = TraitFactory.NetworkRolling;
+                            obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                            _instance._setApplyAbilityMsg.ApplyAbility = false;
+                            obj.SendMessageTo(_instance._setApplyAbilityMsg, obj);
+
+                            break;
+                        case WalledParameter.TYPE:
+                            if (parameter is WalledParameter walled)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.NetworkWalled;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupWalledMsg.Hitbox = walled.Hitbox;
+                                _instance._setupWalledMsg.CheckForPlayer = walled.CheckForPlayer;
+                                _instance._setupWalledMsg.IgnoreGround = walled.IgnoreGround;
+                                obj.SendMessageTo(_instance._setupWalledMsg, obj);
+                            }
+                            break;
+                        case MovementParameter.TYPE:
+                            addTraitToUnitMsg.Trait = TraitFactory.NetworkMovement;
+                            obj.SendMessageTo(addTraitToUnitMsg, obj);
+                            break;
+                        case MovableParameter.TYPE:
+                            if (parameter is MovableParameter movable)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.WorldPosition;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                addTraitToUnitMsg.Trait = TraitFactory.Movable;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupMovableMsg.Hitbox = movable.Hitbox;
+                                _instance._setupMovableMsg.MoveSpeed = movable.MoveSpeed;
+                                _instance._setupMovableMsg.Horizontal = movable.HorizontalHitbox;
+                                _instance._setupMovableMsg.Offset = movable.Offset;
+                                obj.SendMessageTo(_instance._setupMovableMsg, obj);
+                            }
+                            break;
+                        case ProjectileRedirectParameter.TYPE:
+                            if (parameter is ProjectileRedirectParameter projectileRedirect)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.ProjectileRedirect;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupProjectileRedirectMsg.Direction = projectileRedirect.Direction;
+                                _instance._setupProjectileRedirectMsg.Hitbox = projectileRedirect.Hitbox;
+                                _instance._setupProjectileRedirectMsg.Tags = projectileRedirect.Tags;
+                                obj.SendMessageTo(_instance._setupProjectileRedirectMsg, obj);
+                            }
+                            break;
+                        case BombableDoorParameter.TYPE:
+                            if (parameter is BombableDoorParameter bombable)
+                            {
+                                addTraitToUnitMsg.Trait = TraitFactory.BombableDoor;
+                                obj.SendMessageTo(addTraitToUnitMsg, obj);
+
+                                _instance._setupBombableDoorMsg.Hitbox = bombable.Hitbox;
+                                _instance._setupBombableDoorMsg.Open = bombable.Open;
+                                _instance._setupBombableDoorMsg.BombableExperience = bombable.BombingExperience;
+                                obj.SendMessageTo(_instance._setupBombableDoorMsg, obj);
                             }
                             break;
                     }
@@ -498,6 +627,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private void ClientObjectResult(ClientObjectResultMessage msg)
         {
             Debug.Log($"Client Object Result received - Success:{msg.Success}");
+            UiServerStatusWindow.SetStatusText("Objects received - Building world");
             if (msg.Success)
             {
                 if (_networkObjectTemplate)
@@ -514,6 +644,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                 MessageFactory.CacheMessage(setUnitStateMsg);
 
                 DataController.SetWorldState(WorldState.Active);
+                UiServerStatusWindow.Clear();
             }
         }
     }

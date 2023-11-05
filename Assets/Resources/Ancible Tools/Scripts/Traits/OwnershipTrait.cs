@@ -24,6 +24,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void SetOwner(SetOwnerMessage msg)
         {
             _owner = msg.Owner;
+            var updateOwnerMsg = MessageFactory.GenerateUpdateOwnerMsg();
+            updateOwnerMsg.Owner = _owner;
+            _controller.gameObject.SendMessageTo(updateOwnerMsg, _controller.transform.parent.gameObject);
+            MessageFactory.CacheMessage(updateOwnerMsg);
         }
 
         private void QueryOwner(QueryOwnerMessage msg)

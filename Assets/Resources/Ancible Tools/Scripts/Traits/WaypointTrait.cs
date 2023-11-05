@@ -56,18 +56,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void WaypointWindowClosed(WaypointWindowClosedMessage msg)
         {
             _waypointWindow = null;
-            var travelled = msg.Travelling;
-            _controller.StartCoroutine(StaticMethods.WaitForFrames(1, () =>
+            if (!msg.Travelling)
             {
-                if (!travelled)
+                _controller.StartCoroutine(StaticMethods.WaitForFrames(2, () =>
                 {
                     var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
                     setUnitStateMsg.State = UnitState.Active;
                     _controller.gameObject.SendMessageTo(setUnitStateMsg, ObjectManager.Player);
                     _controller.gameObject.SendMessageTo(setUnitStateMsg, _controller.transform.parent.gameObject);
                     MessageFactory.CacheMessage(setUnitStateMsg);
-                }
-            }));
+
+                }));
+            }
+
         }
     }
 }

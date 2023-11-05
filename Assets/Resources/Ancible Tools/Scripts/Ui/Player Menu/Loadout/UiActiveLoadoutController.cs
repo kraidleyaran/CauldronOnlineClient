@@ -27,7 +27,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
         {
             _active = active;
             _cursor.gameObject.SetActive(_active);
-            _slots[_index].SetCursor(_cursor);
+            if (_active)
+            {
+                _slots[_index].SetCursor(_cursor);
+            }
             _slots[_index].SetHovered(_active && _hovered);
         }
 
@@ -53,11 +56,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                     controller.Setup(null, i);
                 }
             }
+            if (_index < _slots.Length)
+            {
+                _slots[_index].SetHovered(_hovered && _active);
+            }
         }
 
         private void SubscribeToMessages()
         {
             gameObject.Subscribe<UpdateInputStateMessage>(UpdateInputState);
+            gameObject.Subscribe<PlayerLoadoutUpdatedMessage>(PlayerLoadoutUpdated);
         }
 
         private void UpdateInputState(UpdateInputStateMessage msg)
@@ -65,10 +73,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
             if (!msg.Previous.Info && msg.Current.Info)
             {
                 _hovered = !_hovered;
-                if (_active)
-                {
-                    _slots[_index].SetHovered(_hovered);
-                }
+                _slots[_index].SetHovered(_hovered && _active);
             }
             if (_active)
             {
@@ -161,12 +166,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                 {
                     if (!msg.Previous.Left && msg.Current.Left)
                     {
+                        _slots[_index].SetHovered(false);
                         _index = _index > 0 ? _index - 1 : _slots.Length - 1;
                         _slots[_index].SetCursor(_cursor);
                         _slots[_index].SetHovered(_hovered);
                     }
                     else if (!msg.Previous.Right && msg.Current.Right)
                     {
+                        _slots[_index].SetHovered(false);
                         _index = _index < _slots.Length - 1 ? _index + 1 : 0;
                         _slots[_index].SetCursor(_cursor);
                         _slots[_index].SetHovered(_hovered);
@@ -175,6 +182,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
             }
 
 
+        }
+
+        private void PlayerLoadoutUpdated(PlayerLoadoutUpdatedMessage msg)
+        {
+            RefreshPlayerLoadout();
         }
 
         void OnDestroy()

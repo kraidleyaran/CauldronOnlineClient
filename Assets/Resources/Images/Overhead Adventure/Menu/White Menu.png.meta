@@ -38,6 +38,12 @@ TextureImporter:
   - first:
       213: 4924438023580309919
     second: White Exclamation
+  - first:
+      213: -5664947622144197125
+    second: White Frame
+  - first:
+      213: -3848601064291648316
+    second: Rounded Selector
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -287,7 +293,7 @@ TextureImporter:
         height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 6, y: 6, z: 6, w: 6}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -391,7 +397,7 @@ TextureImporter:
         width: 14
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -399,6 +405,48 @@ TextureImporter:
       bones: []
       spriteID: f995ee9aa4e175440800000000000000
       internalID: 4924438023580309919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White Frame
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 183
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfdb6eed6201261b0800000000000000
+      internalID: -5664947622144197125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rounded Selector
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 148
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 9, y: 9, z: 9, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccb4b809b5079ac0800000000000000
+      internalID: -3848601064291648316
       vertices: []
       indices: 
       edges: []

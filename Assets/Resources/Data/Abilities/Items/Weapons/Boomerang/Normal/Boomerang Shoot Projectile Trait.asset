@@ -27,3 +27,5 @@ MonoBehaviour:
   _stopOnWall: 1
   _direction: {x: 0, y: 0}
   _registerProjectile: 1
+  _tags:
+  - {fileID: 11400000, guid: b8c70f0de57d4244d8feed6fbb156e23, type: 2}

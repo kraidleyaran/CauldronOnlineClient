@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcba3285dd35954ca1a99cc441216b5, type: 3}
+  m_Name: Dungeon 1 - FirePath 1 - Switch Timer - Switch Signal Receiver Server Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _onSwitchSignal:
+  - Switch: {fileID: 11400000, guid: 1021b98e58d1e794eb779a52749492df, type: 2}
+    RequiredSignal: 1
+    ApplyOnSignal:
+    - {fileID: 11400000, guid: 049273eab3f846a4fbc77f3e49bba207, type: 2}
+    ApplyEventOnSignal: []

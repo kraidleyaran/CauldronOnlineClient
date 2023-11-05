@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading;
 using Assets.Resources.Ancible_Tools.Scripts.System.Abilities;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.SystemEvents;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.Timers;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data.Items;
 using CauldronOnlineCommon.Data.Math;
@@ -29,6 +31,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private SetPathMessage _setPathMsg = new SetPathMessage();
         private SetDoorStateMessage _setDoorStateMsg = new SetDoorStateMessage();
         private SetSignalMessage _setSignalMsg = new SetSignalMessage();
+        private MovableEventMessage _movableEventMsg = new MovableEventMessage();
+        private RollEventMessage _rollEventMsg = new RollEventMessage();
+        private SetBridgeStateMessage _setBridgeStateMsg = new SetBridgeStateMessage();
+        private NetworkReturnToOwnerMessage _networkReturnToOwnerMsg = new NetworkReturnToOwnerMessage();
 
         void Awake()
         {
@@ -232,13 +238,25 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                         case SpawnLootEvent.ID:
                             if (worldEvent is SpawnLootEvent spawnLoot)
                             {
+                                
                                 var obj = ObjectManager.GetObjectById(spawnLoot.OwnerId);
                                 var pos = spawnLoot.Position.ToWorldVector();
                                 if (obj)
                                 {
                                     pos = obj.transform.position.ToVector2().ToWorldPosition().ToWorldVector();
                                 }
-                                SpawnLoot(spawnLoot, pos);
+
+                                if (spawnLoot.IsMonster && obj)
+                                {
+                                    var lootSpawncontroller = Instantiate(ItemFactory.LootSpawn, pos, Quaternion.identity);
+                                    lootSpawncontroller.Setup(spawnLoot.LootTable, spawnLoot.Drops, obj);
+                                    ObjectManager.RegisterObject(lootSpawncontroller.gameObject);
+                                }
+                                else
+                                {
+                                    SpawnLoot(spawnLoot, pos);
+                                }
+                                
                             }
                             break;
                         case RespawnEvent.ID:
@@ -348,6 +366,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                     var controller = Instantiate(ItemFactory.KeyItemLoot, pos, Quaternion.identity);
                                     ObjectManager.RegisterObject(controller.gameObject);
                                     controller.Setup(item);
+                                    UiSystemEventManagerWindow.ShowSystemEvent($"{keyItem.PlayerName} found {item.DisplayName}!");
                                 }
                             }
                             break;
@@ -384,6 +403,90 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                                     setUnitStateMsg.State = objectState.Active ? UnitState.Active : UnitState.Disabled;
                                     obj.SendMessageTo(setUnitStateMsg, obj);
                                     MessageFactory.CacheMessage(setUnitStateMsg);
+                                }
+                            }
+                            break;
+                        case TimerEvent.ID:
+                            if (worldEvent is TimerEvent timer)
+                            {
+                                var obj = ObjectManager.GetObjectById(timer.TargetId);
+                                if (obj)
+                                {
+                                    UiTimerManager.RegisterTimer(timer.Ticks, timer.Loops, obj);
+                                }
+                                else
+                                {
+                                    UiTimerManager.RegisterTimer(timer.Ticks, timer.Loops, timer.Position.ToWorldVector());
+                                }
+                            }
+                            break;
+                        case MovableEvent.ID:
+                            if (worldEvent is MovableEvent movable)
+                            {
+                                var obj = ObjectManager.GetObjectById(movable.OwnerId);
+                                if (obj)
+                                {
+                                    _movableEventMsg.Event = movable;
+                                    gameObject.SendMessageTo(_movableEventMsg, obj);
+                                }
+                            }
+                            break;
+                        case RollEvent.ID:
+                            if (worldEvent is RollEvent roll)
+                            {
+                                var obj = ObjectManager.GetObjectById(roll.OwnerId);
+                                if (obj)
+                                {
+                                    _rollEventMsg.Event = roll;
+                                    obj.SendMessageTo(_rollEventMsg, obj);
+                                }
+                            }
+                            break;
+                        case BridgeStateEvent.ID:
+                            if (worldEvent is BridgeStateEvent bridge)
+                            {
+                                var obj = ObjectManager.GetObjectById(bridge.TargetId);
+                                if (obj)
+                                {
+                                    _setBridgeStateMsg.Active = bridge.Active;
+                                    obj.SendMessageTo(_setBridgeStateMsg, obj);
+                                }
+                            }
+                            break;
+                        case ReturnToOwnerEvent.ID:
+                            if (worldEvent is ReturnToOwnerEvent returnToOwner)
+                            {
+                                var obj = ObjectManager.GetObjectById(returnToOwner.TargetId);
+                                if (obj)
+                                {
+                                    _networkReturnToOwnerMsg.DetectInstance = returnToOwner.DetectDistance;
+                                    _networkReturnToOwnerMsg.Offset = returnToOwner.DetectOffset;
+                                    obj.SendMessageTo(_networkReturnToOwnerMsg, obj);
+                                }
+                            }
+                            break;
+                        case HasReturnedToOwnerEvent.ID:
+                            if (worldEvent is HasReturnedToOwnerEvent hasReturned)
+                            {
+                                var obj = ObjectManager.GetObjectById(hasReturned.TargetId);
+                                if (obj)
+                                {
+                                    obj.SendMessageTo(NetworkProjectileReturnedMessage.INSTANCE, obj);
+                                }
+                            }
+                            break;
+                        case UpdateCombatStatsEvent.ID:
+                            if (worldEvent is UpdateCombatStatsEvent updateCombatStats)
+                            {
+                                var obj = ObjectManager.GetObjectById(updateCombatStats.OwnerId);
+                                if (obj)
+                                {
+                                    var setCombatStatsMsg = MessageFactory.GenerateSetCombatStatsMsg();
+                                    setCombatStatsMsg.Stats = updateCombatStats.Stats;
+                                    setCombatStatsMsg.Vitals = updateCombatStats.Vitals;
+                                    setCombatStatsMsg.BonusSecondary = updateCombatStats.Secondary;
+                                    obj.SendMessageTo(setCombatStatsMsg, obj);
+                                    MessageFactory.CacheMessage(setCombatStatsMsg);
                                 }
                             }
                             break;

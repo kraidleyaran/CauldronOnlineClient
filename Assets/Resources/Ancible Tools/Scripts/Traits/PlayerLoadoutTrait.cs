@@ -54,6 +54,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _controller.transform.parent.gameObject.SubscribeWithFilter<UnequipLoadoutSlotMessage>(UnequipLoadoutSlot, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetLoadoutMessage>(SetLoadout, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<FillLoadoutStackMessage>(FillLoadoutStack, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<SwapLoadoutSlotsMessage>(SwapLoadoutSlots, _instanceId);
         }
 
         private void UpdateInputState(UpdateInputStateMessage msg)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
 {
-    [CreateAssetMenu(fileName = "Monster Experience Server Trait", menuName = "Ancible Tools/Server/Traits/Combat/Monster Experience")]
+    [CreateAssetMenu(fileName = "Monster Experience Server Trait", menuName = "Ancible Tools/Server/Traits/Monster/Monster Experience")]
     public class MonsterExperienceTrait : ServerTrait
     {
         [SerializeField] private WorldIntRange _experience = new WorldIntRange();

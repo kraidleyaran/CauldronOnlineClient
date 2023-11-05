@@ -17,24 +17,34 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
         public override void SetupController(TraitController controller)
         {
             base.SetupController(controller);
-            _controller.gameObject.SendMessageTo(RemoveActiveRecallMessage.INSTANCE, _controller.transform.parent.gameObject);
-            var zone = WorldZoneManager.GetZoneByName(DataController.CurrentCharacter.Zone);
-            if (zone)
+            if (_controller.transform.parent.gameObject == ObjectManager.Player)
             {
-                var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
-                setUnitStateMsg.State = UnitState.Interaction;
-                _controller.gameObject.SendMessageTo(setUnitStateMsg, _controller.transform.parent.gameObject);
-                MessageFactory.CacheMessage(setUnitStateMsg);
+                _controller.gameObject.SendMessageTo(RemoveActiveRecallMessage.INSTANCE, _controller.transform.parent.gameObject);
+                var zone = WorldZoneManager.GetZoneByName(DataController.CurrentCharacter.Zone);
+                if (zone)
+                {
+                    var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
+                    setUnitStateMsg.State = UnitState.Interaction;
+                    _controller.gameObject.SendMessageTo(setUnitStateMsg, _controller.transform.parent.gameObject);
+                    MessageFactory.CacheMessage(setUnitStateMsg);
 
-                _zone = WorldZoneManager.CurrentZone;
-                var queryWorldPositionMsg = MessageFactory.GenerateQueryWorldPositionMsg();
-                queryWorldPositionMsg.DoAfter = position => _position = position;
-                _controller.gameObject.SendMessageTo(queryWorldPositionMsg, _controller.transform.parent.gameObject);
-                MessageFactory.CacheMessage(queryWorldPositionMsg);
+                    _zone = WorldZoneManager.CurrentZone;
+                    var queryWorldPositionMsg = MessageFactory.GenerateQueryWorldPositionMsg();
+                    queryWorldPositionMsg.DoAfter = position => _position = position;
+                    _controller.gameObject.SendMessageTo(queryWorldPositionMsg, _controller.transform.parent.gameObject);
+                    MessageFactory.CacheMessage(queryWorldPositionMsg);
 
-                SubscribeToMessages();
+                    SubscribeToMessages();
 
-                ClientController.TransferPlayer(zone, DataController.CurrentCharacter.Position);
+                    ClientController.TransferPlayer(zone, DataController.CurrentCharacter.Position);
+                }
+                else
+                {
+                    var removateTraitFromUnitMsg = MessageFactory.GenerateRemoveTraitFromUnitByControllerMsg();
+                    removateTraitFromUnitMsg.Controller = _controller;
+                    _controller.gameObject.SendMessageTo(removateTraitFromUnitMsg, _controller.transform.parent.gameObject);
+                    MessageFactory.CacheMessage(removateTraitFromUnitMsg);
+                }
             }
             else
             {
@@ -43,6 +53,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 _controller.gameObject.SendMessageTo(removateTraitFromUnitMsg, _controller.transform.parent.gameObject);
                 MessageFactory.CacheMessage(removateTraitFromUnitMsg);
             }
+            
         }
 
         private void SubscribeToMessages()

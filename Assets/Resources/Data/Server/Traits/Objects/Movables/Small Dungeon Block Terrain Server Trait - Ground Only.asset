@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9006f8f9828d4a499eccc4c7007558c, type: 3}
+  m_Name: Small Dungeon Block Terrain Server Trait - Ground Only
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _hitbox:
+    Size: {x: 16, y: 12}
+    Offset: {x: 0, y: -2}
+  _ground: 1

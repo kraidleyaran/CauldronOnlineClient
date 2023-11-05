@@ -16,3 +16,4 @@ MonoBehaviour:
   _hitbox:
     Size: {x: 16, y: 8}
     Offset: {x: 0, y: -2}
+  _ground: 1

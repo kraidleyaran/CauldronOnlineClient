@@ -19,8 +19,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         public override void SetupController(TraitController controller)
         {
-            base.SetupController(controller);
-            _controller.gameObject.SendMessageTo(ReturningToOwnerMessage.INSTANCE, _controller.transform.parent.gameObject);
+            base.SetupController(controller);            
             var queryOwnerMsg = MessageFactory.GenerateQueryOwnerMsg();
             queryOwnerMsg.DoAfter = owner => _owner = owner;
             _controller.gameObject.SendMessageTo(queryOwnerMsg, _controller.transform.parent.gameObject);
@@ -30,7 +29,25 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 ObjectManager.DestroyNetworkObject(_controller.transform.parent.gameObject);
                 return;
             }
+            if (_owner == ObjectManager.Player)
+            {
+                var objId = ObjectManager.GetId(_controller.transform.parent.gameObject);
+                if (!string.IsNullOrEmpty(objId))
+                {
+                    ClientController.SendToServer(new ClientReturnToOwnerMessage { TargetId = objId, Tick = TickController.ServerTick, DetectDistance = _detectDistance, DetectOffset = _ownerOffset.ToWorldVector()});
+                    //ClientController.SendToServer(new ClientDestroyObjectMessage{TargetId = objId, Tick = TickController.ServerTick});
+                }
 
+            }
+            //else
+            //{
+            //    var removeTraitFromUnitByControllerMsg = MessageFactory.GenerateRemoveTraitFromUnitByControllerMsg();
+            //    removeTraitFromUnitByControllerMsg.Controller = _controller;
+            //    _controller.gameObject.SendMessageTo(removeTraitFromUnitByControllerMsg, _controller.transform.parent.gameObject);
+            //    MessageFactory.CacheMessage(removeTraitFromUnitByControllerMsg);
+            //    return;
+            //}
+            _controller.gameObject.SendMessageTo(ReturningToOwnerMessage.INSTANCE, _controller.transform.parent.gameObject);
             var worldPos = _controller.transform.parent.position.ToVector2().ToWorldPosition();
             var setWorldPositionMsg = MessageFactory.GenerateSetWorldPositionMsg();
             setWorldPositionMsg.Position = worldPos;
@@ -69,11 +86,24 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 var distance = diff.magnitude;
                 if (distance <= _detectDistance * DataController.Interpolation)
                 {
+
+                    if (_owner == ObjectManager.Player)
+                    {
+                        var objId = ObjectManager.GetId(_controller.transform.parent.gameObject);
+                        if (!string.IsNullOrEmpty(objId))
+                        {
+                            ClientController.SendToServer(new ClientProjectileReturnedMessage{TargetId = objId, Tick = TickController.ServerTick});
+                            ClientController.SendToServer(new ClientDestroyObjectMessage{TargetId = objId, Tick = TickController.ServerTick});
+                        }
+                    }
                     var projectileReturnedMsg = MessageFactory.GenerateProjectileReturnedMsg();
                     projectileReturnedMsg.Projectile = _controller.transform.parent.gameObject;
+                    projectileReturnedMsg.Destroy = true;
                     _controller.gameObject.SendMessageTo(projectileReturnedMsg, _owner);
                     MessageFactory.CacheMessage(projectileReturnedMsg);
-                    _owner.UnsubscribeFromAllMessagesWithFilter(_instanceId);
+
+                    //_owner.UnsubscribeFromAllMessagesWithFilter(_instanceId);
+
                     ObjectManager.DestroyNetworkObject(_controller.transform.parent.gameObject);
                 }
             }
@@ -104,6 +134,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         public override void Destroy()
         {
+            Debug.Log("Return to Owner Removed");
             if (_owner)
             {
                 _owner.UnsubscribeFromAllMessagesWithFilter(_instanceId);

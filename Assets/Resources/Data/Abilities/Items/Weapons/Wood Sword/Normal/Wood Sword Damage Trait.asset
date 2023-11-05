@@ -15,4 +15,8 @@ MonoBehaviour:
   MaxStack: 1
   _amount: 3
   _type: 0
-  _tags: []
+  _tags:
+  - {fileID: 11400000, guid: ac09376563a505649815bb753eb3bdf6, type: 2}
+  - {fileID: 11400000, guid: e01d83372d8f0634d97aaa440431362b, type: 2}
+  _applyToOwnerOnDamageDone:
+  - {fileID: 11400000, guid: 19efe35c2d0c5e543a397c61b8a137eb, type: 2}

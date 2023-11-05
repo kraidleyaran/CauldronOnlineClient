@@ -15,3 +15,4 @@ MonoBehaviour:
   MaxStack: 1
   _hitbox: {fileID: 11400000, guid: beb8c087a3dfc904dbbebb943acd73c3, type: 2}
   _resultCount: 5
+  _ignoreGround: 1

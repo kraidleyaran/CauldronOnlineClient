@@ -2,6 +2,7 @@
 using System.Linq;
 using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment;
 using ConcurrentMessageBus;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -17,7 +18,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
         [SerializeField] private GameObject _cursor;
         [SerializeField] private GameObject _upArrow;
         [SerializeField] private GameObject _downArrow;
-
+        [SerializeField] private UiArmorEquipmentManager _armorEquipment;
+        [SerializeField] private GameObject _equip;
 
         private DataRow<ItemStack>[] _items = new DataRow<ItemStack>[0];
         private Dictionary<Vector2Int, UiInventoryItemController> _controllers = new Dictionary<Vector2Int, UiInventoryItemController>();
@@ -25,9 +27,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
         private int _dataRowPosition = 0;
         private Vector2Int _cursorPosition = Vector2Int.zero;
         private bool _hover = false;
+        private bool _active = true;
 
         void Awake()
         {
+            _armorEquipment.WakeUp();
             RefreshInventory();
             _upArrow.gameObject.SetActive(false);
             _downArrow.gameObject.SetActive(_dataRowPosition + 1 < _items.Length - _maxRows + 1);
@@ -85,6 +89,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                 {
                     setCursorController.SetCursor(_cursor);
                     setCursorController.SetHover(_hover);
+                    _equip.gameObject.SetActive(setCursorController.Item.Item.Type == ItemType.Armor);
                 }
                 else
                 {
@@ -94,13 +99,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                         _cursorPosition = closest.Key;
                         closest.Value.SetCursor(_cursor);
                         closest.Value.SetHover(_hover);
+                        _equip.gameObject.SetActive(closest.Value.Item.Item.Type == ItemType.Armor);
                     }
 
                 }
             }
             else
             {
-                _cursor.gameObject.SetActive(false);
+                _active = false;
+                _equip.gameObject.SetActive(false);
+                _armorEquipment.SetActive(true);
             }
         }
 
@@ -136,6 +144,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
 
         private void UpdateInputState(UpdateInputStateMessage msg)
         {
+            if (!msg.Previous.Info && msg.Current.Info)
+            {
+                _hover = !_hover;
+                if (_active)
+                {
+                    if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                    {
+                        selected.SetHover(_hover);
+                    }
+                }
+
+            }
             var buttonPressed = false;
             if (_controllers.TryGetValue(_cursorPosition, out var controller))
             {
@@ -155,63 +175,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Inventory
                     buttonPressed = true;
                     gameObject.SendMessage(PlayerInventoryUpdatedMessage.INSTANCE);
                 }
-                if (!msg.Previous.Info && msg.Current.Info)
-                {
-                    _hover = !_hover;
-                    if (_controllers.TryGetValue(_cursorPosition, out var selected))
-                    {
-                       selected.SetHover(_hover);
-                    }
-                }
+
                 
             }
 
             if (!buttonPressed)
             {
-                var direction = Vector2Int.zero;
-                if (!msg.Previous.Up && msg.Current.Up)
-                {
-                    direction.y = -1;
-                }
-                else if (!msg.Previous.Down && msg.Current.Down)
-                {
-                    direction.y = 1;
-                }
-                else if (!msg.Previous.Left && msg.Current.Left)
-                {
-                    direction.x = -1;
-                }
-                else if (!msg.Previous.Right && msg.Current.Right)
-                {
-                    direction.x = 1;
-                }
-
-                if (direction != Vector2Int.zero)
-                {
-                    if (_controllers.TryGetValue(direction + _cursorPosition, out var itemController))
-                    {
-                        if (_controllers.TryGetValue(_cursorPosition, out var selected))
-                        {
-                            selected.SetHover(false);
-                        }
-                        _cursorPosition = itemController.Position;
-                        itemController.SetCursor(_cursor);
-                        itemController.SetHover(_hover);
-                    }
-                    else if (direction.y > 0 && _dataRowPosition + 1 < _items.Length - _maxRows + 1)
-                    {
-                        _dataRowPosition++;
-                        RefreshRows();
-                    }
-                    else if (direction.y < 0 && _dataRowPosition > 0)
-                    {
-                        _dataRowPosition--;
-                        RefreshRows();
-                    }
-
-                    _upArrow.gameObject.SetActive(_dataRowPosition > 0);
-                    _downArrow.gameObject.SetActive(_dataRowPosition + 1 < _items.Length - _maxRows + 1);
-                }
+                
             }
             
         }

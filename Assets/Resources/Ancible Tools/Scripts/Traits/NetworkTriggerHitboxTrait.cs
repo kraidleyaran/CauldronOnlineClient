@@ -19,7 +19,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             base.SetupController(controller);
             _hitboxController = Instantiate(FactoryController.NETWORK_HITBOX, _controller.transform.parent);
-            _hitboxController.Setup(_hitbox, CollisionLayerFactory.Interaction, Apply);
+            _hitboxController.Setup(_hitbox, CollisionLayerFactory.Interaction, Apply, false);
             SubscribeToMessages();
         }
 

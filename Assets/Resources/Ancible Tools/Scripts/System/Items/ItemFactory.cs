@@ -10,12 +10,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
     {
         public static ItemLootController ItemLoot => _instance._itemLootTemplate;
         public static KeyItemLootController KeyItemLoot => _instance._keyItemLootTemplate;
+        public static LootSpawnController LootSpawn => _instance._lootSpawnTemplate;
+
+        public static BonusTag ExplosiveTag => _instance._explosive;
 
         private static ItemFactory _instance = null;
 
         [SerializeField] private string _internalItemPath = string.Empty;
         [SerializeField] private ItemLootController _itemLootTemplate;
         [SerializeField] private KeyItemLootController _keyItemLootTemplate;
+        [SerializeField] private LootSpawnController _lootSpawnTemplate;
+        [SerializeField] private string _tagsInternalPath = string.Empty;
         
         [Header("Item Quality Colors")]
         [SerializeField] private Color _normal = Color.white;
@@ -25,7 +30,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
         [SerializeField] private Color _ornate = Color.yellow;
         [SerializeField] private Color _legendary = Color.yellow;
 
+        [Header("Tags")]
+        [SerializeField] private BonusTag _explosive;
+
         private Dictionary<string, WorldItem> _items = new Dictionary<string, WorldItem>();
+        private Dictionary<string, BonusTag> _tags = new Dictionary<string, BonusTag>();
 
         void Awake()
         {
@@ -37,6 +46,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
 
             _instance = this;
             _items = UnityEngine.Resources.LoadAll<WorldItem>(_internalItemPath).ToDictionary(i => i.name, i => i);
+            _tags = UnityEngine.Resources.LoadAll<BonusTag>(_tagsInternalPath).ToDictionary(t => t.name, t => t);
             Debug.Log($"Loaded {_items.Count} World Items");
             SubscribeToMessages();
         }
@@ -69,6 +79,36 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Items
                     return _instance._normal;
             }
         }
+
+        public static WorldItem[] GetAllItems()
+        {
+            return _instance._items.Values.ToArray();
+        }
+
+        public static BonusTag GetTag(string tagName)
+        {
+            if (_instance._tags.TryGetValue(tagName, out var tag))
+            {
+                return tag;
+            }
+
+            return null;
+        }
+
+        public static BonusTag[] GetTags(string[] tags)
+        {
+            var returnTags = new List<BonusTag>();
+            foreach (var tagName in tags)
+            {
+                if (_instance._tags.TryGetValue(tagName, out var tag))
+                {
+                    returnTags.Add(tag);
+                }
+            }
+
+            return returnTags.ToArray();
+        }
+        
 
         private void SubscribeToMessages()
         {

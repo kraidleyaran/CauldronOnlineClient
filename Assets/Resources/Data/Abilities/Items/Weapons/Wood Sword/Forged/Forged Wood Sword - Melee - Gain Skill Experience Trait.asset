@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8716c8178cc9b48489c050c16b96417e, type: 3}
+  m_Name: Forged Wood Sword - Melee - Gain Skill Experience Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _skill: {fileID: 11400000, guid: 351a43c88d224a04da244c2d197012ea, type: 2}
+  _experience: 2

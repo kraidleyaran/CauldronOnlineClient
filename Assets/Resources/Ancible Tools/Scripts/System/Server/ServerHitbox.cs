@@ -30,6 +30,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server
     {
         public ServerTrait[] ApplyOnServer = new ServerTrait[0];
         public Trait[] ApplyOnClient = new Trait[0];
+        public bool ReApply;
 
         public ApplyHitboxData GetApplyData()
         {
@@ -38,7 +39,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server
                 Size = Size.ToWorldVector(),
                 Offset = Offset.ToWorldVector(),
                 ApplyOnServer = ApplyOnServer.Where(t => t).Select(t => t.name).ToArray(),
-                ApplyOnClient = ApplyOnClient.Where(t => t).Select(t => t.name).ToArray()
+                ApplyOnClient = ApplyOnClient.Where(t => t).Select(t => t.name).ToArray(),
+                ReApply = ReApply
             };
         }
     }

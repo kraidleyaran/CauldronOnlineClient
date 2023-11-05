@@ -9,6 +9,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera
     public class CameraController : MonoBehaviour
     {
         public static Camera Camera => _instance._camera;
+        public static bool Locked => _instance._locked;
 
         private static CameraController _instance = null;
 
@@ -22,6 +23,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera
         private Vector2 _position = Vector2.zero;
         private List<CameraZoneController> _cameraZones = new List<CameraZoneController>();
         private CameraZoneController _currentZone = null;
+        private bool _locked = true;
 
         private Tween _cameraTween = null;
 
@@ -39,82 +41,98 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera
 
         public static void SetPosition(Vector2 position, bool instant = false)
         {
-            if (_instance._cameraTween == null)
+            if (_instance._locked)
             {
-                if (!_instance._currentZone)
+                if (_instance._cameraTween == null)
                 {
-                    if (_instance._cameraZones.Count > 0)
+                    if (!_instance._currentZone)
                     {
-                        var closestZone = _instance._cameraZones.Where(z => z.ContainsPoint(position)).OrderBy(z => (z.ClosestPos(position) - position).sqrMagnitude).FirstOrDefault();
-                        if (!closestZone)
+                        if (_instance._cameraZones.Count > 0)
                         {
-                            closestZone = _instance._cameraZones.OrderBy(z => (z.ClosestPos(position) - position).sqrMagnitude).First();
-                        }
-                        var closestPos = closestZone.GetCameraPosition(position);
-                        _instance._position = closestPos;
-                        _instance._currentZone = closestZone;
-                        if (instant)
-                        {
-                            _instance._rigidBody.position = _instance._position;
-                        }
-                    }
-                    else
-                    {
-                        _instance._position = position;
-                        if (instant)
-                        {
-                            _instance._rigidBody.position = position;
-                        }
-                    }
-                }
-                else if (!_instance._currentZone.ContainsPoint(position) && _instance._cameraZones.Count > 1)
-                {
-                    var currentClosePos = _instance._currentZone.GetCameraPosition(position);/*.ToPixelPerfect();*/
-                    var closestZone = _instance._cameraZones.Where(z => z != _instance._currentZone).OrderBy(z => (z.ClosestPos(position) - position).sqrMagnitude).First();
-                    if (closestZone)
-                    {
-                        var closestPos = closestZone.GetCameraPosition(position);/*.ToPixelPerfect();*/
-
-                        var closestDistance = (closestPos - position).magnitude;
-                        var currentDistance = (currentClosePos - position).magnitude;
-
-                        if (currentDistance > closestDistance)
-                        {
-                            _instance._currentZone = closestZone;
-                            _instance._position = closestPos;
-                            if (DataController.WorldState == WorldState.Active)
+                            var closestZone = _instance._cameraZones.Where(z => z.ContainsPoint(position)).OrderBy(z => (z.ClosestPos(position) - position).sqrMagnitude).FirstOrDefault();
+                            if (!closestZone)
                             {
-                                if (closestDistance >= _instance._minimumZoneTransitionDistance * DataController.Interpolation)
-                                {
-                                    if (_instance._rigidBody.position != _instance._position)
-                                    {
-                                        if (_instance._cameraTween != null)
-                                        {
-                                            if (_instance._cameraTween.IsActive())
-                                            {
-                                                _instance._cameraTween.Kill();
-                                            }
-
-                                            _instance._cameraTween = null;
-                                        }
-                                        var speed = _instance._zoneTransitionSpeed * TickController.TickRate;
-                                        _instance._cameraTween = _instance._rigidBody.DOMove(_instance._position, speed).SetEase(Ease.Linear).OnComplete(() => { _instance._cameraTween = null; });
-                                    }
-                                }
-                                else
-                                {
-                                    _instance._position = currentClosePos;
-                                    if (instant)
-                                    {
-                                        _instance._rigidBody.position = _instance._position;
-                                    }
-                                }
+                                closestZone = _instance._cameraZones.OrderBy(z => (z.ClosestPos(position) - position).sqrMagnitude).First();
                             }
-
+                            var closestPos = closestZone.GetCameraPosition(position);
+                            _instance._position = closestPos;
+                            _instance._currentZone = closestZone;
+                            if (instant)
+                            {
+                                _instance._rigidBody.position = _instance._position;
+                            }
                         }
                         else
                         {
-                            _instance._position = currentClosePos;
+                            _instance._position = position;
+                            if (instant)
+                            {
+                                _instance._rigidBody.position = position;
+                            }
+                        }
+                    }
+                    else if (!_instance._currentZone.ContainsPoint(position) && _instance._cameraZones.Count > 1)
+                    {
+                        var currentClosePos = _instance._currentZone.GetCameraPosition(position);/*.ToPixelPerfect();*/
+                        var closestZone = _instance._cameraZones.Where(z => z != _instance._currentZone).OrderBy(z => (z.ClosestPos(position) - position).sqrMagnitude).First();
+                        if (closestZone)
+                        {
+                            var closestPos = closestZone.GetCameraPosition(position);/*.ToPixelPerfect();*/
+
+                            var closestDistance = (closestPos - position).magnitude;
+                            var currentDistance = (currentClosePos - position).magnitude;
+
+                            if (currentDistance > closestDistance)
+                            {
+                                _instance._currentZone = closestZone;
+                                _instance._position = closestPos;
+                                if (DataController.WorldState == WorldState.Active)
+                                {
+                                    if (closestDistance >= _instance._minimumZoneTransitionDistance * DataController.Interpolation)
+                                    {
+                                        if (_instance._rigidBody.position != _instance._position)
+                                        {
+                                            if (_instance._cameraTween != null)
+                                            {
+                                                if (_instance._cameraTween.IsActive())
+                                                {
+                                                    _instance._cameraTween.Kill();
+                                                }
+
+                                                _instance._cameraTween = null;
+                                            }
+                                            var speed = _instance._zoneTransitionSpeed * TickController.TickRate;
+                                            _instance._cameraTween = _instance._rigidBody.DOMove(_instance._position, speed).SetEase(Ease.Linear).OnComplete(() => { _instance._cameraTween = null; });
+                                        }
+                                    }
+                                    else
+                                    {
+                                        _instance._position = currentClosePos;
+                                        if (instant)
+                                        {
+                                            _instance._rigidBody.position = _instance._position;
+                                        }
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                _instance._position = currentClosePos;
+                                if (instant)
+                                {
+                                    _instance._rigidBody.position = _instance._position;
+                                }
+                                //if (DataController.WorldState == WorldState.Active)
+                                //{
+                                //    _rigidBody.position = _position;
+                                //    _moved = true;
+                                //}
+                            }
+                        }
+                        else
+                        {
+                            _instance._position = _instance._currentZone.GetCameraPosition(position).ToPixelPerfect();
                             if (instant)
                             {
                                 _instance._rigidBody.position = _instance._position;
@@ -128,48 +146,39 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera
                     }
                     else
                     {
-                        _instance._position = _instance._currentZone.GetCameraPosition(position).ToPixelPerfect();
-                        if (instant)
-                        {
-                            _instance._rigidBody.position = _instance._position;
-                        }
-                        //if (DataController.WorldState == WorldState.Active)
-                        //{
-                        //    _rigidBody.position = _position;
-                        //    _moved = true;
-                        //}
-                    }
-                }
-                else
-                {
-                    var prev = _instance._position;
-                    _instance._position = _instance._currentZone.GetCameraPosition(position);//.ToPixelPerfect();
+                        var prev = _instance._position;
+                        _instance._position = _instance._currentZone.GetCameraPosition(position);//.ToPixelPerfect();
 
-                    if (DataController.WorldState == WorldState.Active)
-                    {
-                        var currentDistance = (_instance._position - prev).magnitude;
-                        if (currentDistance >= _instance._minimumZoneTransitionDistance * DataController.Interpolation)
+                        if (DataController.WorldState == WorldState.Active)
                         {
-                            if (_instance._cameraTween != null)
+                            var currentDistance = (_instance._position - prev).magnitude;
+                            if (currentDistance >= _instance._minimumZoneTransitionDistance * DataController.Interpolation)
                             {
-                                if (_instance._cameraTween.IsActive())
+                                if (_instance._cameraTween != null)
                                 {
-                                    _instance._cameraTween.Kill();
+                                    if (_instance._cameraTween.IsActive())
+                                    {
+                                        _instance._cameraTween.Kill();
+                                    }
+
+                                    _instance._cameraTween = null;
                                 }
 
-                                _instance._cameraTween = null;
+                                var speed = _instance._zoneTransitionSpeed * TickController.TickRate;
+                                _instance._cameraTween = _instance._rigidBody.DOMove(_instance._position, speed).SetEase(Ease.Linear).OnComplete(() => { _instance._cameraTween = null; });
+                            }
+                            else if (instant)
+                            {
+                                _instance._rigidBody.position = _instance._position;
                             }
 
-                            var speed = _instance._zoneTransitionSpeed * TickController.TickRate;
-                            _instance._cameraTween = _instance._rigidBody.DOMove(_instance._position, speed).SetEase(Ease.Linear).OnComplete(() => { _instance._cameraTween = null; });
                         }
-                        else if (instant)
-                        {
-                            _instance._rigidBody.position = _instance._position;
-                        }
-
                     }
                 }
+            }
+            else
+            {
+                _instance._position = position;
             }
             
 
@@ -195,6 +204,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera
                 _instance._currentZone = null;
             }
             _instance._cameraZones.Remove(zone);
+        }
+
+        public static void SetLockedState(bool locked)
+        {
+            _instance._locked = locked;
         }
 
 

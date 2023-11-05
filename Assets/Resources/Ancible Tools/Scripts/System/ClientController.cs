@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.Threading;
+using Assets.Resources.Ancible_Tools.Scripts.System.Data;
 using Assets.Resources.Ancible_Tools.Scripts.System.WorldCamera;
 using Assets.Resources.Ancible_Tools.Scripts.System.Zones;
+using Assets.Resources.Ancible_Tools.Scripts.Ui;
 using Battlehub.Dispatcher;
 using CauldronOnlineCommon;
 using CauldronOnlineCommon.Data;
 using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Math;
 using ConcurrentMessageBus;
+using DG.Tweening;
 using Newtonsoft.Json;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System
 {
@@ -20,6 +24,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
     {
         public static WorldClientState State => _instance._client.State;
         public static ClientSettings Settings => _instance._settings;
+        public static RegisteredPlayerData[] Roster => _instance._players.Values.ToArray();
 
         private static ClientController _instance = null;
 
@@ -28,6 +33,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         [SerializeField] private int _checkMessagesEveryMs = 10;
         [SerializeField] private string _settingsFileName = "clientsettings.json";
         [SerializeField] private int _maxPingResults = 100;
+        [SerializeField] private float _serverConnectWaitTime = 10f;
+        [SerializeField] private float _maxTimeBetweenPings = 5;
 
         private WorldClient _client = null;
 
@@ -37,13 +44,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private Thread _messagingThread = null;
         private bool _active = false;
         private string _clientId = string.Empty;
+        private Sequence _disconnectTimerSequence = null;
+        private Sequence _serverConnectWaitSequence = null;
 
         private ClientSettings _settings = null;
 
         private Dictionary<string, List<ClientMultiPartMessage>> _multiPartMessages = new Dictionary<string, List<ClientMultiPartMessage>>();
+        private Dictionary<string, RegisteredPlayerData> _players = new Dictionary<string, RegisteredPlayerData>();
+        private string _playerId = string.Empty;
 
         private List<int> _pingResults = new List<int>();
         private DateTime _lastPingStamp = DateTime.MinValue;
+        
 
         void Awake()
         {
@@ -81,19 +93,30 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             SubscribeToMessages();
         }
 
-        void Start()
-        {
-
-        }
-
         public static void Connect()
         {
             if (_instance._client.State == WorldClientState.Disconnected)
             {
+                UiServerStatusWindow.SetStatusText("Connecting to server");
                 _instance._active = true;
                 _instance._messagingThread = new Thread(_instance.CheckMessages);
                 _instance._messagingThread.Start();
-                _instance._client.Connect(_instance._settings.IpAddres, _instance._settings.Port);
+                _instance._serverConnectWaitSequence = DOTween.Sequence().AppendInterval(_instance._serverConnectWaitTime).OnComplete(_instance.ServerNotAvailable);
+                var ip = _instance._ipAddress;
+                if (!string.IsNullOrEmpty(ip))
+                {
+                    
+                    if (IPAddress.TryParse(_instance._settings.IpAddres, out var ipAddress))
+                    {
+                        ip = ipAddress.MapToIPv4().ToString();
+                    }
+                    else
+                    {
+                        var host = Dns.GetHostEntry(_instance._settings.IpAddres);
+                        ip = host.AddressList[0].MapToIPv4().ToString();
+                    }
+                }
+                _instance._client.Connect(ip, _instance._settings.Port);
             }
         }
 
@@ -101,6 +124,26 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         {
             if (_instance._client.State != WorldClientState.Disconnected)
             {
+                if (_instance._disconnectTimerSequence != null)
+                {
+                    if (_instance._disconnectTimerSequence.IsActive())
+                    {
+                        _instance._disconnectTimerSequence.Kill();
+                    }
+
+                    _instance._disconnectTimerSequence = null;
+                }
+
+                if (_instance._serverConnectWaitSequence != null)
+                {
+                    if (_instance._serverConnectWaitSequence.IsActive())
+                    {
+                        _instance._serverConnectWaitSequence.Kill();
+                    }
+
+                    _instance._serverConnectWaitSequence = null;
+                }
+                _instance._active = false;
                 _instance._client.Disconnect();
             }
         }
@@ -136,6 +179,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         {
             DataController.SetWorldState(WorldState.Loading);
             DataController.SavePlayerData();
+            UiServerStatusWindow.SetStatusText("Requesting transfer");
             var clientData = DataController.CurrentCharacter.ToClientData();
             clientData.Sprite = ObjectManager.DefaultPlayerSprite.name;
             SendToServer(new ClientZoneTransferRequestMessage{Data = clientData, Zone = zone.name, Position = pos});
@@ -152,11 +196,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             clientData.Sprite = ObjectManager.DefaultPlayerSprite.name;
             _instance.gameObject.SendMessageTo(queryCombatStatsMsg, ObjectManager.Player);
             MessageFactory.CacheMessage(queryCombatStatsMsg);
-
+            UiServerStatusWindow.SetStatusText("Requesting respawn");
             SendToServer(new ClientRespawnRequestMessage{Data = clientData, Zone = DataController.CurrentCharacter.Zone, Position = DataController.CurrentCharacter.Position});
         }
 
-        
+
 
         public static void SetConnctionSettings(string ipAddress, int port)
         {
@@ -164,6 +208,17 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             _instance._settings.Port = port;
             var path = $"{Application.persistentDataPath}{Path.DirectorySeparatorChar}{_instance._settingsFileName}";
             File.WriteAllText(path, JsonConvert.SerializeObject(_instance._settings));
+        }
+
+
+        public static void EnterWorld(WorldCharacterData data)
+        {
+            UiServerStatusWindow.SetStatusText("Requesting join...");
+            DataController.SetCurrentPlayerData(data);
+            var clientData = data.ToClientData();
+            clientData.Sprite = ObjectManager.DefaultPlayerSprite.name;
+            SendToServer(new ClientCreateCharacterRequestMessage { Data = clientData, Zone = DataController.CurrentCharacter.Zone, Position = DataController.CurrentCharacter.Position });
+            
         }
 
         private void StateUpdate(WorldClientState state)
@@ -221,6 +276,22 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             _messagingThread = null;
         }
 
+        private void ServerHasStoppedResponding()
+        {
+            _instance._active = false;
+            _disconnectTimerSequence = null;
+            _client.Disconnect();
+            UiServerStatusWindow.SetStatusText("Disconnected", true);
+        }
+
+        private void ServerNotAvailable()
+        {
+            _instance._active = false;
+            _serverConnectWaitSequence = null;
+            _client.Disconnect();
+            UiServerStatusWindow.SetStatusText("Server did not respond", true);
+        }
+
         private void SubscribeToMessages()
         {
             gameObject.Subscribe<ClientConnectResultMessage>(ClientConnectionResult);
@@ -229,19 +300,33 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             gameObject.Subscribe<ClientPingMessage>(ClientPing);
             gameObject.Subscribe<ClientZoneTransferResultMessage>(ClientZoneTransferResult);
             gameObject.Subscribe<ClientRespawnResultMessage>(ClientRespawnResult);
-            //gameObject.Subscribe<ClientMultiPartMessage>(ClientMultiPart);
+            gameObject.Subscribe<ClientPlayerRosterResponseMessage>(ClientPlayerRosterRespone);
+            gameObject.Subscribe<ClientPlayerRosterUpdateMessage>(ClientPlayerRosterUpdate);
         }
 
         private void ClientConnectionResult(ClientConnectResultMessage msg)
         {
             if (msg.Success)
             {
+                if (_serverConnectWaitSequence != null)
+                {
+                    if (_serverConnectWaitSequence.IsActive())
+                    {
+                        _serverConnectWaitSequence.Kill();
+                    }
+
+                    _serverConnectWaitSequence = null;
+                }
                 DataController.SetWorldState(WorldState.Loading);
                 _clientId = msg.ClientId;
-                Debug.Log($"Connected to Server - ClientId:{msg.ClientId} - Sending Settings Request");
+                _playerId = msg.PlayerId;
+                Debug.Log($"Connected to Server - ClientId:{msg.ClientId} - PlayerId:{msg.PlayerId} - Sending Settings Request");
                 _lastPingStamp = DateTime.UtcNow;
+                UiServerStatusWindow.SetStatusText("Connected to server - Requesting world state");
+                _disconnectTimerSequence = DOTween.Sequence().AppendInterval(_maxTimeBetweenPings).OnComplete(ServerHasStoppedResponding);
                 SendToServer(new ClientPingMessage());
                 SendToServer(new ClientWorldSettingsRequestMessage());
+                SendToServer(new ClientPlayerRosterRequestMessage());
             }
             else
             {
@@ -256,6 +341,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             {
                 WorldZoneManager.LoadZone(msg.Zone);
                 ObjectManager.GeneratePlayerObject(DataController.CurrentCharacter, msg.ObjectId, msg.Position);
+                UiServerStatusWindow.SetStatusText("Character accepted - Requesting objects");
                 Debug.Log("Character request received - Sending Object request");
                 SendToServer(new ClientObjectRequestMessage());
             }
@@ -263,14 +349,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
         private void ClientWorldSettingsResult(ClientWorldSettingsResultMessage msg)
         {
-            Debug.Log("Settings received - Sending character request");
-            var clientData = DataController.CurrentCharacter.ToClientData();
-            clientData.Sprite = ObjectManager.DefaultPlayerSprite.name;
-            SendToServer(new ClientCreateCharacterRequestMessage{Data = clientData, Zone = DataController.CurrentCharacter.Zone, Position = DataController.CurrentCharacter.Position});
+            UiWindowManager.OpenWindow(UiController.CharacterManager);
+            UiServerStatusWindow.Clear();
+            //Debug.Log("Settings received - Sending character request");
+            //UiServerStatusWindow.SetStatusText("");
+            //var clientData = DataController.CurrentCharacter.ToClientData();
+            //clientData.Sprite = ObjectManager.DefaultPlayerSprite.name;
+            //SendToServer(new ClientCreateCharacterRequestMessage{Data = clientData, Zone = DataController.CurrentCharacter.Zone, Position = DataController.CurrentCharacter.Position});
         }
 
         private void ClientPing(ClientPingMessage msg)
         {
+            _disconnectTimerSequence?.Restart();
             var latency = (int)(DateTime.UtcNow - _lastPingStamp).TotalMilliseconds;
             _lastPingStamp = DateTime.UtcNow;
             _pingResults.Add(latency);
@@ -293,10 +383,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                     _setWorldPositionMsg.Position = msg.Position;
                     gameObject.SendMessageTo(_setWorldPositionMsg, ObjectManager.Player);
                     CameraController.SetPosition(msg.Position.ToWorldVector(), true);
+                    UiServerStatusWindow.SetStatusText("Transfer accepted - requesting objects");
                     SendToServer(new ClientObjectRequestMessage());
                 }
                 else
                 {
+                    
                     _setWorldPositionMsg.Position = msg.Position;
                     gameObject.SendMessageTo(_setWorldPositionMsg, ObjectManager.Player);
                     CameraController.SetPosition(msg.Position.ToWorldVector(), true);
@@ -307,11 +399,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                     setUnitStateMsg.State = UnitState.Active;
                     gameObject.SendMessageTo(setUnitStateMsg, ObjectManager.Player);
                     MessageFactory.CacheMessage(setUnitStateMsg);
+                    UiServerStatusWindow.Clear();
                 }
 
             }
             else
             {
+                UiServerStatusWindow.SetStatusText("Error while transferring zones - See log for details", true);
                 Debug.LogWarning($"Error while transferring zones - {msg.Message}");
             }
         }
@@ -344,6 +438,34 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
                     MessageFactory.CacheMessage(setUnitStateMsg);
                 }
                 
+            }
+        }
+
+        private void ClientPlayerRosterRespone(ClientPlayerRosterResponseMessage msg)
+        {
+            foreach (var player in msg.Players)
+            {
+                if (player.PlayerId != _playerId && !_instance._players.ContainsKey(player.PlayerId))
+                {
+                    _instance._players.Add(player.PlayerId, player);
+                }
+            }
+            gameObject.SendMessage(PlayerRosterUpdatedMessage.INSTANCE);
+        }
+
+        private void ClientPlayerRosterUpdate(ClientPlayerRosterUpdateMessage msg)
+        {
+            if (_playerId != msg.Player.PlayerId)
+            {
+                if (_instance._players.TryGetValue(msg.Player.PlayerId, out var data))
+                {
+                    data.Update(msg.Player);
+                }
+                else
+                {
+                    _instance._players.Add(msg.Player.PlayerId, msg.Player);
+                }
+                gameObject.SendMessage(PlayerRosterUpdatedMessage.INSTANCE);
             }
         }
 

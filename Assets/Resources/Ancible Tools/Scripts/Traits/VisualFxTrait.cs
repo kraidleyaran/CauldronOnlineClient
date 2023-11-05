@@ -14,6 +14,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private Vector2 _scale = new Vector2(31.25f,31.25f);
         [SerializeField] private Vector2Int _offset = Vector2Int.zero;
         [SerializeField] private bool _instantiateAlone = false;
+        [SerializeField] private bool _applySorting = false;
+        [SerializeField] private SpriteLayer _spriteLayer;
+        [SerializeField] private int _sortOrder = 0;
 
         private VisualFxController _fxController = null;
 
@@ -36,6 +39,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 fxController.Setup(_runtime, VisualFxFinished);
             }
 
+            if (_applySorting)
+            {
+                var sortingOrder = fxController.transform.position.ToVector2().ToWorldPosition().Y * -1;
+                fxController.SetSortingLayer(_spriteLayer);
+                fxController.SetSortingOrder(sortingOrder + _sortOrder);
+            }
             fxController.transform.SetLocalScaling(_scale);
             
         }

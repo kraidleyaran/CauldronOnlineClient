@@ -28,6 +28,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private bool _stopOnWall = true;
         [SerializeField] private Vector2Int _direction = Vector2Int.zero;
         [SerializeField] private bool _registerProjectile = false;
+        [SerializeField] private BonusTag[] _tags = new BonusTag[0];
 
         public override void SetupController(TraitController controller)
         {
@@ -78,12 +79,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                         MessageFactory.CacheMessage(registerProjectileMsg);
                     }
 
+                    var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+                    addTraitToUnitMsg.Trait = TraitFactory.Ownership;
+                    _controller.gameObject.SendMessageTo(addTraitToUnitMsg, projectile);
+
                     var setOwnerMsg = MessageFactory.GenerateSetOwnerMsg();
                     setOwnerMsg.Owner = owner;
                     _controller.gameObject.SendMessageTo(setOwnerMsg, projectile);
                     MessageFactory.CacheMessage(setOwnerMsg);
 
-                    var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+                    
                     addTraitToUnitMsg.Trait = _spriteTrait;
                     _controller.gameObject.SendMessageTo(addTraitToUnitMsg, projectile);
 
@@ -104,6 +109,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     setupProjectileMsg.MoveSpeed = _moveSpeed;
                     setupProjectileMsg.ApplyOnWall = _applyOnWall;
                     setupProjectileMsg.StopOnWall = _stopOnWall;
+                    setupProjectileMsg.Tags = _tags;
                     if (owner == ObjectManager.Player)
                     {
                         setupProjectileMsg.ReportPosition = true;

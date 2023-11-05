@@ -50,6 +50,8 @@ MonoBehaviour:
   _networkHitboxTemplate: {fileID: 4998810074321960782, guid: 9bc5722f957471d4f8f269ac232f1aa2, type: 3}
   _worldAbilityTemplate: {fileID: 6869623039305906815, guid: 1bdeabdc63e42a7489ec2eb0f8eb99e8, type: 3}
   _visualFxTemplate: {fileID: 4580447240638721925, guid: af1e79733b96646419d2cc7791b6b0c3, type: 3}
+  _recolorMaterial: {fileID: 2100000, guid: 47891c79d054d564ca4800155d1b4d07, type: 2}
+  _defaultSpriteMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &2194048140382316759
 GameObject:
   m_ObjectHideFlags: 0

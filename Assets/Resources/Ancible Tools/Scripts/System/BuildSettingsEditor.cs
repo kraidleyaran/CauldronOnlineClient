@@ -11,15 +11,23 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Build
         {
             serializedObject.Update();
             DrawDefaultInspector();
-            if (serializedObject.targetObject is BuildSettings buildSettings && GUILayout.Button("Build Dev"))
+            if (serializedObject.targetObject is BuildSettings buildSettings)
             {
-                var buildProperty = serializedObject.FindProperty("Build");
-                if (buildProperty != null)
+                if (GUILayout.Button("Build Dev"))
                 {
-                    buildProperty.intValue = buildProperty.intValue + 1;
-                    serializedObject.ApplyModifiedProperties();
+                    var buildProperty = serializedObject.FindProperty("Build");
+                    if (buildProperty != null)
+                    {
+                        buildProperty.intValue = buildProperty.intValue + 1;
+                        serializedObject.ApplyModifiedProperties();
+                    }
+                    buildSettings.BuildDev();
                 }
-                buildSettings.BuildDev();
+                GUILayout.Space(10);
+                if (GUILayout.Button("Build Windows"))
+                {
+                    buildSettings.BuildWindowsDev();
+                }
             }
             serializedObject.ApplyModifiedProperties();
 

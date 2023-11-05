@@ -92,6 +92,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 }
 
                 _vitals.Health -= amount;
+                msg.OnDamageDone?.Invoke();
                 _controller.gameObject.SendMessageTo(CombatStatsUpdatedMessage.INSTANCE, _controller.transform.parent.gameObject);
                 if (_applyOnDamageTaken.Length > 0)
                 {
@@ -115,6 +116,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             _baseStats = msg.Stats;
             _vitals = msg.Vitals;
+            _bonusSecondary = msg.BonusSecondary;
             _reportDamage = msg.Report;
             if (_vitals.Health <= 0)
             {

@@ -14,6 +14,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private int _amount = 1;
         [SerializeField] private DamageType _type = DamageType.Physical;
         [SerializeField] private BonusTag[] _tags = new BonusTag[0];
+        [SerializeField] private Trait[] _applyToOwnerOnDamageDone = new Trait[0];
 
         public override void SetupController(TraitController controller)
         {
@@ -42,12 +43,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     MessageFactory.CacheMessage(queryBonusDamageMsg);
 
                     amount += bonusAmount;
+                    var damageDone = false;
                     var takeDamageMsg = MessageFactory.GenerateTakeDamageMsg();
                     takeDamageMsg.Amount = amount;
                     takeDamageMsg.Type = _type;
                     takeDamageMsg.OwnerId = id;
+                    takeDamageMsg.OnDamageDone = () => damageDone = true;
+                    takeDamageMsg.Tags = _tags;
                     _controller.gameObject.SendMessageTo(takeDamageMsg, _controller.transform.parent.gameObject);
                     MessageFactory.CacheMessage(takeDamageMsg);
+                    if (damageDone && _applyToOwnerOnDamageDone.Length > 0)
+                    {
+                        OnDamageDone(owner);
+                    }
                 }
 
 
@@ -56,7 +64,26 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         public override string GetDescription()
         {
-            return $"{_amount} {_type} Damage";
+            if (_tags.Length <= 0)
+            {
+                return $"{_amount} {_type} Damage";
+            }
+            else
+            {
+                return $"{_amount} {_type} Damage ({_tags.ToSingleLine()})";
+            }
         }
+
+        private void OnDamageDone(GameObject owner)
+        {
+            var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+            foreach (var trait in _applyToOwnerOnDamageDone)
+            {
+                addTraitToUnitMsg.Trait = trait;
+                _controller.gameObject.SendMessageTo(addTraitToUnitMsg, owner);
+            }
+            MessageFactory.CacheMessage(addTraitToUnitMsg);
+        }
+
     }
 }

@@ -15,4 +15,5 @@ MonoBehaviour:
   MaxStack: 1
   _amount: 20
   _type: 0
-  _tags: []
+  _tags:
+  - {fileID: 11400000, guid: ac09376563a505649815bb753eb3bdf6, type: 2}

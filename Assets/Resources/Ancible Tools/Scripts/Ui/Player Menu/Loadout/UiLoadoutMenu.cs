@@ -27,7 +27,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
 
         private int _dataRowPosition = 0;
         private Vector2Int _cursorPosition = Vector2Int.zero;
-        private bool _hover = true;
+        private bool _hover = false;
         private bool _active = true;
 
         void Awake()
@@ -160,25 +160,42 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                     position.y++;
                 }
 
-                if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
+                if (_active)
                 {
-                    setCursorController.SetCursor(_cursor);
-                    setCursorController.SetHovered(_hover);
-                }
-                else
-                {
-                    var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
-                    if (closest.Value)
+                    if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
                     {
-                        _cursorPosition = closest.Key;
-                        closest.Value.SetCursor(_cursor);
-                        closest.Value.SetHovered(_hover);
+                        setCursorController.SetCursor(_cursor);
+                        setCursorController.SetHovered(_hover);
+                    }
+                    else if (_controllers.Count > 0)
+                    {
+                        var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
+                        if (closest.Value)
+                        {
+                            _cursorPosition = closest.Key;
+                            closest.Value.SetCursor(_cursor);
+                            closest.Value.SetHovered(_hover);
+                        }
+                    }
+                    else
+                    {
+                        _active = false;
+                        _cursor.gameObject.SetActive(false);
+                        _activeLoadoutController.SetActive(true);
                     }
                 }
+
             }
             else
             {
+                //_active = false;
+                //_activeLoadoutController.SetActive(true);
                 _cursor.gameObject.SetActive(false);
+                if (_active)
+                {
+                    _active = false;
+                    _activeLoadoutController.SetActive(true);
+                }
             }
             
 
@@ -193,7 +210,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
         private void UpdateInputState(UpdateInputStateMessage msg)
         {
             var loadoutButtonPressed = false;
-            if (msg.Current.Loadout.Contains(true))
+            if (_active && msg.Current.Loadout.Contains(true))
             {
                 for (var i = 0; i < msg.Previous.Loadout.Length; i++)
                 {
@@ -232,17 +249,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
                             loadoutButtonPressed = true;
                             break;
                         }
-
-
                     }
-                    else if (!msg.Previous.Info && msg.Current.Info)
-                    {
-                        _hover = !_hover;
-                        if (_controllers.TryGetValue(_cursorPosition, out var selected))
-                        {
-                            selected.SetHovered(_hover);
-                        }
-                    }
+
+                }
+            }
+            else if (!msg.Previous.Info && msg.Current.Info)
+            {
+                _hover = !_hover;
+                if (_active && _controllers.TryGetValue(_cursorPosition, out var selected))
+                {
+                    selected.SetHovered(_hover && _active);
                 }
             }
 
@@ -268,42 +284,58 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu
 
                 if (direction != Vector2Int.zero)
                 {
-                    if (_controllers.TryGetValue(direction + _cursorPosition, out var itemController))
+                    if (_active)
                     {
-                        _cursorPosition = itemController.Position;
-                        itemController.SetCursor(_cursor);
-                        itemController.SetHovered(_hover);
-                    }
-                    else if (direction.y > 0)
-                    {
-                        if (_dataRowPosition + 1 < _rows.Length - _maxRows + 1)
+                        if (_controllers.TryGetValue(direction + _cursorPosition, out var itemController))
                         {
-                            _dataRowPosition++;
-                            RefreshRows();
+                            if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                            {
+                                selected.SetHovered(false);
+                            }
+                            _cursorPosition = itemController.Position;
+                            itemController.SetCursor(_cursor);
+                            itemController.SetHovered(_hover);
                         }
-                        else if (_active)
+                        else if (direction.y > 0)
                         {
-                            _active = false;
-                            _activeLoadoutController.SetActive(true);
+                            if (_dataRowPosition + 1 < _rows.Length - _maxRows + 1)
+                            {
+                                _dataRowPosition++;
+                                RefreshRows();
+                            }
+                            else
+                            {
+                                _active = false;
+                                _cursor.gameObject.SetActive(false);
+                                if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                                {
+                                    selected.SetHovered(false);
+                                }
+                                _activeLoadoutController.SetActive(true);
+                            }
                         }
-                    }
-                    else if (direction.y < 0)
-                    {
-                        if (_active)
+                        else if (direction.y < 0)
                         {
                             if (_dataRowPosition > 0)
                             {
                                 _dataRowPosition--;
                                 RefreshRows();
                             }
-                        }
-                        else
-                        {
-                            _active = true;
-                            _activeLoadoutController.SetActive(false);
-                        }
 
+                        }
                     }
+                    else if (direction.y < 0)
+                    {
+                        _activeLoadoutController.SetActive(false);
+                        _active = true;
+                        _cursor.gameObject.SetActive(true);
+                        if (_controllers.TryGetValue(_cursorPosition, out var controller))
+                        {
+                            controller.SetCursor(_cursor);
+                            controller.SetHovered(_hover);
+                        }
+                    }
+                    
 
                     _upArrow.gameObject.SetActive(_dataRowPosition > 0);
                     _downArrow.gameObject.SetActive(_dataRowPosition + 1 < _rows.Length - _maxRows + 1);

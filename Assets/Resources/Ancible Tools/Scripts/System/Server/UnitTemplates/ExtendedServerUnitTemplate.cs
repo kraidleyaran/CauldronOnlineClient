@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using UnityEngine;
 
 namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.UnitTemplates
@@ -8,10 +9,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.UnitTemplates
     {
         [SerializeField] private ServerUnitTemplate _baseTemplate;
 
-        public override string[] GetTraits()
+        public override string[] GetTraits(bool includeSprite = true)
         {
             var traits = _baseTemplate.GetTraits().ToList();
-            if (Sprite)
+            if (includeSprite && Sprite)
             {
                 if (_baseTemplate.Sprite)
                 {
@@ -21,6 +22,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.UnitTemplates
             }
             traits.AddRange(Traits.Where(t => t).Select(t => t.name));
             return traits.ToArray();
+        }
+
+        public override SpriteTrait GetSprite()
+        {
+            return Sprite ? Sprite : _baseTemplate.GetSprite();
         }
     }
 }

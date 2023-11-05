@@ -93,6 +93,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         private static List<ProjectileReturnedMessage> _projectileReturnedCache = new List<ProjectileReturnedMessage>();
         private static List<ProjectileAvailableCheckMessage> _projectileAvavailableCheckCache = new List<ProjectileAvailableCheckMessage>();
         private static List<SetProjectileDirectionMessage> _setProjectileDirectionCache = new List<SetProjectileDirectionMessage>();
+        private static List<SetDefaulMaterialsMessage> _setDefaultMaterialCache = new List<SetDefaulMaterialsMessage>();
+        private static List<SetSelectedPlayerCharacterControllerMessage> _setSelectedPlayerCharacterControllerCache = new List<SetSelectedPlayerCharacterControllerMessage>();
+        private static List<PromptResultMessage> _promptResultCache = new List<PromptResultMessage>();
+        private static List<SetMovableMessage> _setMovableCache = new List<SetMovableMessage>();
+        private static List<SetFacingDirectionMessage> _setFacingDirecitonCache = new List<SetFacingDirectionMessage>();
+        private static List<QueryProjectileTagsMessage> _queryProjectileTagsCache = new List<QueryProjectileTagsMessage>();
+        private static List<SetCombatStatsMessage> _setCombatStatsCache = new List<SetCombatStatsMessage>();
+        private static List<GainSkillExperienceMessage> _gainSkillExperienceCache = new List<GainSkillExperienceMessage>();
+        private static List<QuerySkillsMessage> _querySkillsCache = new List<QuerySkillsMessage>();
         
         public static AddTraitToUnitMessage GenerateAddTraitToUnitMsg()
         {
@@ -1031,6 +1040,114 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             return new SetProjectileDirectionMessage();
         }
 
+        public static SetDefaulMaterialsMessage GenerateSetDefaulMaterialsMsg()
+        {
+            if (_setDefaultMaterialCache.Count > 0)
+            {
+                var message = _setDefaultMaterialCache[0];
+                _setDefaultMaterialCache.Remove(message);
+                return message;
+            }
+
+            return new SetDefaulMaterialsMessage();
+        }
+
+        public static SetSelectedPlayerCharacterControllerMessage GenerateSetSelectedPlayerCharacterControllerMsg()
+        {
+            if (_setSelectedPlayerCharacterControllerCache.Count > 0)
+            {
+                var message = _setSelectedPlayerCharacterControllerCache[0];
+                _setSelectedPlayerCharacterControllerCache.Remove(message);
+                return message;
+            }
+
+            return new SetSelectedPlayerCharacterControllerMessage();
+        }
+
+        public static PromptResultMessage GeneratePromptResultMsg()
+        {
+            if (_promptResultCache.Count > 0)
+            {
+                var message = _promptResultCache[0];
+                _promptResultCache.Remove(message);
+                return message;
+            }
+
+            return new PromptResultMessage();
+        }
+
+        public static SetMovableMessage GenerateSetMovableMsg()
+        {
+            if (_setMovableCache.Count > 0)
+            {
+                var message = _setMovableCache[0];
+                _setMovableCache.Remove(message);
+                return message;
+            }
+
+            return new SetMovableMessage();
+        }
+
+        public static SetFacingDirectionMessage GenerateSetFacingDirectionMsg()
+        {
+            if (_setFacingDirecitonCache.Count > 0)
+            {
+                var message = _setFacingDirecitonCache[0];
+                _setFacingDirecitonCache.Remove(message);
+                return message;
+            }
+
+            return new SetFacingDirectionMessage();
+        }
+
+        public static QueryProjectileTagsMessage GenerateQueryProjectileTagsMsg()
+        {
+            if (_queryProjectileTagsCache.Count > 0)
+            {
+                var message = _queryProjectileTagsCache[0];
+                _queryProjectileTagsCache.Remove(message);
+                return message;
+            }
+
+            return new QueryProjectileTagsMessage();
+        }
+
+        public static SetCombatStatsMessage GenerateSetCombatStatsMsg()
+        {
+            if (_setCombatStatsCache.Count > 0)
+            {
+                var message = _setCombatStatsCache[0];
+                _setCombatStatsCache.Remove(message);
+                return message;
+            }
+
+            return new SetCombatStatsMessage();
+        }
+
+        public static GainSkillExperienceMessage GenerateGainSkillExperienceMsg()
+        {
+            if (_gainSkillExperienceCache.Count > 0)
+            {
+                var message = _gainSkillExperienceCache[0];
+                _gainSkillExperienceCache.Remove(message);
+                return message;
+            }
+
+            return new GainSkillExperienceMessage();
+        }
+
+        public static QuerySkillsMessage GenerateQuerySkillsMsg()
+        {
+            if (_querySkillsCache.Count > 0)
+            {
+                var message = _querySkillsCache[0];
+                _querySkillsCache.Remove(message);
+                return message;
+            }
+
+            return new QuerySkillsMessage();
+        }
+
         //TODO: Start Cache
 
         public static void CacheMessage(AddTraitToUnitMessage msg)
@@ -1152,6 +1269,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         {
             msg.Event = false;
             msg.Amount = 0;
+            msg.OnDamageDone = null;
             msg.Sender = null;
             _takeDamageCache.Add(msg);
         }
@@ -1234,6 +1352,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             msg.Direction = Vector2.zero;
             msg.Speed = 0f;
             msg.Origin = Vector2.zero;
+            msg.CheckAlternate = false;
+            msg.Ignore = new GameObject[0];
             msg.DoAfter = null;
             msg.Sender = null;
             _walledCheckCache.Add(msg);
@@ -1269,6 +1389,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             msg.ReportPosition = false;
             msg.WorldId = string.Empty;
             msg.Unregister = false;
+            msg.Tags = new BonusTag[0];
             msg.Sender = null;
             _setupProjectileCache.Add(msg);
         }
@@ -1503,6 +1624,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public static void CacheMessage(SetWorldPositionMessage msg)
         {
             msg.Position = WorldVector2Int.Zero;
+            msg.IgnorePositionChange = false;
             msg.Sender = null;
             _setworldPositionCache.Add(msg);
         }
@@ -1602,6 +1724,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public static void CacheMessage(ProjectileReturnedMessage msg)
         {
             msg.Projectile = null;
+            msg.Destroy = true;
             msg.Sender = null;
             _projectileReturnedCache.Add(msg);
         }
@@ -1619,6 +1742,74 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             msg.Direction = Vector2.zero;
             msg.Sender = null;
             _setProjectileDirectionCache.Add(msg);
+        }
+
+        public static void CacheMessage(SetDefaulMaterialsMessage msg)
+        {
+            msg.Default = null;
+            msg.Sender = null;
+            _setDefaultMaterialCache.Add(msg);
+        }
+
+        public static void CacheMessage(SetSelectedPlayerCharacterControllerMessage msg)
+        {
+            msg.Controller = null;
+            msg.Sender = null;
+            _setSelectedPlayerCharacterControllerCache.Add(msg);
+        }
+
+        public static void CacheMessage(PromptResultMessage msg)
+        {
+            msg.Confirm = false;
+            msg.Sender = null;
+            _promptResultCache.Add(msg);
+        }
+
+        public static void CacheMessage(SetMovableMessage msg)
+        {
+            msg.Id = string.Empty;
+            msg.Movable = null;
+            msg.MoveSpeed = 0;
+            msg.Axis = MovableAxis.Vertical;
+            msg.Offset = new WorldOffset();
+            msg.Sender = null;
+            _setMovableCache.Add(msg);
+        }
+
+        public static void CacheMessage(SetFacingDirectionMessage msg)
+        {
+            msg.Direction = Vector2Int.zero;
+            msg.Sender = null;
+            _setFacingDirecitonCache.Add(msg);
+        }
+
+        public static void CacheMessage(QueryProjectileTagsMessage msg)
+        {
+            msg.DoAfter = null;
+            msg.Tags = new BonusTag[0];
+            _queryProjectileTagsCache.Add(msg);
+        }
+
+        public static void CacheMessage(SetCombatStatsMessage msg)
+        {
+            msg.Stats = new CombatStats();
+            msg.Sender = null;
+            _setCombatStatsCache.Add(msg);
+        }
+
+        public static void CacheMessage(GainSkillExperienceMessage msg)
+        {
+            msg.Experience = 0;
+            msg.Skill = null;
+            msg.Sender = null;
+            _gainSkillExperienceCache.Add(msg);
+        }
+
+        public static void CacheMessage(QuerySkillsMessage msg)
+        {
+            msg.DoAfter = null;
+            msg.Sender = null;
+            _querySkillsCache.Add(msg);
         }
     }
 }

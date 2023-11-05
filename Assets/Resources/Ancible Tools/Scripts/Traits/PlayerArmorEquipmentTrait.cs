@@ -45,6 +45,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             {
                 _equipped.Add(msg.Item.Slot, new EquippedArmorItemInstance(msg.Item, _controller.transform.parent.gameObject));
             }
+
+            _controller.gameObject.SendMessage(PlayerEquipmentUpdatedMessage.INSTANCE);
         }
 
         private void UnequipArmorItemFromSlot(UnequipArmorItemFromSlotMessage msg)
@@ -60,6 +62,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 addItemMsg.Stack = 1;
                 _controller.gameObject.SendMessageTo(addItemMsg, _controller.transform.parent.gameObject);
                 MessageFactory.CacheMessage(addItemMsg);
+
+                _controller.gameObject.SendMessage(PlayerEquipmentUpdatedMessage.INSTANCE);
             }
         }
 

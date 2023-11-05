@@ -1,4 +1,5 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
+using Assets.Resources.Ancible_Tools.Scripts.System.Items;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.HoverInfo;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Loadout
     {
         [SerializeField] private Image _sprite;
         [SerializeField] private Text _usesText;
+        [SerializeField] private Image _outline;
+        [SerializeField] private Image _outlineMask;
         [SerializeField] private RectTransform _cursorPosition;
 
         public LoadoutSlot Item;
@@ -24,11 +27,19 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Loadout
             {
                 _sprite.sprite = null;
                 _sprite.gameObject.SetActive(false);
+                _outline.gameObject.SetActive(false);
             }
             else
             {
                 _sprite.sprite = item.Icon;
                 _sprite.gameObject.SetActive(true);
+                var showOutline = Item.EquippedItem && Item.EquippedItem.Quality != ItemQuality.Normal;
+                _outline.gameObject.SetActive(showOutline);
+                if (showOutline)
+                {
+                    _outline.color = ItemFactory.GetQualityColor(Item.EquippedItem);
+                    _outlineMask.sprite = Item.EquippedItem.Sprite.Sprite;
+                }
             }
             RefreshUses();
         }
@@ -67,6 +78,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Loadout
                 }
             }
             else if (_hovered && !hovered)
+            {
+                UiHoverInfoManager.RemoveHoverInfo(gameObject);
+            }
+
+            _hovered = hovered;
+        }
+
+        void OnDestroy()
+        {
+            if (_hovered)
             {
                 UiHoverInfoManager.RemoveHoverInfo(gameObject);
             }

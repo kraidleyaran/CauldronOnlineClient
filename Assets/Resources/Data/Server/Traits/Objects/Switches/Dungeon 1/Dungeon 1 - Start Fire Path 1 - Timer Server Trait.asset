@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a6211f4477a6544a82e41c20366c5a, type: 3}
+  m_Name: Dungeon 1 - Start Fire Path 1 - Timer Server Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _applyOnStart: []
+  _applyOnLoop:
+  - {fileID: 11400000, guid: 7b1e24a996bc5e54ab76a69e4effec71, type: 2}
+  - {fileID: 11400000, guid: 744443854db9b084590d6c81dec87098, type: 2}
+  _ticks: 40
+  _loops: 0
+  _showOnClient: 1

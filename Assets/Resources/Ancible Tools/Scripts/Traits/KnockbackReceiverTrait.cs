@@ -78,6 +78,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 walledCheckMsg.Direction = msg.Direction;
                 walledCheckMsg.Speed = distance;
                 walledCheckMsg.Origin = pos;
+                walledCheckMsg.CheckAlternate = false;
                 walledCheckMsg.DoAfter = (setPos, contact) =>
                 {
                     pos = setPos;

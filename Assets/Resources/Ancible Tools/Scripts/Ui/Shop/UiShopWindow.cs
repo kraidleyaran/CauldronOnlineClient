@@ -16,6 +16,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
         [SerializeField] private UiShopInventoryController _playerShop;
         [SerializeField] private UiShopInventoryController _npcShop;
         [SerializeField] private UiSellStackWindow _sellStackTemplate;
+        [SerializeField] private GameObject _buy;
+        [SerializeField] private GameObject _sell;
 
         private UiSellStackWindow _sellStackWindow = null;
 
@@ -34,6 +36,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             _playerShop.Setup(ObjectManager.Player);
             _playerShop.SetActive(false);
             _npcShop.SetActive(true);
+            _buy.gameObject.SetActive(true);
+            _sell.gameObject.SetActive(false);
         }
 
         public static void SetActiveShop(ShopInventoryType type, int cursorY)
@@ -42,6 +46,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
             {
                 case ShopInventoryType.Player:
                     _instance._npcShop.SetActive(false);
+                    _instance._buy.gameObject.SetActive(false);
+                    _instance._sell.gameObject.SetActive(true);
                     _instance.StartCoroutine(StaticMethods.WaitForFrames(1, () =>
                     {
                         _instance._playerShop.SetActive(true, cursorY);
@@ -49,6 +55,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Shop
                     break;
                 case ShopInventoryType.Shop:
                     _instance._playerShop.SetActive(false);
+                    _instance._buy.gameObject.SetActive(true);
+                    _instance._sell.gameObject.SetActive(false);
                     _instance.StartCoroutine(StaticMethods.WaitForFrames(1, () =>
                     {
                         _instance._npcShop.SetActive(true, cursorY);

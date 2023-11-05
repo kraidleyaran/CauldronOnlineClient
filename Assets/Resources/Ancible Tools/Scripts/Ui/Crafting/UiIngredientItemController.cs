@@ -33,10 +33,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
             _requiredStackText.text = $"{_playerStack}/{_stack}";
         }
 
-        public void RefreshPlayerStack(int playerStack)
+        public void RefreshPlayerStack(int playerStack, Color missing, Color fulfilled)
         {
             _playerStack = playerStack;
-            _requiredStackText.text = $"{_playerStack}/{_stack}";
+            var color = _playerStack >= _stack ? fulfilled : missing;
+            _requiredStackText.text = $"{StaticMethods.ApplyColorToText($"{_playerStack}/{_stack}", color)}";
         }
 
         public void SetCursor(GameObject cursor)

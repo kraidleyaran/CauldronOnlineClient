@@ -14,6 +14,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
 
         [SerializeField] private UiRecipeManager _recipeManager;
         [SerializeField] private UiIngredientManager _ingredientManager;
+        [SerializeField] private GameObject _craft;
+        [SerializeField] private GameObject _recipes;
+        [SerializeField] private GameObject _ingredients;
+        
 
         private GameObject _activeManager = null;
         private GameObject _owner = null;
@@ -30,12 +34,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
             _recipeManager.SetActive(true);
             _ingredientManager.SetActive(false);
             _activeManager = _recipeManager.gameObject;
+            _ingredients.gameObject.SetActive(true);
+            _recipes.gameObject.SetActive(false);
             SubscribeToMessages();
         }
 
         public static void ShowIngredients(WorldItemStackData[] recipe, int cost)
         {
             _instance._ingredientManager.Setup(recipe, cost);
+            _instance._craft.gameObject.SetActive(_instance._ingredientManager.CanCraft()); 
         }
 
         private void SubscribeToMessages()
@@ -60,12 +67,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
                     _activeManager = _ingredientManager.gameObject;
                     _ingredientManager.SetActive(true);
                     _recipeManager.SetActive(false);
+                    _ingredients.gameObject.SetActive(false);
+                    _recipes.gameObject.SetActive(true);
                 }
                 else
                 {
                     _activeManager = _recipeManager.gameObject;
                     _recipeManager.SetActive(true);
                     _ingredientManager.SetActive(false);
+                    _ingredients.gameObject.SetActive(true);
+                    _recipes.gameObject.SetActive(false);
                 }
             }
             else if (!msg.Previous.Red && msg.Current.Red || !msg.Previous.PlayerMenu && msg.Current.PlayerMenu)

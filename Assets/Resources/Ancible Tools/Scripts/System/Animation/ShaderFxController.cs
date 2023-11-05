@@ -9,10 +9,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Animation
 
         protected internal Action _onFinish = null;
         protected internal SpriteRenderer _renderer = null;
+        protected internal Material _baseMaterial = null;
 
-        protected internal void Setup(SpriteRenderer spriteRenderer, Action onFinish)
+        protected internal void Setup(SpriteRenderer spriteRenderer, Material baseMaterial, Action onFinish)
         {
             _renderer = spriteRenderer;
+            _baseMaterial = baseMaterial;
             _renderer.material = _material;
             _onFinish = onFinish;
         }

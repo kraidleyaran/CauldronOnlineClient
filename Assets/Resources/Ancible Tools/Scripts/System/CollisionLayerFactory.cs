@@ -14,7 +14,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public static CollisionLayer ItemCollect => _instance._itemCollect;
         public static CollisionLayer ZoneTransfer => _instance._zoneTransfer;
         public static CollisionLayer GroundTerrain => _instance._groundTerrain;
-        
+        public static CollisionLayer InvisibleGround => _instance._invisibleGround;
+        public static CollisionLayer InvisibleTerrain => _instance._invisibleTerrain;
+        public static CollisionLayer PlayerTerrain => _instance._playerTerrain;
 
 
         private static CollisionLayerFactory _instance = null;
@@ -28,6 +30,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         [SerializeField] private CollisionLayer _interaction;
         [SerializeField] private CollisionLayer _itemCollect;
         [SerializeField] private CollisionLayer _zoneTransfer;
+        [SerializeField] private CollisionLayer _invisibleGround;
+        [SerializeField] private CollisionLayer _invisibleTerrain;
+        [SerializeField] private CollisionLayer _playerTerrain;
 
         void Awake()
         {

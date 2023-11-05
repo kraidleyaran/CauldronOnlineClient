@@ -44,5 +44,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Templates
             MessageFactory.CacheMessage(addTraitToUnitMsg);
             return unitController;
         }
+
+        
     }
 }

@@ -20,6 +20,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private int _currentSignal = 0;
         private bool _locked = false;
         private bool _lockOnInteract = false;
+        private object _combatReceiver = new object();
 
         public override void SetupController(TraitController controller)
         {
@@ -42,7 +43,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     _locked = true;
                 }
                 var targetId = ObjectManager.GetId(_controller.transform.parent.gameObject);
-                ClientController.SendToServer(new ClientSwitchSignalMessage { Signal = signal, TargetId = targetId, Tick = TickController.ServerTick });
+                ClientController.SendToServer(new ClientSwitchSignalMessage { Signal = signal, TargetId = targetId, Locked = _locked, Tick = TickController.ServerTick });
             }
 
         }
@@ -91,8 +92,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             {
                 _combatHitboxController = Instantiate(_hitboxController, _controller.transform.parent);
                 _combatHitboxController.Setup(_hitbox, CollisionLayerFactory.MonsterHurt);
-                _combatHitboxController.AddSubscriber(_controller.gameObject);
-                _controller.gameObject.SubscribeWithFilter<EnterCollisionWithObjectMessage>(CombatEnterCollisionWithObject, _instanceId);
+                _combatHitboxController.AddSubscriber(_spriteController.gameObject);
+                _spriteController.gameObject.SubscribeWithFilter<EnterCollisionWithObjectMessage>(CombatEnterCollisionWithObject, _instanceId);
             }
         }
 
@@ -120,6 +121,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 Destroy(_combatHitboxController.gameObject);
                 _combatHitboxController = null;
             }
+            _spriteController.gameObject.UnsubscribeFromAllMessages();
             base.Destroy();
         }
     }

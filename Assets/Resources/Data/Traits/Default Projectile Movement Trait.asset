@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Default Projectile Movement Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
+  _maxMoveEvents: 1

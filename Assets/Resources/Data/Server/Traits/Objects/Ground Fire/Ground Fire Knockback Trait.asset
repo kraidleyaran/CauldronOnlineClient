@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ground Fire Knockback Trait
   m_EditorClassIdentifier: 
   MaxStack: 1
-  _speed: 30
+  _speed: 35
   _distance: 20

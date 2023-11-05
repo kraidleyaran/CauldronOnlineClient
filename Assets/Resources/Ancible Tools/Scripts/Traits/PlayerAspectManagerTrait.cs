@@ -97,6 +97,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             if (leveled)
             {
                 _controller.gameObject.SendMessage(PlayerAspectsUpdatedMessage.INSTANCE);
+                ClientController.SendToServer(new ClientPlayerLeveledMessage{Level = _level});
             }
             _controller.gameObject.SendMessage(PlayerExperienceUpdatedMessage.INSTANCE);
         }
@@ -143,6 +144,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 _availablePoints++;
                 _controller.gameObject.SendMessage(PlayerAspectsUpdatedMessage.INSTANCE);
                 _controller.gameObject.SendMessage(PlayerExperienceUpdatedMessage.INSTANCE);
+                ClientController.SendToServer(new ClientPlayerLeveledMessage { Level = _level });
             }
         }
 

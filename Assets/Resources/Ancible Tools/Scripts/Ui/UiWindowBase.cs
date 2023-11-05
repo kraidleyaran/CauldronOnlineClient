@@ -9,12 +9,12 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
         public virtual bool Movable => true;
         public virtual bool Static => false;
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public virtual void OnPointerEnter(PointerEventData eventData)
         {
             UiWindowManager.SetHoveredWindow(this);
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public virtual void OnPointerExit(PointerEventData eventData)
         {
             UiWindowManager.RemoveHoveredWindow(this);
         }

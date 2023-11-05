@@ -1,7 +1,9 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.Characters;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Dev;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Dialogue;
+using Assets.Resources.Ancible_Tools.Scripts.Ui.PlayerRoster;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu;
 using Assets.Resources.Ancible_Tools.Scripts.Ui.Shop;
 using CauldronOnlineCommon;
@@ -15,6 +17,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
         public static UiShopWindow Shop => _instance._shopWindow;
         public static UiCraftingWindow Crafting => _instance._craftingWindow;
         public static UiWaypointWindow Waypoint => _instance._waypointWindow;
+        public static UiCharacterManagerWindow CharacterManager => _instance._characterManagerWindow;
+        public static UiCreateCharacterWindow CreateCharacter => _instance._createCharacterWindow;
+        public static UiPromptWindow Prompt => _instance._promptWindow;
 
         private static UiController _instance = null;
 
@@ -26,7 +31,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
         [SerializeField] private UiDialogueWindow _dialogueWindow;
         [SerializeField] private UiCraftingWindow _craftingWindow;
         [SerializeField] private UiWaypointWindow _waypointWindow;
+        [SerializeField] private UiCharacterManagerWindow _characterManagerWindow;
+        [SerializeField] private UiCreateCharacterWindow _createCharacterWindow;
+        [SerializeField] private UiPromptWindow _promptWindow;
+        [SerializeField] private UiPlayerRosterWindow _rosterWindow;
         [SerializeField] private UiDevWindow _devWindow;
+        
+        
 
         private UiPlayerMenuManagerWindow _openPlayerMenuWindow = null;
 
@@ -71,6 +82,18 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
         {
             var dialogueWindow = UiWindowManager.OpenWindow(_instance._dialogueWindow);
             dialogueWindow.Setup(dialogue, owner);
+        }
+
+        public static void ToggleRoster()
+        {
+            if (UiWindowManager.IsWindowOpen(_instance._rosterWindow.name))
+            {
+                UiWindowManager.CloseWindow(_instance._rosterWindow);
+            }
+            else
+            {
+                UiWindowManager.OpenWindow(_instance._rosterWindow);
+            }
         }
 
         private void SubscribeToMessages()

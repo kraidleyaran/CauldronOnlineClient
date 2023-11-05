@@ -11,6 +11,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
         [SerializeField] private ServerTrait[] _applyOnLoop;
         [SerializeField] private int _ticks;
         [SerializeField] private int _loops;
+        [SerializeField] private bool _showOnClient = false;
 
         public override WorldTraitData GetData()
         {
@@ -21,7 +22,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Server.Traits
                 ApplyOnStart = _applyOnStart.Where(t => t).Select(t => t.name).ToArray(),
                 ApplyOnLoop = _applyOnLoop.Where(t => t).Select(t => t.name).ToArray(),
                 TotalTicks = _ticks,
-                TotalLoops = _loops
+                TotalLoops = _loops,
+                ShowOnClient = _showOnClient
             };
         }
     }

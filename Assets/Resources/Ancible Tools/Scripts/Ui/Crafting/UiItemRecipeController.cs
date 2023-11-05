@@ -30,7 +30,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
         {
             if (!_hovered && hovered)
             {
-                UiHoverInfoManager.SetHoverInfo(gameObject, Recipe.Item.GetDisplayName(), Recipe.Item.GetDescription(), Recipe.Item.Sprite.Sprite, _cursorPosition.transform.position.ToVector2(), Recipe.Cost);
+                UiHoverInfoManager.SetHoverInfo(gameObject, Recipe.Item.GetDisplayName(), Recipe.Item.GetDescription(), Recipe.Item.Sprite.Sprite, transform.position.ToVector2(), Recipe.Cost);
             }
             else if (_hovered && !hovered)
             {

@@ -18,7 +18,6 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private Hitbox.Hitbox _trappedHitbox;
 
         private HitboxController _trappedHitboxController = null;
-        private object _trappedReceiver = new object();
         private WorldVector2Int _trappedSpawn = WorldVector2Int.Zero;
 
         private bool _open = false;
@@ -27,9 +26,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         public override void SetupController(TraitController controller)
         {
+            _trappedHitboxController = controller.gameObject.SetupHitbox(_trappedHitbox, CollisionLayerFactory.ZoneTransfer);
+            _trappedHitboxController.AddSubscriber(_trappedHitboxController.gameObject);
             base.SetupController(controller);
-            _trappedHitboxController = _controller.gameObject.SetupHitbox(_trappedHitbox, CollisionLayerFactory.ZoneTransfer);
-            SubscribeToMessages();
         }
 
         protected internal override void Interact()
@@ -49,7 +48,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             base.SubscribeToMessages();
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetupDoorMessage>(SetupDoor, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetDoorStateMessage>(SetDoorState, _instanceId);
-            _trappedReceiver.SubscribeWithFilter<EnterCollisionWithObjectMessage>(EnterCollisionWithTrappedObject, _instanceId);
+            _trappedHitboxController.gameObject.SubscribeWithFilter<EnterCollisionWithObjectMessage>(EnterCollisionWithTrappedObject, _instanceId);
         }
 
         protected internal override void EnterCollisionWithObject(EnterCollisionWithObjectMessage msg)
@@ -119,8 +118,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         public override void Destroy()
         {
-            _trappedReceiver.UnsubscribeFromAllMessages();
-            _trappedReceiver = null;
+            _trappedHitboxController.gameObject.UnsubscribeFromAllMessages();
             _trappedHitboxController.Destroy();
             Destroy(_trappedHitboxController.gameObject);
             base.Destroy();

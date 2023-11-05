@@ -1,6 +1,7 @@
 ﻿using Assets.Resources.Ancible_Tools.Scripts.System;
 using Assets.Resources.Ancible_Tools.Scripts.System.Abilities;
 using Assets.Resources.Ancible_Tools.Scripts.System.Animation;
+using Assets.Resources.Ancible_Tools.Scripts.System.Animation.ColorOptions;
 using ConcurrentMessageBus;
 using UnityEngine;
 
@@ -33,6 +34,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private Color _colorMask = Color.white;
         [SerializeField] private float _rotation = 0f;
         [SerializeField] private FlipSprite _flipX = FlipSprite.None;
+        [SerializeField] private Material _material = null;
 
         private SpriteController _spriteController = null;
 
@@ -47,6 +49,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             base.SetupController(controller);
             _spriteController = Instantiate(FactoryController.SPRITE_CONTROLLER, _controller.transform.parent);
+            if (_material)
+            {
+                _spriteController.SpriteRenderer.material = Instantiate(_material);
+            }
             if (_runtimeAnimator)
             {
                 _spriteController.SetRuntimeController(_runtimeAnimator);
@@ -56,7 +62,15 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 _spriteController.SetSprite(_sprite);
             }
             _spriteController.SetScale(_scaling);
-            _spriteController.SetSortingOrder(_sortingOrder);
+            if (IgnoreWorldPosition)
+            {
+                _spriteController.SetSortingOrder(_sortingOrder);
+            }
+            else
+            {
+                var sortingOrder = _controller.transform.position.ToVector2().ToWorldPosition().Y * -1;
+                _spriteController.SetSortingOrder(sortingOrder + _sortingOrder);
+            }
             if (_spriteLayer)
             {
                 _spriteController.SetSortingLayerFromSpriteLayer(_spriteLayer);
@@ -86,6 +100,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             {
                 _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateWorldPositionMessage>(UpdateWorldPosition, _instanceId);
             }
+            _controller.transform.parent.gameObject.SubscribeWithFilter<SetDefaulMaterialsMessage>(SetDefaultMaterials, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<SetSpriteColorDataMessage>(SetSpriteColorData, _instanceId);
         }
 
 
@@ -155,7 +171,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             var controller = Instantiate(ShaderFxFactory.FlashColor, _controller.transform);
             _currentShader = controller;
 
-            controller.Setup(_spriteController.SpriteRenderer, FlashColorFinished, msg.Color, msg.FramesBetweenFlashes, msg.Loops);
+            controller.Setup(_spriteController.SpriteRenderer, _spriteController.SpriteRenderer.material, FlashColorFinished, msg.Color, msg.FramesBetweenFlashes, msg.Loops);
         }
 
         private void UpdateAbilityState(UpdateAbilityStateMessage msg)
@@ -208,12 +224,49 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             _spriteController.SetSortingOrder((msg.Position.Y * -1) + _sortingOrder);
         }
 
+        private void SetDefaultMaterials(SetDefaulMaterialsMessage msg)
+        {
+            _spriteController.SpriteRenderer.materials = msg.Default;
+        }
+
+        private void SetSpriteColorData(SetSpriteColorDataMessage msg)
+        {
+            var hair = ColorOptionFactory.GetOptionByName(msg.Data.Hair);
+            if (hair)
+            {
+                hair.Apply(_spriteController.SpriteRenderer.material, false);
+            }
+
+            var eyes = ColorOptionFactory.GetOptionByName(msg.Data.Eyes);
+            if (eyes)
+            {
+                eyes.Apply(_spriteController.SpriteRenderer.material, false);
+            }
+
+            var primaryShirt = ColorOptionFactory.GetOptionByName(msg.Data.PrimaryShirt);
+            if (primaryShirt)
+            {
+                primaryShirt.Apply(_spriteController.SpriteRenderer.material, false);
+            }
+
+            var secondaryShirt = ColorOptionFactory.GetOptionByName(msg.Data.SecondaryShirt);
+            if (secondaryShirt)
+            {
+                secondaryShirt.Apply(_spriteController.SpriteRenderer.material, true);
+            }
+        }
+
         public override void Destroy()
         {
             if (_currentShader)
             {
                 _currentShader.Destroy();
                 _currentShader = null;
+            }
+
+            if (_material)
+            {
+                Destroy(_spriteController.SpriteRenderer.material);
             }
             base.Destroy();
         }

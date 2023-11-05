@@ -25,6 +25,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         public static ZoneTransitionTrait ZoneTransition => _instance._zoneTransitionTrait;
         public static NetworkCrafterTrait Crafter => _instance._networkCrafterTrait;
         public static BridgeTrait Bridge => _instance._bridgeTrait;
+        public static OwnershipTrait Ownership => _instance._ownershipTrait;
+        public static WalledTrait NetworkWalled => _instance._networkWalledTrait;
+        public static NetworkMovementTrait NetworkMovement => _instance._networkMovementTrait;
+        public static MovableTrait Movable => _instance._movableTrait;
+        public static NetworkMovableHelperTrait NetworkMovableHelper => _instance._networkMovableHelperTrait;
+        public static HitboxTrait NetworkPlayerTerrain => _instance._networkPlayerTerrainTrait;
+        public static ProjectileManagerTrait ProjectileManager => _instance._projectileManagerTrait;
+        public static NetworkRollingTrait NetworkRolling => _instance._networkRollingTrait;
+        public static ProjectileRedirectTrait ProjectileRedirect => _instance._projectileRedirectTrait;
+        public static BombableDoorTrait BombableDoor => _instance._bombableDoorTrait;
 
         private static TraitFactory _instance = null;
 
@@ -49,6 +59,16 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         [SerializeField] private ZoneTransitionTrait _zoneTransitionTrait;
         [SerializeField] private NetworkCrafterTrait _networkCrafterTrait;
         [SerializeField] private BridgeTrait _bridgeTrait;
+        [SerializeField] private OwnershipTrait _ownershipTrait;
+        [SerializeField] private WalledTrait _networkWalledTrait;
+        [SerializeField] private NetworkMovementTrait _networkMovementTrait;
+        [SerializeField] private MovableTrait _movableTrait;
+        [SerializeField] private NetworkMovableHelperTrait _networkMovableHelperTrait;
+        [SerializeField] private HitboxTrait _networkPlayerTerrainTrait;
+        [SerializeField] private ProjectileManagerTrait _projectileManagerTrait;
+        [SerializeField] private NetworkRollingTrait _networkRollingTrait;
+        [SerializeField] private ProjectileRedirectTrait _projectileRedirectTrait;
+        [SerializeField] private BombableDoorTrait _bombableDoorTrait;
 
         private Dictionary<string, Trait> _traits = new Dictionary<string, Trait>();
         private Dictionary<string, SpriteTrait> _sprites = new Dictionary<string, SpriteTrait>();

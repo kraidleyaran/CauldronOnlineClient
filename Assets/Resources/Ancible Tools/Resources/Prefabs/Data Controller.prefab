@@ -87,6 +87,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401002ae460e930448a2240b7f22b78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2062692012751865366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767361639695714024}
+  - component: {fileID: 7049564506361873227}
+  m_Layer: 0
+  m_Name: Color Options Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &767361639695714024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062692012751865366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4046400618405463988}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7049564506361873227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062692012751865366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e9e4e27dc74f24a8c4724746108711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorOptionPaths:
+  - Data/Color Options
+--- !u!1 &2515273431959462412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542320574679984239}
+  - component: {fileID: 9027455188138688652}
+  m_Layer: 0
+  m_Name: Skill Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1542320574679984239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515273431959462412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4046400618405463988}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9027455188138688652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515273431959462412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35ce2ee66a2a7749935e8e1e27e80b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillsPath: Data/Skills
 --- !u!1 &3039061665355360001
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,10 +223,14 @@ MonoBehaviour:
   _monsterHurt: {fileID: 11400000, guid: ed9dbc738d098c1468182af047d35fc0, type: 2}
   _playerAggro: {fileID: 11400000, guid: cfd5c92083a061a4a9fae15d2a0431db, type: 2}
   _casting: {fileID: 11400000, guid: 372d42a0e5d65714dbbb5e5b3f6907da, type: 2}
+  _groundTerrain: {fileID: 11400000, guid: ae985a5bc03c37b45a19c57988cdb75d, type: 2}
   _terrain: {fileID: 11400000, guid: 96d52b04e20da524b9410ee4e0aacf36, type: 2}
   _interaction: {fileID: 11400000, guid: 17bd869ab41f95647b2d1e4abc5b840c, type: 2}
   _itemCollect: {fileID: 11400000, guid: 9e28df09138a9b34a82f95423adb91fe, type: 2}
   _zoneTransfer: {fileID: 11400000, guid: 052b55632989e554280a0683ec85231c, type: 2}
+  _invisibleGround: {fileID: 11400000, guid: 0db93e244dd6290458d712d0a988c796, type: 2}
+  _invisibleTerrain: {fileID: 11400000, guid: ce7d3e51ddf347e4287a225ee71e147e, type: 2}
+  _playerTerrain: {fileID: 11400000, guid: b006845ac1b23fd41b1cf2810b9fea58, type: 2}
 --- !u!1 &3277387774141104272
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +325,8 @@ Transform:
   - {fileID: 7263760411797995346}
   - {fileID: 5114816666096796933}
   - {fileID: 7184821968594709198}
+  - {fileID: 767361639695714024}
+  - {fileID: 1542320574679984239}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -301,6 +396,8 @@ MonoBehaviour:
   _checkMessagesEveryMs: 10
   _settingsFileName: clientsettings.json
   _maxPingResults: 100
+  _serverConnectWaitTime: 10
+  _maxTimeBetweenPings: 30
 --- !u!1 &5370988455478199816
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +463,17 @@ MonoBehaviour:
   _appearanceVisualFxTrait: {fileID: 11400000, guid: cce66b941a1325643879c87b56b82923, type: 2}
   _zoneTransitionTrait: {fileID: 11400000, guid: 7d34c0c03148d4c458feb50c445ffec3, type: 2}
   _networkCrafterTrait: {fileID: 11400000, guid: d79ee4c2dce5e2e4a809b43dacb6c164, type: 2}
+  _bridgeTrait: {fileID: 11400000, guid: 9d7afb6e0a427c34ea037a3763156577, type: 2}
+  _ownershipTrait: {fileID: 11400000, guid: 7de88773e765acd41b0280ddf39e4ffe, type: 2}
+  _networkWalledTrait: {fileID: 11400000, guid: 9d7956b963803da4aa3898085afd7e28, type: 2}
+  _networkMovementTrait: {fileID: 11400000, guid: 29deca41e59726b439102a1feb94166d, type: 2}
+  _movableTrait: {fileID: 11400000, guid: 1efb67b6c19b6e54cb6e6d5a9ac5c02c, type: 2}
+  _networkMovableHelperTrait: {fileID: 11400000, guid: c5c9f9746b26951469e5013c35e0c21d, type: 2}
+  _networkPlayerTerrainTrait: {fileID: 11400000, guid: 68892b3229f25694f93c123c61130bee, type: 2}
+  _projectileManagerTrait: {fileID: 11400000, guid: e22c073cf0763df48947c2afbc34dce1, type: 2}
+  _networkRollingTrait: {fileID: 11400000, guid: 411540d72c7c67a4d88ab543adc98989, type: 2}
+  _projectileRedirectTrait: {fileID: 11400000, guid: f050c76384e5c814fbe91c6c1ce54ca8, type: 2}
+  _bombableDoorTrait: {fileID: 11400000, guid: c4d39e8977dc7c54f8997b8859a7e0e5, type: 2}
 --- !u!1 &5636035961498998251
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +570,7 @@ MonoBehaviour:
     Wisdom: 5
     Luck: 5
   _defaultPlayerSprite: {fileID: 11400000, guid: d5b96159b5123a549996ab6ddcab5362, type: 2}
+  _defaultRecolorTrait: {fileID: 11400000, guid: f4679723ff6d3d54494dbcae5ae58158, type: 2}
   _startingEquippedActionItems:
   - Item: {fileID: 11400000, guid: 5a978425e52e8b3438aaf89754e00790, type: 2}
     Stack: 1
@@ -472,7 +581,7 @@ MonoBehaviour:
   _startingAbilities: []
   _networkObjectTemplate: {fileID: 11400000, guid: 47154eaa7de048e43afc6b1958c9ddba, type: 2}
   _localFilter: Local
-  _showPlayerClone: 0
+  _showPlayerClone: 1
 --- !u!1 &6841408480091183370
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,21 +625,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc3a1c7472378a4bb565f07ebd4c207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _up: 63
-  _down: 64
-  _left: 61
-  _right: 62
-  _loadout: 280000002600000011000000240000000f000000210000001200000014000000
-  _menuLeft: 31
-  _menuRight: 19
-  _playerMenu: 30
-  _leftTrigger: 51
-  _green: 1
-  _red: 17
-  _blue: 40
-  _yellow: 38
-  _info: 23
-  _devWindow: 101
+  _devMenu: 101
+  _defaultKeyboardLayout:
+    Up: 63
+    Down: 64
+    Left: 61
+    Right: 62
+    Loadout: 280000002600000011000000240000000f000000210000001200000014000000
+    MenuLeft: 31
+    MenuRight: 19
+    PlayerMenu: 30
+    LeftTrigger: 51
+    Green: 1
+    Red: 17
+    Blue: 40
+    Yellow: 38
+    Info: 23
+  _defaultGamepadLayout:
+    Up: 0
+    Down: 1
+    Left: 2
+    Right: 3
+    Loadout: 08000000090000000a0000000b000000
+    MenuLeft: 14
+    MenuRight: 15
+    PlayerMenu: 12
+    LeftTrigger: 16
+    Green: 8
+    Red: 9
+    Blue: 10
+    Yellow: 11
+    Info: 13
+    Mod: 17
+  _xboxLayout: {fileID: 11400000, guid: 8bef3432610ef2b4bbb5c6f17422872e, type: 2}
 --- !u!1 &7335422139119193679
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,12 +835,15 @@ MonoBehaviour:
   _internalItemPath: Data/Items
   _itemLootTemplate: {fileID: 4081817834852410326, guid: f211510a7012f9c479f71c8635afbcd9, type: 3}
   _keyItemLootTemplate: {fileID: 4175208551176256474, guid: 56eb25413fb1ca148840c2c1627506a1, type: 3}
+  _lootSpawnTemplate: {fileID: 2390126941047432994, guid: 7eba93353580d7c47b0df96887cce415, type: 3}
+  _tagsInternalPath: Data/Tags
   _normal: {r: 1, g: 1, b: 1, a: 1}
   _polished: {r: 0.1254902, g: 0.70980394, b: 0.38431373, a: 1}
   _forged: {r: 0.007843138, g: 0.2901961, b: 0.7921569, a: 1}
   _rare: {r: 0.41568628, g: 0.19215687, b: 0.7921569, a: 1}
   _ornate: {r: 0.8117647, g: 0.23529412, b: 0.44313726, a: 1}
   _legendary: {r: 1, g: 0.73333335, b: 0.19215687, a: 1}
+  _explosive: {fileID: 11400000, guid: 96b77ffe986d5414db44c290f23f339f, type: 2}
 --- !u!1 &8336418316504823673
 GameObject:
   m_ObjectHideFlags: 0

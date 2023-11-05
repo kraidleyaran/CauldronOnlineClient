@@ -1,0 +1,6757 @@
+fileFormatVersion: 2
+guid: 32e8d731cd634f6489ee7421fe0deed2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7923309636734386781
+    second: eggboycolor-gamepad-buttons-16x16-transparent_0
+  - first:
+      213: -6295783060442127588
+    second: eggboycolor-gamepad-buttons-16x16-transparent_1
+  - first:
+      213: -351641957730465402
+    second: eggboycolor-gamepad-buttons-16x16-transparent_2
+  - first:
+      213: 5851878915321720725
+    second: eggboycolor-gamepad-buttons-16x16-transparent_3
+  - first:
+      213: 4160017342304021534
+    second: eggboycolor-gamepad-buttons-16x16-transparent_4
+  - first:
+      213: -6453525334366324539
+    second: eggboycolor-gamepad-buttons-16x16-transparent_5
+  - first:
+      213: 4985845169117699134
+    second: eggboycolor-gamepad-buttons-16x16-transparent_6
+  - first:
+      213: 2048423307186889711
+    second: eggboycolor-gamepad-buttons-16x16-transparent_7
+  - first:
+      213: 6037769882752667017
+    second: eggboycolor-gamepad-buttons-16x16-transparent_8
+  - first:
+      213: -5499955198718811695
+    second: eggboycolor-gamepad-buttons-16x16-transparent_9
+  - first:
+      213: -2248405797189679318
+    second: eggboycolor-gamepad-buttons-16x16-transparent_10
+  - first:
+      213: 317489683271427350
+    second: eggboycolor-gamepad-buttons-16x16-transparent_11
+  - first:
+      213: -366659080613619676
+    second: eggboycolor-gamepad-buttons-16x16-transparent_12
+  - first:
+      213: -3836177980300983981
+    second: eggboycolor-gamepad-buttons-16x16-transparent_13
+  - first:
+      213: -4016751815421081199
+    second: eggboycolor-gamepad-buttons-16x16-transparent_14
+  - first:
+      213: -2258653511709922010
+    second: eggboycolor-gamepad-buttons-16x16-transparent_15
+  - first:
+      213: -8993930336529075692
+    second: eggboycolor-gamepad-buttons-16x16-transparent_16
+  - first:
+      213: 8344069950485185018
+    second: eggboycolor-gamepad-buttons-16x16-transparent_17
+  - first:
+      213: -8176004725324188058
+    second: eggboycolor-gamepad-buttons-16x16-transparent_18
+  - first:
+      213: 6375045439586385887
+    second: eggboycolor-gamepad-buttons-16x16-transparent_19
+  - first:
+      213: -8779293749198810822
+    second: eggboycolor-gamepad-buttons-16x16-transparent_24
+  - first:
+      213: -5055226195173667708
+    second: eggboycolor-gamepad-buttons-16x16-transparent_25
+  - first:
+      213: -4446047251054807994
+    second: eggboycolor-gamepad-buttons-16x16-transparent_26
+  - first:
+      213: 8828685899263375912
+    second: eggboycolor-gamepad-buttons-16x16-transparent_27
+  - first:
+      213: -4616649004353699801
+    second: eggboycolor-gamepad-buttons-16x16-transparent_28
+  - first:
+      213: 2948653096219689349
+    second: eggboycolor-gamepad-buttons-16x16-transparent_29
+  - first:
+      213: 832434455318552841
+    second: eggboycolor-gamepad-buttons-16x16-transparent_30
+  - first:
+      213: 206984746710974282
+    second: eggboycolor-gamepad-buttons-16x16-transparent_31
+  - first:
+      213: 1222855857244151229
+    second: eggboycolor-gamepad-buttons-16x16-transparent_32
+  - first:
+      213: -745377349396102010
+    second: eggboycolor-gamepad-buttons-16x16-transparent_33
+  - first:
+      213: 86929752497555294
+    second: eggboycolor-gamepad-buttons-16x16-transparent_34
+  - first:
+      213: 7048809147540618781
+    second: eggboycolor-gamepad-buttons-16x16-transparent_35
+  - first:
+      213: 4311366173698835433
+    second: eggboycolor-gamepad-buttons-16x16-transparent_36
+  - first:
+      213: -4905147952607710442
+    second: eggboycolor-gamepad-buttons-16x16-transparent_37
+  - first:
+      213: -2135948603955641789
+    second: eggboycolor-gamepad-buttons-16x16-transparent_38
+  - first:
+      213: -8792680093606704089
+    second: eggboycolor-gamepad-buttons-16x16-transparent_39
+  - first:
+      213: -7179835427438916246
+    second: eggboycolor-gamepad-buttons-16x16-transparent_40
+  - first:
+      213: -5458266195935670590
+    second: eggboycolor-gamepad-buttons-16x16-transparent_41
+  - first:
+      213: -6668032718667227358
+    second: eggboycolor-gamepad-buttons-16x16-transparent_42
+  - first:
+      213: 3889855479552090248
+    second: eggboycolor-gamepad-buttons-16x16-transparent_43
+  - first:
+      213: 2529931385802817787
+    second: eggboycolor-gamepad-buttons-16x16-transparent_44
+  - first:
+      213: 7255225325511136015
+    second: eggboycolor-gamepad-buttons-16x16-transparent_45
+  - first:
+      213: 8059261618190849684
+    second: eggboycolor-gamepad-buttons-16x16-transparent_46
+  - first:
+      213: -7066963349378350779
+    second: eggboycolor-gamepad-buttons-16x16-transparent_47
+  - first:
+      213: 8464100250160766250
+    second: eggboycolor-gamepad-buttons-16x16-transparent_48
+  - first:
+      213: -9058478208482450128
+    second: eggboycolor-gamepad-buttons-16x16-transparent_49
+  - first:
+      213: 3945688879455071806
+    second: eggboycolor-gamepad-buttons-16x16-transparent_50
+  - first:
+      213: 3981058186192364230
+    second: eggboycolor-gamepad-buttons-16x16-transparent_51
+  - first:
+      213: -7332702325716263404
+    second: eggboycolor-gamepad-buttons-16x16-transparent_52
+  - first:
+      213: 5756351513089106014
+    second: eggboycolor-gamepad-buttons-16x16-transparent_53
+  - first:
+      213: 1084929064954189380
+    second: eggboycolor-gamepad-buttons-16x16-transparent_54
+  - first:
+      213: 1071676125927360868
+    second: eggboycolor-gamepad-buttons-16x16-transparent_55
+  - first:
+      213: -760786444007719805
+    second: eggboycolor-gamepad-buttons-16x16-transparent_56
+  - first:
+      213: 1693484626526845692
+    second: eggboycolor-gamepad-buttons-16x16-transparent_57
+  - first:
+      213: -4538676578341865717
+    second: eggboycolor-gamepad-buttons-16x16-transparent_58
+  - first:
+      213: 8113512751606287555
+    second: eggboycolor-gamepad-buttons-16x16-transparent_59
+  - first:
+      213: 9163370152832648134
+    second: atwa
+  - first:
+      213: -8326731007341946232
+    second: dawda
+  - first:
+      213: -7428306105132698608
+    second: eggboycolor-gamepad-buttons-16x16-transparent_62
+  - first:
+      213: 6333948235564926345
+    second: eggboycolor-gamepad-buttons-16x16-transparent_63
+  - first:
+      213: -4525825770237047591
+    second: eggboycolor-gamepad-buttons-16x16-transparent_64
+  - first:
+      213: -4137045213094474135
+    second: eggboycolor-gamepad-buttons-16x16-transparent_65
+  - first:
+      213: -2103505677456199418
+    second: eggboycolor-gamepad-buttons-16x16-transparent_66
+  - first:
+      213: -7592799586492360404
+    second: eggboycolor-gamepad-buttons-16x16-transparent_67
+  - first:
+      213: -3508947243019213317
+    second: eggboycolor-gamepad-buttons-16x16-transparent_68
+  - first:
+      213: -2775724129473997224
+    second: eggboycolor-gamepad-buttons-16x16-transparent_69
+  - first:
+      213: -658043259563710611
+    second: eggboycolor-gamepad-buttons-16x16-transparent_70
+  - first:
+      213: 9076766098702106371
+    second: eggboycolor-gamepad-buttons-16x16-transparent_71
+  - first:
+      213: -522368784100615485
+    second: eggboycolor-gamepad-buttons-16x16-transparent_72
+  - first:
+      213: -6238263337841435904
+    second: eggboycolor-gamepad-buttons-16x16-transparent_73
+  - first:
+      213: 5920172710909439376
+    second: eggboycolor-gamepad-buttons-16x16-transparent_74
+  - first:
+      213: 2151490797511742979
+    second: eggboycolor-gamepad-buttons-16x16-transparent_75
+  - first:
+      213: -2902034337877643659
+    second: eggboycolor-gamepad-buttons-16x16-transparent_76
+  - first:
+      213: -3017678284800240116
+    second: Xbox Dpad Left
+  - first:
+      213: 6755738812833723501
+    second: Xbox Dpad Right
+  - first:
+      213: 4484427032776805749
+    second: Xbox Dpad Up
+  - first:
+      213: -4254515508646573679
+    second: Xbox Dpad Down
+  - first:
+      213: -8432566787060390441
+    second: eggboycolor-gamepad-buttons-16x16-transparent_81
+  - first:
+      213: -546465266943627367
+    second: eggboycolor-gamepad-buttons-16x16-transparent_82
+  - first:
+      213: -5529266514920199085
+    second: eggboycolor-gamepad-buttons-16x16-transparent_83
+  - first:
+      213: -1052250441074572386
+    second: eggboycolor-gamepad-buttons-16x16-transparent_84
+  - first:
+      213: 7967623762620246893
+    second: eggboycolor-gamepad-buttons-16x16-transparent_85
+  - first:
+      213: 586266631159333970
+    second: eggboycolor-gamepad-buttons-16x16-transparent_86
+  - first:
+      213: 5336985567488400839
+    second: eggboycolor-gamepad-buttons-16x16-transparent_87
+  - first:
+      213: 3405353008585013747
+    second: eggboycolor-gamepad-buttons-16x16-transparent_88
+  - first:
+      213: 657804712550262719
+    second: eggboycolor-gamepad-buttons-16x16-transparent_89
+  - first:
+      213: 2263911528005510788
+    second: eggboycolor-gamepad-buttons-16x16-transparent_90
+  - first:
+      213: 8879872401207938670
+    second: eggboycolor-gamepad-buttons-16x16-transparent_91
+  - first:
+      213: -3590169616052566608
+    second: eggboycolor-gamepad-buttons-16x16-transparent_92
+  - first:
+      213: -8707127796568457107
+    second: Default X Button
+  - first:
+      213: -8315336350928202617
+    second: Default B Button
+  - first:
+      213: -3661902615970250119
+    second: Default Y Button
+  - first:
+      213: -5759641974879527087
+    second: Default A Button
+  - first:
+      213: 361052053928568787
+    second: eggboycolor-gamepad-buttons-16x16-transparent_97
+  - first:
+      213: -8014195800460334355
+    second: eggboycolor-gamepad-buttons-16x16-transparent_98
+  - first:
+      213: -429135009362576932
+    second: eggboycolor-gamepad-buttons-16x16-transparent_99
+  - first:
+      213: -4255832741985524955
+    second: eggboycolor-gamepad-buttons-16x16-transparent_100
+  - first:
+      213: 4401537383194501840
+    second: eggboycolor-gamepad-buttons-16x16-transparent_101
+  - first:
+      213: 1299923800121900395
+    second: eggboycolor-gamepad-buttons-16x16-transparent_102
+  - first:
+      213: 4165978595778831839
+    second: eggboycolor-gamepad-buttons-16x16-transparent_103
+  - first:
+      213: -41425062252274607
+    second: eggboycolor-gamepad-buttons-16x16-transparent_104
+  - first:
+      213: -7588319045478998469
+    second: eggboycolor-gamepad-buttons-16x16-transparent_105
+  - first:
+      213: 8438937704679532818
+    second: eggboycolor-gamepad-buttons-16x16-transparent_106
+  - first:
+      213: -2942266187503788245
+    second: eggboycolor-gamepad-buttons-16x16-transparent_107
+  - first:
+      213: -8487681825568086368
+    second: eggboycolor-gamepad-buttons-16x16-transparent_108
+  - first:
+      213: -778381827408924062
+    second: eggboycolor-gamepad-buttons-16x16-transparent_109
+  - first:
+      213: 1706267933528326392
+    second: eggboycolor-gamepad-buttons-16x16-transparent_110
+  - first:
+      213: -868450826626000507
+    second: eggboycolor-gamepad-buttons-16x16-transparent_111
+  - first:
+      213: -288119585051115629
+    second: Xbox Left Shoulder
+  - first:
+      213: 3882885062619668833
+    second: Xbox Right Shoulder
+  - first:
+      213: 7363346164282047839
+    second: Xbox Left Trigger
+  - first:
+      213: 4920394074468937403
+    second: Xbox Right Trigger
+  - first:
+      213: 7979837582876274219
+    second: eggboycolor-gamepad-buttons-16x16-transparent_116
+  - first:
+      213: -1999754531241464040
+    second: eggboycolor-gamepad-buttons-16x16-transparent_117
+  - first:
+      213: -3364003477368753290
+    second: eggboycolor-gamepad-buttons-16x16-transparent_118
+  - first:
+      213: -8489880825925920476
+    second: eggboycolor-gamepad-buttons-16x16-transparent_119
+  - first:
+      213: -7493041600991609994
+    second: eggboycolor-gamepad-buttons-16x16-transparent_120
+  - first:
+      213: 2304140649044879287
+    second: eggboycolor-gamepad-buttons-16x16-transparent_121
+  - first:
+      213: -1944262940574571880
+    second: eggboycolor-gamepad-buttons-16x16-transparent_122
+  - first:
+      213: -3220318242212450272
+    second: eggboycolor-gamepad-buttons-16x16-transparent_123
+  - first:
+      213: -7293658978278006141
+    second: Xbox Left STick
+  - first:
+      213: -8968792816814884415
+    second: Xbox Right Stick
+  - first:
+      213: -2204720281275667122
+    second: eggboycolor-gamepad-buttons-16x16-transparent_126
+  - first:
+      213: -4875751156396199339
+    second: eggboycolor-gamepad-buttons-16x16-transparent_127
+  - first:
+      213: -6477120841907225201
+    second: eggboycolor-gamepad-buttons-16x16-transparent_128
+  - first:
+      213: 1905350937952318655
+    second: eggboycolor-gamepad-buttons-16x16-transparent_129
+  - first:
+      213: 5373613803537980083
+    second: eggboycolor-gamepad-buttons-16x16-transparent_130
+  - first:
+      213: -7390856173330761654
+    second: eggboycolor-gamepad-buttons-16x16-transparent_131
+  - first:
+      213: 3246518539067255671
+    second: eggboycolor-gamepad-buttons-16x16-transparent_132
+  - first:
+      213: 1531402972565415734
+    second: eggboycolor-gamepad-buttons-16x16-transparent_133
+  - first:
+      213: -3430543755272132460
+    second: eggboycolor-gamepad-buttons-16x16-transparent_134
+  - first:
+      213: 7102688825801605569
+    second: eggboycolor-gamepad-buttons-16x16-transparent_135
+  - first:
+      213: 4047403439203610815
+    second: eggboycolor-gamepad-buttons-16x16-transparent_136
+  - first:
+      213: -4290837553934604227
+    second: eggboycolor-gamepad-buttons-16x16-transparent_137
+  - first:
+      213: -6746060785458240788
+    second: eggboycolor-gamepad-buttons-16x16-transparent_138
+  - first:
+      213: 2316968742022964738
+    second: eggboycolor-gamepad-buttons-16x16-transparent_139
+  - first:
+      213: 2138411996304292803
+    second: eggboycolor-gamepad-buttons-16x16-transparent_140
+  - first:
+      213: -7722863643782901162
+    second: eggboycolor-gamepad-buttons-16x16-transparent_141
+  - first:
+      213: 5466747750160801597
+    second: eggboycolor-gamepad-buttons-16x16-transparent_142
+  - first:
+      213: 4113569605441211893
+    second: eggboycolor-gamepad-buttons-16x16-transparent_143
+  - first:
+      213: 8769396089252263448
+    second: Xbox A
+  - first:
+      213: -2268730382184368236
+    second: Xbox B
+  - first:
+      213: -5708825691454669277
+    second: Xbox X
+  - first:
+      213: 3019058344738457083
+    second: Xbox Y
+  - first:
+      213: 909502607725743788
+    second: Xbox Le1
+  - first:
+      213: -3703124360577229983
+    second: 2
+  - first:
+      213: 425085311584902817
+    second: 3
+  - first:
+      213: 3073469953200056292
+    second: Xbox4
+  - first:
+      213: -6945981453013336802
+    second: eggboycolor-gamepad-buttons-16x16-transparent_152
+  - first:
+      213: 1900514697465637113
+    second: eggboycolor-gamepad-buttons-16x16-transparent_153
+  - first:
+      213: 3643098296677263703
+    second: eggboycolor-gamepad-buttons-16x16-transparent_154
+  - first:
+      213: -9147718612035174730
+    second: eggboycolor-gamepad-buttons-16x16-transparent_155
+  - first:
+      213: -5013460322086298652
+    second: eggboycolor-gamepad-buttons-16x16-transparent_156
+  - first:
+      213: -8890492974633904123
+    second: eggboycolor-gamepad-buttons-16x16-transparent_157
+  - first:
+      213: -6707500958405085126
+    second: eggboycolor-gamepad-buttons-16x16-transparent_158
+  - first:
+      213: 2070004136524677357
+    second: eggboycolor-gamepad-buttons-16x16-transparent_159
+  - first:
+      213: -3465008766509551647
+    second: eggboycolor-gamepad-buttons-16x16-transparent_160
+  - first:
+      213: 1553368280226294721
+    second: eggboycolor-gamepad-buttons-16x16-transparent_161
+  - first:
+      213: 7666339292419304699
+    second: Xbox Select
+  - first:
+      213: 3297326843112928333
+    second: Xbox Start
+  - first:
+      213: -5990493342937480107
+    second: eggboycolor-gamepad-buttons-16x16-transparent_164
+  - first:
+      213: 7018845009570895071
+    second: eggboycolor-gamepad-buttons-16x16-transparent_165
+  - first:
+      213: 6476069582249447570
+    second: eggboycolor-gamepad-buttons-16x16-transparent_166
+  - first:
+      213: 4127792383935217567
+    second: eggboycolor-gamepad-buttons-16x16-transparent_167
+  - first:
+      213: -2068548159955004625
+    second: eggboycolor-gamepad-buttons-16x16-transparent_168
+  - first:
+      213: -4738070438197424556
+    second: eggboycolor-gamepad-buttons-16x16-transparent_169
+  - first:
+      213: 8521844861638842582
+    second: eggboycolor-gamepad-buttons-16x16-transparent_170
+  - first:
+      213: -67134054230908861
+    second: eggboycolor-gamepad-buttons-16x16-transparent_171
+  - first:
+      213: -8530474702576434276
+    second: eggboycolor-gamepad-buttons-16x16-transparent_172
+  - first:
+      213: 5449597987764338947
+    second: eggboycolor-gamepad-buttons-16x16-transparent_173
+  - first:
+      213: 6612842627358192105
+    second: eggboycolor-gamepad-buttons-16x16-transparent_174
+  - first:
+      213: 4884218066621502767
+    second: eggboycolor-gamepad-buttons-16x16-transparent_175
+  - first:
+      213: 295854548329602748
+    second: eggboycolor-gamepad-buttons-16x16-transparent_176
+  - first:
+      213: 8001342677030453510
+    second: eggboycolor-gamepad-buttons-16x16-transparent_177
+  - first:
+      213: -2114754218752681079
+    second: eggboycolor-gamepad-buttons-16x16-transparent_178
+  - first:
+      213: 1652913761249071010
+    second: eggboycolor-gamepad-buttons-16x16-transparent_179
+  - first:
+      213: -6634374024672573806
+    second: eggboycolor-gamepad-buttons-16x16-transparent_180
+  - first:
+      213: 7947363822919053529
+    second: eggboycolor-gamepad-buttons-16x16-transparent_181
+  - first:
+      213: 5938030138550574396
+    second: eggboycolor-gamepad-buttons-16x16-transparent_182
+  - first:
+      213: 7891981167981398709
+    second: eggboycolor-gamepad-buttons-16x16-transparent_183
+  - first:
+      213: -7843750500742333020
+    second: eggboycolor-gamepad-buttons-16x16-transparent_184
+  - first:
+      213: 1824387278140834452
+    second: eggboycolor-gamepad-buttons-16x16-transparent_185
+  - first:
+      213: 5979406269542823956
+    second: eggboycolor-gamepad-buttons-16x16-transparent_186
+  - first:
+      213: -5253170760590376204
+    second: eggboycolor-gamepad-buttons-16x16-transparent_187
+  - first:
+      213: 6876572928510575657
+    second: eggboycolor-gamepad-buttons-16x16-transparent_188
+  - first:
+      213: -2051876248284813479
+    second: eggboycolor-gamepad-buttons-16x16-transparent_189
+  - first:
+      213: -5260395219182338846
+    second: eggboycolor-gamepad-buttons-16x16-transparent_190
+  - first:
+      213: 1697705205590801754
+    second: eggboycolor-gamepad-buttons-16x16-transparent_191
+  - first:
+      213: 2499916434543720394
+    second: eggboycolor-gamepad-buttons-16x16-transparent_192
+  - first:
+      213: 1985649885482434710
+    second: eggboycolor-gamepad-buttons-16x16-transparent_193
+  - first:
+      213: -3684432604766730233
+    second: eggboycolor-gamepad-buttons-16x16-transparent_194
+  - first:
+      213: -3648043505296058317
+    second: eggboycolor-gamepad-buttons-16x16-transparent_195
+  - first:
+      213: 3321855600714273718
+    second: eggboycolor-gamepad-buttons-16x16-transparent_196
+  - first:
+      213: 1329176958190114410
+    second: eggboycolor-gamepad-buttons-16x16-transparent_197
+  - first:
+      213: 5039756059085350678
+    second: eggboycolor-gamepad-buttons-16x16-transparent_198
+  - first:
+      213: 8875301479924253318
+    second: eggboycolor-gamepad-buttons-16x16-transparent_199
+  - first:
+      213: -9042921160980855004
+    second: eggboycolor-gamepad-buttons-16x16-transparent_200
+  - first:
+      213: 3322239542337435851
+    second: eggboycolor-gamepad-buttons-16x16-transparent_201
+  - first:
+      213: -1275272418075889781
+    second: eggboycolor-gamepad-buttons-16x16-transparent_202
+  - first:
+      213: -7847821644138544506
+    second: eggboycolor-gamepad-buttons-16x16-transparent_203
+  - first:
+      213: -8880409676900026066
+    second: eggboycolor-gamepad-buttons-16x16-transparent_204
+  - first:
+      213: 573232208714671113
+    second: eggboycolor-gamepad-buttons-16x16-transparent_205
+  - first:
+      213: 8732293283500375330
+    second: eggboycolor-gamepad-buttons-16x16-transparent_206
+  - first:
+      213: -2073755871948644534
+    second: eggboycolor-gamepad-buttons-16x16-transparent_207
+  - first:
+      213: -4003813347967296165
+    second: eggboycolor-gamepad-buttons-16x16-transparent_208
+  - first:
+      213: -4570607296027824482
+    second: eggboycolor-gamepad-buttons-16x16-transparent_209
+  - first:
+      213: -3318475676080659319
+    second: eggboycolor-gamepad-buttons-16x16-transparent_210
+  - first:
+      213: 1561081889205111192
+    second: eggboycolor-gamepad-buttons-16x16-transparent_211
+  - first:
+      213: 7668510444417537956
+    second: eggboycolor-gamepad-buttons-16x16-transparent_212
+  - first:
+      213: 8373180724622931317
+    second: eggboycolor-gamepad-buttons-16x16-transparent_213
+  - first:
+      213: -4535879303120752548
+    second: eggboycolor-gamepad-buttons-16x16-transparent_214
+  - first:
+      213: -9191233371749795622
+    second: eggboycolor-gamepad-buttons-16x16-transparent_215
+  - first:
+      213: -7970646329513170768
+    second: eggboycolor-gamepad-buttons-16x16-transparent_216
+  - first:
+      213: 789711436771605400
+    second: eggboycolor-gamepad-buttons-16x16-transparent_217
+  - first:
+      213: -8944182185908796790
+    second: eggboycolor-gamepad-buttons-16x16-transparent_218
+  - first:
+      213: 5965076019529698945
+    second: eggboycolor-gamepad-buttons-16x16-transparent_219
+  - first:
+      213: 6415054055381834175
+    second: eggboycolor-gamepad-buttons-16x16-transparent_220
+  - first:
+      213: 2100432727205949851
+    second: eggboycolor-gamepad-buttons-16x16-transparent_221
+  - first:
+      213: -3350950717426214293
+    second: eggboycolor-gamepad-buttons-16x16-transparent_222
+  - first:
+      213: -6583522114752515722
+    second: eggboycolor-gamepad-buttons-16x16-transparent_223
+  - first:
+      213: 4353435752588641918
+    second: eggboycolor-gamepad-buttons-16x16-transparent_224
+  - first:
+      213: -5664787136774458931
+    second: eggboycolor-gamepad-buttons-16x16-transparent_225
+  - first:
+      213: 8230042285290909543
+    second: eggboycolor-gamepad-buttons-16x16-transparent_226
+  - first:
+      213: -4888997458144661727
+    second: eggboycolor-gamepad-buttons-16x16-transparent_227
+  - first:
+      213: 3427716059486987841
+    second: eggboycolor-gamepad-buttons-16x16-transparent_228
+  - first:
+      213: 3543755918378931884
+    second: eggboycolor-gamepad-buttons-16x16-transparent_229
+  - first:
+      213: 3078331282797217306
+    second: eggboycolor-gamepad-buttons-16x16-transparent_230
+  - first:
+      213: 8135841743660562904
+    second: eggboycolor-gamepad-buttons-16x16-transparent_231
+  - first:
+      213: 7140734399143733377
+    second: eggboycolor-gamepad-buttons-16x16-transparent_232
+  - first:
+      213: 7896648212386903569
+    second: eggboycolor-gamepad-buttons-16x16-transparent_233
+  - first:
+      213: -4965630686899820545
+    second: eggboycolor-gamepad-buttons-16x16-transparent_234
+  - first:
+      213: 5494366861144855431
+    second: eggboycolor-gamepad-buttons-16x16-transparent_235
+  - first:
+      213: 2448599317611771425
+    second: eggboycolor-gamepad-buttons-16x16-transparent_236
+  - first:
+      213: -8117449077359324033
+    second: eggboycolor-gamepad-buttons-16x16-transparent_237
+  - first:
+      213: 7739932768158046940
+    second: eggboycolor-gamepad-buttons-16x16-transparent_238
+  - first:
+      213: -5264835567395865734
+    second: eggboycolor-gamepad-buttons-16x16-transparent_239
+  - first:
+      213: 6912912465263497042
+    second: eggboycolor-gamepad-buttons-16x16-transparent_240
+  - first:
+      213: -5830849414938890526
+    second: eggboycolor-gamepad-buttons-16x16-transparent_241
+  - first:
+      213: -7084378940238309501
+    second: eggboycolor-gamepad-buttons-16x16-transparent_242
+  - first:
+      213: -5170157588421535791
+    second: eggboycolor-gamepad-buttons-16x16-transparent_243
+  - first:
+      213: 2181988808046623476
+    second: eggboycolor-gamepad-buttons-16x16-transparent_244
+  - first:
+      213: -939486768057931673
+    second: eggboycolor-gamepad-buttons-16x16-transparent_245
+  - first:
+      213: -7213142272594940992
+    second: eggboycolor-gamepad-buttons-16x16-transparent_246
+  - first:
+      213: 4195941302753234344
+    second: eggboycolor-gamepad-buttons-16x16-transparent_247
+  - first:
+      213: 7517561327099541433
+    second: eggboycolor-gamepad-buttons-16x16-transparent_248
+  - first:
+      213: 4947701236039679195
+    second: eggboycolor-gamepad-buttons-16x16-transparent_249
+  - first:
+      213: 2279226638934750679
+    second: eggboycolor-gamepad-buttons-16x16-transparent_250
+  - first:
+      213: -690931534070100231
+    second: eggboycolor-gamepad-buttons-16x16-transparent_251
+  - first:
+      213: -1876270712643640311
+    second: eggboycolor-gamepad-buttons-16x16-transparent_252
+  - first:
+      213: -1378724176830151965
+    second: eggboycolor-gamepad-buttons-16x16-transparent_253
+  - first:
+      213: -156915334567924943
+    second: eggboycolor-gamepad-buttons-16x16-transparent_254
+  - first:
+      213: -919668896708037350
+    second: eggboycolor-gamepad-buttons-16x16-transparent_255
+  - first:
+      213: -780566661912509819
+    second: eggboycolor-gamepad-buttons-16x16-transparent_256
+  - first:
+      213: 6102195588219142143
+    second: eggboycolor-gamepad-buttons-16x16-transparent_257
+  - first:
+      213: 6567917398693594514
+    second: eggboycolor-gamepad-buttons-16x16-transparent_258
+  - first:
+      213: 4452057944512833177
+    second: eggboycolor-gamepad-buttons-16x16-transparent_259
+  - first:
+      213: 4656807583490504580
+    second: eggboycolor-gamepad-buttons-16x16-transparent_260
+  - first:
+      213: 2031989300570797550
+    second: eggboycolor-gamepad-buttons-16x16-transparent_261
+  - first:
+      213: 1679530893972068316
+    second: eggboycolor-gamepad-buttons-16x16-transparent_262
+  - first:
+      213: -8399131956448299902
+    second: eggboycolor-gamepad-buttons-16x16-transparent_263
+  - first:
+      213: 2470485671651686325
+    second: eggboycolor-gamepad-buttons-16x16-transparent_264
+  - first:
+      213: -7683377543663082234
+    second: eggboycolor-gamepad-buttons-16x16-transparent_265
+  - first:
+      213: -4520866194741595536
+    second: eggboycolor-gamepad-buttons-16x16-transparent_266
+  - first:
+      213: 7094448587927746440
+    second: eggboycolor-gamepad-buttons-16x16-transparent_267
+  - first:
+      213: -4031078844622458864
+    second: eggboycolor-gamepad-buttons-16x16-transparent_268
+  - first:
+      213: -1989218148171671747
+    second: eggboycolor-gamepad-buttons-16x16-transparent_269
+  - first:
+      213: -4747974490786238707
+    second: eggboycolor-gamepad-buttons-16x16-transparent_270
+  - first:
+      213: 5572235841720989366
+    second: eggboycolor-gamepad-buttons-16x16-transparent_271
+  - first:
+      213: 2318010570860465756
+    second: eggboycolor-gamepad-buttons-16x16-transparent_272
+  - first:
+      213: -7780166192406878279
+    second: eggboycolor-gamepad-buttons-16x16-transparent_273
+  - first:
+      213: -212625028560821151
+    second: eggboycolor-gamepad-buttons-16x16-transparent_274
+  - first:
+      213: -1564073417223520589
+    second: eggboycolor-gamepad-buttons-16x16-transparent_275
+  - first:
+      213: -7978302244021791304
+    second: eggboycolor-gamepad-buttons-16x16-transparent_276
+  - first:
+      213: -2543348321006326738
+    second: eggboycolor-gamepad-buttons-16x16-transparent_277
+  - first:
+      213: -731507409690556160
+    second: eggboycolor-gamepad-buttons-16x16-transparent_278
+  - first:
+      213: -6431660121523086780
+    second: eggboycolor-gamepad-buttons-16x16-transparent_279
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d528bf6922045fd60800000000000000
+      internalID: 7923309636734386781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13ec6bb9a2e0a8a0800000000000000
+      internalID: -6295783060442127588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6894a55a087be1bf0800000000000000
+      internalID: -351641957730465402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f69507edc063150800000000000000
+      internalID: 5851878915321720725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cee7b6bb95bb930800000000000000
+      internalID: 4160017342304021534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c87c1096e87076a0800000000000000
+      internalID: -6453525334366324539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c9b52e3c7413540800000000000000
+      internalID: 4985845169117699134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3618615267d6c10800000000000000
+      internalID: 2048423307186889711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d460908b77ac350800000000000000
+      internalID: 6037769882752667017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d16dc303eb3ca3b0800000000000000
+      internalID: -5499955198718811695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27849b07de0cc0e0800000000000000
+      internalID: -2248405797189679318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615ae3f4f23f76400800000000000000
+      internalID: 317489683271427350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4289a52428d59eaf0800000000000000
+      internalID: -366659080613619676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3510cfca37823cac0800000000000000
+      internalID: -3836177980300983981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199cbea6181a148c0800000000000000
+      internalID: -4016751815421081199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d67d31996a7a0e0800000000000000
+      internalID: -2258653511709922010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4123394c2042f2380800000000000000
+      internalID: -8993930336529075692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af14ea349671cc370800000000000000
+      internalID: 8344069950485185018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666f229450ff88e80800000000000000
+      internalID: -8176004725324188058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf35850d06b87850800000000000000
+      internalID: 6375045439586385887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31923c89dea92680800000000000000
+      internalID: -8779293749198810822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c8c692f8a38d9b0800000000000000
+      internalID: -5055226195173667708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644b642d4977c42c0800000000000000
+      internalID: -4446047251054807994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_27
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82af71b8c0bc58a70800000000000000
+      internalID: 8828685899263375912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72046dac03e5eefb0800000000000000
+      internalID: -4616649004353699801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_29
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581c70e4e58bbe820800000000000000
+      internalID: 2948653096219689349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_30
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901ee080ab66d8b00800000000000000
+      internalID: 832434455318552841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4fb1adc78b5fd200800000000000000
+      internalID: 206984746710974282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd1b865ce478f010800000000000000
+      internalID: 1222855857244151229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_33
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6848f99ff33e7a5f0800000000000000
+      internalID: -745377349396102010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_34
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57870a3626d43100800000000000000
+      internalID: 86929752497555294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_35
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ebea0d29662d160800000000000000
+      internalID: 7048809147540618781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e344ff31bc05db30800000000000000
+      internalID: 4311366173698835433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613351afce96debb0800000000000000
+      internalID: -4905147952607710442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3428bbabf069b52e0800000000000000
+      internalID: -2135948603955641789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_39
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c8cec5a002af580800000000000000
+      internalID: -8792680093606704089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_40
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d0db918b91c5c90800000000000000
+      internalID: -7179835427438916246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_41
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce4bbd50d75044b0800000000000000
+      internalID: -5458266195935670590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f582532936673a0800000000000000
+      internalID: -6668032718667227358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_43
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8802f4603fa8bf530800000000000000
+      internalID: 3889855479552090248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf083e4f03f1c1320800000000000000
+      internalID: 2529931385802817787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_45
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0352846efcbfa460800000000000000
+      internalID: 7255225325511136015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_46
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4969430fdbf38df60800000000000000
+      internalID: 8059261618190849684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_47
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541499fa64a1ded90800000000000000
+      internalID: -7066963349378350779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_48
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d90223556867570800000000000000
+      internalID: 8464100250160766250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03569c13012d94280800000000000000
+      internalID: -9058478208482450128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ee0267127e1c630800000000000000
+      internalID: 3945688879455071806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_51
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2282ae35f8f3730800000000000000
+      internalID: 3981058186192364230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e5008c5120d3a90800000000000000
+      internalID: -7332702325716263404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_53
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5065f3e33ba2ef40800000000000000
+      internalID: 5756351513089106014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_54
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44657138c317e0f00800000000000000
+      internalID: 1084929064954189380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_55
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469ca2032cb5fde00800000000000000
+      internalID: 1071676125927360868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_56
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38cbcfe82c42175f0800000000000000
+      internalID: -760786444007719805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_57
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfab7bc9b47708710800000000000000
+      internalID: 1693484626526845692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_58
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b073c8de2b16301c0800000000000000
+      internalID: -4538676578341865717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc48104cdcf89070800000000000000
+      internalID: 8113512751606287555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atwa
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3c109ba94da2f70800000000000000
+      internalID: 9163370152832648134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dawda
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a17270442817c80800000000000000
+      internalID: -8326731007341946232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_62
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01433b844fa59e890800000000000000
+      internalID: -7428306105132698608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_63
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9854f8e8c54b6e750800000000000000
+      internalID: 6333948235564926345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_64
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc46b9d0790131c0800000000000000
+      internalID: -4525825770237047591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_65
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e06c53c434696c0800000000000000
+      internalID: -4137045213094474135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601b4303bb8dec2e0800000000000000
+      internalID: -2103505677456199418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_67
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29d3642105f0a690800000000000000
+      internalID: -7592799586492360404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5e04cd217bd4fc0800000000000000
+      internalID: -3508947243019213317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_69
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856d8345c95aa79d0800000000000000
+      internalID: -2775724129473997224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_70
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d676dd254292ed6f0800000000000000
+      internalID: -658043259563710611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_71
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f727e0da627fd70800000000000000
+      internalID: 9076766098702106371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_72
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca1ee5cb5c20c8f0800000000000000
+      internalID: -522368784100615485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_73
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b5e94cb8c3d69a0800000000000000
+      internalID: -6238263337841435904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_74
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09de7b2d6bda82250800000000000000
+      internalID: 5920172710909439376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_75
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30695333b71abdd10800000000000000
+      internalID: 2151490797511742979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e21d43527e9b7d0800000000000000
+      internalID: -2902034337877643659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Dpad Left
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06521c969d0f16d0800000000000000
+      internalID: -3017678284800240116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Dpad Right
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64f54628a431cd50800000000000000
+      internalID: 6755738812833723501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Dpad Up
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d02d570a2eb3e30800000000000000
+      internalID: 4484427032776805749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Dpad Down
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1990bbfaface4f4c0800000000000000
+      internalID: -4254515508646573679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_81
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d522805f2189fa80800000000000000
+      internalID: -8432566787060390441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_82
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f6cb92cb09a68f0800000000000000
+      internalID: -546465266943627367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_83
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c28b566691443b0800000000000000
+      internalID: -5529266514920199085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_84
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9380058cc7a561f0800000000000000
+      internalID: -1052250441074572386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_85
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6be0fa099fa29e60800000000000000
+      internalID: 7967623762620246893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_86
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254cae51566d22800800000000000000
+      internalID: 586266631159333970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_87
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd5889d818c01a40800000000000000
+      internalID: 5336985567488400839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_88
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9748bd48e324f20800000000000000
+      internalID: 3405353008585013747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_89
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7e22f96edf02900800000000000000
+      internalID: 657804712550262719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_90
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4862ead3a870b6f10800000000000000
+      internalID: 2263911528005510788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_91
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e4bccb6e4ab3b70800000000000000
+      internalID: 8879872401207938670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_92
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b549c771c72d2ec0800000000000000
+      internalID: -3590169616052566608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Default X Button
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d608b9fb6611a2780800000000000000
+      internalID: -8707127796568457107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Default B Button
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784180735adf99c80800000000000000
+      internalID: -8315336350928202617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Default Y Button
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972050de8fe4e2dc0800000000000000
+      internalID: -3661902615970250119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Default A Button
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f50e5c324a110b0800000000000000
+      internalID: -5759641974879527087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_97
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d766db1ee6b20500800000000000000
+      internalID: 361052053928568787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_98
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea6229616bd7c090800000000000000
+      internalID: -8014195800460334355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_99
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9724e8bf76b0af0800000000000000
+      internalID: -429135009362576932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_100
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523e9766bae30f4c0800000000000000
+      internalID: -4255832741985524955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_101
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d229eefde6651d30800000000000000
+      internalID: 4401537383194501840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_102
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d77551fc14a0210800000000000000
+      internalID: 1299923800121900395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_103
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd52747e57780d930800000000000000
+      internalID: 4165978595778831839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_104
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c97a71024dc6ff0800000000000000
+      internalID: -41425062252274607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_105
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e94e36800e0b690800000000000000
+      internalID: -7588319045478998469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_106
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219e21981212d1570800000000000000
+      internalID: 8438937704679532818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_107
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f9133cd78fa27d0800000000000000
+      internalID: -2942266187503788245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6a97c6952b53a80800000000000000
+      internalID: -8487681825568086368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_109
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262fbad1ad1a235f0800000000000000
+      internalID: -778381827408924062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_110
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0889535a1eda710800000000000000
+      internalID: 1706267933528326392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_111
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589101e0394a2f3f0800000000000000
+      internalID: -868450826626000507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Left Shoulder
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ff13093c4600cf0800000000000000
+      internalID: -288119585051115629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Right Shoulder
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161ad1d5467c2e530800000000000000
+      internalID: 3882885062619668833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Left Trigger
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d3440e25cdf2660800000000000000
+      internalID: 7363346164282047839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Right Trigger
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe68a36750c84440800000000000000
+      internalID: 4920394074468937403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_116
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ee6aca0041ebe60800000000000000
+      internalID: 7979837582876274219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_117
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fef5759d17f34e0800000000000000
+      internalID: -1999754531241464040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_118
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673b14c19a8a051d0800000000000000
+      internalID: -3364003477368753290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_119
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4291941ce52ed2a80800000000000000
+      internalID: -8489880825925920476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_120
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67bbbad1d5e530890800000000000000
+      internalID: -7493041600991609994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_121
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7abd266b3f9ff10800000000000000
+      internalID: 2304140649044879287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_122
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892a81d18279405e0800000000000000
+      internalID: -1944262940574571880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_123
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0207735ee912f43d0800000000000000
+      internalID: -3220318242212450272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Left STick
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382a6ee7dc7b7ca90800000000000000
+      internalID: -7293658978278006141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Right Stick
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c97ca9a372788380800000000000000
+      internalID: -8968792816814884415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_126
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4de675d5924761e0800000000000000
+      internalID: -2204720281275667122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_127
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552fdc5f72ad55cb0800000000000000
+      internalID: -4875751156396199339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_128
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d37da59e4ac16a0800000000000000
+      internalID: -6477120841907225201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_129
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4fa15459a217a10800000000000000
+      internalID: 1905350937952318655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_130
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba5400a849e29a40800000000000000
+      internalID: 5373613803537980083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_131
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48fd9208776e6990800000000000000
+      internalID: -7390856173330761654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_132
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77be2d51963fd0d20800000000000000
+      internalID: 3246518539067255671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_133
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6372dbbc3e2a04510800000000000000
+      internalID: 1531402972565415734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_134
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498e19061a24460d0800000000000000
+      internalID: -3430543755272132460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_135
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c18a0cfad1d19260800000000000000
+      internalID: 7102688825801605569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_136
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0fc60ebf34b2830800000000000000
+      internalID: 4047403439203610815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_137
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3862d08af1e374c0800000000000000
+      internalID: -4290837553934604227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_138
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2a191357d2162a0800000000000000
+      internalID: -6746060785458240788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_139
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20666f78bc6872020800000000000000
+      internalID: 2316968742022964738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_140
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbb62f716a2dad10800000000000000
+      internalID: 2138411996304292803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_141
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6529a87fe60e2d490800000000000000
+      internalID: -7722863643782901162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_142
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f100d5d1acddb40800000000000000
+      internalID: 5466747750160801597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_143
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdca23f2c5561930800000000000000
+      internalID: 4113569605441211893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox A
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816b49ae74723b970800000000000000
+      internalID: 8769396089252263448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox B
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497b3c6dcb9d380e0800000000000000
+      internalID: -2268730382184368236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox X
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e7830c74d26c0b0800000000000000
+      internalID: -5708825691454669277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Y
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf58052a199d5e920800000000000000
+      internalID: 3019058344738457083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Le1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caec8cf8dc33f9c00800000000000000
+      internalID: 909502607725743788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16bd2b8930cdb9cc0800000000000000
+      internalID: -3703124360577229983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae1144b6d436e500800000000000000
+      internalID: 425085311584902817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7635473a827aa20800000000000000
+      internalID: 3073469953200056292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_152
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d30bc7baaea9f90800000000000000
+      internalID: -6945981453013336802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_153
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f829d84c0cff5a10800000000000000
+      internalID: 1900514697465637113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_154
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759674f4992ee8230800000000000000
+      internalID: 3643098296677263703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_155
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bef9689366cc0180800000000000000
+      internalID: -9147718612035174730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_156
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebd786466c9c6ab0800000000000000
+      internalID: -5013460322086298652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_157
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50817d05ebf9e9480800000000000000
+      internalID: -8890492974633904123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_158
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a383cab8a6b2ae2a0800000000000000
+      internalID: -6707500958405085126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_159
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de084297bc12abc10800000000000000
+      internalID: 2070004136524677357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef6590a2e0d9efc0800000000000000
+      internalID: -3465008766509551647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_161
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb6f34883cae8510800000000000000
+      internalID: 1553368280226294721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Select
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfca54ce7fe446a60800000000000000
+      internalID: 7666339292419304699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Start
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d443b183b4572cd20800000000000000
+      internalID: 3297326843112928333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_164
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5548ed82b0e7ddca0800000000000000
+      internalID: -5990493342937480107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_165
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd41ff84952f76160800000000000000
+      internalID: 7018845009570895071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_166
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290d0be29fe9fd950800000000000000
+      internalID: 6476069582249447570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_167
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f750f9d4dd84930800000000000000
+      internalID: 4127792383935217567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_168
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23181d786a0b43e0800000000000000
+      internalID: -2068548159955004625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_169
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e86723a0efe3eb0800000000000000
+      internalID: -4738070438197424556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_170
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d898f040cca34670800000000000000
+      internalID: 8521844861638842582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_171
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3402c31feed711ff0800000000000000
+      internalID: -67134054230908861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_172
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93c973547aad9980800000000000000
+      internalID: -8530474702576434276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_173
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30180652f7cd0ab40800000000000000
+      internalID: 5449597987764338947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_174
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1fe3f455985cb50800000000000000
+      internalID: 6612842627358192105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_175
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f251582347a38c340800000000000000
+      internalID: 4884218066621502767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_176
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe9e5ae4261b1400800000000000000
+      internalID: 295854548329602748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_177
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601c29695ca7a0f60800000000000000
+      internalID: 8001342677030453510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_178
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bdcf31e32e6a2e0800000000000000
+      internalID: -2114754218752681079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_179
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af0b9fee4450f610800000000000000
+      internalID: 1652913761249071010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_180
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296005899f7fde3a0800000000000000
+      internalID: -6634374024672573806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_181
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d071ed3a45ba4e60800000000000000
+      internalID: 7947363822919053529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_182
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3dded133fe186250800000000000000
+      internalID: 5938030138550574396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_183
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba8a9b0f03f58d60800000000000000
+      internalID: 7891981167981398709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_184
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4adf5704a76652390800000000000000
+      internalID: -7843750500742333020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_185
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492835e3096815910800000000000000
+      internalID: 1824387278140834452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_186
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418f7d7625e1bf250800000000000000
+      internalID: 5979406269542823956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_187
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2ca86960df817b0800000000000000
+      internalID: -5253170760590376204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_188
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924c0f315ae7e6f50800000000000000
+      internalID: 6876572928510575657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_189
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9572ce96c654683e0800000000000000
+      internalID: -2051876248284813479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_190
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec397e3b625ff6b0800000000000000
+      internalID: -5260395219182338846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_191
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d3290c3e57f8710800000000000000
+      internalID: 1697705205590801754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_192
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7b32980cc71b220800000000000000
+      internalID: 2499916434543720394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_193
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690c978ec027e8b10800000000000000
+      internalID: 1985649885482434710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_194
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708030221144edcc0800000000000000
+      internalID: -3684432604766730233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_195
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33858a592cb8f5dc0800000000000000
+      internalID: -3648043505296058317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_196
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b357b3a11a991e20800000000000000
+      internalID: 3321855600714273718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_197
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a665e84b66f227210800000000000000
+      internalID: 1329176958190114410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_198
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617a7681f6fc0f540800000000000000
+      internalID: 5039756059085350678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_199
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68242613ca76b2b70800000000000000
+      internalID: 8875301479924253318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_200
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4278fd39d17118280800000000000000
+      internalID: -9042921160980855004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_201
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc877c30347fa1e20800000000000000
+      internalID: 3322239542337435851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_202
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fabb01e725d4ee0800000000000000
+      internalID: -1275272418075889781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_203
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68200805bcfe61390800000000000000
+      internalID: -7847821644138544506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_204
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29be64037272c480800000000000000
+      internalID: -8880409676900026066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_205
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904204e18a784f700800000000000000
+      internalID: 573232208714671113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_206
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22db195c9765f2970800000000000000
+      internalID: 8732293283500375330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_207
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4fde9d850a8833e0800000000000000
+      internalID: -2073755871948644534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_208
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d117f19f89f68c0800000000000000
+      internalID: -4003813347967296165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_209
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ee37061e0f190c0800000000000000
+      internalID: -4570607296027824482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_210
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984207364f762f1d0800000000000000
+      internalID: -3318475676080659319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_211
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899cd5f05b31aa510800000000000000
+      internalID: 1561081889205111192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_212
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a751e3ae950c6a60800000000000000
+      internalID: 7668510444417537956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_213
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5753c4b8183833470800000000000000
+      internalID: 8373180724622931317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_214
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50f0715ec15d01c0800000000000000
+      internalID: -4535879303120752548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_215
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8332512fd227080800000000000000
+      internalID: -9191233371749795622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_216
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8a813c463926190800000000000000
+      internalID: -7970646329513170768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_217
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bb5df1e5e95fa00800000000000000
+      internalID: 789711436771605400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_218
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a828782b0b1efd380800000000000000
+      internalID: -8944182185908796790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_219
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ec442190538c250800000000000000
+      internalID: 5965076019529698945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_220
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb996f9cca9d60950800000000000000
+      internalID: 6415054055381834175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_221
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9137b3df6c362d10800000000000000
+      internalID: 2100432727205949851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_222
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a58fb93180f71d0800000000000000
+      internalID: -3350950717426214293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_223
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6717f338481a2a4a0800000000000000
+      internalID: -6583522114752515722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_224
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76088160c28a6c30800000000000000
+      internalID: 4353435752588641918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_225
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc13b58cc12a261b0800000000000000
+      internalID: -5664787136774458931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_226
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f65359adbf63270800000000000000
+      internalID: 8230042285290909543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_227
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fef7ff6bac62cb0800000000000000
+      internalID: -4888997458144661727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_228
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146af946891b19f20800000000000000
+      internalID: 3427716059486987841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_229
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca61aad6b33fd2130800000000000000
+      internalID: 3543755918378931884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_230
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16c914fdfd68ba20800000000000000
+      internalID: 3078331282797217306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_231
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9bea7d5f058e070800000000000000
+      internalID: 8135841743660562904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_232
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188ef505a1cf81360800000000000000
+      internalID: 7140734399143733377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_233
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1167b8ff5b7869d60800000000000000
+      internalID: 7896648212386903569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_234
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7ae850339861bb0800000000000000
+      internalID: -4965630686899820545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_235
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7839730cc89ef3c40800000000000000
+      internalID: 5494366861144855431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_236
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126738b2b1c2bf120800000000000000
+      internalID: 2448599317611771425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_237
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74dcad7217095f80800000000000000
+      internalID: -8117449077359324033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_238
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda577f38d3c96b60800000000000000
+      internalID: 7739932768158046940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_239
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bf68c12fb8fe6b0800000000000000
+      internalID: -5264835567395865734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_240
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f866fc2499fef50800000000000000
+      internalID: 6912912465263497042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_241
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eee5cba959a41fa0800000000000000
+      internalID: -5830849414938890526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_242
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38756d473ea3fad90800000000000000
+      internalID: -7084378940238309501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_243
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d71855e019ef38b0800000000000000
+      internalID: -5170157588421535791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_244
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa3f7f924bf74e10800000000000000
+      internalID: 2181988808046623476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_245
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7682ab613c546f2f0800000000000000
+      internalID: -939486768057931673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_246
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbef97e155c5eb90800000000000000
+      internalID: -7213142272594940992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_247
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad0ff0426afa3a30800000000000000
+      internalID: 4195941302753234344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_248
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b77bfe723eb35860800000000000000
+      internalID: 7517561327099541433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_249
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdcf7e46f04c9a440800000000000000
+      internalID: 4947701236039679195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_250
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d530506d8071af10800000000000000
+      internalID: 2279226638934750679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_251
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fec2a33e615966f0800000000000000
+      internalID: -690931534070100231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_252
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904286e4ab526f5e0800000000000000
+      internalID: -1876270712643640311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_253
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2cbcc7aa9cddce0800000000000000
+      internalID: -1378724176830151965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_254
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b6447a55682ddf0800000000000000
+      internalID: -156915334567924943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_255
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15fdb4d20eac33f0800000000000000
+      internalID: -919668896708037350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_256
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5824131b1ceda25f0800000000000000
+      internalID: -780566661912509819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_257
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffff1c18e8a5fa450800000000000000
+      internalID: 6102195588219142143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_258
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2954d37631ee52b50800000000000000
+      internalID: 6567917398693594514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_259
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996a42ecc13e8cd30800000000000000
+      internalID: 4452057944512833177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_260
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487fb4903dd40a040800000000000000
+      internalID: 4656807583490504580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_261
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5baefb083133c10800000000000000
+      internalID: 2031989300570797550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_262
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7df741374ee4710800000000000000
+      internalID: 1679530893972068316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_263
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28474427cf9407b80800000000000000
+      internalID: -8399131956448299902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_264
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7bd7111ade84220800000000000000
+      internalID: 2470485671651686325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_265
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605afb215d82f5590800000000000000
+      internalID: -7683377543663082234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_266
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072fa510628a241c0800000000000000
+      internalID: -4520866194741595536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_267
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88774b8176b847260800000000000000
+      internalID: 7094448587927746440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_268
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010bfacf52bbe08c0800000000000000
+      internalID: -4031078844622458864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_269
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37977132a0e464e0800000000000000
+      internalID: -1989218148171671747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_270
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0fe1124b5ecb1eb0800000000000000
+      internalID: -4747974490786238707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_271
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6ba7e99fe845d40800000000000000
+      internalID: 5572235841720989366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_272
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e0db5355a3b2020800000000000000
+      internalID: 2318010570860465756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_273
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7a510b11c470490800000000000000
+      internalID: -7780166192406878279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_274
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164664eb9aa9c0df0800000000000000
+      internalID: -212625028560821151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_275
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3beb2cb838b4b4ae0800000000000000
+      internalID: -1564073417223520589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_276
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b511624160674190800000000000000
+      internalID: -7978302244021791304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_277
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ce4526d2634bcd0800000000000000
+      internalID: -2543348321006326738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_278
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00904d6f2e929d5f0800000000000000
+      internalID: -731507409690556160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eggboycolor-gamepad-buttons-16x16-transparent_279
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a129422372eb6a0800000000000000
+      internalID: -6431660121523086780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

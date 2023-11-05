@@ -14,7 +14,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         public static NetworkHitboxController NETWORK_HITBOX => _instance._networkHitboxTemplate;
         public static WorldAbilityController ABILITY_CONTROLLER => _instance._worldAbilityTemplate;
         public static VisualFxController VISUAL_FX => _instance._visualFxTemplate;
-        
+        public static Material RECOLOR_MATERIAL => _instance._recolorMaterial;
+        public static Material DEFAULT_SPRITE_MATERIAL => _instance._defaultSpriteMaterial;
 
         private static FactoryController _instance;
 
@@ -25,6 +26,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         [SerializeField] private NetworkHitboxController _networkHitboxTemplate;
         [SerializeField] private WorldAbilityController _worldAbilityTemplate;
         [SerializeField] private VisualFxController _visualFxTemplate;
+        [SerializeField] private Material _recolorMaterial;
+        [SerializeField] private Material _defaultSpriteMaterial;
 
         void Awake()
         {

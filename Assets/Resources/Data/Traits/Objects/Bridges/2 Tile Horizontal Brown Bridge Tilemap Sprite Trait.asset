@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa8606a4a9ce3646a158e3489138da8, type: 3}
+  m_Name: 2 Tile Horizontal Brown Bridge Tilemap Sprite Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  Tilemap: {fileID: 5688546378095646123, guid: aad6b0b6c441ada4f80e7895d27d06d7, type: 3}
+  Offset: {x: -8, y: -8}

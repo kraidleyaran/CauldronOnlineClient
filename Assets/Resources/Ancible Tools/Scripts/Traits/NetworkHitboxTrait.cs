@@ -36,6 +36,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void SubscribeToMessages()
         {
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetupHitboxesMessage>(SetupHitboxes, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UnitDeathMessage>(UnitDeath, _instanceId);
         }
 
         private void SetupHitboxes(SetupHitboxesMessage msg)
@@ -46,7 +47,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 var traits = TraitFactory.GetTraitsByName(data.ApplyOnClient);
                 var hitboxController = Instantiate(FactoryController.NETWORK_HITBOX, _controller.transform.parent);
 
-                hitboxController.Setup(_hitbox, _collisionLayer, obj => {ApplyHitbox(obj, traits);});
+                hitboxController.Setup(_hitbox, _collisionLayer, obj => {ApplyHitbox(obj, traits);}, data.ReApply);
                 hitboxController.SetSize(data.Size.ToVector());
                 hitboxController.SetOffset(data.Offset);
 
@@ -54,6 +55,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
             }
 
             _hitboxes = hitboxes.ToArray();
+        }
+
+        private void UnitDeath(UnitDeathMessage msg)
+        {
+            foreach (var hitbox in _hitboxes)
+            {
+                hitbox.gameObject.SetActive(false);
+            }
         }
 
         public override void Destroy()

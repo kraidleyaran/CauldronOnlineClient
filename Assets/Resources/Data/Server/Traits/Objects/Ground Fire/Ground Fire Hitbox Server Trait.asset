@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxStack: 1
   _hitboxes:
-  - Size: {x: 10, y: 10}
-    Offset: {x: 0, y: -1}
+  - Size: {x: 16, y: 16}
+    Offset: {x: 0, y: 0}
     ApplyOnServer: []
     ApplyOnClient:
     - {fileID: 11400000, guid: b29049bad6a79aa44ba2df8ac3c6340f, type: 2}
     - {fileID: 11400000, guid: 3017a613c88ee53438b1af4b7a97af23, type: 2}
+    ReApply: 1

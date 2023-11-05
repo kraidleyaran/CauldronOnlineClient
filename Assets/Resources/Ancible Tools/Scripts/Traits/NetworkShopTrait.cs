@@ -71,7 +71,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void ShopWindowClosed(ShopWindowClosedMessage msg)
         {
             _shopWindowOpen = false;
-            _controller.StartCoroutine(StaticMethods.WaitForFrames(1, () =>
+            _controller.StartCoroutine(StaticMethods.WaitForFrames(2, () =>
             {
                 var setUnitStateMsg = MessageFactory.GenerateSetUnitStateMsg();
                 setUnitStateMsg.State = UnitState.Active;

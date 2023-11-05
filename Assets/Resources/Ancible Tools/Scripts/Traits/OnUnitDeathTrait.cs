@@ -10,6 +10,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
     public class OnUnitDeathTrait : Trait
     {
         [SerializeField] private Trait[] _applyOnDeath;
+        [SerializeField] private Trait[] _applyOnTimerComplete;
         [SerializeField] private int _deathTicks = 120;
 
 
@@ -27,8 +28,21 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private void DeathTimerCompleted()
         {
+
+            if (_applyOnTimerComplete.Length > 0)
+            {
+                var addTraitToUnitMsg = MessageFactory.GenerateAddTraitToUnitMsg();
+                foreach (var trait in _applyOnTimerComplete)
+                {
+                    addTraitToUnitMsg.Trait = trait;
+                    _controller.gameObject.SendMessageTo(addTraitToUnitMsg, _controller.transform.parent.gameObject);
+                }
+                MessageFactory.CacheMessage(addTraitToUnitMsg);
+            }
+
             if (_destroyOnDeath)
             {
+                _controller.gameObject.SendMessageTo(DestroyingObjectMessage.INSTANCE, _controller.transform.parent.gameObject);
                 ObjectManager.DestroyNetworkObject(_controller.transform.parent.gameObject);
             }
             else if (_unitState == UnitState.Dead)

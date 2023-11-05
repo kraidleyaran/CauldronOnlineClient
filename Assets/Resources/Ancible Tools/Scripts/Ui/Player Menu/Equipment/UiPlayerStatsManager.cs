@@ -35,9 +35,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
 
         private string FormatStatText(int total, int bonus)
         {
-            var bonusText = string.Empty;
             if (bonus != 0)
             {
+                var bonusText = string.Empty;
                 var color = bonus > 0 ? ColorFactory.PositiveStat : ColorFactory.NegativeStat;
                 bonusText = $"({StaticMethods.ApplyColorToText($"{bonus.ToStatString()}", color)})";
                 return $"{total} {bonusText}";
@@ -49,9 +49,9 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Player_Menu.Equipment
 
         private string FormatStatText(float total, float bonus)
         {
-            var bonusText = string.Empty;
             if (bonus > 0f || bonus < 0f)
             {
+                var bonusText = string.Empty;
                 var color = bonus > 0f ? ColorFactory.PositiveStat : ColorFactory.NegativeStat;
                 bonusText = $"({StaticMethods.ApplyColorToText($"{bonus.ToStatString()}", color)})";
                 return $"{total:P} {bonusText}";

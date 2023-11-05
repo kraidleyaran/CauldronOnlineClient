@@ -29,6 +29,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         {
             _hitboxController.transform.SetLocalScaling(msg.Hitbox.Size.ToVector());
             _hitboxController.transform.SetLocalPosition(msg.Hitbox.Offset.ToWorldVector());
+            if (msg.IsGround)
+            {
+                _hitboxController.gameObject.layer = CollisionLayerFactory.GroundTerrain.ToLayer();
+            }
         }
 
         public override void Destroy()

@@ -30,7 +30,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
 
         private bool CanMove(UnitState state)
         {
-            return !_knockback && state != UnitState.Attack && state != UnitState.Dead && state != UnitState.Disabled && state != UnitState.Interaction;
+            return !_knockback && state != UnitState.Attack && state != UnitState.Dead && state != UnitState.Disabled && state != UnitState.Interaction && state != UnitState.Rolling;
         }
 
         private void SubscribeToMessages()
@@ -54,6 +54,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                 walledCheckmsg.Direction = _direction;
                 walledCheckmsg.Origin = _rigidBody.position;
                 walledCheckmsg.Speed = moveSpeed;
+                walledCheckmsg.CheckAlternate = true;
                 var setPos = _rigidBody.position;
                 walledCheckmsg.DoAfter = (pos, contact) =>
                 {
@@ -127,6 +128,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
                     walledCheckmsg.Direction = diff.normalized;
                     walledCheckmsg.Origin = _rigidBody.position;
                     walledCheckmsg.Speed = diff.magnitude;
+                    walledCheckmsg.CheckAlternate = false;
                     walledCheckmsg.DoAfter = (pos, contact) => wallContact = contact;
                     _controller.gameObject.SendMessageTo(walledCheckmsg, _controller.transform.parent.gameObject);
                     MessageFactory.CacheMessage(walledCheckmsg);
@@ -189,7 +191,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Traits
         private void SetWorldPosition(SetWorldPositionMessage msg)
         {
             _worldPosition = msg.Position;
-            _rigidBody.position = _worldPosition.ToWorldVector();
+            if (!msg.IgnorePositionChange)
+            {
+                _rigidBody.position = _worldPosition.ToWorldVector();
+            }
 
             var updateWorldPositionMsg = MessageFactory.GenerateUpdateWorldPositionMsg();
             updateWorldPositionMsg.Position = _worldPosition;

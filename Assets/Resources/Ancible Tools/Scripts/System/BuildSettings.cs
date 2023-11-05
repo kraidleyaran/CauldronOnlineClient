@@ -28,7 +28,7 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
 
                 if (BuildLinuxDev())
                 {
-                //    BuildMacDev();
+                    BuildMacDev();
                 }
             }
         }

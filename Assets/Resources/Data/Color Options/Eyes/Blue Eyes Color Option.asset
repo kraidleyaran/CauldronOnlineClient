@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ab1f369a6ce3c4fbaf6c1d2f2eda8b, type: 3}
+  m_Name: Blue Eyes Color Option
+  m_EditorClassIdentifier: 
+  _eyeColor: {r: 0, g: 0.09019608, b: 0.49019608, a: 1}

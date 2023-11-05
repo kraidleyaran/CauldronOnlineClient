@@ -12,6 +12,11 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui
 
         public bool Active { get; private set; }
 
+        void Awake()
+        {
+            Active = true;
+        }
+
         public void SelectItem()
         {
             _action.Invoke();

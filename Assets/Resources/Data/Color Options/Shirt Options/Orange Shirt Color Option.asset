@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1335402df2c70243be759f3f919bf59, type: 3}
+  m_Name: Orange Shirt Color Option
+  m_EditorClassIdentifier: 
+  _color1: {r: 1, g: 0.73333335, b: 0.19215687, a: 1}
+  _color2: {r: 0.9647059, g: 0.56078434, b: 0.21568628, a: 1}
+  _color3: {r: 0.6784314, g: 0.30588236, b: 0.101960786, a: 1}

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1912dc1c48b109e43b3ba794736004f7, type: 3}
   m_Name: Default Recall Trait
   m_EditorClassIdentifier: 
-  MaxStack: 1
+  MaxStack: 2

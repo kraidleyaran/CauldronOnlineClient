@@ -5,14 +5,18 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Assets.Resources.Ancible_Tools.Scripts.Hitbox;
 using Assets.Resources.Ancible_Tools.Scripts.System.Items;
+using Assets.Resources.Ancible_Tools.Scripts.System.WorldInput;
 using Assets.Resources.Ancible_Tools.Scripts.Traits;
 using CauldronOnlineCommon;
+using CauldronOnlineCommon.Data;
 using CauldronOnlineCommon.Data.Combat;
 using CauldronOnlineCommon.Data.Math;
 using CauldronOnlineCommon.Data.ObjectParameters;
 using CauldronOnlineCommon.Data.Zones;
 using ConcurrentMessageBus;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -467,6 +471,22 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             return returnValue;
         }
 
+        public static Vector2 Absolute(this Vector2 vector)
+        {
+            var returnValue = vector;
+            if (vector.x < 0)
+            {
+                returnValue.x *= -1;
+            }
+
+            if (vector.y < 0)
+            {
+                returnValue.y *= -1;
+            }
+
+            return returnValue;
+        }
+
         public static WorldVector2Int ToWorldPosition(this Vector2 vector)
         {
             var pos = vector / (DataController.Interpolation);
@@ -502,6 +522,24 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
         {
             var direction = Vector2Int.zero;
             var nakedValues = vector.NakedValues();
+            if (nakedValues.x > nakedValues.y)
+            {
+                direction.x = vector.x > 0 ? 1 : -1;
+                direction.y = 0;
+            }
+            else if (nakedValues.y > nakedValues.x)
+            {
+                direction.y = vector.y > 0 ? 1 : -1;
+                direction.x = 0;
+            }
+
+            return direction;
+        }
+
+        public static Vector2Int ToFaceDirection(this Vector2 vector)
+        {
+            var direction = Vector2Int.zero;
+            var nakedValues = vector.Absolute();
             if (nakedValues.x > nakedValues.y)
             {
                 direction.x = vector.x > 0 ? 1 : -1;
@@ -610,6 +648,40 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             return returnList.ToArray();
         }
 
+        public static string ToSingleLine(this BonusTag[] tags)
+        {
+            var returnString = string.Empty;
+            var names = tags.ToDisplayNames();
+            if (names.Length > 1)
+            {
+                for (var i = 0; i < names.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(returnString))
+                    {
+                        if (i == 0)
+                        {
+                            returnString = $"{names[i]},";
+                        }
+                        else if (i < names.Length - 1)
+                        {
+                            returnString = $"{returnString}{names[i]},";
+                        }
+                        else
+                        {
+                            returnString = $"{returnString}{names[i]}";
+                        }
+
+                    }
+                }
+            }
+            else if (names.Length > 0)
+            {
+                returnString = $"{names[0]}";
+            }
+
+            return returnString;
+        }
+
         public static string[] GetRequiredStacks(this ResourceItemStack[] stacks)
         {
             var returnList = new List<string>();
@@ -641,6 +713,85 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System
             }
 
             return returnString;
+        }
+
+        public static string ToPlayTime(this TimeSpanData data)
+        {
+            return $"{data.Days:N0}:{data.Hours}:{data.Minutes}";
+        }
+
+        public static string ToInputString(this Key key)
+        {
+            switch (key)
+            {
+                case Key.UpArrow:
+                    return WorldKeyboardInputLayout.UP;
+                case Key.DownArrow:
+                    return WorldKeyboardInputLayout.DOWN;
+                case Key.LeftArrow:
+                    return WorldKeyboardInputLayout.LEFT;
+                case Key.RightArrow:
+                    return WorldKeyboardInputLayout.RIGHT;
+                case Key.LeftShift:
+                    return WorldKeyboardInputLayout.LEFT_SHIFT;
+                case Key.RightShift:
+                    return WorldKeyboardInputLayout.RIGHT_SHIFT;
+                default:
+                        return $"{key}";
+            }
+        }
+
+        public static bool ToInputState(this WorldGamepadInputType type, Gamepad gamepad)
+        {
+            switch (type)
+            {
+                case WorldGamepadInputType.LStickUp:
+                    return gamepad.leftStick.up.isPressed;
+                case WorldGamepadInputType.LStickDown:
+                    return gamepad.leftStick.down.isPressed;
+                case WorldGamepadInputType.LStickLeft:
+                    return gamepad.leftStick.left.isPressed;
+                case WorldGamepadInputType.LStickRight:
+                    return gamepad.leftStick.right.isPressed;
+                case WorldGamepadInputType.RStickUp:
+                    return gamepad.rightStick.up.isPressed;
+                case WorldGamepadInputType.RStickDown:
+                    return gamepad.rightStick.down.isPressed;
+                case WorldGamepadInputType.RStickLeft:
+                    return gamepad.rightStick.left.isPressed;
+                case WorldGamepadInputType.RStickRight:
+                    return gamepad.rightStick.right.isPressed;
+                case WorldGamepadInputType.A:
+                    return gamepad.aButton.isPressed;
+                case WorldGamepadInputType.B:
+                    return gamepad.bButton.isPressed;
+                case WorldGamepadInputType.X:
+                    return gamepad.xButton.isPressed;
+                case WorldGamepadInputType.Y:
+                    return gamepad.yButton.isPressed;
+                case WorldGamepadInputType.Start:
+                    return gamepad.startButton.isPressed;
+                case WorldGamepadInputType.Select:
+                    return gamepad.selectButton.isPressed;
+                case WorldGamepadInputType.LeftShoulder:
+                    return gamepad.leftShoulder.isPressed;
+                case WorldGamepadInputType.RightShoulder:
+                    return gamepad.rightShoulder.isPressed;
+                case WorldGamepadInputType.LeftTrigger:
+                    return gamepad.leftTrigger.isPressed;
+                case WorldGamepadInputType.RightTrigger:
+                    return gamepad.rightTrigger.isPressed;
+                case WorldGamepadInputType.DpadUp:
+                    return gamepad.dpad.up.isPressed;
+                case WorldGamepadInputType.DpadDown:
+                    return gamepad.dpad.down.isPressed;
+                case WorldGamepadInputType.DpadLeft:
+                    return gamepad.dpad.left.isPressed;
+                case WorldGamepadInputType.DpadRight:
+                    return gamepad.dpad.right.isPressed;
+                default:
+                    return false;
+            }
         }
 
     }

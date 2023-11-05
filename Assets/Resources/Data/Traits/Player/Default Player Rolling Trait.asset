@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b606ae76c87ec7e4e8a456907c86ad6a, type: 3}
+  m_Name: Default Player Rolling Trait
+  m_EditorClassIdentifier: 
+  MaxStack: 1
+  _rollSpeed: 20
+  _rollDistance: 24

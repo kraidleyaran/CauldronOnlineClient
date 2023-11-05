@@ -2,6 +2,6 @@
 {
     public enum UnitAnimationState
     {
-        Idle,Move,Attack
+        Idle,Move,Attack,Grab,Push,Roll
     }
 }

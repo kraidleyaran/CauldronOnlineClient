@@ -128,21 +128,24 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
                     position.y++;
                 }
 
-                if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
+                if (_active)
                 {
-                    setCursorController.SetCursor(_cursor);
-                    setCursorController.SetHovered(_hover);
-                }
-                else
-                {
-                    var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
-                    if (closest.Value)
+                    if (_controllers.TryGetValue(_cursorPosition, out var setCursorController))
                     {
-                        _cursorPosition = closest.Key;
-                        closest.Value.SetCursor(_cursor);
-                        closest.Value.SetHovered(_hover);
+                        setCursorController.SetCursor(_cursor);
+                        setCursorController.SetHovered(_hover);
                     }
+                    else
+                    {
+                        var closest = _controllers.OrderBy(c => (c.Value.Position - _cursorPosition).sqrMagnitude).FirstOrDefault();
+                        if (closest.Value)
+                        {
+                            _cursorPosition = closest.Key;
+                            closest.Value.SetCursor(_cursor);
+                            closest.Value.SetHovered(_hover);
+                        }
 
+                    }
                 }
             }
             else
@@ -194,6 +197,10 @@ namespace Assets.Resources.Ancible_Tools.Scripts.Ui.Crafting
                 {
                     if (_controllers.TryGetValue(direction + _cursorPosition, out var itemController))
                     {
+                        if (_controllers.TryGetValue(_cursorPosition, out var selected))
+                        {
+                            selected.SetHovered(false);
+                        }
                         _cursorPosition = itemController.Position;
                         itemController.SetCursor(_cursor);
                         itemController.SetHovered(_hover);

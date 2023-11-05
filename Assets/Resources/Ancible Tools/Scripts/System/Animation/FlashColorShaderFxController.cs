@@ -12,12 +12,14 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Animation
         private int _loops = 0;
         private int _loopCount = 0;
 
-        public void Setup(SpriteRenderer spriteRenderer, Action onFinish, Color color, int framesBetween, int loops)
+        private bool _active = true;
+
+        public void Setup(SpriteRenderer spriteRenderer, Material baseMaterial, Action onFinish, Color color, int framesBetween, int loops)
         {
-            Setup(spriteRenderer, onFinish);
+            Setup(spriteRenderer, baseMaterial, onFinish);
             _framesBetweenFlashes = framesBetween;
             _loops = loops;
-            _renderer.material.SetColor("_ChangeColor", color);
+            _material.SetColor("_ChangeColor", color);
             FlashColor();
         }
 
@@ -30,10 +32,8 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Animation
             }
             if (_loops < 0 || _loopCount <= _loops)
             {
-                if (_renderer.material.shader == _material.shader)
-                {
-                    _renderer.material.SetInt("_Active", _colorActive ? 1 : 0);
-                }
+                _active = !_active;
+                _renderer.material = _active ? _material : _baseMaterial;
                 _flashSequence = DOTween.Sequence().AppendInterval(_framesBetweenFlashes * TickController.TickRate).OnComplete(
                     () =>
                     {
@@ -59,8 +59,13 @@ namespace Assets.Resources.Ancible_Tools.Scripts.System.Animation
 
                 _flashSequence = null;
             }
-            _renderer?.material.SetInt("_Active", 0);
-            _renderer = null;
+
+            if (_renderer)
+            {
+                _renderer.material = _baseMaterial;
+                _renderer = null;
+            }
+            
             base.Destroy();
         }
     }
